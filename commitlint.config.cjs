@@ -1,7 +1,7 @@
 module.exports = {
-    extends: ['@commitlint/config-conventional'],
-    rules: {},
-    parserPreset: {
-        parserOpts: {},
-    }
-}
+	extends: ["@commitlint/config-conventional"],
+	rules: {},
+	parserPreset: {
+		parserOpts: {},
+	},
+};
