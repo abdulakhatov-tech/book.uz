@@ -1,50 +1,106 @@
-# React + TypeScript + Vite
+# book.uz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+book.uz is your premier platform for discovering, exploring, and purchasing a wide range of books. Whether you're into fiction, non-fiction, educational, or rare books, book.uz has something for every reader. Committed to providing an exceptional user experience, we offer a modern, user-friendly interface with secure transactions and reliable delivery.
 
-Currently, two official plugins are available:
+[figma](https://www.figma.com/design/YcJRCIevKxhrKZ0e0EEKLF/Book.uz-copy?node-id=0-1&node-type=CANVAS&t=LaIAobRggKrSONHb-0)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![alt text](image.png)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Table of Contents
+- Features
+- Technologies Used
+- Getting Started
+  - Prerequisites
+  - Installation
+  - Running the Application
+- Project Structure
+- Usage
+- Contributing
+- License
+- Contact
 
-- Configure the top-level `parserOptions` property like this:
+## Features
+- Extensive Catalog: Wide selection of books across various genres
+- Personalized Recommendations: Tailored book suggestions
+- User-Friendly Interface: Easy navigation and seamless purchasing
+- Responsive Design: Optimized for all devices
+- Secure Payments: Safe and encrypted transactions
+- Fast Delivery: Reliable and efficient shipping
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Technologies Used
+- Frontend Framework: Vite + ShadCN
+- Programming Language: TypeScript
+- Styling: Tailwind CSS
+- Git Hooks: Husky
+- Commit Management: Conventional Commits
+- Library: React Vite
+
+## Getting Started
+#### Prerequisites
+#### Ensure you have the following installed:
+
+- Node.js (version 14.x or higher) - Download Node.js
+- npm (version 6.x or higher) or yarn (version 1.x or higher) - Download npm or Download Yarn
+
+#### Installation
+1. Clone the repository:
+```
+  git clone https://github.com/abdulakhatov-dev/book.uz.git
+  cd book.uz
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+2. Install dependencies:
 ```
+  npm install
+  # or
+  yarn install
+```
+
+#### Running the Application
+1. Start the development server:
+```
+  npm run dev
+  # or
+  yarn dev
+```
+2. Open your browser and navigate to http://localhost:5173 to see the application in action.
+
+#### Project Structure
+
+Here's a brief overview of the project structure following a European-style folder layout:
+
+```
+book.uz/
+├── node_modules/
+├── public/
+│   └── index.html
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── configs/
+│   ├── hooks/
+│   ├── pages/
+│   ├── redux/
+│   ├── routes/
+│   ├── services/
+│   ├── styles/
+│   ├── utils/
+│   ├── index.css
+│   └── main.tsx
+├── .env
+├── .eslint.cjs
+├── .gitignore
+├── .husky/
+├── .prettierrc.json
+├── commitlint.config.cjs
+├── image.png
+├── index.html
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── README.md
+├── tailwind.config.js
+└── vite.config.ts
+```
+
