@@ -1,4 +1,3 @@
-
 export interface IInitialState {
-    menuModalVisibility: boolean;
+	menuModalVisibility: boolean;
 }

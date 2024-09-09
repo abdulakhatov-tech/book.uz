@@ -1,19 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IInitialState } from "./types";
+import type { IInitialState } from "./types";
 
 const initialState: IInitialState = {
-    menuModalVisibility: false,
-}
+	menuModalVisibility: false,
+};
 
 const modalSlice = createSlice({
-    name: "modal",
-    initialState,
-    reducers: {
-        toggleMenuModalVisibility: (state, action) => {
-            state.menuModalVisibility = action.payload;
-        },
-    },
-})
+	name: "modal",
+	initialState,
+	reducers: {
+		toggleMenuModalVisibility: (state, action) => {
+			state.menuModalVisibility = action.payload;
+		},
+	},
+});
 
 export const { toggleMenuModalVisibility } = modalSlice.actions;
 

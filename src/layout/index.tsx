@@ -1,13 +1,15 @@
-import React from "react";
-import Header from "@/components/header";
 import ModalVisibility from "@/components/common/modals";
+import Header from "@/components/header";
+import type React from "react";
 
-const MainLayout:React.FC = () => {
-  return <>
-    <Header />
-    Layout
-    <ModalVisibility />
-    </>;
+const MainLayout: React.FC = () => {
+	return (
+		<>
+			<Header />
+			Layout
+			<ModalVisibility />
+		</>
+	);
 };
 
 export default MainLayout;
