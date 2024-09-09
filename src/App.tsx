@@ -1,6 +1,7 @@
+import type { FC } from "react";
 import { Button } from "./components/ui/button";
 
-const App: React.FC = () => {
+const App: FC = () => {
 	return (
 		<div>
 			<h1 className="text-3xl font-bold underline text-[crimson]">
