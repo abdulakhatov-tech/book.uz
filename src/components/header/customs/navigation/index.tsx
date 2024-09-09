@@ -1,5 +1,5 @@
-import type React from "react";
 import { Button } from "@/components/ui/button";
+import type React from "react";
 
 import basketIcon from "@/assets/icons/basket.svg";
 import heartIcon from "@/assets/icons/heart.svg";

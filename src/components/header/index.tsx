@@ -1,5 +1,5 @@
-import type React from "react";
 import Container from "@/layout/container";
+import type React from "react";
 import { HeaderNavigation, TopBar } from "./customs";
 
 const Header: React.FC = () => {

@@ -1,4 +1,3 @@
-import type React from "react";
 import {
 	Sheet,
 	SheetContent,
@@ -7,6 +6,7 @@ import {
 } from "@/components/ui/sheet";
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
 import { toggleMenuModalVisibility } from "@/redux/slices/modals";
+import type React from "react";
 
 import closeIcon from "@/assets/icons/close.svg";
 import logoIcon from "@/assets/icons/logo.svg";
