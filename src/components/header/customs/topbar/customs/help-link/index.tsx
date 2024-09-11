@@ -1,15 +1,16 @@
 import type React from "react";
+import { NavLink } from "react-router-dom";
 
 const HelpLink: React.FC<{ className: string }> = ({ className }) => {
 	return (
 		<nav className={className}>
-			<a
-				href="/help"
+			<NavLink
+				to="/"
 				aria-label="How to purchase guide"
 				className="text-[16px] font-normal text-[#6A6A6A] underline"
 			>
 				Qanday xarid qilinadi?
-			</a>
+			</NavLink>
 		</nav>
 	);
 };

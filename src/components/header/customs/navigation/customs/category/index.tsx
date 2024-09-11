@@ -1,10 +1,11 @@
 import type React from "react";
+import { NavLink } from "react-router-dom";
 
 const categories = [
-	{ label: "Kitoblar", path: "/kitoblar" },
-	{ label: "To'plamlar", path: "/toplamlar" },
-	{ label: "Mualliflar", path: "/mualliflar" },
-	{ label: "Chegirmalar", path: "/chegirmalar" },
+	{ label: "Kitoblar", path: "/books" },
+	{ label: "To'plamlar", path: "/packages" },
+	{ label: "Mualliflar", path: "/authors" },
+	{ label: "Chegirmalar", path: "/discounts" },
 ];
 
 const Category: React.FC<{ className: string }> = ({ className }) => {
@@ -12,12 +13,12 @@ const Category: React.FC<{ className: string }> = ({ className }) => {
 		<ul className={className}>
 			{categories.map((category) => (
 				<li key={category.path}>
-					<a
-						href={category.path}
+					<NavLink
+						to={category.path}
 						className="text-[#000] text-[16px] font-normal"
 					>
 						{category.label}
-					</a>
+					</NavLink>
 				</li>
 			))}
 		</ul>
