@@ -5,17 +5,22 @@ import basketIcon from "@/assets/icons/basket.svg";
 import heartIcon from "@/assets/icons/heart.svg";
 import menuIcon from "@/assets/icons/menu-blue.svg";
 import userIcon from "@/assets/icons/user.svg";
+
+import { NavLink } from "react-router-dom";
 import { CategoryNavigation } from "./customs";
 
 // Reusable Button component for Nav
-const NavButton: React.FC<{ icon: string; label: string; alt: string }> = ({
-	icon,
-	label,
-	alt,
-}) => (
-	<Button variant="secondary" className="flex items-center">
-		<img src={icon} alt={alt} />
-		<span className="hidden sm:block ml-2">{label}</span>
+const NavButton: React.FC<{
+	icon: string;
+	label: string;
+	alt: string;
+	path: string;
+}> = ({ icon, label, alt, path }) => (
+	<Button variant="secondary">
+		<NavLink to={path} className="flex items-center">
+			<img src={icon} alt={alt} />
+			<span className="hidden sm:block ml-2">{label}</span>
+		</NavLink>
 	</Button>
 );
 
@@ -36,9 +41,24 @@ const HeaderNavigation: React.FC = () => {
 
 			{/* Right-side Icons */}
 			<div className="flex items-center gap-2 sm:gap-4 md:gap-6">
-				<NavButton icon={basketIcon} label="Savatcha" alt="Basket icon" />
-				<NavButton icon={heartIcon} label="Sevimlilar" alt="Heart icon" />
-				<NavButton icon={userIcon} label="Profil" alt="User profile icon" />
+				<NavButton
+					icon={basketIcon}
+					label="Savatcha"
+					path="/cart"
+					alt="Basket icon"
+				/>
+				<NavButton
+					icon={heartIcon}
+					label="Sevimlilar"
+					path="/bookmark"
+					alt="Heart icon"
+				/>
+				<NavButton
+					icon={userIcon}
+					label="Profil"
+					path="/profile"
+					alt="User profile icon"
+				/>
 			</div>
 		</div>
 	);

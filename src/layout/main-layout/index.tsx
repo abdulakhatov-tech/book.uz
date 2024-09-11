@@ -1,12 +1,19 @@
+import type React from "react";
+import { Outlet } from "react-router-dom";
+
 import ModalVisibility from "@/components/common/modals";
 import Header from "@/components/header";
-import type React from "react";
+import Container from "../container";
 
 const MainLayout: React.FC = () => {
 	return (
 		<>
 			<Header />
-			Layout
+			<main>
+				<Container>
+					<Outlet />
+				</Container>
+			</main>
 			<ModalVisibility />
 		</>
 	);
