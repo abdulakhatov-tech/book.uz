@@ -1,36 +1,50 @@
+# name: Code Quality
+
+# on:
+#   push:
+#   pull_request:
+
+# jobs:
+#   quality:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
+      
+#       - name: Setup Biome
+#         uses: biomejs/setup-biome@v2
+#         with:
+#           version: latest
+      
+#       - name: Run Biome
+#         run: biome ci .
+
+#   reviewdog:
+#     name: Biome Reviewdog
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: read
+#       pull-requests: write
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
+      
+#       - name: Run Biome with Reviewdog
+#         uses: mongolyy/reviewdog-action-biome@v1
+#         with:
+#           github_token: ${{ secrets.github_token }}
+#           reporter: github-pr-review
+
 name: Code Quality
 
-on:
-  push:
-  pull_request:
+on: [push, pull_request]
 
 jobs:
   quality:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Setup Biome
-        uses: biomejs/setup-biome@v2
-        with:
-          version: latest
-      
-      - name: Run Biome
-        run: biome ci .
+      - uses: actions/checkout@v4
 
-  reviewdog:
-    name: Biome Reviewdog
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Run Biome with Reviewdog
-        uses: mongolyy/reviewdog-action-biome@v1
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-pr-review
+      - uses: biomejs/setup-biome@v2
+
+      - run: biome ci .

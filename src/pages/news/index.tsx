@@ -1,7 +1,7 @@
 import type { FC } from "react";
 
 const NewsPage: FC = () => {
-  return <div>NewsPage</div>;
+	return <div>NewsPage</div>;
 };
 
 export default NewsPage;

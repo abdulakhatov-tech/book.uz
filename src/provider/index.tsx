@@ -6,17 +6,17 @@ import { store } from "@/redux/store";
 import SuspenseWrapper from "@/tools/suspense-wrapper";
 
 interface AppProviderProps {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }
 
 const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
-  return (
-    <BrowserRouter>
-      <SuspenseWrapper>
-        <Provider store={store}>{children}</Provider>
-      </SuspenseWrapper>
-    </BrowserRouter>
-  );
+	return (
+		<BrowserRouter>
+			<SuspenseWrapper>
+				<Provider store={store}>{children}</Provider>
+			</SuspenseWrapper>
+		</BrowserRouter>
+	);
 };
 
 export default AppProvider;

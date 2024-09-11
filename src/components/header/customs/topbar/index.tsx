@@ -8,8 +8,8 @@ import searchIcon from "@/assets/icons/search.svg";
 
 import Locale from "@/components/common/locale";
 import { useAppDispatch } from "@/hooks/useRedux";
-import { HelpLink, SocialLinks } from "./customs";
 import { toggleMenuModalVisibility } from "@/redux/slices/modals";
+import { HelpLink, SocialLinks } from "./customs";
 
 const TopBar: React.FC = () => {
 	const dispatch = useAppDispatch();
@@ -26,7 +26,7 @@ const TopBar: React.FC = () => {
 		>
 			<div className="flex items-end gap-5 lg:gap-6">
 				{/* Logo */}
-				<NavLink to='/' className="w-16 h-11">
+				<NavLink to="/" className="w-16 h-11">
 					<img src={logoIcon} alt="Book.uz logo" className="object-cover" />
 				</NavLink>
 
@@ -45,7 +45,7 @@ const TopBar: React.FC = () => {
 
 				{/* Locale Component */}
 				{/* <div className="hidden sm:block"> */}
-					<Locale />
+				<Locale />
 				{/* </div> */}
 
 				{/* Contact Link */}
