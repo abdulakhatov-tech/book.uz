@@ -8,19 +8,19 @@ import authStore from "@/config/auth";
 import SuspenseWrapper from "@/tools/suspense-wrapper";
 
 interface AppProviderProps {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }
 
 const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
-  return (
-    <AuthProvider store={authStore}>
-      <BrowserRouter>
-        <SuspenseWrapper>
-          <Provider store={store}>{children}</Provider>
-        </SuspenseWrapper>
-      </BrowserRouter>
-    </AuthProvider>
-  );
+	return (
+		<AuthProvider store={authStore}>
+			<BrowserRouter>
+				<SuspenseWrapper>
+					<Provider store={store}>{children}</Provider>
+				</SuspenseWrapper>
+			</BrowserRouter>
+		</AuthProvider>
+	);
 };
 
 export default AppProvider;
