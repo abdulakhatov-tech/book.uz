@@ -8,6 +8,7 @@ const initialState: IInitialState = {
 		open: false,
 		data: {},
 	},
+	categoryDropdownVisibility: false,
 };
 
 const modalSlice = createSlice({
@@ -23,10 +24,17 @@ const modalSlice = createSlice({
 				...action.payload,
 			};
 		},
+		toggleCategoryDropdownVisibility: (state, action) => {
+			state.categoryDropdownVisibility =
+				action.payload ?? !state.categoryDropdownVisibility;
+		},
 	},
 });
 
-export const { toggleMenuModalVisibility, toggleAuthModalVisibility } =
-	modalSlice.actions;
+export const {
+	toggleMenuModalVisibility,
+	toggleAuthModalVisibility,
+	toggleCategoryDropdownVisibility,
+} = modalSlice.actions;
 
 export default modalSlice.reducer;

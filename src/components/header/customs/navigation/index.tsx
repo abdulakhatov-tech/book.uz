@@ -5,17 +5,24 @@ import basketIcon from "@/assets/icons/basket.svg";
 import heartIcon from "@/assets/icons/heart.svg";
 import menuIcon from "@/assets/icons/menu-blue.svg";
 import userIcon from "@/assets/icons/user.svg";
+import closeIcon from "@/assets/icons/close-blue.svg";
 
 import { NavLink } from "react-router-dom";
-import { CategoryNavigation } from "./customs";
+import { CategoryDropdown, CategoryNavigation } from "./customs";
+import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
+import { toggleCategoryDropdownVisibility } from "@/redux/slices/modals";
+import { useTranslation } from "react-i18next";
 
-// Reusable Button component for Nav
-const NavButton: React.FC<{
+// Define types for NavButton props
+interface NavButtonProps {
 	icon: string;
 	label: string;
 	alt: string;
 	path: string;
-}> = ({ icon, label, alt, path }) => (
+}
+
+// Reusable Button component for Nav
+const NavButton: React.FC<NavButtonProps> = ({ icon, label, alt, path }) => (
 	<Button variant="secondary">
 		<NavLink to={path} className="flex items-center">
 			<img src={icon} alt={alt} />
@@ -25,16 +32,36 @@ const NavButton: React.FC<{
 );
 
 const HeaderNavigation: React.FC = () => {
+	const { t } = useTranslation();
+	const dispatch = useAppDispatch();
+	const categoryDropdownVisibility = useAppSelector(
+		(state) => state.modal.categoryDropdownVisibility,
+	);
+
+	const handleCategoryDropdown = () => {
+		dispatch(toggleCategoryDropdownVisibility(!categoryDropdownVisibility));
+	};
+
 	return (
 		<div className="py-3 flex items-center justify-between gap-4">
 			{/* Mobile Menu Button */}
-			<Button
-				className="flex gap-2 lg:hidden bg-[#107fe419] text-[#107fe4]"
-				aria-label="Open Categories"
-			>
-				<img src={menuIcon} alt="Open categories menu" />
-				<span className="hidden sm:block">Categories</span>
-			</Button>
+			<CategoryDropdown>
+				<Button
+					onClick={handleCategoryDropdown}
+					className="flex gap-2 lg:hidden bg-[#45688819] text-[#107fe4]"
+					aria-label="Open Categories"
+				>
+					<img
+						src={categoryDropdownVisibility ? closeIcon : menuIcon}
+						alt={
+							categoryDropdownVisibility
+								? "Close categories menu"
+								: "Open categories menu"
+						}
+					/>
+					<span className="hidden sm:block">{t("header.categories")}</span>
+				</Button>
+			</CategoryDropdown>
 
 			{/* Category Navigation for larger screens */}
 			<CategoryNavigation className="hidden lg:flex items-center gap-9" />
@@ -43,21 +70,21 @@ const HeaderNavigation: React.FC = () => {
 			<div className="flex items-center gap-2 sm:gap-4 md:gap-6">
 				<NavButton
 					icon={basketIcon}
-					label="Savatcha"
+					label={t("header.basket")}
 					path="/cart"
-					alt="Basket icon"
+					alt="View shopping basket"
 				/>
 				<NavButton
 					icon={heartIcon}
-					label="Sevimlilar"
+					label={t("header.favourites")}
 					path="/bookmark"
-					alt="Heart icon"
+					alt="View favorites"
 				/>
 				<NavButton
 					icon={userIcon}
-					label="Profil"
+					label={t("header.profile")}
 					path="/profile"
-					alt="User profile icon"
+					alt="View user profile"
 				/>
 			</div>
 		</div>

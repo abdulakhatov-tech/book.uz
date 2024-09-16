@@ -15,12 +15,12 @@
 }
 
 .container {
-  max-width: 1124px;
+  max-width: 1224px;
   width: 100%;
   min-width: 320px;
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1250px) {
   .container {
     padding: 0px 16px;
   }
@@ -89,4 +89,34 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 4px ; /* width of the entire scrollbar */
+  height: 4% ; /* height of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #cdcdcd; /* color of the scrollbar handle */
+  border-radius: 10px; /* roundness of the scrollbar handle */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ababab; /* color of the scrollbar handle on hover */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbc9c9 #f1f1f1;
+}
+
+/* Scrollbar color for IE and Edge */
+* {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 }

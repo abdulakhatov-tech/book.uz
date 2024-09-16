@@ -3,7 +3,6 @@ import { Outlet } from "react-router-dom";
 
 import ModalVisibility from "@/components/common/modals";
 import Header from "@/components/header";
-import Container from "../container";
 import { Toaster } from "@/components/ui/toaster";
 
 const MainLayout: React.FC = () => {
@@ -11,9 +10,7 @@ const MainLayout: React.FC = () => {
 		<>
 			<Header />
 			<main>
-				<Container>
-					<Outlet />
-				</Container>
+				<Outlet />
 			</main>
 			<ModalVisibility />
 			<Toaster />
