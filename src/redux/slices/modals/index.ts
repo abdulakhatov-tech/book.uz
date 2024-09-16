@@ -4,10 +4,10 @@ import type { IInitialState } from "./types";
 const initialState: IInitialState = {
 	menuModalVisibility: false,
 	authModalVisibility: {
-		authType: 'sign-in',
+		authType: "sign-in",
 		open: false,
-		data: {}
-	}
+		data: {},
+	},
 };
 
 const modalSlice = createSlice({
@@ -18,14 +18,15 @@ const modalSlice = createSlice({
 			state.menuModalVisibility = action.payload;
 		},
 		toggleAuthModalVisibility: (state, action) => {
-			state.authModalVisibility =	{
+			state.authModalVisibility = {
 				...state.authModalVisibility,
-                ...action.payload,
+				...action.payload,
 			};
-		}
+		},
 	},
 });
 
-export const { toggleMenuModalVisibility, toggleAuthModalVisibility } = modalSlice.actions;
+export const { toggleMenuModalVisibility, toggleAuthModalVisibility } =
+	modalSlice.actions;
 
 export default modalSlice.reducer;
