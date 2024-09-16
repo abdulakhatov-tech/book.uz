@@ -1,22 +1,22 @@
 import { useEffect } from "react";
-// import { useAppSelector } from "@/hooks/useRedux";
+import { Navigate } from "react-router-dom";
+import useIsAuthenticated from 'react-auth-kit/hooks/useIsAuthenticated'
+
 import { useAppDispatch } from "@/hooks/useRedux";
 import { toggleAuthModalVisibility } from "@/redux/slices/modals";
-import { Navigate } from "react-router-dom";
 
 const PrivateRoute = ({ children }: { children: JSX.Element }) => {
 	const dispatch = useAppDispatch();
-	//   const { isAuthed } = useAppSelector((state) => state.auth);
-	const isAuthed = false;
+	const isAuthenticated = useIsAuthenticated()
 
 	useEffect(() => {
-		if (!isAuthed) {
+		if (!isAuthenticated) {
 			// Dispatch the action to show the authentication modal
 			dispatch(toggleAuthModalVisibility({ open: true }));
 		}
-	}, [isAuthed, dispatch]);
+	}, [isAuthenticated, dispatch]);
 
-	return isAuthed ? children : <Navigate to="/" replace />;
+	return isAuthenticated ? children : <Navigate to="/" replace />;
 };
 
 export default PrivateRoute;
