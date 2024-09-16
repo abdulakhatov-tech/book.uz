@@ -6,7 +6,6 @@ import {
 	PopoverTrigger,
 } from "@/components/ui/popover";
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
-import Genres from "@/components/views/home/intro/genres";
 import useGenresService from "@/services/genres";
 import useOnlineStatus from "@/hooks/useOnlineStatus";
 import { GenreI } from "@/types";
