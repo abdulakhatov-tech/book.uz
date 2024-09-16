@@ -12,7 +12,7 @@ const HelpLink: React.FC<{ className: string }> = ({ className }) => {
 				aria-label="How to purchase guide"
 				className="text-[16px] font-normal text-[#6A6A6A] underline"
 			>
-				{t('header.how_to_purchase')}?
+				{t("header.how_to_purchase")}?
 			</NavLink>
 		</nav>
 	);

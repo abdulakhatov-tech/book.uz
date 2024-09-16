@@ -1,16 +1,15 @@
 {
-    "header": {
-      "how_to_purchase": "Qanday harid qilinadi",
-      "category": {
-        "books": "Kitoblar",
-        "collections": "To‘plamlar",
-        "authors": "Mualliflar",
-        "discounts": "Chegirmalar"
-      },
-      "basket": "Savat",
-      "favourites": "Sevimlilar",
-      "Profile": "Profil",
-      "categories": "Kategoriyalar"
-    }
-  }
-  
+	"header": {
+		"how_to_purchase": "Qanday harid qilinadi",
+		"category": {
+			"books": "Kitoblar",
+			"collections": "To‘plamlar",
+			"authors": "Mualliflar",
+			"discounts": "Chegirmalar"
+		},
+		"basket": "Savat",
+		"favourites": "Sevimlilar",
+		"Profile": "Profil",
+		"categories": "Kategoriyalar"
+	}
+}

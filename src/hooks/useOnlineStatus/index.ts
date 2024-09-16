@@ -1,22 +1,22 @@
 import { useState, useEffect } from "react";
 
 const useOnlineStatus = () => {
-  const [isOnline, setIsOnline] = useState(navigator.onLine);
+	const [isOnline, setIsOnline] = useState(navigator.onLine);
 
-  useEffect(() => {
-    const updateOnlineStatus = () => setIsOnline(navigator.onLine);
+	useEffect(() => {
+		const updateOnlineStatus = () => setIsOnline(navigator.onLine);
 
-    window.addEventListener("online", updateOnlineStatus);
-    window.addEventListener("offline", updateOnlineStatus);
+		window.addEventListener("online", updateOnlineStatus);
+		window.addEventListener("offline", updateOnlineStatus);
 
-    // Cleaning up event listeners on component unmount
-    return () => {
-      window.removeEventListener("online", updateOnlineStatus);
-      window.removeEventListener("offline", updateOnlineStatus);
-    };
-  }, []);
+		// Cleaning up event listeners on component unmount
+		return () => {
+			window.removeEventListener("online", updateOnlineStatus);
+			window.removeEventListener("offline", updateOnlineStatus);
+		};
+	}, []);
 
-  return isOnline;
+	return isOnline;
 };
 
 export default useOnlineStatus;

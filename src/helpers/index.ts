@@ -7,5 +7,8 @@ export const formatTime = (milliseconds: number): string => {
 
 // Utility to format title to URL
 export const formatTitleToUrl = (title: string) => {
-	return title.toLowerCase().replace(/[^\w\s-]/g, "").replace(/\s+/g, "-");
-}
+	return title
+		.toLowerCase()
+		.replace(/[^\w\s-]/g, "")
+		.replace(/\s+/g, "-");
+};

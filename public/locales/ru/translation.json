@@ -1,16 +1,15 @@
 {
-    "header": {
-      "how_to_purchase": "Как купить",
-      "category": {
-        "books": "Книги",
-        "collections": "Коллекции",
-        "authors": "Авторы",
-        "discounts": "Скидки"
-      },
-      "basket": "Корзина",
-      "favourites": "Избранное",
-      "profile": "Профиль",
-      "categories": "Категории"
-    }
-  }
-  
+	"header": {
+		"how_to_purchase": "Как купить",
+		"category": {
+			"books": "Книги",
+			"collections": "Коллекции",
+			"authors": "Авторы",
+			"discounts": "Скидки"
+		},
+		"basket": "Корзина",
+		"favourites": "Избранное",
+		"profile": "Профиль",
+		"categories": "Категории"
+	}
+}

@@ -11,27 +11,27 @@ import SuspenseWrapper from "@/tools/suspense-wrapper";
 import "@/locale";
 
 interface AppProviderProps {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }
 
 // Create a client
 const queryClient = new QueryClient();
 
 const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
-  return (
-    <AuthProvider store={authStore}>
-      <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
-          <SuspenseWrapper>
-            <Provider store={store}>
-              {children}
-              <ReactQueryDevtools initialIsOpen={false} />
-            </Provider>
-          </SuspenseWrapper>
-        </BrowserRouter>
-      </QueryClientProvider>
-    </AuthProvider>
-  );
+	return (
+		<AuthProvider store={authStore}>
+			<QueryClientProvider client={queryClient}>
+				<BrowserRouter>
+					<SuspenseWrapper>
+						<Provider store={store}>
+							{children}
+							<ReactQueryDevtools initialIsOpen={false} />
+						</Provider>
+					</SuspenseWrapper>
+				</BrowserRouter>
+			</QueryClientProvider>
+		</AuthProvider>
+	);
 };
 
 export default AppProvider;

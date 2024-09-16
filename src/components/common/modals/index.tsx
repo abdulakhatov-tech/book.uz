@@ -3,7 +3,10 @@ import { useEffect } from "react";
 
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
-import { toggleCategoryDropdownVisibility, toggleMenuModalVisibility } from "@/redux/slices/modals";
+import {
+	toggleCategoryDropdownVisibility,
+	toggleMenuModalVisibility,
+} from "@/redux/slices/modals";
 import { AuthModalVisibility, MenuModalVisibility } from "./customs";
 
 const ModalVisibility: React.FC = () => {
@@ -18,7 +21,7 @@ const ModalVisibility: React.FC = () => {
 	useEffect(() => {
 		if (lg) {
 			dispatch(toggleMenuModalVisibility(false));
-			dispatch(toggleCategoryDropdownVisibility(false))
+			dispatch(toggleCategoryDropdownVisibility(false));
 		}
 	}, [lg, dispatch]);
 

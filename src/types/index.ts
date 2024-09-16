@@ -26,7 +26,7 @@ export interface GenreI {
 	ebookCount: number;
 	imgUrl?: string | null;
 	name: string;
-	parentId: string | null
+	parentId: string | null;
 }
 
 export interface BannerI {
@@ -35,5 +35,5 @@ export interface BannerI {
 	imgUrl: string;
 	link: string;
 	position: number;
-	type: number
-  }
+	type: number;
+}

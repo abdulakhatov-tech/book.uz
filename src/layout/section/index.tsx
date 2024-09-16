@@ -6,7 +6,11 @@ export interface ContainerPropsI {
 }
 
 const Section: FC<ContainerPropsI> = ({ children, id, ...props }) => {
-	return <section id={id} {...props}>{children}</section>;
+	return (
+		<section id={id} {...props}>
+			{children}
+		</section>
+	);
 };
 
 export default Section;
