@@ -5,4 +5,5 @@ export interface IInitialState {
 		open: boolean;
 		data: any;
 	};
+	categoryDropdownVisibility: boolean;
 }
