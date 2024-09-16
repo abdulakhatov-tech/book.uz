@@ -17,7 +17,7 @@ const Banners: React.FC = () => {
 	if (!banners.length) return null;
 
 	return (
-		<div className="h-fit flex-grow bg-[#d2b8be] rounded-[8px]">
+		<div className="h-fit flex-grow rounded-[8px]">
 			<Carousel
 				opts={{
 					align: "start",
