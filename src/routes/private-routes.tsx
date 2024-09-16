@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { Navigate } from "react-router-dom";
-import useIsAuthenticated from 'react-auth-kit/hooks/useIsAuthenticated'
+import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 
 import { useAppDispatch } from "@/hooks/useRedux";
 import { toggleAuthModalVisibility } from "@/redux/slices/modals";
 
 const PrivateRoute = ({ children }: { children: JSX.Element }) => {
 	const dispatch = useAppDispatch();
-	const isAuthenticated = useIsAuthenticated()
+	const isAuthenticated = useIsAuthenticated();
 
 	useEffect(() => {
 		if (!isAuthenticated) {
