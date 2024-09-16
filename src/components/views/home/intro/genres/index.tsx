@@ -6,7 +6,7 @@ import useGenresService from "@/services/genres";
 import { Skeleton } from "@/components/ui/skeleton";
 import useOnlineStatus from "@/hooks/useOnlineStatus";
 
-const Genres: React.FC<{ isVisible?: boolean }> = ({ isVisible }) => {
+const Genres: React.FC = () => {
 	const { genres } = useGenresService();
 	const isOnline = useOnlineStatus();
 
