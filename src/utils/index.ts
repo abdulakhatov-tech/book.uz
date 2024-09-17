@@ -16,7 +16,7 @@ import featuredCardsIcon2 from "@/assets/icons/book.svg";
 import featuredCardsIcon3 from "@/assets/icons/credit-card.svg";
 import featuredCardsIcon4 from "@/assets/icons/guarantee.svg";
 
-import bookIcon from '@/assets/icons/books-icon.svg';
+import bookIcon from "@/assets/icons/books-icon.svg";
 
 export const banners: BannerI[] = [
 	{
@@ -102,24 +102,24 @@ export const MockData = () => {
 
 	const statistics: StatisticsI[] = [
 		{
-		  _id: '1',
-		  icon:bookIcon,
-		  title: 5000,
-		  description: t('home.statistics.description_1')
+			_id: "1",
+			icon: bookIcon,
+			title: 5000,
+			description: t("home.statistics.description_1"),
 		},
 		{
-		  _id: '2',
-		  icon: bookIcon,
-		  title: 30000,
-		  description: t('home.statistics.description_2')
+			_id: "2",
+			icon: bookIcon,
+			title: 30000,
+			description: t("home.statistics.description_2"),
 		},
 		{
-		  _id: '3',
-		  icon: bookIcon,
-		  title: 7,
-		  description: t('home.statistics.description_3')
-		}
-	  ]
+			_id: "3",
+			icon: bookIcon,
+			title: 7,
+			description: t("home.statistics.description_3"),
+		},
+	];
 
 	return { featuredCards, statistics };
 };
