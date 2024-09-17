@@ -11,5 +11,25 @@
 		"favourites": "Favourites",
 		"Profile": "Profile",
 		"categories": "Categories"
+	},
+	"home": {
+		"featured_cards": {
+			"card_1": {
+				"title": "Delivery",
+				"description": "We deliver your order across Uzbekistan"
+			},
+			"card_2": {
+				"title": "Wide selection",
+				"description": "You can find books of any type"
+			},
+			"card_3": {
+				"title": "Easy payment",
+				"description": "You can make purchases using any type of payment method"
+			},
+			"card_4": {
+				"title": "Secured system",
+				"description": "We have done everything to ensure your safety"
+			}
+		}
 	}
 }
