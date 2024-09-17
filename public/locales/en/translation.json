@@ -1,48 +1,53 @@
 {
-	"header": {
-		"how_to_purchase": "How to purchase",
-		"category": {
-			"books": "Books",
-			"collections": "Collections",
-			"authors": "Authors",
-			"discounts": "Discounts"
-		},
-		"basket": "Basket",
-		"favourites": "Favourites",
-		"Profile": "Profile",
-		"categories": "Categories"
-	},
-	"home": {
-		"featured_cards": {
-			"card_1": {
-				"title": "Delivery",
-				"description": "We deliver your order across Uzbekistan"
-			},
-			"card_2": {
-				"title": "Wide selection",
-				"description": "You can find books of any type"
-			},
-			"card_3": {
-				"title": "Easy payment",
-				"description": "You can make purchases using any type of payment method"
-			},
-			"card_4": {
-				"title": "Secured system",
-				"description": "We have done everything to ensure your safety"
-			}
-		}
-	},
-	"footer": {
-		"largest_shop": "One of the largest bookstores in our republic",
-		"menu": "Menu",
-		"about_uz": "About us",
-		"how_to_purchase": "How to purchase",
-		"delivery": "Delivery",
-		"branch_and_diller": "Branches and dealers",
-		"contacts": "Contacts",
-		"location": "Chilonzor-8, Qatortol street 60",
-		"downloading_applications": "Downloading applications",
-		"public": "Public offer",
-		"politic": "Policy"
-	}
+  "header": {
+    "how_to_purchase": "How to purchase",
+    "category": {
+      "books": "Books",
+      "collections": "Collections",
+      "authors": "Authors",
+      "discounts": "Discounts"
+    },
+    "basket": "Basket",
+    "favourites": "Favourites",
+    "Profile": "Profile",
+    "categories": "Categories"
+  },
+  "home": {
+    "featured_cards": {
+      "card_1": {
+        "title": "Delivery",
+        "description": "We deliver your order across Uzbekistan"
+      },
+      "card_2": {
+        "title": "Wide selection",
+        "description": "You can find books of any type"
+      },
+      "card_3": {
+        "title": "Easy payment",
+        "description": "You can make purchases using any type of payment method"
+      },
+      "card_4": {
+        "title": "Secured system",
+        "description": "We have done everything to ensure your safety"
+      }
+    },
+    "statistics": {
+      "description_1": "Books available for sale by title",
+      "description_2": "Books available for sale",
+      "description_3": "Number of branches and dealers"
+    }
+  },
+  "footer": {
+    "largest_shop": "One of the largest bookstores in our republic",
+    "menu": "Menu",
+    "about_uz": "About us",
+    "how_to_purchase": "How to purchase",
+    "delivery": "Delivery",
+    "branch_and_diller": "Branches and dealers",
+    "contacts": "Contacts",
+    "location": "Chilonzor-8, Qatortol street 60",
+    "downloading_applications": "Downloading applications",
+    "public": "Public offer",
+    "politic": "Policy"
+  }
 }

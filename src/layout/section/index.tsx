@@ -3,11 +3,12 @@ import type { FC } from "react";
 export interface ContainerPropsI {
 	children: React.ReactNode;
 	id?: string;
+	className?: string;
 }
 
-const Section: FC<ContainerPropsI> = ({ children, id, ...props }) => {
+const Section: FC<ContainerPropsI> = ({ children, id, className, ...props }) => {
 	return (
-		<section id={id} {...props}>
+		<section id={id} className={className} {...props}>
 			{children}
 		</section>
 	);

@@ -44,3 +44,10 @@ export interface FeaturedCardI {
 	title: string;
 	description: string;
 }
+
+export interface StatisticsI {
+	_id: string;
+	icon: any;
+	title: number;
+	description: string;
+}

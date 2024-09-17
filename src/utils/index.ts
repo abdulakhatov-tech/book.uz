@@ -1,7 +1,7 @@
 import { useId } from "react";
 import { useTranslation } from "react-i18next";
 
-import { BannerI, FeaturedCardI } from "@/types";
+import { BannerI, FeaturedCardI, StatisticsI } from "@/types";
 
 import bannerImg1 from "@/assets/images/sep-taqdir-tuhfasi.png";
 import bannerImg2 from "@/assets/images/onamni-asra.png";
@@ -15,6 +15,8 @@ import featuredCardsIcon1 from "@/assets/icons/fast.svg";
 import featuredCardsIcon2 from "@/assets/icons/book.svg";
 import featuredCardsIcon3 from "@/assets/icons/credit-card.svg";
 import featuredCardsIcon4 from "@/assets/icons/guarantee.svg";
+
+import bookIcon from '@/assets/icons/books-icon.svg';
 
 export const banners: BannerI[] = [
 	{
@@ -98,5 +100,26 @@ export const MockData = () => {
 		},
 	];
 
-	return { featuredCards };
+	const statistics: StatisticsI[] = [
+		{
+		  _id: '1',
+		  icon:bookIcon,
+		  title: 5000,
+		  description: t('home.statistics.description_1')
+		},
+		{
+		  _id: '2',
+		  icon: bookIcon,
+		  title: 30000,
+		  description: t('home.statistics.description_2')
+		},
+		{
+		  _id: '3',
+		  icon: bookIcon,
+		  title: 7,
+		  description: t('home.statistics.description_3')
+		}
+	  ]
+
+	return { featuredCards, statistics };
 };
