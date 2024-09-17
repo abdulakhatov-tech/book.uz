@@ -40,7 +40,7 @@ export interface BannerI {
 
 export interface FeaturedCardI {
 	_id?: string;
-	icon: any,
+	icon: any;
 	title: string;
 	description: string;
 }

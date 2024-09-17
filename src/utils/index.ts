@@ -75,28 +75,28 @@ export const MockData = () => {
 		{
 			_id,
 			icon: featuredCardsIcon1,
-			title: t('home.featured_cards.card_1.title'),
-			description: t('home.featured_cards.card_1.description'),
+			title: t("home.featured_cards.card_1.title"),
+			description: t("home.featured_cards.card_1.description"),
 		},
 		{
 			_id,
-            icon: featuredCardsIcon2,
-            title: t('home.featured_cards.card_2.title'),
-            description: t('home.featured_cards.card_2.description'),
+			icon: featuredCardsIcon2,
+			title: t("home.featured_cards.card_2.title"),
+			description: t("home.featured_cards.card_2.description"),
 		},
 		{
 			_id,
-            icon: featuredCardsIcon3,
-            title: t('home.featured_cards.card_3.title'),
-            description: t('home.featured_cards.card_3.description'),
+			icon: featuredCardsIcon3,
+			title: t("home.featured_cards.card_3.title"),
+			description: t("home.featured_cards.card_3.description"),
 		},
 		{
 			_id,
-            icon: featuredCardsIcon4,
-            title: t('home.featured_cards.card_4.title'),
-            description: t('home.featured_cards.card_4.description'),
-		}
-	]
+			icon: featuredCardsIcon4,
+			title: t("home.featured_cards.card_4.title"),
+			description: t("home.featured_cards.card_4.description"),
+		},
+	];
 
-	return { featuredCards }
-}
+	return { featuredCards };
+};

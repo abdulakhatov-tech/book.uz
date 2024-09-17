@@ -20,16 +20,16 @@
 			},
 			"card_2": {
 				"title": "Keng tanlov",
-                "description": "Istalgan turdagi kitoblarni topishingiz mumkin"
+				"description": "Istalgan turdagi kitoblarni topishingiz mumkin"
 			},
 			"card_3": {
-                "title": "Oson to'lov",
-                "description": "Istalgan turdagi to‘lov asosida xarid qilishingiz mumkin"
-            },
+				"title": "Oson to'lov",
+				"description": "Istalgan turdagi to‘lov asosida xarid qilishingiz mumkin"
+			},
 			"card_4": {
-                "title": "Himoyalangan tizim",
-                "description": "Sizning xavfsizligingiz uchun barcha ishlarni qilganmiz"
-            }
+				"title": "Himoyalangan tizim",
+				"description": "Sizning xavfsizligingiz uchun barcha ishlarni qilganmiz"
+			}
 		}
 	}
 }
