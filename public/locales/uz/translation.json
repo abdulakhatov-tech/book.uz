@@ -31,5 +31,18 @@
 				"description": "Sizning xavfsizligingiz uchun barcha ishlarni qilganmiz"
 			}
 		}
+	},
+	"footer": {
+		"largest_shop": "Respublikamizdagi eng katta kitob do'konlaridan biri",
+		"menu": "Menu",
+		"about_uz": "Biz haqimizda",
+		"how_to_purchase": "Qanday xarid qilinadi",
+		"delivery": "Yetkazib berish",
+		"branch_and_diller": "Fillial va dillerlar",
+		"contacts": "Kontaktlar",
+		"location": "Chilonzor-8, Qatortol ko'chasi 60",
+		"downloading_applications": "Ilovalarni Yuklab Olish",
+		"public": "Ommaviy oferta",
+		"politic": "Politika"
 	}
 }
