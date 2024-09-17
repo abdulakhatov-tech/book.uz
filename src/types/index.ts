@@ -37,3 +37,10 @@ export interface BannerI {
 	position: number;
 	type: number;
 }
+
+export interface FeaturedCardI {
+	_id?: string;
+	icon: any,
+	title: string;
+	description: string;
+}

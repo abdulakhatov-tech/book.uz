@@ -1,4 +1,7 @@
-import { BannerI } from "@/types";
+import { useId } from "react";
+import { useTranslation } from "react-i18next";
+
+import { BannerI, FeaturedCardI } from "@/types";
 
 import bannerImg1 from "@/assets/images/sep-taqdir-tuhfasi.png";
 import bannerImg2 from "@/assets/images/onamni-asra.png";
@@ -6,6 +9,12 @@ import bannerImg3 from "@/assets/images/haram.png";
 import bannerImg4 from "@/assets/images/turkiston.png";
 import bannerImg5 from "@/assets/images/hayotga-qayt.png";
 import bannerImg6 from "@/assets/images/sivilizatsiyalar-toqnashuvi-va-yangi-dunyo-tartibi.png";
+
+// featuredCards icons
+import featuredCardsIcon1 from "@/assets/icons/fast.svg";
+import featuredCardsIcon2 from "@/assets/icons/book.svg";
+import featuredCardsIcon3 from "@/assets/icons/credit-card.svg";
+import featuredCardsIcon4 from "@/assets/icons/guarantee.svg";
 
 export const banners: BannerI[] = [
 	{
@@ -57,3 +66,37 @@ export const banners: BannerI[] = [
 		type: 10,
 	},
 ];
+
+export const MockData = () => {
+	const _id = useId();
+	const { t } = useTranslation();
+
+	const featuredCards: FeaturedCardI[] = [
+		{
+			_id,
+			icon: featuredCardsIcon1,
+			title: t('home.featured_cards.card_1.title'),
+			description: t('home.featured_cards.card_1.description'),
+		},
+		{
+			_id,
+            icon: featuredCardsIcon2,
+            title: t('home.featured_cards.card_2.title'),
+            description: t('home.featured_cards.card_2.description'),
+		},
+		{
+			_id,
+            icon: featuredCardsIcon3,
+            title: t('home.featured_cards.card_3.title'),
+            description: t('home.featured_cards.card_3.description'),
+		},
+		{
+			_id,
+            icon: featuredCardsIcon4,
+            title: t('home.featured_cards.card_4.title'),
+            description: t('home.featured_cards.card_4.description'),
+		}
+	]
+
+	return { featuredCards }
+}
