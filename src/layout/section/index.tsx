@@ -6,7 +6,12 @@ export interface ContainerPropsI {
 	className?: string;
 }
 
-const Section: FC<ContainerPropsI> = ({ children, id, className, ...props }) => {
+const Section: FC<ContainerPropsI> = ({
+	children,
+	id,
+	className,
+	...props
+}) => {
 	return (
 		<section id={id} className={className} {...props}>
 			{children}
