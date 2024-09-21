@@ -2,12 +2,12 @@ import { MockData } from "@/utils";
 import React from "react";
 import classnames from "classnames";
 import { NavLink } from "react-router-dom";
-import useAuthUser from "react-auth-kit/hooks/useAuthUser";
-import { UserI } from "@/types";
+// import useAuthUser from "react-auth-kit/hooks/useAuthUser";
+// import { UserI } from "@/types";
 
 const Navigation: React.FC = () => {
 	const { profileNavigation } = MockData();
-	const user: UserI | null = useAuthUser();
+	// const user: UserI | null = useAuthUser();
 
 	// const filteredNavigation = profileNavigation.filter((item: any) => item.roles.includes(user?.role))
 

@@ -19,10 +19,6 @@ import featuredCardsIcon4 from "@/assets/icons/guarantee.svg";
 import bookIcon from "@/assets/icons/books-icon.svg";
 
 // profile navigation
-import dashboardIcon from "@/assets/icons/dashboard.svg";
-import orderIcon from "@/assets/icons/order.svg";
-import settings from "@/assets/icons/settings.svg";
-
 import { RiDashboardFill } from "react-icons/ri";
 import { SlBasketLoaded } from "react-icons/sl";
 import { IoSettingsOutline } from "react-icons/io5";
