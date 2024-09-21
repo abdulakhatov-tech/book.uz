@@ -1,7 +1,8 @@
 import type { FC } from "react";
+import { Profile } from "@/components/views";
 
 const ProfilePage: FC = () => {
-	return <div>ProfilePage</div>;
+	return <Profile />;
 };
 
 export default ProfilePage;

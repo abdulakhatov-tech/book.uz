@@ -13,6 +13,8 @@ const Bookmark = lazy(() => import("@/pages/bookmark"));
 const News = lazy(() => import("@/pages/news"));
 const Profile = lazy(() => import("@/pages/profile"));
 const Dashboard = lazy(() => import("@/pages/dashboard"));
+const Orders = lazy(() => import("@/pages/profile/orders"));
+const Settings = lazy(() => import("@/pages/profile/settings"));
 
 const useAppRoutes = () => {
 	const _id = useId;
@@ -89,6 +91,20 @@ const useAppRoutes = () => {
 			path: "/profile",
 			Component: Profile,
 			isPrivate: true,
+			children: [
+				{
+					_id: _id(),
+					path: "orders",
+					Component: Orders,
+					isPrivate: true,
+				},
+				{
+					_id: _id(),
+                    path: "settings",
+                    Component: Settings,
+                    isPrivate: true,
+				}
+			]
 		},
 		{
 			_id: _id(),
