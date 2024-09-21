@@ -55,17 +55,17 @@ export interface StatisticsI {
 export interface UserI {
 	balance: number;
 	frozenBalance: number;
-	lastEnteredAt: string;  
+	lastEnteredAt: string;
 	name: string;
-	orders: Array<any>;     
+	orders: Array<any>;
 	phoneNumber: string;
-	products: Array<any>;  
-	profilePhoto: string;   
+	products: Array<any>;
+	profilePhoto: string;
 	role: string;
 	signInAttempts: number;
 	surname: string;
-	wishlist: Array<any>;   
-	_id: string; 
+	wishlist: Array<any>;
+	_id: string;
 	email?: string;
-	bio?: string;           // Object ID
-  }
+	bio?: string; // Object ID
+}

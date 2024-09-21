@@ -19,9 +19,9 @@ import featuredCardsIcon4 from "@/assets/icons/guarantee.svg";
 import bookIcon from "@/assets/icons/books-icon.svg";
 
 // profile navigation
-import dashboardIcon from '@/assets/icons/dashboard.svg';
-import orderIcon from '@/assets/icons/order.svg';
-import settings from '@/assets/icons/settings.svg';
+import dashboardIcon from "@/assets/icons/dashboard.svg";
+import orderIcon from "@/assets/icons/order.svg";
+import settings from "@/assets/icons/settings.svg";
 
 import { RiDashboardFill } from "react-icons/ri";
 import { SlBasketLoaded } from "react-icons/sl";
@@ -134,25 +134,25 @@ export const MockData = () => {
 		{
 			_id,
 			icon: RiDashboardFill,
-            label: t("profile.nav.dashboard"),
-            path: "/dashboard",
-			roles: ["admin", "owner"]
+			label: t("profile.nav.dashboard"),
+			path: "/dashboard",
+			roles: ["admin", "owner"],
 		},
 		{
 			_id,
-            icon: SlBasketLoaded ,
-            label: t("profile.nav.orders"),
-            path: "/profile/orders",
-			roles: ['user']
+			icon: SlBasketLoaded,
+			label: t("profile.nav.orders"),
+			path: "/profile/orders",
+			roles: ["user"],
 		},
 		{
 			_id,
-            icon: IoSettingsOutline,
-            label: t("profile.nav.settings"),
-            path: "/profile/settings",
-			roles: ["admin", "owner", "user"]
-		}
-	]
+			icon: IoSettingsOutline,
+			label: t("profile.nav.settings"),
+			path: "/profile/settings",
+			roles: ["admin", "owner", "user"],
+		},
+	];
 
 	return { featuredCards, statistics, profileNavigation };
 };

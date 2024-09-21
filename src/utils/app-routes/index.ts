@@ -100,11 +100,11 @@ const useAppRoutes = () => {
 				},
 				{
 					_id: _id(),
-                    path: "settings",
-                    Component: Settings,
-                    isPrivate: true,
-				}
-			]
+					path: "settings",
+					Component: Settings,
+					isPrivate: true,
+				},
+			],
 		},
 		{
 			_id: _id(),
