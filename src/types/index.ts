@@ -51,3 +51,21 @@ export interface StatisticsI {
 	title: number;
 	description: string;
 }
+
+export interface UserI {
+	balance: number;
+	frozenBalance: number;
+	lastEnteredAt: string;
+	name: string;
+	orders: Array<any>;
+	phoneNumber: string;
+	products: Array<any>;
+	profilePhoto: string;
+	role: string;
+	signInAttempts: number;
+	surname: string;
+	wishlist: Array<any>;
+	_id: string;
+	email?: string;
+	bio?: string; // Object ID
+}

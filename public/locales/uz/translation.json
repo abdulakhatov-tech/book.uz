@@ -1,4 +1,35 @@
 {
+	"profile": {
+		"nav": {
+			"dashboard": "Boshqaruv paneli",
+			"orders": "Buyurtmalar",
+			"products": "Mahsulotlar",
+			"settings": "Sozlamalar",
+			"logout": "Chiqish"
+		},
+		"logout": {
+			"title": "Ishonchingiz komilmi?",
+			"description": "Ushbu harakat sizni hisobingizdan chiqaradi va siz kirish sahifasiga yo'naltirilasiz. Davom etishni xohlaysizmi?",
+			"cancel": "Bekor qilish",
+			"ok": "Chiqish"
+		},
+		"settings": {
+			"title": "Sozlamalar",
+			"name": "Ismingiz",
+			"surname": "Familiyangiz",
+			"phoneNumber": "Telefon raqamingiz",
+			"email": "Emailingiz",
+			"bio": "Bio",
+			"save": "Saqlash"
+		},
+		"message": {
+			"image_title": "Taxrirlash xatosi!",
+			"image_description": "Rasmni yangilashda xatolik yuz berdi. Iltimos, keyinroq qayta urinib ko'ring.",
+			"profile_updated_title": "Profil yangilandi",
+			"profile_updated_description": "Profil rasmingiz muvaffaqiyatli yangilandi",
+			"failed_to_update": "Profilingizni yangilashda xatolik yuz berdi. Iltimos, qayta urinib ko'ring!"
+		}
+	},
 	"header": {
 		"how_to_purchase": "Qanday harid qilinadi",
 		"category": {
@@ -9,7 +40,7 @@
 		},
 		"basket": "Savat",
 		"favourites": "Sevimlilar",
-		"Profile": "Profil",
+		"profile": "Profil",
 		"categories": "Kategoriyalar"
 	},
 	"home": {

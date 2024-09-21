@@ -45,7 +45,6 @@ const useVerifyOTPFeatures = () => {
 						phoneNumber: data.phoneNumber,
 					},
 				);
-				console.log(response, "response");
 				if (response?.data?.data?.token) {
 					const signedIn = signIn({
 						auth: {

@@ -1,4 +1,35 @@
 {
+	"profile": {
+		"nav": {
+			"dashboard": "Dashboard",
+			"orders": "Orders",
+			"products": "Products",
+			"settings": "Settings",
+			"logout": "Logout"
+		},
+		"logout": {
+			"title": "Are you absolutely sure",
+			"description": "This action will log you out from your account and you will be redirected to the login page. Are you sure you want to proceed",
+			"cancel": "Cancel",
+			"ok": "Logout"
+		},
+		"settings": {
+			"title": "Settings",
+			"name": "Your name",
+			"surname": "Your surname",
+			"phoneNumber": "Your phone number",
+			"email": "Your email",
+			"bio": "Bio",
+			"save": "Save"
+		},
+		"message": {
+			"image_title": "Update Error!",
+			"image_description": "An error occurred while trying to update the image. Please, try again later.",
+			"profile_updated_title": "Profile Updated",
+			"profile_updated_description": "Your profile image has been updated successfully",
+			"failed_to_update": "Failed to update your profile. Please try again!"
+		}
+	},
 	"header": {
 		"how_to_purchase": "How to purchase",
 		"category": {

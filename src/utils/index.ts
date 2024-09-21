@@ -18,6 +18,11 @@ import featuredCardsIcon4 from "@/assets/icons/guarantee.svg";
 
 import bookIcon from "@/assets/icons/books-icon.svg";
 
+// profile navigation
+import { RiDashboardFill } from "react-icons/ri";
+import { SlBasketLoaded } from "react-icons/sl";
+import { IoSettingsOutline } from "react-icons/io5";
+
 export const banners: BannerI[] = [
 	{
 		_id: "1",
@@ -121,5 +126,29 @@ export const MockData = () => {
 		},
 	];
 
-	return { featuredCards, statistics };
+	const profileNavigation = [
+		{
+			_id,
+			icon: RiDashboardFill,
+			label: t("profile.nav.dashboard"),
+			path: "/dashboard",
+			roles: ["admin", "owner"],
+		},
+		{
+			_id,
+			icon: SlBasketLoaded,
+			label: t("profile.nav.orders"),
+			path: "/profile/orders",
+			roles: ["user"],
+		},
+		{
+			_id,
+			icon: IoSettingsOutline,
+			label: t("profile.nav.settings"),
+			path: "/profile/settings",
+			roles: ["admin", "owner", "user"],
+		},
+	];
+
+	return { featuredCards, statistics, profileNavigation };
 };

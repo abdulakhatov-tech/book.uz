@@ -2,8 +2,7 @@ import axios from "axios";
 import useSignOut from "react-auth-kit/hooks/useSignOut";
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 
-const createAxiosInstance = (authHeader: any, signOut: any) => {
-	console.log(import.meta.env.VITE_API_BASE_URL);
+const createAxiosInstance = (token: any, signOut: any) => {
 	const instance = axios.create({
 		baseURL: import.meta.env.VITE_API_BASE_URL, // Make sure this is correct
 		headers: {
@@ -15,9 +14,12 @@ const createAxiosInstance = (authHeader: any, signOut: any) => {
 	// Request interceptor to add token
 	instance.interceptors.request.use(
 		(request) => {
-			const token = authHeader; // Get token from React Auth Kit
 			if (token) {
-				request.headers["Authorization"] = `Bearer ${token}`; // Add Bearer token
+				if (!token.startsWith("Bearer ")) {
+					request.headers["Authorization"] = `Bearer ${token}`; // Add Bearer token
+				} else {
+					request.headers["Authorization"] = token; // Use the token as it is
+				}
 			}
 			return request;
 		},
@@ -42,10 +44,10 @@ const createAxiosInstance = (authHeader: any, signOut: any) => {
 
 // Hook to use the axios instance within React components
 const useAxiosInstance = () => {
-	const authHeader = useAuthHeader(); // Get the auth header
+	const token = useAuthHeader(); // Get the auth header
 	const signOut = useSignOut(); // Get the sign out function
 
-	const axiosInstance = createAxiosInstance(authHeader, signOut);
+	const axiosInstance = createAxiosInstance(token, signOut);
 	return axiosInstance;
 };
 
