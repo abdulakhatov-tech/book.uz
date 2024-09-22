@@ -5,78 +5,102 @@ import MainLayout from "@/layout/main-layout";
 import type { RenderComponentT } from "@/types";
 import useAppRoutes from "@/utils/app-routes";
 import PrivateRoute from "./private-routes";
+import DashboardLayout from "@/layout/dashboard-layout";
 
 const NotFound = lazy(() => import("@/pages/not-found"));
 const Error = lazy(() => import("@/pages/error"));
 
 const AppRoutes = () => {
-	const { appRoutes } = useAppRoutes();
+  const { appRoutes, dashboardRoutes } = useAppRoutes();
 
-	const renderComponent: React.FC<RenderComponentT> = ({
-		Component,
-		isPrivate,
-	}) =>
-		isPrivate ? (
-			<PrivateRoute>
-				<Component />
-			</PrivateRoute>
-		) : (
-			<Component />
-		);
+  const renderComponent: React.FC<RenderComponentT> = ({
+    Component,
+    isPrivate,
+  }) =>
+    isPrivate ? (
+      <PrivateRoute>
+        <Component />
+      </PrivateRoute>
+    ) : (
+      <Component />
+    );
 
-	return (
-		<Routes>
-			<Route element={<MainLayout />}>
-				{appRoutes.map(({ _id, path, Component, children, isPrivate }) => {
-					if (!children?.length) {
-						return (
-							<Route
-								index
-								key={_id as string}
-								path={path}
-								element={renderComponent({
-									Component,
-									path,
-									isPrivate,
-								})}
-							/>
-						);
-					}
+  return (
+    <Routes>
+      <Route element={<MainLayout />}>
+        {appRoutes.map(({ _id, path, Component, children, isPrivate }) => {
+          if (!children?.length) {
+            return (
+              <Route
+                index
+                key={_id as string}
+                path={path}
+                element={renderComponent({
+                  Component,
+                  path,
+                  isPrivate,
+                })}
+              />
+            );
+          }
 
-					return (
-						<Route
-							key={_id}
-							path={path}
-							element={renderComponent({ Component, path, isPrivate })}
-						>
-							{children?.map(
-								({ _id, path, Component, children, isPrivate }) => {
-									if (!children?.length) {
-										return (
-											<Route
-												index
-												key={_id}
-												path={path}
-												element={renderComponent({
-													Component,
-													path,
-													isPrivate,
-												})}
-											/>
-										);
-									}
-								},
-							)}
-						</Route>
-					);
-				})}
+          return (
+            <Route
+              key={_id}
+              path={path}
+              element={renderComponent({ Component, path, isPrivate })}
+            >
+              {children?.map(
+                ({ _id, path, Component, children, isPrivate }) => {
+                  if (!children?.length) {
+                    return (
+                      <Route
+                        index
+                        key={_id}
+                        path={path}
+                        element={renderComponent({
+                          Component,
+                          path,
+                          isPrivate,
+                        })}
+                      />
+                    );
+                  }
+                }
+              )}
+            </Route>
+          );
+        })}
+      </Route>
 
-				<Route path="/not-found" element={<NotFound />} />
-				<Route path="/error" element={<Error />} />
-				<Route path="*" element={<Navigate to="/not-found" />} />
-			</Route>
-		</Routes>
-	);
+      <Route element={<DashboardLayout />}>
+        <Route index path='/dashboard' element={<Navigate to='/dashboard/users' />} />
+
+        {dashboardRoutes.map(
+          ({ _id, path, Component, children, isPrivate }) => {
+            if (!children?.length) {
+              return (
+                <Route
+                  index
+                  key={_id as string}
+                  path={path}
+                  element={renderComponent({
+                    Component,
+                    path,
+                    isPrivate,
+                  })}
+                />
+              );
+            }
+          }
+        )}
+      </Route>
+
+      <Route path='/not-found' element={<NotFound />} />
+      <Route path='/error' element={<Error />} />
+      <Route path='*' element={<Navigate to='/not-found' />} />
+    </Routes>
+  );
 };
 
 export default AppRoutes;

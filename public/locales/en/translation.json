@@ -1,4 +1,16 @@
 {
+	"dashboard": {
+		"sidebar": {
+			"users": "Users",
+			"products": "Products",
+            "orders": "Orders",
+			"genres": "Genres",
+			"authors": "Authors",
+			"categories": "Categories",
+			"news": "News",
+            "logout": "Logout"
+		}
+	},
 	"profile": {
 		"nav": {
 			"dashboard": "Dashboard",

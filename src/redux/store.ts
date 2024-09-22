@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { modal } from "./slices";
+import { modal, sidebar } from "./slices";
 
 export const store = configureStore({
 	reducer: {
 		modal,
+		sidebar
 	},
 });
 
