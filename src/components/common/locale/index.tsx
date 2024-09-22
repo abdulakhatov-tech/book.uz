@@ -10,7 +10,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 
-const Locale: React.FC<{className: string}> = ({className}) => {
+const Locale: React.FC<{ className: string }> = ({ className }) => {
 	const { i18n } = useTranslation();
 
 	// Getting the current language from localStorage.
@@ -30,7 +30,9 @@ const Locale: React.FC<{className: string}> = ({className}) => {
 
 	return (
 		<Select onValueChange={(e: string) => onLanguageHandler(e)}>
-			<SelectTrigger className={`w-[40px] h-fit px-0 py-0 border-none text-[15px] ${className}`}>
+			<SelectTrigger
+				className={`w-[40px] h-fit px-0 py-0 border-none text-[15px] ${className}`}
+			>
 				<SelectValue
 					placeholder={localStorage.getItem("i18nextLng")?.toUpperCase()}
 				/>

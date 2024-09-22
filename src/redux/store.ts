@@ -4,7 +4,7 @@ import { modal, sidebar } from "./slices";
 export const store = configureStore({
 	reducer: {
 		modal,
-		sidebar
+		sidebar,
 	},
 });
 

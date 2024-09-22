@@ -3,12 +3,12 @@
 		"sidebar": {
 			"users": "Users",
 			"products": "Products",
-            "orders": "Orders",
+			"orders": "Orders",
 			"genres": "Genres",
 			"authors": "Authors",
 			"categories": "Categories",
 			"news": "News",
-            "logout": "Logout"
+			"logout": "Logout"
 		}
 	},
 	"profile": {
