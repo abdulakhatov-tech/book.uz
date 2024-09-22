@@ -10,7 +10,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 
-const Locale: React.FC<{ className: string }> = ({ className }) => {
+const Locale: React.FC<{ className?: string }> = ({ className }) => {
 	const { i18n } = useTranslation();
 
 	// Getting the current language from localStorage.

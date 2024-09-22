@@ -4,13 +4,6 @@ import classNames from "classnames";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import {
-	Tooltip,
-	TooltipContent,
-	TooltipProvider,
-	TooltipTrigger,
-} from "@/components/ui/tooltip";
-
 const Sidebar: React.FC = () => {
 	const { isOpen } = useAppSelector((state) => state.sidebar);
 
