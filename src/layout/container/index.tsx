@@ -7,7 +7,7 @@ export interface ContainerPropsI {
 
 const Container: FC<ContainerPropsI> = ({ children, size }) => {
 	if (size === "fluid") {
-		return <div className="container-fluid">{children}</div>;
+		return <div className="container-fluid mx-auto">{children}</div>;
 	}
 
 	return <div className="container mx-auto">{children}</div>;

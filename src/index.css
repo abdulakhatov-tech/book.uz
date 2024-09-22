@@ -20,6 +20,13 @@
   min-width: 320px;
 }
 
+.container-fluid {
+  max-width: 99vw;
+  width: 100%;
+  min-width: 320px;
+
+}
+
 @media screen and (max-width: 1250px) {
   .container {
     padding: 0px 16px;

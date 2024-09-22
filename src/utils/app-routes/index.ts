@@ -16,6 +16,14 @@ const Dashboard = lazy(() => import("@/pages/dashboard"));
 const Orders = lazy(() => import("@/pages/profile/orders"));
 const Settings = lazy(() => import("@/pages/profile/settings"));
 
+const Users = lazy(() => import("@/pages/dashboard/users"));
+const Products = lazy(() => import("@/pages/dashboard/products"));
+const OrdersPage = lazy(() => import("@/pages/dashboard/orders"));
+const Genres = lazy(() => import("@/pages/dashboard/genres"));
+const AuthorsPage = lazy(() => import("@/pages/dashboard/authors"));
+const Categories = lazy(() => import("@/pages/dashboard/categories"));
+const NewsPage = lazy(() => import("@/pages/dashboard/news"));
+
 const useAppRoutes = () => {
 	const _id = useId;
 
@@ -106,15 +114,60 @@ const useAppRoutes = () => {
 				},
 			],
 		},
+	];
+
+	const dashboardRoutes: RoutePropT[] = [
 		{
 			_id: _id(),
 			path: "/dashboard",
 			Component: Dashboard,
 			isPrivate: true,
 		},
+		{
+			_id: _id(),
+			path: "/dashboard/users",
+			Component: Users,
+			isPrivate: true,
+		},
+		{
+			_id: _id(),
+			path: "/dashboard/products",
+			Component: Products,
+			isPrivate: true,
+		},
+		{
+			_id: _id(),
+			path: "/dashboard/orders",
+			Component: OrdersPage,
+			isPrivate: true,
+		},
+		{
+			_id: _id(),
+			path: "/dashboard/genres",
+			Component: Genres,
+			isPrivate: true,
+		},
+		{
+			_id: _id(),
+			path: "/dashboard/authors",
+			Component: AuthorsPage,
+			isPrivate: true,
+		},
+		{
+			_id: _id(),
+			path: "/dashboard/categories",
+			Component: Categories,
+			isPrivate: true,
+		},
+		{
+			_id: _id(),
+			path: "/dashboard/news",
+			Component: NewsPage,
+			isPrivate: true,
+		},
 	];
 
-	return { appRoutes };
+	return { appRoutes, dashboardRoutes };
 };
 
 export default useAppRoutes;

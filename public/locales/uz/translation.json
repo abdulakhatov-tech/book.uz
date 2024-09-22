@@ -1,4 +1,16 @@
 {
+	"dashboard": {
+		"sidebar": {
+			"users": "Foydalanuvchilar",
+			"products": "Mahsulotlar",
+			"orders": "Buyurtmalar",
+			"genres": "Janrlar",
+			"authors": "Mualliflar",
+			"categories": "Kategoriyalar",
+			"news": "Yangiliklar",
+			"logout": "Chiqish"
+		}
+	},
 	"profile": {
 		"nav": {
 			"dashboard": "Boshqaruv paneli",

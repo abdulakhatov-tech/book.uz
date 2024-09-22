@@ -23,6 +23,15 @@ import { RiDashboardFill } from "react-icons/ri";
 import { SlBasketLoaded } from "react-icons/sl";
 import { IoSettingsOutline } from "react-icons/io5";
 
+// dashboard sidebar
+import { LuUsers2 } from "react-icons/lu";
+import { IoBasketOutline } from "react-icons/io5";
+import { SlBasket } from "react-icons/sl";
+import { IoBookSharp } from "react-icons/io5";
+import { PiUsersThreeLight } from "react-icons/pi";
+import { TbCategory } from "react-icons/tb";
+import { FaRegNewspaper } from "react-icons/fa6";
+
 export const banners: BannerI[] = [
 	{
 		_id: "1",
@@ -150,5 +159,62 @@ export const MockData = () => {
 		},
 	];
 
-	return { featuredCards, statistics, profileNavigation };
+	const dashboardSidebarNavigation = [
+		{
+			_id,
+			Icon: LuUsers2,
+			label: t("dashboard.sidebar.users"),
+			path: "/dashboard/users",
+			roles: ["admin", "owner"],
+		},
+		{
+			_id,
+			Icon: IoBasketOutline,
+			label: t("dashboard.sidebar.products"),
+			path: "/dashboard/products",
+			roles: ["admin", "owner"],
+		},
+		{
+			_id,
+			Icon: SlBasket,
+			label: t("dashboard.sidebar.orders"),
+			path: "/dashboard/orders",
+			roles: ["admin", "owner"],
+		},
+		{
+			_id,
+			Icon: IoBookSharp,
+			label: t("dashboard.sidebar.genres"),
+			path: "/dashboard/genres",
+			roles: ["admin", "owner"],
+		},
+		{
+			_id,
+			Icon: PiUsersThreeLight,
+			label: t("dashboard.sidebar.authors"),
+			path: "/dashboard/authors",
+			roles: ["admin", "owner"],
+		},
+		{
+			_id,
+			Icon: TbCategory,
+			label: t("dashboard.sidebar.categories"),
+			path: "/dashboard/categories",
+			roles: ["admin", "owner"],
+		},
+		{
+			_id,
+			Icon: FaRegNewspaper,
+			label: t("dashboard.sidebar.news"),
+			path: "/dashboard/news",
+			roles: ["admin", "owner"],
+		},
+	];
+
+	return {
+		featuredCards,
+		statistics,
+		profileNavigation,
+		dashboardSidebarNavigation,
+	};
 };

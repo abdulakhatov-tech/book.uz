@@ -1,4 +1,16 @@
 {
+	"dashboard": {
+		"sidebar": {
+			"users": "Пользователи",
+			"products": "Продукты",
+			"orders": "Заказы",
+			"genres": "Жанры",
+			"authors": "Авторы",
+			"categories": "Категории",
+			"news": "Новости",
+			"logout": "Выйти"
+		}
+	},
 	"profile": {
 		"nav": {
 			"dashboard": "Панель управления",
