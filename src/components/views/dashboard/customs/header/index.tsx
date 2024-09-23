@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { IoMdLogOut } from "react-icons/io";
 import { RiIndentDecrease, RiIndentIncrease } from "react-icons/ri";
+import { FaHome } from "react-icons/fa";
 
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
 import useAuthUser from "react-auth-kit/hooks/useAuthUser";
@@ -64,7 +65,10 @@ const Header: React.FC = () => {
 					)}
 
 					<div className="flex items-center gap-4">
-						<Locale className="h-[40px] w-[60px] px-2" />
+						<Link to='/'>
+							<FaHome className="text-[24px] text-white" />
+						</Link>
+						<Locale className="h-[38px] w-[60px] px-2" />
 						<Button variant={"destructive"} className="flex items-center gap-2">
 							{t("dashboard.sidebar.logout")}{" "}
 							<IoMdLogOut className="text-[22px] font-bold" />
