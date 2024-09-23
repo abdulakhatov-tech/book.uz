@@ -9,6 +9,18 @@
 			"categories": "Kategoriyalar",
 			"news": "Yangiliklar",
 			"logout": "Chiqish"
+		},
+		"users": {
+			"full_name": "To'liq ism",
+			"phone_number": "Telefon raqami",
+			"email": "Elektron pochta",
+			"role": "Roli",
+			"actions": "Harakatlar",
+			"promote": "Oshirish",
+			"demote": "Pasaytirish",
+			"admins": "Administratorlar",
+			"all_users": "Barcha foydalanuvchilar",
+			"list_users": "Oxirgi foydalanuvchilar ro'yxati"
 		}
 	},
 	"profile": {

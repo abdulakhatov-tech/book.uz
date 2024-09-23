@@ -5,6 +5,8 @@ import { BrowserRouter } from "react-router-dom";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+import "react-photo-view/dist/react-photo-view.css";
+
 import { store } from "@/redux/store";
 import authStore from "@/config/auth";
 import SuspenseWrapper from "@/tools/suspense-wrapper";

@@ -9,6 +9,18 @@
 			"categories": "Categories",
 			"news": "News",
 			"logout": "Logout"
+		},
+		"users": {
+			"full_name": "Full Name",
+			"phone_number": "Phone Number",
+			"email": "Email",
+			"role": "Role",
+			"actions": "Actions",
+			"promote": "Promote",
+			"demote": "Demote",
+			"admins": "Admins",
+			"all_users": "All Users",
+			"list_users": "A list of recent users"
 		}
 	},
 	"profile": {
