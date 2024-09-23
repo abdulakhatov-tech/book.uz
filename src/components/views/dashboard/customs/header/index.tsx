@@ -65,7 +65,7 @@ const Header: React.FC = () => {
 					)}
 
 					<div className="flex items-center gap-4">
-						<Link to='/'>
+						<Link to="/">
 							<FaHome className="text-[24px] text-white" />
 						</Link>
 						<Locale className="h-[38px] w-[60px] px-2" />

@@ -15,7 +15,7 @@
 			"phone_number": "Phone Number",
 			"email": "Email",
 			"role": "Role",
-            "actions": "Actions",
+			"actions": "Actions",
 			"promote": "Promote",
 			"demote": "Demote",
 			"admins": "Admins",

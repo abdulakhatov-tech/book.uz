@@ -18,7 +18,12 @@ const Dashboard: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 			>
 				<Sidebar />
 				<div className="p-6 bg-[#F5F5F5]">
-					<div className="bg-white w-full h-full p-8 overflow-auto" style={{height: "calc(100vh - 70px - 40px)"}}>{children}</div>
+					<div
+						className="bg-white w-full h-full p-8 overflow-auto"
+						style={{ height: "calc(100vh - 70px - 40px)" }}
+					>
+						{children}
+					</div>
 				</div>
 			</div>
 		</>

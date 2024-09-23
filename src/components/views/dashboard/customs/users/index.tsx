@@ -4,15 +4,15 @@ import { Separator } from "@/components/ui/separator";
 import { Admins, AllUsers } from "./customs";
 
 const Users: React.FC = () => {
-  return (
-    <div>
-      <Admins />
+	return (
+		<div>
+			<Admins />
 
-      <Separator className='my-8' />
+			<Separator className="my-8" />
 
-      <AllUsers />
-    </div>
-  );
+			<AllUsers />
+		</div>
+	);
 };
 
 export default Users;
