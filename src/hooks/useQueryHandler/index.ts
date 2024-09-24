@@ -2,7 +2,7 @@ import { useQuery, QueryKey } from "@tanstack/react-query";
 
 interface QueryHandlerProps {
 	queryKey: QueryKey;
-	queryFn: (_id?: string) => any;
+	queryFn: () => any;
 	onError?: (err: Error) => void;
 	options?: object;
 	retry?: number;

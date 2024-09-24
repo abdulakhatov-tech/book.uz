@@ -1,6 +1,6 @@
 import React from "react";
-import { Header, Sidebar } from "./customs";
 import classNames from "classnames";
+import { Header, Sidebar } from "./customs";
 import { useAppSelector } from "@/hooks/useRedux";
 
 const Dashboard: React.FC<{ children: React.ReactNode }> = ({ children }) => {

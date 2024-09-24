@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 
 import { FaRegUser } from "react-icons/fa";
@@ -23,7 +24,6 @@ import {
 import { formatDate } from "@/helpers";
 import { AuthorRowPropsI } from "./interface";
 import useAuthorsService from "@/services/authors";
-import { useTranslation } from "react-i18next";
 
 const AuthorRow: React.FC<AuthorRowPropsI> = ({ author, index }) => {
 	const { t } = useTranslation();
