@@ -1,14 +1,13 @@
 import useAxiosInstance from "@/api";
 import { useParams } from "react-router-dom";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query"
+;
 import { toast } from "@/components/ui/use-toast";
 import useQueryHandler from "@/hooks/useQueryHandler";
-
 const useAuthorsService = () => {
 	const axios = useAxiosInstance();
 	const queryClient = useQueryClient();
 	const { authorId } = useParams();
-
 	const getAllAuthors = useQueryHandler({
 		queryKey: ["authors"],
 		queryFn: async () => {
@@ -16,7 +15,6 @@ const useAuthorsService = () => {
 			return response.data.data;
 		},
 	});
-
 	const getAuthorById = useQueryHandler({
 		queryKey: ["author", { authorId }],
 		queryFn: async () => {
@@ -30,7 +28,6 @@ const useAuthorsService = () => {
 			});
 		},
 	});
-
 	const createAuthor = useMutation({
 		mutationFn: async (author: any) => {
 			const response = await axios.post("/authors", author);
@@ -52,7 +49,6 @@ const useAuthorsService = () => {
 			});
 		},
 	});
-
 	const updateAuthorById = useMutation({
 		mutationFn: async (author: any) => {
 			const response = await axios.put(`/authors/${author._id}`, author);
@@ -77,7 +73,6 @@ const useAuthorsService = () => {
 			});
 		},
 	});
-
 	const deleteAuthorById = useMutation({
 		mutationFn: async (authorId: string) => {
 			await axios.delete(`/authors/${authorId}`);
@@ -98,7 +93,6 @@ const useAuthorsService = () => {
 			});
 		},
 	});
-
 	return {
 		getAllAuthors,
 		createAuthor,
@@ -107,5 +101,4 @@ const useAuthorsService = () => {
 		deleteAuthorById,
 	};
 };
-
 export default useAuthorsService;

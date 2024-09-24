@@ -1,32 +1,29 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { IoIosCamera } from "react-icons/io";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import Section from "@/layout/section";
-import { Button } from "@/components/ui/button";
+import { IoIosCamera } from "react-icons/io";
+import useCreateAuthorFeatures from "./features";
 import noImage from "@/assets/images/no-user.jpg";
-import useAuthorsService from "@/services/authors";
-import useEditAuthorFeatures from "./features";
-const EditAuthor: React.FC = () => {
+
+const CreateAuthor: React.FC = () => {
 	const { t } = useTranslation();
-	const { getAuthorById } = useAuthorsService();
-	const { isLoading, isError, data } = getAuthorById;
 	const {
-		preview,
-		formData,
-		onInputChange,
 		selectImageHandler,
+		onInputChange,
 		isFormValid,
-		uploading,
 		onSubmit,
-	} = useEditAuthorFeatures();
-	console.log(isLoading, isError, data);
+		preview,
+		uploading,
+		formData,
+	} = useCreateAuthorFeatures();
 	return (
-		<Section id="edit-author">
+		<Section id="create-author">
 			<h2 className="text-[22px] text-black mb-4">
-				{t("dashboard.authors.edit")}
+				{t("dashboard.authors.create")}
 			</h2>
 			<form onSubmit={onSubmit}>
 				<div className="flex flex-col gap-4">
@@ -63,9 +60,9 @@ const EditAuthor: React.FC = () => {
 						{t("dashboard.authors.biography")}
 						<Textarea
 							name="biography"
-							rows={10}
 							value={formData.biography}
 							onChange={onInputChange}
+							rows={10}
 						/>
 					</Label>
 					<Label className="flex flex-col gap-2" id="image-upload">
@@ -96,10 +93,10 @@ const EditAuthor: React.FC = () => {
 				>
 					{uploading
 						? t("dashboard.authors.uploading")
-						: t("dashboard.authors.edit")}
+						: t("dashboard.authors.create")}
 				</Button>
 			</form>
 		</Section>
 	);
 };
-export default EditAuthor;
+export default CreateAuthor;
