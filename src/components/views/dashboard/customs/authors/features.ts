@@ -1,9 +1,9 @@
 import useAuthorsService from "@/services/authors";
 
 const useAuthorsFeatures = () => {
-    const { getAllAuthors } = useAuthorsService();
+	const { getAllAuthors } = useAuthorsService();
 
-  return { getAllAuthors };
+	return { getAllAuthors };
 };
 
 export default useAuthorsFeatures;

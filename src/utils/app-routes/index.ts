@@ -163,7 +163,7 @@ const useAppRoutes = () => {
 		},
 		{
 			_id: _id(),
-			path: "/dashboard/authors/edit\/:authorId",
+			path: "/dashboard/authors/edit/:authorId",
 			Component: EditAuthorPage,
 			isPrivate: true,
 		},
