@@ -1,9 +1,9 @@
 import useAxiosInstance from "@/api";
+import { useParams } from "react-router-dom";
+import { useMutation, useQueryClient } from "@tanstack/react-query"
+;
 import { toast } from "@/components/ui/use-toast";
 import useQueryHandler from "@/hooks/useQueryHandler";
-import { AuthorI } from "@/types";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
 
 const useAuthorsService = () => {
 	const axios = useAxiosInstance();
