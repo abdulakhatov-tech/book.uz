@@ -21,27 +21,6 @@
 			"admins": "Administratorlar",
 			"all_users": "Barcha foydalanuvchilar",
 			"list_users": "Oxirgi foydalanuvchilar ro'yxati"
-		},
-		"authors": {
-			"full_name": "To'liq ism",
-			"audio_books_count": "Audio kitoblar",
-			"books_count": "Kitoblar",
-			"ebooks_count": "Elektron kitoblar",
-			"date_of_birth": "Tug'ilgan sanasi",
-			"date_of_death": "Vafot etgan sanasi",
-			"created_at": "Yaratilgan sana",
-			"edit": "Tahrirlash",
-			"delete": "O'chirish",
-			"authors": "Mualliflar",
-			"create": "Muallif yaratish",
-			"list_authors": "Oxirgi mualliflar ro'yxati",
-			"biography": "Biografiya",
-			"image": "Rasm",
-			"uploading": "Yuklanmoqda",
-			"are_you_sure": "Ishonchingiz komilmi?",
-			"are_you_sure_description": "Muallifni o'chirish uning barcha bog'liq kitoblari va audiokitoblarini ham olib tashlaydi.",
-			"cancel": "Bekor qilish",
-			"continue": "Davom etish"
 		}
 	},
 	"profile": {

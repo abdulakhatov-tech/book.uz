@@ -1,11 +1,10 @@
 import React from "react";
 import classNames from "classnames";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import { FaHome } from "react-icons/fa";
 import { IoMdLogOut } from "react-icons/io";
 import { RiIndentDecrease, RiIndentIncrease } from "react-icons/ri";
+import { FaHome } from "react-icons/fa";
 
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
 import useAuthUser from "react-auth-kit/hooks/useAuthUser";
@@ -14,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import Locale from "@/components/common/locale";
 import logo from "@/assets/icons/logo.svg";
 import { UserI } from "@/types";
+import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
 	const { t } = useTranslation();
