@@ -1,9 +1,8 @@
-import React from "react";
-import classNames from "classnames";
-import { NavLink } from "react-router-dom";
-
-import { MockData } from "@/utils";
 import { useAppSelector } from "@/hooks/useRedux";
+import { MockData } from "@/utils";
+import classNames from "classnames";
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Sidebar: React.FC = () => {
 	const { isOpen } = useAppSelector((state) => state.sidebar);

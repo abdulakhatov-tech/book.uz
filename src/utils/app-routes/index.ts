@@ -1,5 +1,3 @@
-import CreateAuthorPage from "@/pages/dashboard/authors/create";
-import EditAuthorPage from "@/pages/dashboard/authors/edit";
 import type { RoutePropT } from "@/types";
 import { lazy, useId } from "react";
 
@@ -153,18 +151,6 @@ const useAppRoutes = () => {
 			_id: _id(),
 			path: "/dashboard/authors",
 			Component: AuthorsPage,
-			isPrivate: true,
-		},
-		{
-			_id: _id(),
-			path: "/dashboard/authors/create",
-			Component: CreateAuthorPage,
-			isPrivate: true,
-		},
-		{
-			_id: _id(),
-			path: "/dashboard/authors/edit/:authorId",
-			Component: EditAuthorPage,
 			isPrivate: true,
 		},
 		{
