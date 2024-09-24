@@ -21,6 +21,27 @@
 			"admins": "Admins",
 			"all_users": "All Users",
 			"list_users": "A list of recent users"
+		},
+		"authors": {
+			"full_name": "Full Name",
+			"audio_books_count": "Audio Books",
+			"books_count": "Books",
+			"ebooks_count": "E-Books",
+			"date_of_birth": "Date of Birth",
+			"date_of_death": "Date of Death",
+			"created_at": "Created At",
+			"edit": "Edit",
+            "delete": "Delete",
+            "authors": "Authors",
+			"create": "Create Author",
+            "list_authors": "A list of recent authors",
+			"biography": "Biography",
+			"image": "Image",
+			"uploading": "Uploading",
+			"are_you_sure": "Are you absolutely sure?",
+			"are_you_sure_description": "Deleting an author will also remove all their associated books and audiobooks.",
+			"cancel": "Cancel",
+			"continue": "Continue"
 		}
 	},
 	"profile": {

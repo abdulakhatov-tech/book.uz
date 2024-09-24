@@ -17,14 +17,14 @@ import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 const AllUsers: React.FC = () => {
 	const { t } = useTranslation();
 	const currentUser: UserI | null = useAuthUser();
-	const { getAllUsers, demoteUserToUserHandler } = useUsersFeatures();
+	const { getAllUsers, promoteUserToAdminHandler } = useUsersFeatures();
 
 	const { isLoading, isError, data: users } = getAllUsers;
 
 	// Filter users with admin or owner role
 	const allUsers =
 		users?.filter(
-			(user: UserI) => user.role === "owner" || user.role === "admin",
+			(user: UserI) => user.role === "user"
 		) || [];
 
 	const canPromote =
@@ -64,7 +64,7 @@ const AllUsers: React.FC = () => {
 								key={user._id}
 								user={user}
 								index={idx}
-								onPromote={() => demoteUserToUserHandler(user._id)}
+								onPromote={() => promoteUserToAdminHandler(user._id)}
 								canPromote={canPromote}
 							/>
 						))
