@@ -7,16 +7,6 @@ export const formatTime = (milliseconds: number): string => {
 	}${seconds}`;
 };
 
-export const formatDate = (isoDate: Date) => {
-	const date = new Date(isoDate);
-
-	const year = date.getFullYear();
-	const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are 0-based, so add 1
-	const day = String(date.getDate()).padStart(2, "0");
-
-	return `${day}-${month}-${year}`; // Returns format YYYY-MM-DD
-};
-
 // Utility to format title to URL
 export const formatTitleToUrl = (title: string) => {
 	return title
