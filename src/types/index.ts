@@ -69,3 +69,19 @@ export interface UserI {
 	email?: string;
 	bio?: string; // Object ID
 }
+
+export interface AuthorI {
+	_id: string;
+	audioBookCount: number;
+	bookCount: number;
+	ebookCount: number;
+	fullName: string;
+	link: string;
+	biography: string[];
+	dateOfbirth: Date | null;
+	dateOfdeath: Date | null;
+	imgUrl: string | null;
+	createdAt: Date;
+	updatedAt: Date;
+	__v?: number;
+}
