@@ -10,12 +10,9 @@ import Section from "@/layout/section";
 import useEditAuthorFeatures from "./features";
 import { Button } from "@/components/ui/button";
 import noImage from "@/assets/images/no-user.jpg";
-import useAuthorsService from "@/services/authors";
 
 const EditAuthor: React.FC = () => {
 	const { t } = useTranslation();
-	const { getAuthorById } = useAuthorsService();
-	const { isLoading, isError, data } = getAuthorById;
 	const {
 		preview,
 		formData,
@@ -25,8 +22,6 @@ const EditAuthor: React.FC = () => {
 		uploading,
 		onSubmit,
 	} = useEditAuthorFeatures();
-
-	console.log(isLoading, isError, data);
 
 	return (
 		<Section id="edit-author">
