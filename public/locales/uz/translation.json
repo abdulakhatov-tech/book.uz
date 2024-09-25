@@ -42,6 +42,22 @@
 			"are_you_sure_description": "Muallifni o'chirish uning barcha bog'liq kitoblari va audiokitoblarini ham olib tashlaydi.",
 			"cancel": "Bekor qilish",
 			"continue": "Davom etish"
+		},
+		"genres": {
+			"title": "Janrlar",
+			"name": "Nomi",
+			"books_count": "Kitoblar",
+			"ebooks_count": "Elektron kitoblar",
+			"audio_books_count": "Audio kitoblar",
+			"child_count": "Bola janrlar soni",
+			"create": "Janr yaratish",
+			"uploading": "Yuklanmoqda",
+			"are_you_sure": "Ishonchingiz komilmi?",
+			"are_you_sure_description": "Janrni o'chirish uning barcha bog'liq kitoblari va audiokitoblarini ham olib tashlaydi.",
+			"cancel": "Bekor qilish",
+			"continue": "Davom etish",
+			"created_at": "Yaratilgan sana",
+			"edit": "Janrni tahrirlash"
 		}
 	},
 	"profile": {

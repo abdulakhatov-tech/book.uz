@@ -1,7 +1,8 @@
 import type { FC } from "react";
+import { Genres } from "@/components/views/dashboard/customs";
 
 const GenresPage: FC = () => {
-	return <div>GenresPage</div>;
+	return <Genres />;
 };
 
 export default GenresPage;
