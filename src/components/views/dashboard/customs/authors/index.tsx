@@ -48,11 +48,7 @@ const Authors: React.FC = () => {
 						<LoadingRows />
 					) : (
 						data?.authors?.map((author: AuthorI, idx: number) => (
-							<UserRow
-								key={author._id}
-								author={author}
-								index={idx}
-							/>
+							<UserRow key={author._id} author={author} index={idx} />
 						))
 					)}
 				</TableBody>

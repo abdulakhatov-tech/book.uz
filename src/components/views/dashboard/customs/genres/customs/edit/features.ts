@@ -6,32 +6,32 @@ import { toast } from "@/components/ui/use-toast";
 import useGenresService from "@/services/genres";
 
 interface FormDataI {
-    name: string;
+	name: string;
 }
 
 const useEditGenreFeatures = () => {
-    const navigate = useNavigate();
+	const navigate = useNavigate();
 	const axios = useAxiosInstance();
-    const { getGenreById, updateGenreById} = useGenresService();
-    const [imageUrl, setImageUrl] = useState<string>("");
+	const { getGenreById, updateGenreById } = useGenresService();
+	const [imageUrl, setImageUrl] = useState<string>("");
 	const [preview, setPreview] = useState<string | null>(null);
-    const [formData, setFormData] = useState<FormDataI>({
-        name: "",
-    });
-    const [uploading, setUploading] = useState<boolean>(false);
-    const { data: genre, isLoading, isError } = getGenreById;
+	const [formData, setFormData] = useState<FormDataI>({
+		name: "",
+	});
+	const [uploading, setUploading] = useState<boolean>(false);
+	const { data: genre, isLoading, isError } = getGenreById;
 
-    useEffect(() => {
-        if(genre) {
-            setFormData({
-                name: genre.name || "",
-            });
-            setImageUrl(genre.imgUrl || "");
-            setPreview(genre.imgUrl || "");
-        }
-    }, [genre])
+	useEffect(() => {
+		if (genre) {
+			setFormData({
+				name: genre.name || "",
+			});
+			setImageUrl(genre.imgUrl || "");
+			setPreview(genre.imgUrl || "");
+		}
+	}, [genre]);
 
-    const selectImageHandler = async (e: React.ChangeEvent<HTMLInputElement>) => {
+	const selectImageHandler = async (e: React.ChangeEvent<HTMLInputElement>) => {
 		const file = e.target.files?.[0];
 		if (!file) return;
 		setUploading(true);
@@ -58,7 +58,7 @@ const useEditGenreFeatures = () => {
 		setUploading(false);
 	};
 
-    const onInputChange = (
+	const onInputChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
 	) => {
 		const { name, value } = e.target;
@@ -68,11 +68,11 @@ const useEditGenreFeatures = () => {
 		}));
 	};
 
-    const isFormValid = () => {
-        return formData.name.trim();
-    }
+	const isFormValid = () => {
+		return formData.name.trim();
+	};
 
-    const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+	const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		if (!isFormValid()) {
 			toast({
@@ -89,15 +89,17 @@ const useEditGenreFeatures = () => {
 		navigate("/dashboard/genres");
 	};
 
-  return {preview,
-    formData,
-    isLoading,
-    isError,
-    onInputChange,
-    selectImageHandler,
-    isFormValid,
-    uploading,
-    onSubmit,};
+	return {
+		preview,
+		formData,
+		isLoading,
+		isError,
+		onInputChange,
+		selectImageHandler,
+		isFormValid,
+		uploading,
+		onSubmit,
+	};
 };
 
 export default useEditGenreFeatures;

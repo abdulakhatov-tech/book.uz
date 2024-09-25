@@ -171,15 +171,15 @@ const useAppRoutes = () => {
 		},
 		{
 			_id: _id(),
-            path: "/dashboard/genres/create",
-            Component: CreateGenrePage,
-            isPrivate: true,
+			path: "/dashboard/genres/create",
+			Component: CreateGenrePage,
+			isPrivate: true,
 		},
 		{
 			_id: _id(),
-            path: "/dashboard/genres/edit/:genreId",
-            Component: EditGenrePage,
-            isPrivate: true,
+			path: "/dashboard/genres/edit/:genreId",
+			Component: EditGenrePage,
+			isPrivate: true,
 		},
 		{
 			_id: _id(),
