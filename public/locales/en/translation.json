@@ -42,6 +42,23 @@
 			"are_you_sure_description": "Deleting an author will also remove all their associated books and audiobooks.",
 			"cancel": "Cancel",
 			"continue": "Continue"
+		},
+		"genres": {
+			"title": "Genres",
+			"name": "Name",
+			"books_count": "Books",
+			"ebooks_count": "E-Books",
+			"audio_books_count": "Audio books",
+			"child_count": "Child count",
+			"create": "Create Genre",
+			"uploading": "Uploading",
+			"are_you_sure": "Are you absolutely sure?",
+			"are_you_sure_description": "Deleting an genre will also remove all their associated books and audiobooks.",
+			"cancel": "Cancel",
+			"continue": "Continue",
+			"created_at": "Created At",
+			"edit": "Edit Genre"
+
 		}
 	},
 	"profile": {

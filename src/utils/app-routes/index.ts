@@ -25,6 +25,8 @@ const Categories = lazy(() => import("@/pages/dashboard/categories"));
 const NewsPage = lazy(() => import("@/pages/dashboard/news"));
 const CreateAuthorPage = lazy(() => import("@/pages/dashboard/authors/create"));
 const EditAuthorPage = lazy(() => import("@/pages/dashboard/authors/edit"));
+const CreateGenrePage = lazy(() => import("@/pages/dashboard/genres/create"));
+const EditGenrePage = lazy(() => import("@/pages/dashboard/genres/edit"));
 
 const useAppRoutes = () => {
 	const _id = useId;
@@ -145,12 +147,6 @@ const useAppRoutes = () => {
 		},
 		{
 			_id: _id(),
-			path: "/dashboard/genres",
-			Component: Genres,
-			isPrivate: true,
-		},
-		{
-			_id: _id(),
 			path: "/dashboard/authors",
 			Component: AuthorsPage,
 			isPrivate: true,
@@ -166,6 +162,24 @@ const useAppRoutes = () => {
 			path: "/dashboard/authors/edit/:authorId",
 			Component: EditAuthorPage,
 			isPrivate: true,
+		},
+		{
+			_id: _id(),
+			path: "/dashboard/genres",
+			Component: Genres,
+			isPrivate: true,
+		},
+		{
+			_id: _id(),
+            path: "/dashboard/genres/create",
+            Component: CreateGenrePage,
+            isPrivate: true,
+		},
+		{
+			_id: _id(),
+            path: "/dashboard/genres/edit/:genreId",
+            Component: EditGenrePage,
+            isPrivate: true,
 		},
 		{
 			_id: _id(),

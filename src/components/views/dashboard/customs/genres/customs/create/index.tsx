@@ -1,17 +1,16 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+import { IoIosCamera } from "react-icons/io";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 
 import Section from "@/layout/section";
-import { IoIosCamera } from "react-icons/io";
-import useCreateAuthorFeatures from "./features";
-import noImage from "@/assets/images/no-user.jpg";
+import { Button } from "@/components/ui/button";
+import useCreateGenreFeatures from "./features";
+import noImage from "@/assets/images/no-image.png";
 
-const CreateAuthor: React.FC = () => {
+const CreateGenre: React.FC = () => {
   const { t } = useTranslation();
   const {
     selectImageHandler,
@@ -21,50 +20,22 @@ const CreateAuthor: React.FC = () => {
     preview,
     uploading,
     formData,
-  } = useCreateAuthorFeatures();
+  } = useCreateGenreFeatures();
+
   return (
-    <Section id='create-author'>
+    <Section id='create-genre'>
       <h2 className='text-[22px] text-black mb-4'>
-        {t("dashboard.authors.create")}
+        {t("dashboard.genres.create")}
       </h2>
       <form onSubmit={onSubmit}>
         <div className='flex flex-col gap-4'>
-          <div className='grid grid-cols-3 gap-4'>
-            <Label className='flex flex-col gap-2'>
-              {t("dashboard.authors.full_name")}
-              <Input
-                type='text'
-                name='fullName'
-                value={formData.fullName}
-                onChange={onInputChange}
-              />
-            </Label>
-            <Label className='flex flex-col gap-2'>
-              {t("dashboard.authors.date_of_birth")}
-              <Input
-                type='date'
-                name='dateOfbirth'
-                value={formData.dateOfbirth}
-                onChange={onInputChange}
-              />
-            </Label>
-            <Label className='flex flex-col gap-2'>
-              {t("dashboard.authors.date_of_death")}
-              <Input
-                type='date'
-                name='dateOfdeath'
-                value={formData.dateOfdeath}
-                onChange={onInputChange}
-              />
-            </Label>
-          </div>
           <Label className='flex flex-col gap-2'>
-            {t("dashboard.authors.biography")}
-            <Textarea
-              name='biography'
-              value={formData.biography}
+            {t("dashboard.genres.name")}
+            <Input
+              type='text'
+              name='name'
+              value={formData.name}
               onChange={onInputChange}
-              rows={10}
             />
           </Label>
           <Label className='flex flex-col gap-2' id='image-upload'>
@@ -94,11 +65,12 @@ const CreateAuthor: React.FC = () => {
           className='mt-6 bg-[#BC8E5B]'
         >
           {uploading
-            ? t("dashboard.authors.uploading")
-            : t("dashboard.authors.create")}
+            ? t("dashboard.genres.uploading")
+            : t("dashboard.genres.create")}
         </Button>
       </form>
     </Section>
   );
 };
-export default CreateAuthor;
+
+export default CreateGenre;

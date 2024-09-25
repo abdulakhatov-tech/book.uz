@@ -52,8 +52,6 @@ const Authors: React.FC = () => {
 								key={author._id}
 								author={author}
 								index={idx}
-								// onDemote={() => demoteUserToUserHandler(user._id)}
-								// canDemote={canDemote}
 							/>
 						))
 					)}

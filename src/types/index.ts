@@ -22,11 +22,12 @@ export interface GenreI {
 	_id?: string;
 	audioBookCount: number;
 	bookCount: number;
-	childCount: number;
 	ebookCount: number;
-	imgUrl?: string | null;
 	name: string;
-	parentId: string | null;
+	imgUrl?: string | null;
+	childCount?: number;
+	parentId?: string | null;
+	createdAt?: Date;
 }
 
 export interface BannerI {
