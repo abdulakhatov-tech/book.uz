@@ -7,7 +7,7 @@ export const formatTime = (milliseconds: number): string => {
 	}${seconds}`;
 };
 
-export const formatDate = (isoDate: Date) => {
+export const formatDate = (isoDate: any) => {
 	const date = new Date(isoDate);
 	const year = date.getFullYear();
 	const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are 0-based, so add 1
@@ -36,3 +36,10 @@ export const formatPhoneNumber = (phoneNumber: string) => {
 
 	return phoneNumber; // Return the original input if it doesn't match
 };
+
+export const formatPrice = (price: number | string): string => {
+	return new Intl.NumberFormat("uz-UZ", {
+        style: "currency",
+        currency: "UZS",
+    }).format(Number(price));
+}

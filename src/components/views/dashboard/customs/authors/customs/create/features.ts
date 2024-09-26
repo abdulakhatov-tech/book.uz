@@ -6,7 +6,9 @@ import { toast } from "@/components/ui/use-toast";
 import useAuthorsService from "@/services/authors";
 
 const useCreateAuthorFeatures = () => {
+	const navigate = useNavigate();
 	const axios = useAxiosInstance();
+	const { createAuthor } = useAuthorsService();
 	const [imageUrl, setImageUrl] = useState("");
 	const [preview, setPreview] = useState<string | null>(null);
 	const [formData, setFormData] = useState({
@@ -15,9 +17,8 @@ const useCreateAuthorFeatures = () => {
 		biography: "",
 		dateOfdeath: "",
 	});
-	const navigate = useNavigate();
 	const [uploading, setUploading] = useState(false);
-	const { createAuthor } = useAuthorsService();
+	
 	const selectImageHandler = async (e: React.ChangeEvent<HTMLInputElement>) => {
 		setUploading(true);
 		const file = e.target.files?.[0];
@@ -50,6 +51,7 @@ const useCreateAuthorFeatures = () => {
 		}
 		setUploading(false);
 	};
+
 	const onInputChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
 	) => {
@@ -58,6 +60,7 @@ const useCreateAuthorFeatures = () => {
 			[e.target.name]: e.target.value,
 		});
 	};
+
 	const isFormValid = () => {
 		return (
 			formData.fullName.trim() &&
@@ -67,6 +70,7 @@ const useCreateAuthorFeatures = () => {
 			imageUrl
 		);
 	};
+
 	const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		createAuthor.mutate({
@@ -78,6 +82,7 @@ const useCreateAuthorFeatures = () => {
 		});
 		navigate("/dashboard/authors");
 	};
+	
 	return {
 		selectImageHandler,
 		onInputChange,

@@ -86,3 +86,31 @@ export interface AuthorI {
 	updatedAt: Date;
 	__v?: number;
 }
+
+export interface BookI {
+	_id: string;
+	name: string;
+	genre: GenreI;
+	author: AuthorI;
+	amount: number;
+	bookPrice: number;
+	language: string;
+	cover: string; 
+	discount: number; 
+	numberOfPage: number;
+	state: string; 
+	year: number;
+	barcode: string;
+	description: string;
+	imgUrl: string;
+	additionalImgs: string[];
+	hasDiscount: boolean;
+	link: string;
+	rateCount: number;
+	rating: number;
+	soldBookCount: number;
+	createdAt: string;
+	updatedAt: string;
+  }
+
+  

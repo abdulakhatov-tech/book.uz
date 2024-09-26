@@ -27,8 +27,8 @@ const AuthorRow: React.FC<AuthorRowPropsI> = ({ author, index }) => {
 	return (
 		<TableRow key={author._id}>
 			<TableCell className="font-medium">{index + 1}</TableCell>
-			<TableCell className="flex items-center gap-2">
-				<div className="w-[30px] h-[30px] rounded-full overflow-hidden flex items-center justify-center bg-[#BC8E5B] text-white">
+			<TableCell className="flex items-center gap-3">
+				<div className="w-[44px] h-[44px] rounded-full overflow-hidden flex items-center justify-center bg-[#BC8E5B] text-white">
 					{author?.imgUrl ? (
 						<PhotoProvider>
 							<PhotoView src={author.imgUrl}>

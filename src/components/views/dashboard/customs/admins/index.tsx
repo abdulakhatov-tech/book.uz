@@ -10,14 +10,14 @@ import {
 } from "@/components/ui/table";
 
 import { UserI } from "@/types";
-import useUsersFeatures from "../../features";
+import useAdminsFeatures from "./features";
 import { LoadingRows, UserRow } from "./customs";
 import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 
 const Admins: React.FC = () => {
 	const { t } = useTranslation();
 	const currentUser: UserI | null = useAuthUser();
-	const { getAllUsers, demoteUserToUserHandler } = useUsersFeatures();
+	const { getAllUsers, demoteUserToUserHandler } = useAdminsFeatures();
 
 	const { isLoading, isError, data: users } = getAllUsers;
 
@@ -36,7 +36,7 @@ const Admins: React.FC = () => {
 
 	return (
 		<div>
-			<h2 className="text-[22px] text-black text-center mb-4">
+			<h2 className="text-[22px] text-black mb-4">
 				{t("dashboard.users.admins")}
 			</h2>
 

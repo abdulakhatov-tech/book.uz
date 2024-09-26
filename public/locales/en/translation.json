@@ -1,6 +1,7 @@
 {
 	"dashboard": {
 		"sidebar": {
+			"admins": "Admins",
 			"users": "Users",
 			"products": "Products",
 			"orders": "Orders",
@@ -58,6 +59,53 @@
 			"continue": "Continue",
 			"created_at": "Created At",
 			"edit": "Edit Genre"
+		},
+		"books": {
+			"title": "Books",
+			"create": "Create Book",
+			"name": "Name",
+			"genre": "Genre",
+			"author": "Author",
+			"amount": "Amount",
+			"book_price": "Price",
+			"cover": "Cover",
+			"ebooks_count": "E-Books",
+			"created_at": "Created At",
+			"edit": "Edit Book",
+            "delete": "Delete Book",
+            "list_books": "A list of recent books",
+            "are_you_sure": "Are you absolutely sure?",
+            "are_you_sure_description": "Deleting a book will also remove all associated audiobooks.",
+			"language": "Language",
+			"select_language": "Select language",
+			"language_type": {
+				"en": "English",
+				"ru": "Russin",
+                "uz": "Uzbek",
+				"tr": "Turkish"
+			},
+			"select_author": "Select author",
+			"select_cover_type": "Select cover type",
+			"cover_type": {
+				"hard": "Hard", 
+				"soft": "Soft",
+				"digital": "Digital"
+			},
+			"discount": "Discount", 
+			"number_of_pages": "Number of pages",
+			"state": "State (current condition)",
+			"state_type": {
+				"new": "New",
+				"used": "Used",
+                "damaged": "Damaged"
+			},
+			"select_state": "Select state",
+			"year": "Year",
+			"select_year": "Select published year",
+			"barcode": "Barcode",
+			"description": "Description",
+			"additional_images": "Additional images",
+			"select_genre": "Select genre"
 		}
 	},
 	"profile": {
