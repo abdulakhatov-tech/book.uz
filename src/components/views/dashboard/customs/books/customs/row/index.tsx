@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { PhotoProvider, PhotoView } from "react-photo-view";
+
+import { MdDelete } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa";
 import { FaUserEdit } from "react-icons/fa";
-import { MdDelete } from "react-icons/md";
 import { Button } from "@/components/ui/button";
 import { TableCell, TableRow } from "@/components/ui/table";
 import {
@@ -12,30 +13,30 @@ import {
 	AlertDialogAction,
 	AlertDialogCancel,
 	AlertDialogContent,
-	AlertDialogDescription,
 	AlertDialogFooter,
 	AlertDialogHeader,
 	AlertDialogTitle,
 	AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { formatDate } from "@/helpers";
-import { AuthorRowPropsI } from "./interface";
-import useAuthorsService from "@/services/authors";
-const AuthorRow: React.FC<AuthorRowPropsI> = ({ author, index }) => {
+import { formatDate, formatPrice } from "@/helpers";
+import { BookRowPropsI } from "./interface";
+import useBooksService from "@/services/books";
+const AuthorRow: React.FC<BookRowPropsI> = ({ book, index }) => {
 	const { t } = useTranslation();
-	const { deleteAuthorById } = useAuthorsService();
+	const { deleteBookById } = useBooksService();
+
 	return (
-		<TableRow key={author._id}>
+		<TableRow key={book._id}>
 			<TableCell className="font-medium">{index + 1}</TableCell>
 			<TableCell className="flex items-center gap-3">
-				<div className="w-[44px] h-[44px] rounded-full overflow-hidden flex items-center justify-center bg-[#BC8E5B] text-white">
-					{author?.imgUrl ? (
+				<div className="w-[40px] h-[40px] rounded-full overflow-hidden flex items-center justify-center bg-[#BC8E5B] text-white">
+					{book?.imgUrl ? (
 						<PhotoProvider>
-							<PhotoView src={author.imgUrl}>
+							<PhotoView src={book.imgUrl}>
 								<img
-									src={author.imgUrl}
+									src={book.imgUrl}
 									className="w-full h-full object-cover"
-									alt={author.fullName}
+									alt={book.name}
 								/>
 							</PhotoView>
 						</PhotoProvider>
@@ -43,22 +44,18 @@ const AuthorRow: React.FC<AuthorRowPropsI> = ({ author, index }) => {
 						<FaRegUser />
 					)}
 				</div>
-				{author.fullName}
+				{book.name}
 			</TableCell>
-			<TableCell>{author?.audioBookCount || 0}</TableCell>
-			<TableCell>{author?.bookCount || 0}</TableCell>
-			<TableCell>{author?.ebookCount || 0}</TableCell>
+			<TableCell>{book?.genre.name}</TableCell>
+			<TableCell>{book?.author.fullName || "..."}</TableCell>
+			<TableCell>{book?.amount}</TableCell>
+			<TableCell>{formatPrice(book?.bookPrice)}</TableCell>
+			<TableCell>{book?.cover}</TableCell>
 			<TableCell>
-				{author.dateOfbirth ? formatDate(author?.dateOfbirth) : "..."}
-			</TableCell>
-			<TableCell>
-				{author.dateOfdeath ? formatDate(author?.dateOfdeath) : "..."}
-			</TableCell>
-			<TableCell>
-				{author?.createdAt ? formatDate(author?.createdAt) : "..."}
+				{book?.createdAt ? formatDate(book?.createdAt) : "..."}
 			</TableCell>
 			<TableCell className="flex items-center justify-end gap-2">
-				<Link to={`edit/${author?._id}`}>
+				<Link to={`edit/${book?._id}`}>
 					<Button variant="secondary">
 						<FaUserEdit className="text-[22px]" />
 					</Button>
@@ -69,21 +66,18 @@ const AuthorRow: React.FC<AuthorRowPropsI> = ({ author, index }) => {
 							<MdDelete className="text-[22px] text-[crimson]" />
 						</Button>
 					</AlertDialogTrigger>
-					<AlertDialogContent>
+					<AlertDialogContent className="w-[350px]">
 						<AlertDialogHeader>
 							<AlertDialogTitle>
-								{t("dashboard.authors.are_you_sure")}
+								{t("dashboard.books.are_you_sure")}
 							</AlertDialogTitle>
-							<AlertDialogDescription>
-								{t("dashboard.authors.are_you_sure_description")}
-							</AlertDialogDescription>
 						</AlertDialogHeader>
 						<AlertDialogFooter>
 							<AlertDialogCancel>
 								{t("dashboard.authors.cancel")}
 							</AlertDialogCancel>
 							<AlertDialogAction
-								onClick={() => deleteAuthorById.mutate(author._id)}
+								onClick={() => deleteBookById.mutate(book._id)}
 								className="bg-[crimson] hover:bg-[crimson]"
 							>
 								{t("dashboard.authors.continue")}

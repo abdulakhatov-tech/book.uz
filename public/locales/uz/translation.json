@@ -1,6 +1,7 @@
 {
 	"dashboard": {
 		"sidebar": {
+			"admins": "Administratorlar",
 			"users": "Foydalanuvchilar",
 			"products": "Mahsulotlar",
 			"orders": "Buyurtmalar",
@@ -58,6 +59,54 @@
 			"continue": "Davom etish",
 			"created_at": "Yaratilgan sana",
 			"edit": "Janrni tahrirlash"
+		},
+
+		"books": {
+			"title": "Kitoblar",
+			"create": "Kitob yaratish",
+			"name": "Nomi",
+			"genre": "Janr",
+			"author": "Muallif",
+			"amount": "Soni",
+			"book_price": "Kitob narxi",
+			"cover": "Muqova",
+			"ebooks_count": "Elektron kitoblar",
+			"created_at": "Yaratilgan sana",
+			"edit": "Kitobni tahrirlash",
+			"delete": "Kitobni o'chirish",
+			"list_books": "Oxirgi kitoblar ro'yxati",
+			"are_you_sure": "Ishonchingiz komilmi?",
+			"are_you_sure_description": "Kitobni o'chirish uning barcha bog'liq audiokitoblarini ham olib tashlaydi.",
+			"language": "Til",
+			"select_language": "Tilni tanlang",
+			"language_type": {
+				"en": "Ingliz",
+				"ru": "Rus",
+				"uz": "O'zbek",
+				"tr": "Turk"
+			},
+			"select_author": "Muallifni tanlang",
+			"select_cover_type": "Muqova turini tanlang",
+			"cover_type": {
+				"hard": "Qattiq",
+				"soft": "Yumshoq",
+				"digital": "Raqamli"
+			},
+			"discount": "Chegirma",
+			"number_of_pages": "Sahifalar soni",
+			"state": "Holat (joriy sharoit)",
+			"state_type": {
+				"new": "Yangi",
+				"used": "Ishlatilgan",
+				"damaged": "Shikastlangan"
+			},
+			"select_state": "Holatni tanlang",
+			"year": "Yil",
+			"select_year": "Nashr yilini tanlang",
+			"barcode": "Barkod",
+			"description": "Tavsif",
+			"additional_images": "Qo'shimcha rasmlar",
+			"select_genre": "Janrni tanlang"
 		}
 	},
 	"profile": {

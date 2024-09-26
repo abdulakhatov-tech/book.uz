@@ -16,8 +16,9 @@ const Dashboard = lazy(() => import("@/pages/dashboard"));
 const Orders = lazy(() => import("@/pages/profile/orders"));
 const Settings = lazy(() => import("@/pages/profile/settings"));
 
+const Admins = lazy(() => import("@/pages/dashboard/admins"));
 const Users = lazy(() => import("@/pages/dashboard/users"));
-const Products = lazy(() => import("@/pages/dashboard/products"));
+const DashboarBooks = lazy(() => import("@/pages/dashboard/books"));
 const OrdersPage = lazy(() => import("@/pages/dashboard/orders"));
 const Genres = lazy(() => import("@/pages/dashboard/genres"));
 const AuthorsPage = lazy(() => import("@/pages/dashboard/authors"));
@@ -27,6 +28,8 @@ const CreateAuthorPage = lazy(() => import("@/pages/dashboard/authors/create"));
 const EditAuthorPage = lazy(() => import("@/pages/dashboard/authors/edit"));
 const CreateGenrePage = lazy(() => import("@/pages/dashboard/genres/create"));
 const EditGenrePage = lazy(() => import("@/pages/dashboard/genres/edit"));
+const CreateBookPage = lazy(() => import("@/pages/dashboard/books/create"));
+const EditBookPage = lazy(() => import("@/pages/dashboard/books/edit"));
 
 const useAppRoutes = () => {
 	const _id = useId;
@@ -129,6 +132,12 @@ const useAppRoutes = () => {
 		},
 		{
 			_id: _id(),
+			path: "/dashboard/admins",
+			Component: Admins,
+			isPrivate: true,
+		},
+		{
+			_id: _id(),
 			path: "/dashboard/users",
 			Component: Users,
 			isPrivate: true,
@@ -136,7 +145,19 @@ const useAppRoutes = () => {
 		{
 			_id: _id(),
 			path: "/dashboard/products",
-			Component: Products,
+			Component: DashboarBooks,
+			isPrivate: true,
+		},
+		{
+			_id: _id(),
+			path: "/dashboard/products/create",
+			Component: CreateBookPage,
+			isPrivate: true,
+		},
+		{
+			_id: _id(),
+			path: "/dashboard/products/edit/:bookId",
+			Component: EditBookPage,
 			isPrivate: true,
 		},
 		{

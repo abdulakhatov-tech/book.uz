@@ -47,7 +47,7 @@ const Authors: React.FC = () => {
 					{isLoading || isError ? (
 						<LoadingRows />
 					) : (
-						data?.authors?.map((author: AuthorI, idx: number) => (
+						data?.map((author: AuthorI, idx: number) => (
 							<UserRow key={author._id} author={author} index={idx} />
 						))
 					)}

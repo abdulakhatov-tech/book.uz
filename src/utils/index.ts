@@ -25,12 +25,13 @@ import { IoSettingsOutline } from "react-icons/io5";
 
 // dashboard sidebar
 import { LuUsers2 } from "react-icons/lu";
-import { IoBasketOutline } from "react-icons/io5";
 import { SlBasket } from "react-icons/sl";
-import { IoBookSharp } from "react-icons/io5";
-import { PiUsersThreeLight } from "react-icons/pi";
 import { TbCategory } from "react-icons/tb";
+import { GrUserAdmin } from "react-icons/gr";
+import { IoBookSharp } from "react-icons/io5";
+import { IoBasketOutline } from "react-icons/io5";
 import { FaRegNewspaper } from "react-icons/fa6";
+import { PiUsersThreeLight } from "react-icons/pi";
 
 export const banners: BannerI[] = [
 	{
@@ -162,9 +163,31 @@ export const MockData = () => {
 	const dashboardSidebarNavigation = [
 		{
 			_id,
+			Icon: GrUserAdmin,
+			label: t("dashboard.sidebar.admins"),
+			path: "/dashboard/admins",
+			roles: ["admin", "owner"],
+		},
+
+		{
+			_id,
 			Icon: LuUsers2,
 			label: t("dashboard.sidebar.users"),
 			path: "/dashboard/users",
+			roles: ["admin", "owner"],
+		},
+		{
+			_id,
+			Icon: PiUsersThreeLight,
+			label: t("dashboard.sidebar.authors"),
+			path: "/dashboard/authors",
+			roles: ["admin", "owner"],
+		},
+		{
+			_id,
+			Icon: IoBookSharp,
+			label: t("dashboard.sidebar.genres"),
+			path: "/dashboard/genres",
 			roles: ["admin", "owner"],
 		},
 		{
@@ -183,20 +206,6 @@ export const MockData = () => {
 		},
 		{
 			_id,
-			Icon: IoBookSharp,
-			label: t("dashboard.sidebar.genres"),
-			path: "/dashboard/genres",
-			roles: ["admin", "owner"],
-		},
-		{
-			_id,
-			Icon: PiUsersThreeLight,
-			label: t("dashboard.sidebar.authors"),
-			path: "/dashboard/authors",
-			roles: ["admin", "owner"],
-		},
-		{
-			_id,
 			Icon: TbCategory,
 			label: t("dashboard.sidebar.categories"),
 			path: "/dashboard/categories",
@@ -211,9 +220,61 @@ export const MockData = () => {
 		},
 	];
 
+	const bookStates = [
+		{
+			label: t("dashboard.books.state_type.new"),
+			value: "new",
+		},
+		{
+			label: t("dashboard.books.state_type.used"),
+			value: "used",
+		},
+		{
+			label: t("dashboard.books.state_type.damaged"),
+			value: "damaged",
+		},
+	];
+
+	const bookCoverTypes = [
+		{
+			label: t("dashboard.books.cover_type.hard"),
+			value: "hard",
+		},
+		{
+			label: t("dashboard.books.cover_type.soft"),
+			value: "soft",
+		},
+		{
+			label: t("dashboard.books.cover_type.digital"),
+			value: "digital",
+		},
+	];
+
+	const bookLanguages = [
+		{
+			label: t("dashboard.books.language_type.uz"),
+			value: "uz",
+		},
+		{
+			label: t("dashboard.books.language_type.en"),
+			value: "en",
+		},
+		{
+			label: t("dashboard.books.language_type.ru"),
+			value: "ru",
+		},
+		{
+			label: t("dashboard.books.language_type.tr"),
+			value: "tr",
+		},
+	];
+
 	return {
-		featuredCards,
+		bookStates,
 		statistics,
+		bookLanguages,
+		featuredCards,
+		bookCoverTypes,
 		profileNavigation,
 		dashboardSidebarNavigation,
 	};
