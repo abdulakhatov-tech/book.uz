@@ -97,7 +97,7 @@
 			"state": "Holat (joriy sharoit)",
 			"state_type": {
 				"new": "Yangi",
-				"used": "Ishlatilgan",
+				"old": "Eski",
 				"damaged": "Shikastlangan"
 			},
 			"select_state": "Holatni tanlang",
