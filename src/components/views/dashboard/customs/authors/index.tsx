@@ -32,9 +32,7 @@ const Authors: React.FC = () => {
 					<TableRow>
 						<TableHead className="w-[50px]">№</TableHead>
 						<TableHead>{t("dashboard.authors.full_name")}</TableHead>
-						<TableHead>{t("dashboard.authors.audio_books_count")}</TableHead>
 						<TableHead>{t("dashboard.authors.books_count")}</TableHead>
-						<TableHead>{t("dashboard.authors.ebooks_count")}</TableHead>
 						<TableHead>{t("dashboard.authors.date_of_birth")}</TableHead>
 						<TableHead>{t("dashboard.authors.date_of_death")}</TableHead>
 						<TableHead>{t("dashboard.authors.created_at")}</TableHead>

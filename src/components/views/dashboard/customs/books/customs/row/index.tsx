@@ -46,8 +46,8 @@ const AuthorRow: React.FC<BookRowPropsI> = ({ book, index }) => {
 				</div>
 				{book.name}
 			</TableCell>
-			<TableCell>{book?.genre.name}</TableCell>
-			<TableCell>{book?.author.fullName || "..."}</TableCell>
+			<TableCell>{book?.genre?.name}</TableCell>
+			<TableCell>{book?.author?.fullName || "..."}</TableCell>
 			<TableCell>{book?.amount}</TableCell>
 			<TableCell>{formatPrice(book?.bookPrice)}</TableCell>
 			<TableCell>{book?.cover}</TableCell>

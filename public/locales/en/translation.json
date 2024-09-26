@@ -96,7 +96,7 @@
 			"state": "State (current condition)",
 			"state_type": {
 				"new": "New",
-				"used": "Used",
+				"old": "Old",
 				"damaged": "Damaged"
 			},
 			"select_state": "Select state",

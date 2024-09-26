@@ -1,4 +1,4 @@
 export { default as LoadingRows } from "./loading";
-export { default as CreateAuthor } from "./create";
-export { default as EditAuthor } from "./edit";
+export { default as CreateAuthor } from "./form";
+export { default as EditAuthor } from "./form";
 export { default as UserRow } from "./row";

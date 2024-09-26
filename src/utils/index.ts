@@ -226,13 +226,9 @@ export const MockData = () => {
 			value: "new",
 		},
 		{
-			label: t("dashboard.books.state_type.used"),
-			value: "used",
-		},
-		{
-			label: t("dashboard.books.state_type.damaged"),
-			value: "damaged",
-		},
+			label: t("dashboard.books.state_type.old"),
+			value: "old",
+		}
 	];
 
 	const bookCoverTypes = [
