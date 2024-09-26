@@ -1,6 +1,4 @@
-
 export interface SelectPushlishedYearPropsI {
-    value: number,
-    onChange: (value: string, type: string) => void,
+	value: number;
+	onChange: (value: string, type: string) => void;
 }
-

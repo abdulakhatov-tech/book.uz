@@ -1,9 +1,9 @@
 export interface CoverTypeI {
-  label: string;
-  value: string;
+	label: string;
+	value: string;
 }
 
 export interface SelectCoverPropsI {
-  value: string;
-  onChange: (value: string, type: string) => void;
+	value: string;
+	onChange: (value: string, type: string) => void;
 }

@@ -18,7 +18,7 @@ const useCreateAuthorFeatures = () => {
 		dateOfdeath: "",
 	});
 	const [uploading, setUploading] = useState(false);
-	
+
 	const selectImageHandler = async (e: React.ChangeEvent<HTMLInputElement>) => {
 		setUploading(true);
 		const file = e.target.files?.[0];
@@ -82,7 +82,7 @@ const useCreateAuthorFeatures = () => {
 		});
 		navigate("/dashboard/authors");
 	};
-	
+
 	return {
 		selectImageHandler,
 		onInputChange,

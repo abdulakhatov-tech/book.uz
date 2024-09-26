@@ -22,10 +22,7 @@ const AllUsers: React.FC = () => {
 	const { isLoading, isError, data: users } = getAllUsers;
 
 	// Filter users with admin or owner role
-	const allUsers =
-		users?.filter(
-			(user: UserI) => user.role === "user",
-		) || [];
+	const allUsers = users?.filter((user: UserI) => user.role === "user") || [];
 
 	const canPromote =
 		currentUser?.role === "owner" || currentUser?.role === "admin";

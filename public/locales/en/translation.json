@@ -72,32 +72,32 @@
 			"ebooks_count": "E-Books",
 			"created_at": "Created At",
 			"edit": "Edit Book",
-            "delete": "Delete Book",
-            "list_books": "A list of recent books",
-            "are_you_sure": "Are you absolutely sure?",
-            "are_you_sure_description": "Deleting a book will also remove all associated audiobooks.",
+			"delete": "Delete Book",
+			"list_books": "A list of recent books",
+			"are_you_sure": "Are you absolutely sure?",
+			"are_you_sure_description": "Deleting a book will also remove all associated audiobooks.",
 			"language": "Language",
 			"select_language": "Select language",
 			"language_type": {
 				"en": "English",
 				"ru": "Russin",
-                "uz": "Uzbek",
+				"uz": "Uzbek",
 				"tr": "Turkish"
 			},
 			"select_author": "Select author",
 			"select_cover_type": "Select cover type",
 			"cover_type": {
-				"hard": "Hard", 
+				"hard": "Hard",
 				"soft": "Soft",
 				"digital": "Digital"
 			},
-			"discount": "Discount", 
+			"discount": "Discount",
 			"number_of_pages": "Number of pages",
 			"state": "State (current condition)",
 			"state_type": {
 				"new": "New",
 				"used": "Used",
-                "damaged": "Damaged"
+				"damaged": "Damaged"
 			},
 			"select_state": "Select state",
 			"year": "Year",

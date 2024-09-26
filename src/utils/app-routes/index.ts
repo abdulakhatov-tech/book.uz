@@ -156,9 +156,9 @@ const useAppRoutes = () => {
 		},
 		{
 			_id: _id(),
-            path: "/dashboard/products/edit/:bookId",
-            Component: EditBookPage,
-            isPrivate: true,
+			path: "/dashboard/products/edit/:bookId",
+			Component: EditBookPage,
+			isPrivate: true,
 		},
 		{
 			_id: _id(),

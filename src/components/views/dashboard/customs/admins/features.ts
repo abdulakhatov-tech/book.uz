@@ -1,8 +1,7 @@
 import useUsersService from "@/services/users";
 
 const useAdminsFeatures = () => {
-	const { getAllUsers, demoteAdminToUser } =
-		useUsersService();
+	const { getAllUsers, demoteAdminToUser } = useUsersService();
 
 	const demoteUserToUserHandler = (userId: string) => {
 		demoteAdminToUser.mutate(userId);

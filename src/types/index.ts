@@ -95,10 +95,10 @@ export interface BookI {
 	amount: number;
 	bookPrice: number;
 	language: string;
-	cover: string; 
-	discount: number; 
+	cover: string;
+	discount: number;
 	numberOfPage: number;
-	state: string; 
+	state: string;
 	year: number;
 	barcode: string;
 	description: string;
@@ -111,6 +111,4 @@ export interface BookI {
 	soldBookCount: number;
 	createdAt: string;
 	updatedAt: string;
-  }
-
-  
+}

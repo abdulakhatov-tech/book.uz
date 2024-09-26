@@ -39,7 +39,7 @@ export const formatPhoneNumber = (phoneNumber: string) => {
 
 export const formatPrice = (price: number | string): string => {
 	return new Intl.NumberFormat("uz-UZ", {
-        style: "currency",
-        currency: "UZS",
-    }).format(Number(price));
-}
+		style: "currency",
+		currency: "UZS",
+	}).format(Number(price));
+};
