@@ -12,7 +12,6 @@ import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
 import { toggleCategoryDropdownVisibility } from "@/redux/slices/modals";
 import { CategoryDropdown, CategoryNavigation, NavButton } from "./customs";
 
-
 const HeaderNavigation: FC = () => {
 	const { t } = useTranslation();
 	const dispatch = useAppDispatch();
@@ -41,7 +40,9 @@ const HeaderNavigation: FC = () => {
 								: "Open categories menu"
 						}
 					/>
-					<span className="hidden sm:block text-[16px] font-semibold">{t("header.categories")}</span>
+					<span className="hidden sm:block text-[16px] font-semibold">
+						{t("header.categories")}
+					</span>
 				</Button>
 			</CategoryDropdown>
 

@@ -266,10 +266,10 @@ export const MockData = () => {
 	];
 
 	const categories = [
-		{ label: t('header.category.books'), path: "/books" },
-		{ label: t('header.category.collections'), path: "/packages" },
-		{ label: t('header.category.authors'), path: "/authors" },
-		{ label: t('header.category.discounts'), path: "/discounts" },
+		{ label: t("header.category.books"), path: "/books" },
+		{ label: t("header.category.collections"), path: "/packages" },
+		{ label: t("header.category.authors"), path: "/authors" },
+		{ label: t("header.category.discounts"), path: "/discounts" },
 	];
 
 	return {
