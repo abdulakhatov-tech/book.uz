@@ -1,59 +1,44 @@
-import React from "react";
+import type { FC } from "react";
 
 import {
-	Popover,
-	PopoverContent,
-	PopoverTrigger,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
 } from "@/components/ui/popover";
-import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
-import useGenresService from "@/services/genres";
-import useOnlineStatus from "@/hooks/useOnlineStatus";
+
 import { GenreI } from "@/types";
-import { NavLink } from "react-router-dom";
-import { Skeleton } from "@/components/ui/skeleton";
-import { toggleCategoryDropdownVisibility } from "@/redux/slices/modals";
+import CategoryDropdownFeatures from "./features";
+import { CategoryItem, LoadingSkeleton } from "./customs";
 
-const CategoryDropdown: React.FC<{ children: React.ReactNode }> = ({
-	children,
-}) => {
-	const dispatch = useAppDispatch();
-	const { genres } = useGenresService();
-	const isOnline = useOnlineStatus();
-	const { categoryDropdownVisibility } = useAppSelector((state) => state.modal);
+const CategoryDropdown: FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { loading, genresData, handleClose, categoryDropdownVisibility } =
+    CategoryDropdownFeatures();
 
-	const { isLoading, isError, data: genresData } = genres;
-
-	return (
-		<Popover open={categoryDropdownVisibility}>
-			<PopoverTrigger className="lg:hidden">{children}</PopoverTrigger>
-			<PopoverContent className="w-screen h-screen overflow-y-auto">
-				<div className="block w-full h-[75vh] bg-[#F6F6F6] rounded-[8px] overflow-y-auto py-1">
-					<ul className="flex flex-col text-[#1E1E1E]">
-						{!isOnline || isLoading || isError
-							? Array.from({ length: 10 }).map((_, index) => (
-									<Skeleton key={index} className="p-6 w-full bg-[#e5e0e0]" />
-								))
-							: genresData.map(({ _id, name }: GenreI) => (
-									<li
-										key={_id}
-										className="py-2 px-4 hover:bg-[#EF7F1A] hover:text-white active:opacity-75"
-									>
-										<NavLink
-											to={`/books?page=1&limit=24&genreIds=${_id}`}
-											className="text-[16px] font-normal"
-											onClick={() =>
-												dispatch(toggleCategoryDropdownVisibility(false))
-											}
-										>
-											{name}
-										</NavLink>
-									</li>
-								))}
-					</ul>
-				</div>
-			</PopoverContent>
-		</Popover>
-	);
+  return (
+    <Popover open={categoryDropdownVisibility}>
+      <PopoverTrigger className='lg:hidden' tabIndex={0}>
+        {children}
+      </PopoverTrigger>
+      <PopoverContent className='w-screen h-screen thin-scrollbar'>
+        <div className='block w-full h-[75vh] bg-[#F6F6F6] rounded-[8px] thin-scrollbar'>
+          <ul className='flex flex-col gap-1 text-[#1E1E1E] p-2 thin-scrollbar'>
+            {loading ? (
+              <LoadingSkeleton />
+            ) : (
+              genresData?.map(({ _id, name }: GenreI) => (
+                <CategoryItem
+                  key={_id}
+                  id={_id!}
+                  name={name}
+                  onClose={handleClose}
+                />
+              ))
+            )}
+          </ul>
+        </div>
+      </PopoverContent>
+    </Popover>
+  );
 };
 
 export default CategoryDropdown;

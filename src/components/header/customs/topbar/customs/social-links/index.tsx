@@ -1,8 +1,8 @@
-import type React from "react";
+import type { FC } from "react";
 
+import telegram from "@/assets/icons/telegram.svg";
 import facebook from "@/assets/icons/facebook.svg";
 import instagram from "@/assets/icons/instagram.svg";
-import telegram from "@/assets/icons/telegram.svg";
 
 type SocialLinkProps = {
 	src: string;
@@ -10,22 +10,22 @@ type SocialLinkProps = {
 	label: string;
 };
 
-const SocialLink: React.FC<SocialLinkProps> = ({ href, label, src }) => (
-	<a href={href} aria-label={label} target="_blank" rel="noopener noreferrer">
-		<img src={src} alt={label} />
+const SocialLink: FC<SocialLinkProps> = ({ href, label, src }) => (
+	<a href={href} aria-label={label} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+		<img src={src} alt={`Visit us on ${label}`} width={24} height={24} />
 	</a>
 );
 
-const SocialLinks: React.FC = () => {
+const SocialLinks: FC = () => {
 	return (
-		<div className="flex items-center gap-2">
-			<SocialLink href="http://facebook.com/" src={facebook} label="Facebook" />
+		<div className="flex items-cente gap-2">
+			<SocialLink href="https://facebook.com/" src={facebook} label="Facebook"  />
 			<SocialLink
-				href="http://instagram.com/"
+				href="https://instagram.com/"
 				src={instagram}
 				label="Instagram"
 			/>
-			<SocialLink href="http://telegram.com/" src={telegram} label="Telegram" />
+			<SocialLink href="https://telegram.org/" src={telegram} label="Telegram" />
 		</div>
 	);
 };

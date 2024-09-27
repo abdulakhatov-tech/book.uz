@@ -1,37 +1,19 @@
-import { Button } from "@/components/ui/button";
-import type React from "react";
-
-import basketIcon from "@/assets/icons/basket.svg";
-import heartIcon from "@/assets/icons/heart.svg";
-import menuIcon from "@/assets/icons/menu-blue.svg";
-import userIcon from "@/assets/icons/user.svg";
-import closeIcon from "@/assets/icons/close-blue.svg";
-
-import { NavLink } from "react-router-dom";
-import { CategoryDropdown, CategoryNavigation } from "./customs";
-import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
-import { toggleCategoryDropdownVisibility } from "@/redux/slices/modals";
+import type { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-// Define types for NavButton props
-interface NavButtonProps {
-	icon: string;
-	label: string;
-	alt: string;
-	path: string;
-}
+import { Button } from "@/components/ui/button";
+import userIcon from "@/assets/icons/user.svg";
+import heartIcon from "@/assets/icons/heart.svg";
+import basketIcon from "@/assets/icons/basket.svg";
+import menuIcon from "@/assets/icons/menu-blue.svg";
+import closeIcon from "@/assets/icons/close-blue.svg";
 
-// Reusable Button component for Nav
-const NavButton: React.FC<NavButtonProps> = ({ icon, label, alt, path }) => (
-	<Button variant="secondary">
-		<NavLink to={path} className="flex items-center">
-			<img src={icon} alt={alt} />
-			<span className="hidden sm:block ml-2">{label}</span>
-		</NavLink>
-	</Button>
-);
+import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
+import { toggleCategoryDropdownVisibility } from "@/redux/slices/modals";
+import { CategoryDropdown, CategoryNavigation, NavButton } from "./customs";
 
-const HeaderNavigation: React.FC = () => {
+
+const HeaderNavigation: FC = () => {
 	const { t } = useTranslation();
 	const dispatch = useAppDispatch();
 	const categoryDropdownVisibility = useAppSelector(
@@ -48,7 +30,7 @@ const HeaderNavigation: React.FC = () => {
 			<CategoryDropdown>
 				<Button
 					onClick={handleCategoryDropdown}
-					className="flex gap-2 lg:hidden bg-[#45688819] text-[#107fe4]"
+					className="flex gap-2 lg:hidden bg-secondary-blue hover:bg-secondary-blue text-blue cursor-pointer"
 					aria-label="Open Categories"
 				>
 					<img
@@ -59,7 +41,7 @@ const HeaderNavigation: React.FC = () => {
 								: "Open categories menu"
 						}
 					/>
-					<span className="hidden sm:block">{t("header.categories")}</span>
+					<span className="hidden sm:block text-[16px] font-semibold">{t("header.categories")}</span>
 				</Button>
 			</CategoryDropdown>
 

@@ -1,49 +1,37 @@
-import type React from "react";
+import type { FC } from "react";
+import { useTranslation } from "react-i18next";
 
 import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
-import { useTranslation } from "react-i18next";
-import { useEffect } from "react";
+import useLocalFeatures from "./features";
 
-const Locale: React.FC<{ className?: string }> = ({ className }) => {
-	const { i18n } = useTranslation();
+interface LocalePropsI {
+  className?: string;
+}
 
-	// Getting the current language from localStorage.
-	const currentLang = localStorage.getItem("i18nextLng") || "en-US";
+const Locale: FC<LocalePropsI> = ({ className }) => {
+  const { t } = useTranslation();
+  const { onLanguageHandler, capitalizedLang } = useLocalFeatures();
 
-	useEffect(() => {
-		const supportedLanguages = ["en", "uz", "ru"];
-		if (!supportedLanguages.includes(currentLang)) {
-			localStorage.setItem("i18nextLng", "uz");
-		}
-	}, [currentLang]);
-
-	const onLanguageHandler = (lang: string): void => {
-		i18n.changeLanguage(lang);
-		localStorage.setItem("i18nextLng", lang);
-	};
-
-	return (
-		<Select onValueChange={(e: string) => onLanguageHandler(e)}>
-			<SelectTrigger
-				className={`w-[40px] h-fit px-0 py-0 border-none text-[15px] ${className}`}
-			>
-				<SelectValue
-					placeholder={localStorage.getItem("i18nextLng")?.toUpperCase()}
-				/>
-			</SelectTrigger>
-			<SelectContent className="bg-[white]">
-				<SelectItem value="uz">UZ</SelectItem>
-				<SelectItem value="en">EN</SelectItem>
-				<SelectItem value="ru">RU</SelectItem>
-			</SelectContent>
-		</Select>
-	);
+  return (
+    <Select onValueChange={(e: string) => onLanguageHandler(e)}>
+      <SelectTrigger
+        className={`w-[40px] h-fit px-0 py-0 border-none text-[15px] ${className}`}
+      >
+        <SelectValue placeholder={capitalizedLang} />
+      </SelectTrigger>
+      <SelectContent className='bg-[white]'>
+        <SelectItem value='uz'>{t("header.locale.uz")}</SelectItem>
+        <SelectItem value='en'>{t("header.locale.en")}</SelectItem>
+        <SelectItem value='ru'>{t("header.locale.ru")}</SelectItem>
+      </SelectContent>
+    </Select>
+  );
 };
 
 export default Locale;
