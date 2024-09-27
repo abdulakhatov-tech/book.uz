@@ -1,11 +1,11 @@
-import type React from "react";
+import type { FC } from "react";
 
 import Container from "@/layout/container";
 import { HeaderNavigation, TopBar } from "./customs";
 
-const Header: React.FC = () => {
+const Header: FC = () => {
 	return (
-		<header id="header" className="mt-[24px]">
+		<header className="mt-[24px]">
 			<Container>
 				<TopBar />
 				<HeaderNavigation />

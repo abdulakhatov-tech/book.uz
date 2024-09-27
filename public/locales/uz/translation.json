@@ -141,6 +141,12 @@
 		}
 	},
 	"header": {
+		"locale": {
+			"uz": "Uz",
+			"en": "En",
+			"ru": "Ru"
+		},
+		"book_is_best_prize": "Kitob - eng yaxshi sovg'a",
 		"how_to_purchase": "Qanday harid qilinadi",
 		"category": {
 			"books": "Kitoblar",

@@ -1,12 +1,16 @@
-import type React from "react";
-import { useTranslation } from "react-i18next";
+import type { FC } from "react";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
-const HelpLink: React.FC<{ className: string }> = ({ className }) => {
+interface HelpLinkPropsI {
+	className?: string;
+}
+
+const HelpLink: FC<HelpLinkPropsI> = ({ className = "" }) => {
 	const { t } = useTranslation();
 
 	return (
-		<nav className={className}>
+		<div className={className}>
 			<NavLink
 				to="/"
 				aria-label="How to purchase guide"
@@ -14,7 +18,7 @@ const HelpLink: React.FC<{ className: string }> = ({ className }) => {
 			>
 				{t("header.how_to_purchase")}?
 			</NavLink>
-		</nav>
+		</div>
 	);
 };
 

@@ -60,6 +60,7 @@ export default {
 				black: "#000000",
 				"secondary-black": "#171717",
 				crimson: "crimson",
+				borderColor: "#d9d9d9",
 			},
 		},
 	},

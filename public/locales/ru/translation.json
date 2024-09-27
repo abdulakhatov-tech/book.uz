@@ -140,6 +140,12 @@
 		}
 	},
 	"header": {
+		"locale": {
+			"uz": "Уз",
+			"en": "Анг",
+			"ru": "Рус"
+		},
+		"book_is_best_prize": "Книга — лучший подарок",
 		"how_to_purchase": "Как купить",
 		"category": {
 			"books": "Книги",

@@ -140,6 +140,12 @@
 		}
 	},
 	"header": {
+		"locale": {
+			"uz": "Uz",
+			"en": "En",
+			"ru": "Ru"
+		},
+		"book_is_best_prize": "A book is the best gift",
 		"how_to_purchase": "How to purchase",
 		"category": {
 			"books": "Books",

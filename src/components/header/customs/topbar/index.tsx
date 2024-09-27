@@ -1,38 +1,37 @@
-import type React from "react";
-import { useCallback } from "react";
+import type { FC } from "react";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import logoIcon from "@/assets/icons/logo.svg";
 import menuIcon from "@/assets/icons/menu.svg";
 import searchIcon from "@/assets/icons/search.svg";
 
+import useTopBarFeatures from "./features";
 import Locale from "@/components/common/locale";
-import { useAppDispatch } from "@/hooks/useRedux";
-import { toggleMenuModalVisibility } from "@/redux/slices/modals";
 import { HelpLink, SocialLinks } from "./customs";
 
-const TopBar: React.FC = () => {
-	const dispatch = useAppDispatch();
-
-	// Memoizing the handler to prevent unnecessary re-renders
-	const handleMenuClick = useCallback(() => {
-		dispatch(toggleMenuModalVisibility(true));
-	}, [dispatch]);
+const TopBar: FC = () => {
+	const { t } = useTranslation();
+	const { handleMenuClick, handleOnKeyDown } = useTopBarFeatures();
 
 	return (
 		<div
 			id="top-bar"
-			className="flex justify-between items-end pb-[16px] border-b border-b-[#d9d9d9]"
+			className="flex justify-between items-end pb-[16px] border-b border-b-borderColor"
 		>
 			<div className="flex items-end gap-5 lg:gap-6">
 				{/* Logo */}
-				<NavLink to="/" className="w-16 h-11">
-					<img src={logoIcon} alt="Book.uz logo" className="object-cover" />
+				<NavLink to="/" className="w-14 md:w-16">
+					<img
+						src={logoIcon}
+						alt="Book.uz logo"
+						className="w-full h-full object-cover"
+					/>
 				</NavLink>
 
 				{/* Tagline */}
-				<p className="hidden sm:block text-black text-lg lg:text-xl italic font-normal mr-5 lg:mr-10">
-					Kitob – eng yaxshi sovg'a
+				<p className="hidden sm:block text-black text-lg lg:text-xl font-normal mr-5 lg:mr-10 italic">
+					{t("header.book_is_best_prize")}
 				</p>
 
 				{/* Help Link */}
@@ -40,18 +39,13 @@ const TopBar: React.FC = () => {
 			</div>
 
 			<div className="flex items-center gap-3 sm:gap-4 lg:gap-5">
-				{/* Search Icon */}
-				<img src={searchIcon} alt="Search" />
-
-				{/* Locale Component */}
-				{/* <div className="hidden sm:block"> */}
+				<img src={searchIcon} alt="Search" className="w-[18px] h-[18px]" />
 				<Locale />
-				{/* </div> */}
 
 				{/* Contact Link */}
 				<a
 					href="tel:+998 99 111 11 11"
-					className="hidden lg:block whitespace-nowrap text-[16px] font-medium text-black"
+					className="hidden lg:block whitespace-nowrap text-[18px] font-medium text-black"
 				>
 					+998 99 111 11 11
 				</a>
@@ -67,11 +61,7 @@ const TopBar: React.FC = () => {
 					alt="Open Menu"
 					className="block lg:hidden cursor-pointer"
 					onClick={handleMenuClick}
-					onKeyDown={(event) => {
-						if (event.key === "Enter" || event.key === " ") {
-							handleMenuClick();
-						}
-					}}
+					onKeyDown={handleOnKeyDown}
 				/>
 			</div>
 		</div>

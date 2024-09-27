@@ -1,21 +1,18 @@
-import type React from "react";
+import type { FC } from "react";
 import { NavLink } from "react-router-dom";
 
-const categories = [
-	{ label: "Kitoblar", path: "/books" },
-	{ label: "To'plamlar", path: "/packages" },
-	{ label: "Mualliflar", path: "/authors" },
-	{ label: "Chegirmalar", path: "/discounts" },
-];
+import { MockData } from "@/utils";
 
-const Category: React.FC<{ className: string }> = ({ className }) => {
+const Category: FC<{ className: string }> = ({ className }) => {
+	const { categories } = MockData();
+
 	return (
 		<ul className={className}>
 			{categories.map((category) => (
 				<li key={category.path}>
 					<NavLink
 						to={category.path}
-						className="text-[#000] text-[16px] font-normal"
+						className="text-black text-[16px] leading-[19.36px] font-semibold cursor-pointer"
 					>
 						{category.label}
 					</NavLink>
