@@ -13,7 +13,12 @@ const SignUp: React.FC = () => {
 	return (
 		<form onSubmit={handleSubmit} className="flex flex-col gap-2 md:gap-4">
 			<div className="grid w-full max-w-sm items-center gap-1.5">
-				<Label htmlFor="picture" className="text-[14px] md:text-[16px] font-normal leading-[19.36px] text-[#5E5E5E]">{t('auth.name')}:</Label>
+				<Label
+					htmlFor="picture"
+					className="text-[14px] md:text-[16px] font-normal leading-[19.36px] text-[#5E5E5E]"
+				>
+					{t("auth.name")}:
+				</Label>
 				<Input
 					type="text"
 					name="name"
@@ -24,7 +29,12 @@ const SignUp: React.FC = () => {
 			</div>
 
 			<div className="grid w-full max-w-sm items-center gap-1.5">
-				<Label htmlFor="picture" className="text-[14px] md:text-[16px] font-normal leading-[19.36px] text-[#5E5E5E]">{t('auth.surname')}:</Label>
+				<Label
+					htmlFor="picture"
+					className="text-[14px] md:text-[16px] font-normal leading-[19.36px] text-[#5E5E5E]"
+				>
+					{t("auth.surname")}:
+				</Label>
 				<Input
 					type="text"
 					name="surname"
@@ -35,7 +45,12 @@ const SignUp: React.FC = () => {
 			</div>
 
 			<div className="grid w-full max-w-sm items-center gap-1.5">
-				<Label htmlFor="picture" className="text-[14px] md:text-[16px] font-normal leading-[19.36px] text-[#5E5E5E]">{t('auth.phone_number')}:</Label>
+				<Label
+					htmlFor="picture"
+					className="text-[14px] md:text-[16px] font-normal leading-[19.36px] text-[#5E5E5E]"
+				>
+					{t("auth.phone_number")}:
+				</Label>
 				<Input
 					type="text"
 					name="phoneNumber"
@@ -57,7 +72,7 @@ const SignUp: React.FC = () => {
 				className="bg-[#EF7F1A] w-full mt-4 text-[16px] md:text-[18px] font-medium leading-[21.78px]"
 				disabled={loading} // Disable button while loading
 			>
-				{loading ? <LoadingSpinner /> : t('auth.sign_up_title')}
+				{loading ? <LoadingSpinner /> : t("auth.sign_up_title")}
 			</Button>
 		</form>
 	);

@@ -1,4 +1,4 @@
-import type {FC} from "react";
+import type { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Input } from "@/components/ui/input";
@@ -32,7 +32,7 @@ const SignIn: FC = () => {
 				className="bg-[#EF7F1A] w-full mt-6 text-[16px] md:text-[18px] font-medium leading-[21.78px]"
 				disabled={isLoading} // Disable button while loading
 			>
-				{isLoading ? <LoadingSpinner /> : t('auth.login')}
+				{isLoading ? <LoadingSpinner /> : t("auth.login")}
 			</Button>
 		</form>
 	);
