@@ -54,7 +54,7 @@ export default {
 				gray: "#828282",
 				"secondary-gray": "#F6F6F6",
 				blue: "#107FE4",
-				"seconday-blue": "#E7F2FC",
+				"secondary-blue": "#E7F2FC",
 				orange: "#EF7F1A",
 				"secondary-orange": "#FFD8B6",
 				black: "#000000",
