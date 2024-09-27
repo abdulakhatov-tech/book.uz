@@ -4,6 +4,7 @@ import FeaturedCards from "./featured-cards";
 import Statistics from "./statistics";
 import NewAgeLibrary from "./new-age-library";
 import RecentlyPublishedBooks from "./recently-published-books";
+import NewArrivals from "./new-arrivals";
 
 const Home: React.FC = () => {
 	return (
@@ -12,6 +13,7 @@ const Home: React.FC = () => {
 			<FeaturedCards />
 			<NewAgeLibrary />
 			<RecentlyPublishedBooks />
+			<NewArrivals />
 			<Statistics />
 		</>
 	);

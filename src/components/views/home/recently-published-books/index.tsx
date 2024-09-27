@@ -21,13 +21,35 @@ const RecentlyPublishedBooks: React.FC = () => {
 	const { t } = useTranslation();
 	const { books, loading } = useRecentlyPublishedBooksFeatures();
 
+	const renderCarouselItems = () => {
+		if (loading) {
+			return Array.from({ length: 8 }).map((_, idx: number) => (
+				<CarouselItem
+					key={idx}
+					className="basis-[100%] sm:basis-[80%] md:basis-[60%] lg:basis-[40%] lg:mr-[14px]"
+				>
+					<RecentlyPublishedCardSkeleton />
+				</CarouselItem>
+			));
+		}
+
+		return books?.map((book: BookI) => (
+			<CarouselItem
+				key={book._id}
+				className="basis-[100%] sm:basis-[80%] md:basis-[60%] lg:basis-[40%] lg:mr-[14px]"
+			>
+				<RecentlyPublishedBookCard {...book} />
+			</CarouselItem>
+		));
+	};
+
 	return (
 		<Section
 			id="newly-published-books"
 			className="bg-white py-[16px] sm:py-[22px] md:py-[28px]"
 		>
 			<Container>
-				<h3 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px]  font-semibold leading-[34.13px] text-black">
+				<h3 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] font-semibold leading-[34.13px] text-black">
 					{t("home.newly_published_books.title")}
 				</h3>
 
@@ -35,30 +57,13 @@ const RecentlyPublishedBooks: React.FC = () => {
 					plugins={[Autoplay({ delay: 14000, stopOnInteraction: false })]}
 					className="relative"
 				>
-					{loading ? (
-						<div className="overflow-x-hidden pt-[40px] sm:pt-[50px] md:pt-[66px]">
-							<div className="w-fit flex items-center gap-8">
-								<RecentlyPublishedCardSkeleton />
-								<RecentlyPublishedCardSkeleton />
-								<RecentlyPublishedCardSkeleton />
-								<RecentlyPublishedCardSkeleton />
-							</div>
-						</div>
-					) : (
-						<CarouselContent className="-ml-4 pt-[40px] sm:pt-[50px] md:pt-[66px]">
-							{books?.map((book: BookI) => (
-								<CarouselItem
-									key={book._id}
-									className="basis-[100%] sm:basis-[80%] md:basis-[60%] lg:basis-[40%] lg:mr-[14px]"
-								>
-									<RecentlyPublishedBookCard {...book} />
-								</CarouselItem>
-							))}
-						</CarouselContent>
-					)}
+					<CarouselContent className="-ml-4 pt-[40px] sm:pt-[50px] md:pt-[66px]">
+						{renderCarouselItems()}
+					</CarouselContent>
+
 					<div className="absolute -top-5 right-8">
-						<CarouselPrevious></CarouselPrevious>
-						<CarouselNext className="-right-6"></CarouselNext>
+						<CarouselPrevious />
+						<CarouselNext className="-right-6" />
 					</div>
 				</Carousel>
 			</Container>

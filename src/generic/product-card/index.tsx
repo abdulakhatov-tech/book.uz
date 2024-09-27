@@ -19,18 +19,19 @@ import { BookI } from "@/types";
 import { formatPrice } from "@/helpers";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 
-const ProductCard: React.FC<BookI> = ({
+const ProductCard: React.FC<BookI & { noSlide?: boolean }> = ({
 	_id,
 	name,
 	imgUrl,
 	author,
 	bookPrice,
 	additionalImages,
+	noSlide,
 }) => {
 	const { t } = useTranslation();
 	const [preloadedImgUrl, setPreloadedImgUrl] = useState<string>(imgUrl);
 
-	const autoplayDelay = additionalImages?.length > 3 ? 2500 : 2000;
+	const autoplayDelay = 2000;
 
 	useEffect(() => {
 		// Preload the fallback image
@@ -43,9 +44,11 @@ const ProductCard: React.FC<BookI> = ({
 		if (additionalImages?.length > 0) {
 			return (
 				<Carousel
-					plugins={[
-						Autoplay({ delay: autoplayDelay, stopOnInteraction: false }),
-					]}
+					plugins={
+						!noSlide
+							? [Autoplay({ delay: autoplayDelay, stopOnInteraction: false })]
+							: []
+					}
 				>
 					<CarouselContent>
 						{additionalImages.map((item: string, idx: number) => (
