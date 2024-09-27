@@ -19,7 +19,7 @@ import { BookI } from "@/types";
 import { formatPrice } from "@/helpers";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 
-const ProductCard: React.FC<BookI & { noSlide: boolean }> = ({
+const ProductCard: React.FC<BookI & { noSlide?: boolean }> = ({
 	_id,
 	name,
 	imgUrl,
