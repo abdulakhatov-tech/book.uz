@@ -1,10 +1,14 @@
-import type React from "react";
+import type { FC } from "react";
+import { useTranslation } from "react-i18next";
 
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import useSignInFeatures from "./features";
+import { Button } from "@/components/ui/button";
 
-const SignIn: React.FC = () => {
+import useSignInFeatures from "./features";
+import LoadingSpinner from "@/tools/loading-spinner";
+
+const SignIn: FC = () => {
+	const { t } = useTranslation();
 	const { phoneError, isLoading, handleSubmit } = useSignInFeatures();
 
 	return (
@@ -18,17 +22,17 @@ const SignIn: React.FC = () => {
 				disabled={isLoading} // Disable input while loading
 			/>
 			{phoneError && (
-				<p className="text-crimson text-sm font-normal text-center text-[crimson] mt-1">
+				<p className="text-crimson text-sm font-normal text-center mt-1">
 					{phoneError}
 				</p>
 			)}
 			<Button
 				type="submit"
 				variant="default"
-				className="bg-[#EF7F1A] w-full mt-6"
+				className="bg-[#EF7F1A] w-full mt-6 text-[16px] md:text-[18px] font-medium leading-[21.78px]"
 				disabled={isLoading} // Disable button while loading
 			>
-				{isLoading ? "Loading..." : "Kirish"}
+				{isLoading ? <LoadingSpinner /> : t("auth.login")}
 			</Button>
 		</form>
 	);

@@ -1,4 +1,22 @@
 {
+	"auth": {
+		"sign_in_title": "Введите номер телефона",
+		"sign_up_title": "Регистрация",
+		"otp_title": "Подтверждение OTP",
+		"sign_in_description": "Введите номер телефона, и мы отправим вам одноразовый SMS-код",
+		"otp_description": "Введите одноразовый SMS-код, отправленный на ваш телефон",
+		"not_have_account": "Нет аккаунта?",
+		"have_you_registered": "Вы зарегистрированы?",
+		"register_now": "Зарегистрироваться сейчас",
+		"login": "Вход",
+		"name": "Ваше имя",
+		"surname": "Ваша фамилия",
+		"phone_number": "Ваш номер телефона",
+		"otp_code_expired": "Срок действия OTP-кода истек",
+		"verify": "Подтвердить",
+		"verifying": "Подтверждение",
+		"resend": "Отправить снова"
+	},
 	"dashboard": {
 		"sidebar": {
 			"admins": "Администраторы",

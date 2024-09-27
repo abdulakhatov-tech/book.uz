@@ -36,21 +36,24 @@ const Logout: React.FC = () => {
 					className="py-5 flex items-center gap-2 hover:text-[crimson]"
 					aria-label={t("profile.nav.logout")}
 				>
-					<IoIosLogOut className="text-[22px]" aria-hidden="true" />
+					<IoIosLogOut
+						className="text-[18px] md:text-[22px]"
+						aria-hidden="true"
+					/>
 					{t("profile.nav.logout")}
 				</div>
 			</AlertDialogTrigger>
-			<AlertDialogContent className="w-fit">
+			<AlertDialogContent className="w-[260px] sm:w-[300px] rounded-lg">
 				<AlertDialogHeader>
 					<AlertDialogTitle>{t("profile.logout.title")}?</AlertDialogTitle>
 				</AlertDialogHeader>
-				<AlertDialogFooter>
-					<AlertDialogCancel className="w-[50%]">
+				<AlertDialogFooter className="flex">
+					<AlertDialogCancel className="w-full">
 						{t("profile.logout.cancel")}
 					</AlertDialogCancel>
 					<AlertDialogAction
 						onClick={handleLogout}
-						className="hover:bg-[crimson] bg-[crimson] text-white w-[50%]"
+						className="hover:bg-[crimson] bg-[crimson] text-white w-full"
 					>
 						{t("profile.logout.ok")}
 					</AlertDialogAction>

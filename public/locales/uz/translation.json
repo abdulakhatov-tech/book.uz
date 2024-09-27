@@ -1,4 +1,22 @@
 {
+	"auth": {
+		"sign_in_title": "Telefon raqamingizni kiriting",
+		"sign_up_title": "Ro'yxatdan o'tish",
+		"otp_title": "OTP ni tasdiqlash",
+		"sign_in_description": "Telefon raqamingizni kiriting va biz sizga bir martalik SMS-kod yuboramiz",
+		"otp_description": "Telefoningizga yuborilgan bir martalik SMS-kodni kiriting",
+		"not_have_account": "Akkountingiz yo'qmi",
+		"have_you_registered": "Ro'yhatdan o'tganmisiz",
+		"register_now": "Ro'yhatdan o'ting",
+		"login": "Kirish",
+		"name": "Ismingiz",
+		"surname": "Familiyangiz",
+		"phone_number": "Telefon raqamingiz",
+		"otp_code_expired": "OTP code expired",
+		"verify": "Verify",
+		"verifying": "Verifying",
+		"resend": "Resend"
+	},
 	"dashboard": {
 		"sidebar": {
 			"admins": "Administratorlar",

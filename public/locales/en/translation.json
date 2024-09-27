@@ -1,4 +1,22 @@
 {
+	"auth": {
+		"sign_in_title": "Enter your phone number",
+		"sign_up_title": "Sign Up",
+		"otp_title": "OTP Confirmation",
+		"sign_in_description": "Enter your phone number, and we will send you a one-time SMS code",
+		"otp_description": "Enter the one-time SMS code sent to your phone",
+		"not_have_account": "Don't have an account?",
+		"have_you_registered": "Have you registered?",
+		"register_now": "Register now",
+		"login": "Login",
+		"name": "Your name",
+		"surname": "Your surname",
+		"phone_number": "Your phone number",
+		"otp_code_expired": "OTP code expired",
+		"verify": "Verify",
+		"verifying": "Verifying",
+		"resend": "Resend"
+	},
 	"dashboard": {
 		"sidebar": {
 			"admins": "Admins",
