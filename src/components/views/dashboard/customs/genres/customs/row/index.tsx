@@ -48,9 +48,7 @@ const GenreRow: React.FC<GenreRowPropsI> = ({ genre, index }) => {
 				</div>
 				{genre.name}
 			</TableCell>
-			<TableCell>{genre?.audioBookCount || 0}</TableCell>
 			<TableCell>{genre?.bookCount || 0}</TableCell>
-			<TableCell>{genre?.ebookCount || 0}</TableCell>
 			<TableCell>
 				{genre?.createdAt ? formatDate(genre?.createdAt) : "..."}
 			</TableCell>

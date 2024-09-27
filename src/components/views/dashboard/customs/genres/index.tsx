@@ -5,15 +5,17 @@ import { useTranslation } from "react-i18next";
 import {
 	Table,
 	TableBody,
+	TableCaption,
 	TableHead,
 	TableHeader,
 	TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
+
+import { GenreI } from "@/types";
 import Section from "@/layout/section";
 import useGenresService from "@/services/genres";
 import { GenreRow, LoadingRows } from "./customs";
-import { GenreI } from "@/types";
 
 const Genres: React.FC = () => {
 	const { t } = useTranslation();
@@ -32,13 +34,14 @@ const Genres: React.FC = () => {
 				</Link>
 			</div>
 			<Table>
+				<TableCaption>
+					{!isLoading && !isError && !data?.length ? "No books" : ""}
+				</TableCaption>
 				<TableHeader>
 					<TableRow>
 						<TableHead className="w-[50px]">№</TableHead>
 						<TableHead>{t("dashboard.genres.name")}</TableHead>
-						<TableHead>{t("dashboard.genres.audio_books_count")}</TableHead>
 						<TableHead>{t("dashboard.genres.books_count")}</TableHead>
-						<TableHead>{t("dashboard.genres.ebooks_count")}</TableHead>
 						<TableHead>{t("dashboard.genres.created_at")}</TableHead>
 						<TableHead className="text-right">
 							{t("dashboard.users.actions")}

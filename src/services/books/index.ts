@@ -38,7 +38,7 @@ const useBooksService = () => {
 
 	const createBook = useMutation({
 		mutationFn: async (book: any) => {
-			queryClient.setQueryData(["books"], (prev: any) => prev.concat(book));
+			// queryClient.setQueryData(["books"], (prev: any) => prev.concat(book));
 
 			const response = await axios.post("/books", book);
 			return response.data.data as BookI;

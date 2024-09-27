@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+
 import useAxiosInstance from "@/api";
 import { toast } from "@/components/ui/use-toast";
 import useAuthorsService from "@/services/authors";
+
 interface FormDataI {
 	fullName: string;
 	dateOfbirth: string;
@@ -14,11 +16,15 @@ const formatDate = (date: string) => {
 	if (!date) return "";
 	return new Date(date).toISOString().split("T")[0];
 };
-const useEditAuthorFeatures = () => {
+
+const useCreateAuthorFeatures = () => {
 	const navigate = useNavigate();
+	const { authorId } = useParams();
 	const axios = useAxiosInstance();
-	const { getAuthorById, updateAuthorById } = useAuthorsService();
-	const [imageUrl, setImageUrl] = useState<string>("");
+	const { createAuthor, getAuthorById, updateAuthorById } = useAuthorsService();
+
+	const [uploading, setUploading] = useState(false);
+	const [imageUrl, setImageUrl] = useState<string | null>("");
 	const [preview, setPreview] = useState<string | null>(null);
 	const [formData, setFormData] = useState<FormDataI>({
 		fullName: "",
@@ -26,8 +32,11 @@ const useEditAuthorFeatures = () => {
 		biography: "",
 		dateOfdeath: "",
 	});
-	const [uploading, setUploading] = useState<boolean>(false);
+
 	const { data: author, isLoading, isError } = getAuthorById;
+
+	const loading = isLoading || isError;
+
 	useEffect(() => {
 		if (author) {
 			setFormData({
@@ -40,12 +49,24 @@ const useEditAuthorFeatures = () => {
 			setPreview(author.imgUrl || "");
 		}
 	}, [author]);
+
 	const selectImageHandler = async (e: React.ChangeEvent<HTMLInputElement>) => {
-		const file = e.target.files?.[0];
-		if (!file) return;
 		setUploading(true);
+		const file = e.target.files?.[0];
+
+		if (file) {
+			const reader = new FileReader();
+			reader.onloadend = () => {
+				setPreview(reader.result as string); // Set preview image
+			};
+			reader.readAsDataURL(file);
+		}
+
+		if (!file) return;
+
 		const formData = new FormData();
 		formData.append("image", file);
+
 		try {
 			const response = await axios({
 				method: "POST",
@@ -55,9 +76,9 @@ const useEditAuthorFeatures = () => {
 					"Content-Type": "multipart/form-data",
 				},
 			});
+
 			const { imageUrl } = response.data;
-			setImageUrl(imageUrl); // Set the new image URL
-			setPreview(URL.createObjectURL(file)); // Set preview for the new image
+			setImageUrl(imageUrl);
 		} catch (error) {
 			toast({
 				title: "Upload Error",
@@ -66,6 +87,7 @@ const useEditAuthorFeatures = () => {
 		}
 		setUploading(false);
 	};
+
 	const onInputChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
 	) => {
@@ -75,17 +97,14 @@ const useEditAuthorFeatures = () => {
 			[name]: type === "date" ? formatDate(value) : value, // Format date fields if necessary
 		}));
 	};
+
 	const isFormValid = () => {
-		return (
-			formData?.fullName?.trim() &&
-			formData?.dateOfbirth?.trim() &&
-			formData?.biography &&
-			formData?.dateOfdeath?.trim() &&
-			imageUrl
-		);
+		return formData.fullName.trim() && formData.biography.trim();
 	};
+
 	const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+
 		if (!isFormValid()) {
 			toast({
 				title: "Invalid Form",
@@ -93,26 +112,37 @@ const useEditAuthorFeatures = () => {
 			});
 			return;
 		}
-		updateAuthorById.mutate({
-			...author,
+
+		const payload = {
 			fullName: formData.fullName,
 			dateOfbirth: formatDate(formData.dateOfbirth),
 			biography: formData.biography,
 			dateOfdeath: formatDate(formData.dateOfdeath),
 			imgUrl: imageUrl,
-		});
+		};
+
+		if (authorId) {
+			updateAuthorById.mutate({
+				...author,
+				...payload,
+			});
+		} else {
+			createAuthor.mutate(payload);
+		}
+
 		navigate("/dashboard/authors");
 	};
+
 	return {
-		preview,
-		formData,
-		isLoading,
-		isError,
-		onInputChange,
 		selectImageHandler,
+		onInputChange,
 		isFormValid,
-		uploading,
 		onSubmit,
+		imageUrl,
+		preview,
+		uploading,
+		formData,
+		loading,
 	};
 };
-export default useEditAuthorFeatures;
+export default useCreateAuthorFeatures;

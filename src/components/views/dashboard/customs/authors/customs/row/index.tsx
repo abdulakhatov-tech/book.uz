@@ -45,9 +45,7 @@ const AuthorRow: React.FC<AuthorRowPropsI> = ({ author, index }) => {
 				</div>
 				{author.fullName}
 			</TableCell>
-			<TableCell>{author?.audioBookCount || 0}</TableCell>
 			<TableCell>{author?.bookCount || 0}</TableCell>
-			<TableCell>{author?.ebookCount || 0}</TableCell>
 			<TableCell>
 				{author.dateOfbirth ? formatDate(author?.dateOfbirth) : "..."}
 			</TableCell>

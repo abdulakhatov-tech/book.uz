@@ -6,6 +6,7 @@ import { FaSort } from "react-icons/fa";
 import {
 	Table,
 	TableBody,
+	TableCaption,
 	TableHead,
 	TableHeader,
 	TableRow,
@@ -40,6 +41,9 @@ const DashboardBooks: React.FC = () => {
 				</Link>
 			</div>
 			<Table>
+				<TableCaption>
+					{!isLoading && !isError && !sortedBooks?.length ? "No books" : ""}
+				</TableCaption>
 				<TableHeader>
 					<TableRow>
 						<TableHead className="w-[50px]">№</TableHead>
