@@ -175,6 +175,17 @@
 			"description_1": "Books available for sale by title",
 			"description_2": "Books available for sale",
 			"description_3": "Number of branches and dealers"
+		},
+		"new_age_library": {
+			"more_books": "More books",
+			"title": "New Age Library"
+		},
+		"newly_published_books": {
+			"title": "Newly published books"
+		},
+		"new_arrivals": {
+			"title": "New arrivals",
+			"currency": "sum"
 		}
 	},
 	"footer": {

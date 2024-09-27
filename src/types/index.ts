@@ -103,7 +103,7 @@ export interface BookI {
 	barcode: string;
 	description: string;
 	imgUrl: string;
-	additionalImgs: string[];
+	additionalImages: string[];
 	hasDiscount: boolean;
 	link: string;
 	rateCount: number;

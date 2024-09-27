@@ -175,6 +175,17 @@
 			"description_1": "Книги, доступные для продажи по названию",
 			"description_2": "Книги, доступные для продажи",
 			"description_3": "Количество филиалов и дилеров"
+		},
+		"new_age_library": {
+			"more_books": "Больше книг",
+			"title": "Библиотека Нового Века"
+		},
+		"newly_published_books": {
+			"title": "Новоизданные книги"
+		},
+		"new_arrivals": {
+			"title": "Новые поступления",
+			"currency": "сум"
 		}
 	},
 	"footer": {

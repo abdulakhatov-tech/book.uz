@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   /* line-height: 1.5; */
-  font-weight: 400;
+  /* font-weight: 400; */
 
   /* color-scheme: light dark; */
 
@@ -130,4 +130,40 @@
 
 .custom-shadow {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.truncate-single-line {
+  white-space: nowrap; /* Prevents text from wrapping */
+  overflow: hidden; /* Hides text that overflows */
+  text-overflow: ellipsis; /* Adds "..." at the end of the truncated text */
+  max-width: 100%; /* Sets maximum width to prevent overflow */
+}
+
+
+.truncate-two-lines {
+  display: -webkit-box; /* Display as a webkit box to support line clamping */
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical; /* Ensure the box is vertically oriented */
+  overflow: hidden; /* Hides text that overflows */
+  text-overflow: ellipsis; /* Adds "..." at the end of the truncated text */
+  max-width: 100%; /* Sets maximum width to prevent overflow */
 }

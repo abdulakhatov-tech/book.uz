@@ -176,6 +176,17 @@
 			"description_1": "Nomdagi kitoblar sotuvda mavjud",
 			"description_2": "Kitoblar sotuvda mavjud",
 			"description_3": "Filial va dillerlar soni"
+		},
+		"new_age_library": {
+			"more_books": "Ko'proq kitoblar",
+			"title": "Yangi davr kutubxonasi"
+		},
+		"newly_published_books": {
+			"title": "Yangi chop etilgan kitoblar"
+		},
+		"new_arrivals": {
+			"title": "Yangi kelganlar",
+			"currency": "so'm"
 		}
 	},
 	"footer": {
