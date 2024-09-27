@@ -40,7 +40,6 @@ const NewAgeLibrary: React.FC = () => {
 							))}
 				</div>
 
-				{/* Conditionally render buttons only if there are more than 11 books */}
 				{books.length > 11 && (
 					<div className="flex justify-center mt-8 gap-4">
 						<MoreBooks onClick={handleMoreBooks} />
