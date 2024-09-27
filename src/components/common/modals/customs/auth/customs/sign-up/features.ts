@@ -1,7 +1,8 @@
-import { useAppDispatch } from "@/hooks/useRedux";
-import { toggleAuthModalVisibility } from "@/redux/slices/modals";
 import axios from "axios";
 import { useState } from "react";
+
+import { useAppDispatch } from "@/hooks/useRedux";
+import { toggleAuthModalVisibility } from "@/redux/slices/modals";
 
 const useSignUpFeatures = () => {
 	const dispatch = useAppDispatch();

@@ -1,7 +1,7 @@
 import axios from "axios";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useSignIn from "react-auth-kit/hooks/useSignIn";
-import { useEffect, useState } from "react";
 
 import { toast } from "@/components/ui/use-toast";
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
@@ -13,6 +13,7 @@ const useVerifyOTPFeatures = () => {
 	const dispatch = useAppDispatch();
 	const { authModalVisibility } = useAppSelector((state) => state.modal);
 	const [timeRemaining, setTimeRemaining] = useState<number | null>(null);
+
 	const [loading, setLoading] = useState<boolean>(false);
 	const [otpNumber, setOtpNumber] = useState<string | null>(null);
 
@@ -46,6 +47,7 @@ const useVerifyOTPFeatures = () => {
 					},
 				);
 				if (response?.data?.data?.token) {
+					console.log(response?.data?.data, '--data--')
 					const signedIn = signIn({
 						auth: {
 							token: response?.data?.data?.token,

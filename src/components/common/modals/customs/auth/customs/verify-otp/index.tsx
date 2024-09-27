@@ -1,73 +1,87 @@
-import React from "react";
+import type { FC } from "react";
+import { useTranslation } from "react-i18next";
 
 import { formatTime } from "@/helpers";
 import { REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp";
 import {
-	InputOTP,
-	InputOTPGroup,
-	InputOTPSlot,
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSlot,
 } from "@/components/ui/input-otp";
 import { Button } from "@/components/ui/button";
 import useVerifyOTPFeatures from "./features";
+import LoadingSpinner from "@/tools/loading-spinner";
 
-const VerifyOtp: React.FC = () => {
-	const {
-		timeRemaining,
-		loading,
-		handleResend,
-		handleVerify,
-		setOtpNumber,
-		data,
-	} = useVerifyOTPFeatures();
+const VerifyOtp: FC = () => {
+  const { t } = useTranslation();
+  const {
+    timeRemaining,
+    loading,
+    handleResend,
+    handleVerify,
+    setOtpNumber,
+    data,
+  } = useVerifyOTPFeatures();
 
-	return (
-		<div className="w-full flex flex-col items-center gap-2">
-			{/* OTP Code and Countdown */}
-			{timeRemaining !== null && timeRemaining > 0 ? (
-				<p>{formatTime(timeRemaining)}</p>
-			) : (
-				<p>00:00</p>
-			)}
+  return (
+    <form className='w-full flex flex-col items-center gap-2'>
+      {/* Countdown Timer */}
+      <p>
+        {timeRemaining !== null && timeRemaining > 0
+          ? formatTime(timeRemaining)
+          : "00:00"}
+      </p>
 
-			{/* OTP Input Fields */}
-			<InputOTP
-				maxLength={6}
-				pattern={REGEXP_ONLY_DIGITS_AND_CHARS}
-				className="bg-[crimson] w-full"
-				onChange={(e: string) => setOtpNumber(e)}
-			>
-				<InputOTPGroup className="w-full">
-					{Array.from({ length: 6 }, (_, index) => (
-						<InputOTPSlot
-							key={index}
-							index={index}
-							className="w-[50px] h-[50px] text-[18px]"
-						/>
-					))}
-				</InputOTPGroup>
-			</InputOTP>
-			<span>
-				{timeRemaining !== null && timeRemaining > 0
-					? data?.otpCode
-					: "OTP code expired"}
-			</span>
-			<Button
-				onClick={handleVerify}
-				disabled={loading}
-				type="submit"
-				variant="default"
-				className="bg-[#EF7F1A] w-full mt-6"
-			>
-				{loading ? "Verifying..." : "Verify"}
-			</Button>
-			{timeRemaining === null ||
-				(timeRemaining <= 0 && (
-					<Button variant="ghost" className="w-full" onClick={handleResend}>
-						Resend
-					</Button>
-				))}
-		</div>
-	);
+      {/* OTP Input Fields */}
+      <InputOTP
+        maxLength={6}
+        pattern={REGEXP_ONLY_DIGITS_AND_CHARS}
+        className='w-full'
+        onChange={(e: string) => setOtpNumber(e)}
+      >
+        <InputOTPGroup className='w-full grid grid-cols-6 gap-1 md:gap-3'>
+          {Array.from({ length: 6 }, (_, index) => (
+            <InputOTPSlot
+              key={index}
+              index={index}
+              className='max-w-[40px] md:max-w-[60px] h-[40px] md:h-[45px] text-[18px] border'
+            />
+          ))}
+        </InputOTPGroup>
+      </InputOTP>
+
+      {/* Display OTP or expired message */}
+      <span>
+        {timeRemaining !== null && timeRemaining > 0
+          ? data?.otpCode
+          : t("auth.otp_code_expired")}
+      </span>
+
+      {/* Verify Button */}
+      <Button
+        onClick={handleVerify}
+        disabled={loading}
+        type='submit'
+        variant='default'
+        className='bg-[#EF7F1A] w-full mt-4'
+      >
+        {loading ? (
+          <div className='flex items-center gap-2'>
+            <LoadingSpinner /> {t("auth.verifying")}
+          </div>
+        ) : (
+          t("auth.verify")
+        )}
+      </Button>
+
+      {/* Resend Button */}
+      {(timeRemaining === null || timeRemaining <= 0) && (
+        <Button type='button' variant='ghost' className='w-full' onClick={handleResend}>
+          {t("auth.resend")}
+        </Button>
+      )}
+    </form>
+  );
 };
 
 export default VerifyOtp;

@@ -16,11 +16,15 @@ const createAxiosInstance = (token: any, signOut: any) => {
 		(request) => {
 			if (token) {
 				if (!token.startsWith("Bearer ")) {
+					console.log('=====')
 					request.headers["Authorization"] = `Bearer ${token}`; // Add Bearer token
 				} else {
+					console.log('++++')
+
 					request.headers["Authorization"] = token; // Use the token as it is
 				}
 			}
+			console.log(request,' request')
 			return request;
 		},
 		(error) => {
