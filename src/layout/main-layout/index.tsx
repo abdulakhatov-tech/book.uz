@@ -1,23 +1,23 @@
 import type React from "react";
 import { Outlet } from "react-router-dom";
 
-import ModalVisibility from "@/components/common/modals";
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { Toaster } from "@/components/ui/toaster";
-import Footer from "@/components/footer";
+import ModalVisibility from "@/components/common/modals";
 
 const MainLayout: React.FC = () => {
-	return (
-		<>
-			<Header />
-			<main>
-				<Outlet />
-			</main>
-			<Footer />
-			<ModalVisibility />
-			<Toaster />
-		</>
-	);
+  return (
+    <div className="flex flex-col min-h-[100vh]">
+      <Header />
+      <main className="flex-grow">
+        <Outlet />
+      </main>
+      <Footer />
+      <ModalVisibility />
+      <Toaster />
+    </div>
+  );
 };
 
 export default MainLayout;

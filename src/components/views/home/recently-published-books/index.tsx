@@ -54,6 +54,10 @@ const RecentlyPublishedBooks: React.FC = () => {
 				</h3>
 
 				<Carousel
+				opts={{
+					align: "start",
+					loop: true,
+				}}
 					plugins={[Autoplay({ delay: 14000, stopOnInteraction: false })]}
 					className="relative"
 				>
