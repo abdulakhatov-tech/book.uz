@@ -4,7 +4,7 @@ import useCategoriesService from "@/services/categories";
 const useRecentlyPublishedBooksFeatures = () => {
 	const { getRecentlyPublishedBooks } = useCategoriesService();
 	const { isLoading, isError, data } = getRecentlyPublishedBooks;
-	const isOnline = useOnlineStatus()
+	const isOnline = useOnlineStatus();
 
 	const loading = isLoading || isError || !isOnline;
 
