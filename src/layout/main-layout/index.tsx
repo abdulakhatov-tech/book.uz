@@ -6,6 +6,7 @@ import Header from "@/components/header";
 import { Toaster } from "@/components/ui/toaster";
 import ModalVisibility from "@/components/common/modals";
 import ScrollRestoration from "@/tools/scroll-restoration";
+import BackToTop from "@/tools/back-to-top";
 
 const MainLayout: React.FC = () => {
 	return (
@@ -18,6 +19,7 @@ const MainLayout: React.FC = () => {
 			<ModalVisibility />
 			<Toaster />
 			<ScrollRestoration />
+			<BackToTop />
 		</div>
 	);
 };
