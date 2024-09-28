@@ -49,7 +49,7 @@ const NewArrivals: React.FC = () => {
 	return (
 		<Section
 			id="new-arrivals"
-			className="bg-[#F0F0F0] py-[16px] sm:py-[22px] md:py-[28px]"
+			className="bg-[#F0F0F0] py-[30px] md:py-[35px] lg:py-[40px]"
 		>
 			<Container>
 				<h3 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] font-semibold leading-[34.13px] text-black">
