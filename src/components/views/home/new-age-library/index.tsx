@@ -15,41 +15,48 @@ const BOOK_DISPLAY_LIMIT = 11;
 const SKELETON_COUNT = 12;
 
 const NewAgeLibrary: FC = () => {
-  const { t } = useTranslation();
-  const { books, loading, booksCount, handleMoreBooks, handleLessBooks } =
-    useNewAgeLibraryFeatures();
+	const { t } = useTranslation();
+	const { books, loading, booksCount, handleMoreBooks, handleLessBooks } =
+		useNewAgeLibraryFeatures();
 
-  const hasBooks = books && books.length > 0;
-  const showLessBooksButton = booksCount > BOOK_DISPLAY_LIMIT;
-  const showMoreBooksControls = hasBooks && books.length > BOOK_DISPLAY_LIMIT;
+	const hasBooks = books && books.length > 0;
+	const showLessBooksButton = booksCount > BOOK_DISPLAY_LIMIT;
+	const showMoreBooksControls = hasBooks && books.length > BOOK_DISPLAY_LIMIT;
 
-  return (
-    <Section
-      id="new-age-library"
-      className="bg-[#F0F0F0] py-[30px] md:py-[40px] lg:py-[50px] xl:py-[60px]"
-    >
-      <Container>
-        <Button className="bg-orange hover:bg-orange mb-6 md:mb-8">
-          {t("home.new_age_library.title")}
-        </Button>
+	return (
+		<Section
+			id="new-age-library"
+			className="bg-[#F0F0F0] py-[30px] md:py-[40px] lg:py-[50px] xl:py-[60px]"
+		>
+			<Container>
+				<Button className="bg-orange hover:bg-orange mb-6 md:mb-8">
+					{t("home.new_age_library.title")}
+				</Button>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:3 md:gap-4">
-          {loading
-            ? Array.from({ length: SKELETON_COUNT }, (_, idx) => <BookSkeleton key={idx} />)
-            : books?.map((book: BookI) => <ProductCard key={book._id} {...book} />)}
-        </div>
+				<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:3 md:gap-4">
+					{loading
+						? Array.from({ length: SKELETON_COUNT }, (_, idx) => (
+								<BookSkeleton key={idx} />
+							))
+						: books?.map((book: BookI) => (
+								<ProductCard key={book._id} {...book} />
+							))}
+				</div>
 
-        {showMoreBooksControls && (
-          <div className="flex justify-center mt-8 gap-4">
-            <MoreBooksButton onClick={handleMoreBooks} />
-            {showLessBooksButton && (
-              <MoreBooksButton title={t("home.new_age_library.less_books")} onClick={handleLessBooks} />
-            )}
-          </div>
-        )}
-      </Container>
-    </Section>
-  );
+				{showMoreBooksControls && (
+					<div className="flex justify-center mt-8 gap-4">
+						<MoreBooksButton onClick={handleMoreBooks} />
+						{showLessBooksButton && (
+							<MoreBooksButton
+								title={t("home.new_age_library.less_books")}
+								onClick={handleLessBooks}
+							/>
+						)}
+					</div>
+				)}
+			</Container>
+		</Section>
+	);
 };
 
 export default NewAgeLibrary;
