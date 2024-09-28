@@ -22,10 +22,10 @@ const FeaturedCard: React.FC<FeaturedCardI> = ({
 				</div>
 			</CardHeader>
 			<CardContent>
-				<CardTitle className="text-[20px] md:text-[22px] lg:text-[24px] font-semibold leading-[27px] text-[#107FE4] mb-2">
+				<CardTitle className="text-[20px] md:text-[22px] lg:text-[24px] font-semibold leading-[27px] text-blue mb-2">
 					{title}
 				</CardTitle>
-				<CardDescription className="text-[14px] lg:text-[16px] font-normal leading-[20.8px] text-[#107FE4]">
+				<CardDescription className="text-[14px] lg:text-[16px] font-normal leading-[20.8px] text-blue">
 					{description}
 				</CardDescription>
 			</CardContent>
