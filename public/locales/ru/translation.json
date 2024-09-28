@@ -211,6 +211,9 @@
 		"new_arrivals": {
 			"title": "Новые поступления",
 			"currency": "сум"
+		},
+		"news": {
+		  "title": "Новости"
 		}
 	},
 	"footer": {
