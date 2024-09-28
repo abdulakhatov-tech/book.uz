@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 
@@ -9,7 +10,6 @@ import { FaShoppingBasket } from "react-icons/fa";
 
 import { BookI } from "@/types";
 import { formatPrice } from "@/helpers";
-import { Link } from "react-router-dom";
 
 const RecentlyPublishedBookCard: React.FC<BookI> = ({
 	_id,
@@ -48,22 +48,24 @@ const RecentlyPublishedBookCard: React.FC<BookI> = ({
 	);
 
 	return (
-		<div className="flex gap-4 bg-secondary-blue rounded-[16px]">
-			<div className="relative -top-[30px] md:-top-[40px] left-[10px] md:left-[20px] max-w-[100px] md:max-w-[164px] max-h-[250px] w-full overflow-hidden rounded-[6px]">
-				{renderImages()}
-				<div className="absolute bottom-2 right-2 z-10 flex flex-col gap-1">
-					{renderActionButton(
-						<FaShoppingBasket className="text-[16px] md:text-[18px] text-black hover:text-white" />,
-					)}
-					{renderActionButton(
-						<Link to={`/books/details/${_id}`}>
-							<GrSearch className="text-[16px] md:text-[18px] text-black hover:text-white" />
-						</Link>,
-					)}
+		<div className="grid grid-cols-[130px_1fr] sm:grid-cols-[160px_1fr] md:grid-cols-[190px_1fr] bg-secondary-blue rounded-[16px] h-full max-w-[480px]">
+			<div className="relative">
+				<div className="md:absolute -top-[40px] left-[50%] md:-translate-x-[50%] bg-yellow-300 w-full max-w-[164px] h-full max-h-[226px]  overflow-hidden rounded-[6px]">
+					{renderImages()}
+					<div className="absolute bottom-2 right-2 z-10 flex flex-col gap-1">
+						{renderActionButton(
+							<FaShoppingBasket className="text-[16px] md:text-[18px] text-black hover:text-white" />,
+						)}
+						{renderActionButton(
+							<Link to={`/books/details/${_id}`}>
+								<GrSearch className="text-[16px] md:text-[18px] text-black hover:text-white" />
+							</Link>,
+						)}
+					</div>
 				</div>
 			</div>
-			<div className="w-full pl-0 pr-[10px] md:px-[18px] py-[14px] md:py-[16px]">
-				<h3 className="text-[14px] sm:text-[20px] md:text-[22px] font-semibold leading-[29.05px] text-blue truncate-two-lines">
+			<div className="w-full px-[12px] md:pl-0 md:pr-[18px] py-[14px] md:py-[16px]">
+				<h3 className="text-[16px] sm:text-[20px] md:text-[22px] font-semibold leading-[29.05px] text-blue truncate-two-lines">
 					{name}
 				</h3>
 				<h4 className="text-[12px] md:text-[16px] font-medium leading-[19.36px] text-black md:mt-2 mb-2 md:mb-4 truncate-single-line">

@@ -26,7 +26,7 @@ const NewAgeLibrary: FC = () => {
 	return (
 		<Section
 			id="new-age-library"
-			className="bg-[#F0F0F0] py-[30px] md:py-[40px] lg:py-[50px] xl:py-[60px]"
+			className="bg-[#F0F0F0] py-[30px] md:py-[35px] lg:py-[40px]"
 		>
 			<Container>
 				<Button className="bg-orange hover:bg-orange mb-6 md:mb-8">

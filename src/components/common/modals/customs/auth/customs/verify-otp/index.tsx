@@ -11,6 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import useVerifyOTPFeatures from "./features";
 import LoadingSpinner from "@/tools/loading-spinner";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const VerifyOtp: FC = () => {
 	const { t } = useTranslation();
@@ -40,13 +41,20 @@ const VerifyOtp: FC = () => {
 				onChange={(e: string) => setOtpNumber(e)}
 			>
 				<InputOTPGroup className="w-full grid grid-cols-6 gap-1 md:gap-3">
-					{Array.from({ length: 6 }, (_, index) => (
-						<InputOTPSlot
-							key={index}
-							index={index}
-							className="max-w-[40px] md:max-w-[60px] h-[40px] md:h-[45px] text-[18px] border"
-						/>
-					))}
+					{timeRemaining !== null && timeRemaining > 0
+						? Array.from({ length: 6 }, (_, index) => (
+								<InputOTPSlot
+									key={index}
+									index={index}
+									className="max-w-[40px] md:max-w-[60px] h-[40px] md:h-[45px] text-[18px] border"
+								/>
+							))
+						: Array.from({ length: 6 }, (_, index) => (
+								<Skeleton
+									key={index}
+									className="w-[40px] max-w-[40px] md:max-w-[60px] h-[40px] md:h-[45px] text-[18px] border"
+								/>
+							))}
 				</InputOTPGroup>
 			</InputOTP>
 
