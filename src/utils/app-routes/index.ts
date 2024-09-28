@@ -102,12 +102,12 @@ const useAppRoutes = () => {
 			isPrivate: true,
 			children: [
 				{
-                    _id: _id(),
-                    path: ":slug",
-                    Component:News,
-                    isPrivate: true,
-                },
-			]
+					_id: _id(),
+					path: ":slug",
+					Component: News,
+					isPrivate: true,
+				},
+			],
 		},
 		{
 			_id: _id(),
