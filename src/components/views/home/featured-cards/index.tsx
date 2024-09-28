@@ -8,24 +8,24 @@ import { FeaturedCard, LoadingSkeleton } from "./customs";
 import useLoading from "@/utils/custom-loading";
 
 const FeaturedCards: FC = () => {
-  const { featuredCards } = MockData();
-  const { isLoading } = useLoading();
+	const { featuredCards } = MockData();
+	const { isLoading } = useLoading();
 
-  return (
-    <Section id='featured-cards' className='bg-white pt-3 md:pt-5 pb-20'>
-      <Container>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6'>
-          {isLoading ? (
-            <LoadingSkeleton />
-          ) : (
-            featuredCards.map((item: FeaturedCardI) => (
-              <FeaturedCard key={item._id} {...item} />
-            ))
-          )}
-        </div>
-      </Container>
-    </Section>
-  );
+	return (
+		<Section id="featured-cards" className="bg-white pt-3 md:pt-5 pb-20">
+			<Container>
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+					{isLoading ? (
+						<LoadingSkeleton />
+					) : (
+						featuredCards.map((item: FeaturedCardI) => (
+							<FeaturedCard key={item._id} {...item} />
+						))
+					)}
+				</div>
+			</Container>
+		</Section>
+	);
 };
 
 export default FeaturedCards;
