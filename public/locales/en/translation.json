@@ -202,6 +202,7 @@
 		},
 		"new_age_library": {
 			"more_books": "More books",
+			"less_books": "Less books",
 			"title": "New Age Library"
 		},
 		"newly_published_books": {

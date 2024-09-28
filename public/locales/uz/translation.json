@@ -203,6 +203,7 @@
 		},
 		"new_age_library": {
 			"more_books": "Ko'proq kitoblar",
+			"less_books": "Kamroq kitoblar",
 			"title": "Yangi davr kutubxonasi"
 		},
 		"newly_published_books": {

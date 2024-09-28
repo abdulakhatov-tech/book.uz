@@ -202,6 +202,7 @@
 		},
 		"new_age_library": {
 			"more_books": "Больше книг",
+			"less_books": "Меньше книг",
 			"title": "Библиотека Нового Века"
 		},
 		"newly_published_books": {
