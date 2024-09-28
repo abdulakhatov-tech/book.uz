@@ -7,9 +7,9 @@ import Container from "@/layout/container";
 
 const Intro: React.FC = () => {
 	return (
-		<Section id="genres">
+		<Section id="intro" className="pt-[8px] pb-[10px] md:pb-[20px]">
 			<Container>
-				<div className="flex gap-[25px] h-full max-h-[448px]">
+				<div className="flex gap-[24px] h-full max-h-[448px]">
 					<Genres />
 					<Banners />
 				</div>

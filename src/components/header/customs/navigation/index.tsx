@@ -24,12 +24,12 @@ const HeaderNavigation: FC = () => {
 	};
 
 	return (
-		<div className="py-3 flex items-center justify-between gap-4">
+		<div className="mt-2 md:mt-3 lg:mt-4 flex items-center justify-between gap-4">
 			{/* Mobile Menu Button */}
 			<CategoryDropdown>
 				<Button
 					onClick={handleCategoryDropdown}
-					className="flex gap-2 lg:hidden bg-secondary-blue hover:bg-secondary-blue text-blue cursor-pointer"
+					className="flex gap-2 lg:hidden bg-secondary-blue hover:bg-secondary-blue text-blue cursor-pointer "
 					aria-label="Open Categories"
 				>
 					<img
@@ -39,8 +39,9 @@ const HeaderNavigation: FC = () => {
 								? "Close categories menu"
 								: "Open categories menu"
 						}
+						className="w-[20px]"
 					/>
-					<span className="hidden sm:block text-[16px] font-semibold">
+					<span className="hidden sm:block text-[14px] md:text-[16px] font-semibold">
 						{t("header.categories")}
 					</span>
 				</Button>

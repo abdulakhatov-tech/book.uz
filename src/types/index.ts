@@ -19,19 +19,16 @@ export type RoutePropT = {
 };
 
 export interface GenreI {
-	_id?: string;
-	audioBookCount: number;
-	bookCount: number;
-	ebookCount: number;
+	_id: string;
 	name: string;
-	imgUrl?: string | null;
-	childCount?: number;
-	parentId?: string | null;
+	bookCount: number;
+	imgUrl: string | null;
 	createdAt?: Date;
+	updatedAt?: Date;
 }
 
 export interface BannerI {
-	_id?: string;
+	_id: string;
 	title: string;
 	imgUrl: string;
 	link: string;

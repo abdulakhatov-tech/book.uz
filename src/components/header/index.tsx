@@ -5,7 +5,7 @@ import { HeaderNavigation, TopBar } from "./customs";
 
 const Header: FC = () => {
 	return (
-		<header className="mt-[24px]">
+		<header className="pt-[10px] pb-2">
 			<Container>
 				<TopBar />
 				<HeaderNavigation />

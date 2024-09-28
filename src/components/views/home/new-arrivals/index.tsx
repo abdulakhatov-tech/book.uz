@@ -57,6 +57,10 @@ const NewArrivals: React.FC = () => {
 				</h3>
 
 				<Carousel
+					opts={{
+						align: "start",
+						loop: true,
+					}}
 					plugins={[Autoplay({ delay: 4000, stopOnInteraction: false })]}
 					className="relative"
 				>

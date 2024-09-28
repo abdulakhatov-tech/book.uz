@@ -61,6 +61,7 @@ export default {
 				"secondary-black": "#171717",
 				crimson: "crimson",
 				borderColor: "#d9d9d9",
+				"skeleton-color": "#E2E5E9",
 			},
 		},
 	},
