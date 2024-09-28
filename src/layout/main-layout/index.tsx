@@ -7,17 +7,17 @@ import { Toaster } from "@/components/ui/toaster";
 import ModalVisibility from "@/components/common/modals";
 
 const MainLayout: React.FC = () => {
-  return (
-    <div className="flex flex-col min-h-[100vh]">
-      <Header />
-      <main className="flex-grow">
-        <Outlet />
-      </main>
-      <Footer />
-      <ModalVisibility />
-      <Toaster />
-    </div>
-  );
+	return (
+		<div className="flex flex-col min-h-[100vh]">
+			<Header />
+			<main className="flex-grow">
+				<Outlet />
+			</main>
+			<Footer />
+			<ModalVisibility />
+			<Toaster />
+		</div>
+	);
 };
 
 export default MainLayout;

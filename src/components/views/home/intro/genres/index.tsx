@@ -6,29 +6,27 @@ import useOnlineStatus from "@/hooks/useOnlineStatus";
 import { GenreItem, LoadingSkeleton } from "./customs";
 
 const Genres: FC = () => {
-  const { genres } = useGenresService();
-  const isOnline = useOnlineStatus();
+	const { genres } = useGenresService();
+	const isOnline = useOnlineStatus();
 
-  const { isLoading, isError, data: genresData } = genres;
-  const loading = !isOnline || isLoading || isError;
+	const { isLoading, isError, data: genresData } = genres;
+	const loading = !isOnline || isLoading || isError;
 
-  if (!genresData?.length) return null;
+	if (!genresData?.length) return null;
 
-  return (
-    <div
-      className='hidden lg:block min-w-[287px] max-w-[287px] w-[287px]  bg-[#F6F6F6] rounded-[8px] p-2 '
-    >
-      <ul className='flex flex-col gap-2 text-[#1E1E1E] h-full thin-scrollbar'>
-        {loading ? (
-          <LoadingSkeleton />
-        ) : (
-          genresData.map((item: GenreI, idx: number) => (
-            <GenreItem key={item?._id ?? idx} {...item} />
-          ))
-        )}
-      </ul>
-    </div>
-  );
+	return (
+		<div className="hidden lg:block min-w-[287px] max-w-[287px] w-[287px]  bg-[#F6F6F6] rounded-[8px] p-2 ">
+			<ul className="flex flex-col gap-2 text-[#1E1E1E] h-full thin-scrollbar">
+				{loading ? (
+					<LoadingSkeleton />
+				) : (
+					genresData.map((item: GenreI, idx: number) => (
+						<GenreItem key={item?._id ?? idx} {...item} />
+					))
+				)}
+			</ul>
+		</div>
+	);
 };
 
 export default Genres;

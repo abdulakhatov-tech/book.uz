@@ -1,1 +1,1 @@
-export { default as BannerItem } from './banner-item';
+export { default as BannerItem } from "./banner-item";
