@@ -15,7 +15,7 @@ import Container from "@/layout/container";
 import { BookI } from "@/types";
 import useRecentlyPublishedBooksFeatures from "./features";
 import RecentlyPublishedBookCard from "@/generic/recently-published-book-card";
-import { LoadingSkeleton } from "./customs";
+import { Banners, LoadingSkeleton } from "./customs";
 
 const RecentlyPublishedBooks: React.FC = () => {
 	const { t } = useTranslation();
@@ -65,6 +65,7 @@ const RecentlyPublishedBooks: React.FC = () => {
 						<CarouselNext className="-right-6" />
 					</div>
 				</Carousel>
+				<Banners />
 			</Container>
 		</Section>
 	);

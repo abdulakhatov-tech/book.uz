@@ -1,17 +1,17 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import Container from "@/layout/container";
 
 import logo from "@/assets/icons/logo-2.svg";
+import appStore from "@/assets/images/app-store.png";
 import phoneIcon from "@/assets/icons/phone-icon.svg";
 import emailIcon from "@/assets/icons/email-icon.svg";
+import googlePlay from "@/assets/images/google-play.png";
+import telegramIcon from "@/assets/icons/telegram-icon.svg";
 import locationIcon from "@/assets/icons/location-icon.svg";
 import facebookIcon from "@/assets/icons/facebook-icon.svg";
 import instagramIcon from "@/assets/icons/instagram-icon.svg";
-import telegramIcon from "@/assets/icons/telegram-icon.svg";
-import appStore from "@/assets/images/app-store.png";
-import googlePlay from "@/assets/images/google-play.png";
-import { useTranslation } from "react-i18next";
 
 const Footer: React.FC = () => {
 	const { t } = useTranslation();
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
 						<img src={logo} alt="Book.uz logo" />
 						{/* Tagline */}
 						<h4 className="text-white text-lg lg:text-xl italic font-normal mt-5 mb-3">
-							Kitob – eng yaxshi sovg'a
+							{t('header.book_is_best_prize')}
 						</h4>
 						<p className="text-[14px] font-normal leading-[18.2px] text-white max-w-[236px]">
 							BOOK.UZ - {t("footer.largest_shop")}

@@ -10,6 +10,13 @@ import bannerImg4 from "@/assets/images/turkiston.png";
 import bannerImg5 from "@/assets/images/hayotga-qayt.png";
 import bannerImg6 from "@/assets/images/sivilizatsiyalar-toqnashuvi-va-yangi-dunyo-tartibi.png";
 
+// banners 2
+import banner2Img1 from '@/assets/images/banner-1.jpg'
+import banner2Img2 from '@/assets/images/banner-2.jpg'
+import banner2Img3 from '@/assets/images/banner-3.jpg'
+import banner2Img4 from '@/assets/images/banner-4.jpg'
+import banner2Img5 from '@/assets/images/banner-5.jpg'
+
 // featuredCards icons
 import featuredCardsIcon1 from "@/assets/icons/fast.svg";
 import featuredCardsIcon2 from "@/assets/icons/book.svg";
@@ -83,6 +90,29 @@ export const banners: BannerI[] = [
 		type: 10,
 	},
 ];
+
+export const banners_2 = [
+	{
+		_id: "1",
+		"imgUrl": banner2Img1,
+	},
+	{
+		_id: "2",
+        "imgUrl": banner2Img2,
+	},
+	{
+		_id: "3",
+        "imgUrl": banner2Img3,
+	},
+	{
+		_id: "4",
+        "imgUrl": banner2Img4,
+	},
+	{
+		_id: "5",
+        "imgUrl": banner2Img5,
+	}
+]
 
 export const MockData = () => {
 	const _id = useId();
