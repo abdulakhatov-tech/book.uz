@@ -212,6 +212,9 @@
 		"new_arrivals": {
 			"title": "Yangi kelganlar",
 			"currency": "so'm"
+		},
+		"news": {
+			"title": "Yangiliklar"
 		}
 	},
 	"footer": {

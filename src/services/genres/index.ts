@@ -16,6 +16,12 @@ const useGenresService = () => {
 			const response = await axios.get("/genres");
 			return response.data?.data || [];
 		},
+		onError: (err: any) => {
+			toast({
+				title: "Error fetching news",
+				description: err.message,
+			});
+		},
 	});
 
 	const getGenreById = useQueryHandler({

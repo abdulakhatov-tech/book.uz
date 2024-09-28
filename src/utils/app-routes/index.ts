@@ -99,7 +99,15 @@ const useAppRoutes = () => {
 			_id: _id(),
 			path: "/news",
 			Component: News,
-			isPrivate: false,
+			isPrivate: true,
+			children: [
+				{
+					_id: _id(),
+					path: ":slug",
+					Component: News,
+					isPrivate: true,
+				},
+			],
 		},
 		{
 			_id: _id(),

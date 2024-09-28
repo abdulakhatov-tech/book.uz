@@ -211,6 +211,9 @@
 		"new_arrivals": {
 			"title": "New arrivals",
 			"currency": "sum"
+		},
+		"news": {
+			"title": "News"
 		}
 	},
 	"footer": {

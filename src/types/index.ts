@@ -109,3 +109,17 @@ export interface BookI {
 	createdAt: string;
 	updatedAt: string;
 }
+
+export interface NewsI {
+	title: string;
+	content: string;
+	imgUrl: string;
+	createdAt: Date;
+	updatedAt: Date;
+	isRead: number;
+	readCount: number;
+	type: "news" | "newBook";
+	link?: string;
+	book?: any;
+	_id: string;
+}

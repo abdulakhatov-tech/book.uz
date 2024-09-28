@@ -5,6 +5,7 @@ import Statistics from "./statistics";
 import NewAgeLibrary from "./new-age-library";
 import RecentlyPublishedBooks from "./recently-published-books";
 import NewArrivals from "./new-arrivals";
+import News from "./news";
 
 const Home: React.FC = () => {
 	return (
@@ -15,6 +16,7 @@ const Home: React.FC = () => {
 			<RecentlyPublishedBooks />
 			<NewArrivals />
 			<Statistics />
+			<News />
 		</>
 	);
 };
