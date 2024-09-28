@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
 						<img src={logo} alt="Book.uz logo" />
 						{/* Tagline */}
 						<h4 className="text-white text-lg lg:text-xl italic font-normal mt-5 mb-3">
-							{t('header.book_is_best_prize')}
+							{t("header.book_is_best_prize")}
 						</h4>
 						<p className="text-[14px] font-normal leading-[18.2px] text-white max-w-[236px]">
 							BOOK.UZ - {t("footer.largest_shop")}
