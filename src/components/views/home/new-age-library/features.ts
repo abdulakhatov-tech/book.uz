@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 
 import { BookI } from "@/types";
-import useCategoriesService from "@/services/categories";
+// import useCategoriesService from "@/services/categories";
+import useSectionLazyLoader from "../../../../services/section-lazy-loader";
 
 const useNewAgeLibraryFeatures = () => {
-	const { getNewAgeLibrary } = useCategoriesService();
+	// const { getNewAgeLibrary } = useCategoriesService();
+	const { newAgeLibraryBooks, newAgeLibraryBooksRef} = useSectionLazyLoader();
 	const [books, setBooks] = useState<BookI[]>([]);
 	const [booksCount, setBooksCount] = useState<number>(11); // Default to at least 11
 
-	const { isLoading, isError, data } = getNewAgeLibrary;
+	const { isLoading, isError, data } = newAgeLibraryBooks;
 	const loading = isLoading || isError;
 
 	useEffect(() => {
@@ -27,6 +29,7 @@ const useNewAgeLibraryFeatures = () => {
 	};
 
 	return {
+		newAgeLibraryBooksRef,
 		books,
 		loading,
 		booksCount,

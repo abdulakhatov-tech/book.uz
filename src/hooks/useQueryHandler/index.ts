@@ -20,6 +20,7 @@ const useQueryHandler = ({
 	staleTime,
 	select,
 	refetchInterval,
+	enabled
 }: QueryHandlerProps) => {
 	const queryRequest = useQuery({
 		queryKey,
@@ -32,6 +33,7 @@ const useQueryHandler = ({
 		staleTime,
 		select,
 		refetchInterval,
+		enabled
 	});
 
 	return { ...queryRequest };
