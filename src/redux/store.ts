@@ -1,10 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { modal, sidebar } from "./slices";
+import { columnCounter, modal, sidebar } from "./slices";
 
 export const store = configureStore({
 	reducer: {
 		modal,
 		sidebar,
+		columnCounter,
 	},
 });
 

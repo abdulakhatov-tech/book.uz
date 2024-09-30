@@ -289,10 +289,10 @@ export const MockData = () => {
 			label: t("dashboard.books.language_type.ru"),
 			value: "ru",
 		},
-		{
-			label: t("dashboard.books.language_type.tr"),
-			value: "tr",
-		},
+		// {
+		// 	label: t("dashboard.books.language_type.tr"),
+		// 	value: "tr",
+		// },
 	];
 
 	const categories = [

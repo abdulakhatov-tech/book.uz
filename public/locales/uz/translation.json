@@ -1,4 +1,22 @@
 {
+	"books": {
+		"title": "Kitoblar",
+		"show": "Ko'rsatish",
+		"sort_by": "Saralash",
+		"new_books": "Yangi kitoblar",
+		"cheaper": "Arzonroq",
+		"more_expensive": "Qimmatroq",
+		"reyting": "Reytingi yuqori",
+		"genres": "Janrlar",
+		"search": "Qidirish",
+		"price": "Narx",
+		"sum": "so'm",
+		"languages": "Tillari",
+		"uz": "O'zbek",
+		"en": "Ingliz",
+		"ru": "Rus",
+		"authors": "Mualliflar"
+	},
 	"auth": {
 		"sign_in_title": "Telefon raqamingizni kiriting",
 		"sign_up_title": "Ro'yxatdan o'tish",

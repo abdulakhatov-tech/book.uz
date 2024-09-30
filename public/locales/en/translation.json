@@ -1,4 +1,22 @@
 {
+	"books": {
+		"title": "Books",
+		"show": "Show",
+		"sort_by": "Sort By",
+		"new_books": "New Books",
+		"cheaper": "Cheaper",
+		"more_expensive": "More expensive",
+		"reyting": "Reyting is high",
+		"genres": "Genres",
+		"search": "Search",
+		"price": "Price",
+		"sum": "sum",
+		"languages": "languages",
+		"uz": "Uzbek",
+		"en": "English",
+		"ru": "Russian",
+		"authors": "Authors"
+	},
 	"auth": {
 		"sign_in_title": "Enter your phone number",
 		"sign_up_title": "Sign Up",
