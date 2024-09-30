@@ -6,6 +6,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import "react-photo-view/dist/react-photo-view.css";
+import 'rc-slider/assets/index.css';
 
 import { store } from "@/redux/store";
 import authStore from "@/config/auth";

@@ -1,233 +1,251 @@
 {
-	"auth": {
-		"sign_in_title": "Telefon raqamingizni kiriting",
-		"sign_up_title": "Ro'yxatdan o'tish",
-		"otp_title": "OTP ni tasdiqlash",
-		"sign_in_description": "Telefon raqamingizni kiriting va biz sizga bir martalik SMS-kod yuboramiz",
-		"otp_description": "Telefoningizga yuborilgan bir martalik SMS-kodni kiriting",
-		"not_have_account": "Akkountingiz yo'qmi",
-		"have_you_registered": "Ro'yhatdan o'tganmisiz",
-		"register_now": "Ro'yhatdan o'ting",
-		"login": "Kirish",
-		"name": "Ismingiz",
-		"surname": "Familiyangiz",
-		"phone_number": "Telefon raqamingiz",
-		"otp_code_expired": "OTP code expired",
-		"verify": "Verify",
-		"verifying": "Verifying",
-		"resend": "Resend"
-	},
-	"dashboard": {
-		"sidebar": {
-			"admins": "Administratorlar",
-			"users": "Foydalanuvchilar",
-			"products": "Mahsulotlar",
-			"orders": "Buyurtmalar",
-			"genres": "Janrlar",
-			"authors": "Mualliflar",
-			"categories": "Kategoriyalar",
-			"news": "Yangiliklar",
-			"logout": "Chiqish"
-		},
-		"users": {
-			"full_name": "To'liq ism",
-			"phone_number": "Telefon raqami",
-			"email": "Elektron pochta",
-			"role": "Roli",
-			"actions": "Harakatlar",
-			"promote": "Oshirish",
-			"demote": "Pasaytirish",
-			"admins": "Administratorlar",
-			"all_users": "Barcha foydalanuvchilar",
-			"list_users": "Oxirgi foydalanuvchilar ro'yxati"
-		},
-		"authors": {
-			"full_name": "To'liq ism",
-			"audio_books_count": "Audio kitoblar",
-			"books_count": "Kitoblar",
-			"ebooks_count": "Elektron kitoblar",
-			"date_of_birth": "Tug'ilgan sanasi",
-			"date_of_death": "Vafot etgan sanasi",
-			"created_at": "Yaratilgan sana",
-			"edit": "Tahrirlash",
-			"delete": "O'chirish",
-			"authors": "Mualliflar",
-			"create": "Muallif yaratish",
-			"list_authors": "Oxirgi mualliflar ro'yxati",
-			"biography": "Biografiya",
-			"image": "Rasm",
-			"uploading": "Yuklanmoqda",
-			"are_you_sure": "Ishonchingiz komilmi?",
-			"are_you_sure_description": "Muallifni o'chirish uning barcha bog'liq kitoblari va audiokitoblarini ham olib tashlaydi.",
-			"cancel": "Bekor qilish",
-			"continue": "Davom etish"
-		},
-		"genres": {
-			"title": "Janrlar",
-			"name": "Nomi",
-			"books_count": "Kitoblar",
-			"ebooks_count": "Elektron kitoblar",
-			"audio_books_count": "Audio kitoblar",
-			"child_count": "Bola janrlar soni",
-			"create": "Janr yaratish",
-			"uploading": "Yuklanmoqda",
-			"are_you_sure": "Ishonchingiz komilmi?",
-			"are_you_sure_description": "Janrni o'chirish uning barcha bog'liq kitoblari va audiokitoblarini ham olib tashlaydi.",
-			"cancel": "Bekor qilish",
-			"continue": "Davom etish",
-			"created_at": "Yaratilgan sana",
-			"edit": "Janrni tahrirlash"
-		},
+  "books": {
+    "title": "Kitoblar",
+    "show": "Ko'rsatish",
+    "sort_by": "Saralash",
+    "new_books": "Yangi kitoblar",
+    "cheaper": "Arzonroq",
+    "more_expensive": "Qimmatroq",
+    "reyting": "Reytingi yuqori",
+    "genres": "Janrlar",
+    "search": "Qidirish",
+    "price": "Narx",
+    "sum": "so'm",
+    "languages": "Tillari",
+    "uz": "O'zbek",
+    "en": "Ingliz",
+    "ru": "Rus",
+    "authors": "Mualliflar"
+  },
+  "auth": {
+    "sign_in_title": "Telefon raqamingizni kiriting",
+    "sign_up_title": "Ro'yxatdan o'tish",
+    "otp_title": "OTP ni tasdiqlash",
+    "sign_in_description": "Telefon raqamingizni kiriting va biz sizga bir martalik SMS-kod yuboramiz",
+    "otp_description": "Telefoningizga yuborilgan bir martalik SMS-kodni kiriting",
+    "not_have_account": "Akkountingiz yo'qmi",
+    "have_you_registered": "Ro'yhatdan o'tganmisiz",
+    "register_now": "Ro'yhatdan o'ting",
+    "login": "Kirish",
+    "name": "Ismingiz",
+    "surname": "Familiyangiz",
+    "phone_number": "Telefon raqamingiz",
+    "otp_code_expired": "OTP code expired",
+    "verify": "Verify",
+    "verifying": "Verifying",
+    "resend": "Resend"
+  },
+  "dashboard": {
+    "sidebar": {
+      "admins": "Administratorlar",
+      "users": "Foydalanuvchilar",
+      "products": "Mahsulotlar",
+      "orders": "Buyurtmalar",
+      "genres": "Janrlar",
+      "authors": "Mualliflar",
+      "categories": "Kategoriyalar",
+      "news": "Yangiliklar",
+      "logout": "Chiqish"
+    },
+    "users": {
+      "full_name": "To'liq ism",
+      "phone_number": "Telefon raqami",
+      "email": "Elektron pochta",
+      "role": "Roli",
+      "actions": "Harakatlar",
+      "promote": "Oshirish",
+      "demote": "Pasaytirish",
+      "admins": "Administratorlar",
+      "all_users": "Barcha foydalanuvchilar",
+      "list_users": "Oxirgi foydalanuvchilar ro'yxati"
+    },
+    "authors": {
+      "full_name": "To'liq ism",
+      "audio_books_count": "Audio kitoblar",
+      "books_count": "Kitoblar",
+      "ebooks_count": "Elektron kitoblar",
+      "date_of_birth": "Tug'ilgan sanasi",
+      "date_of_death": "Vafot etgan sanasi",
+      "created_at": "Yaratilgan sana",
+      "edit": "Tahrirlash",
+      "delete": "O'chirish",
+      "authors": "Mualliflar",
+      "create": "Muallif yaratish",
+      "list_authors": "Oxirgi mualliflar ro'yxati",
+      "biography": "Biografiya",
+      "image": "Rasm",
+      "uploading": "Yuklanmoqda",
+      "are_you_sure": "Ishonchingiz komilmi?",
+      "are_you_sure_description": "Muallifni o'chirish uning barcha bog'liq kitoblari va audiokitoblarini ham olib tashlaydi.",
+      "cancel": "Bekor qilish",
+      "continue": "Davom etish"
+    },
+    "genres": {
+      "title": "Janrlar",
+      "name": "Nomi",
+      "books_count": "Kitoblar",
+      "ebooks_count": "Elektron kitoblar",
+      "audio_books_count": "Audio kitoblar",
+      "child_count": "Bola janrlar soni",
+      "create": "Janr yaratish",
+      "uploading": "Yuklanmoqda",
+      "are_you_sure": "Ishonchingiz komilmi?",
+      "are_you_sure_description": "Janrni o'chirish uning barcha bog'liq kitoblari va audiokitoblarini ham olib tashlaydi.",
+      "cancel": "Bekor qilish",
+      "continue": "Davom etish",
+      "created_at": "Yaratilgan sana",
+      "edit": "Janrni tahrirlash"
+    },
 
-		"books": {
-			"title": "Kitoblar",
-			"create": "Kitob yaratish",
-			"name": "Nomi",
-			"genre": "Janr",
-			"author": "Muallif",
-			"amount": "Soni",
-			"book_price": "Kitob narxi",
-			"cover": "Muqova",
-			"ebooks_count": "Elektron kitoblar",
-			"created_at": "Yaratilgan sana",
-			"edit": "Kitobni tahrirlash",
-			"delete": "Kitobni o'chirish",
-			"list_books": "Oxirgi kitoblar ro'yxati",
-			"are_you_sure": "Ishonchingiz komilmi?",
-			"are_you_sure_description": "Kitobni o'chirish uning barcha bog'liq audiokitoblarini ham olib tashlaydi.",
-			"language": "Til",
-			"select_language": "Tilni tanlang",
-			"language_type": {
-				"en": "Ingliz",
-				"ru": "Rus",
-				"uz": "O'zbek",
-				"tr": "Turk"
-			},
-			"select_author": "Muallifni tanlang",
-			"select_cover_type": "Muqova turini tanlang",
-			"cover_type": {
-				"hard": "Qattiq",
-				"soft": "Yumshoq",
-				"digital": "Raqamli"
-			},
-			"discount": "Chegirma",
-			"number_of_pages": "Sahifalar soni",
-			"state": "Holat (joriy sharoit)",
-			"state_type": {
-				"new": "Yangi",
-				"old": "Eski",
-				"damaged": "Shikastlangan"
-			},
-			"select_state": "Holatni tanlang",
-			"year": "Yil",
-			"select_year": "Nashr yilini tanlang",
-			"barcode": "Barkod",
-			"description": "Tavsif",
-			"additional_images": "Qo'shimcha rasmlar",
-			"select_genre": "Janrni tanlang"
-		}
-	},
-	"profile": {
-		"nav": {
-			"dashboard": "Boshqaruv paneli",
-			"orders": "Buyurtmalar",
-			"products": "Mahsulotlar",
-			"settings": "Sozlamalar",
-			"logout": "Chiqish"
-		},
-		"logout": {
-			"title": "Ishonchingiz komilmi?",
-			"description": "Ushbu harakat sizni hisobingizdan chiqaradi va siz kirish sahifasiga yo'naltirilasiz. Davom etishni xohlaysizmi?",
-			"cancel": "Bekor qilish",
-			"ok": "Chiqish"
-		},
-		"settings": {
-			"title": "Sozlamalar",
-			"name": "Ismingiz",
-			"surname": "Familiyangiz",
-			"phoneNumber": "Telefon raqamingiz",
-			"email": "Emailingiz",
-			"bio": "Bio",
-			"save": "Saqlash"
-		},
-		"message": {
-			"image_title": "Taxrirlash xatosi!",
-			"image_description": "Rasmni yangilashda xatolik yuz berdi. Iltimos, keyinroq qayta urinib ko'ring.",
-			"profile_updated_title": "Profil yangilandi",
-			"profile_updated_description": "Profil rasmingiz muvaffaqiyatli yangilandi",
-			"failed_to_update": "Profilingizni yangilashda xatolik yuz berdi. Iltimos, qayta urinib ko'ring!"
-		}
-	},
-	"header": {
-		"locale": {
-			"uz": "Uz",
-			"en": "En",
-			"ru": "Ru"
-		},
-		"book_is_best_prize": "Kitob - eng yaxshi sovg'a",
-		"how_to_purchase": "Qanday harid qilinadi",
-		"category": {
-			"books": "Kitoblar",
-			"collections": "To‘plamlar",
-			"authors": "Mualliflar",
-			"discounts": "Chegirmalar"
-		},
-		"basket": "Savat",
-		"favourites": "Sevimlilar",
-		"profile": "Profil",
-		"categories": "Kategoriyalar"
-	},
-	"home": {
-		"featured_cards": {
-			"card_1": {
-				"title": "Yetkazib berish",
-				"description": "Buyurtmangizni O’zbekiston bo’ylab yetkazib beramiz"
-			},
-			"card_2": {
-				"title": "Keng tanlov",
-				"description": "Istalgan turdagi kitoblarni topishingiz mumkin"
-			},
-			"card_3": {
-				"title": "Oson to'lov",
-				"description": "Istalgan turdagi to‘lov asosida xarid qilishingiz mumkin"
-			},
-			"card_4": {
-				"title": "Himoyalangan tizim",
-				"description": "Sizning xavfsizligingiz uchun barcha ishlarni qilganmiz"
-			}
-		},
-		"statistics": {
-			"description_1": "Nomdagi kitoblar sotuvda mavjud",
-			"description_2": "Kitoblar sotuvda mavjud",
-			"description_3": "Filial va dillerlar soni"
-		},
-		"new_age_library": {
-			"more_books": "Ko'proq kitoblar",
-			"less_books": "Kamroq kitoblar",
-			"title": "Yangi davr kutubxonasi"
-		},
-		"newly_published_books": {
-			"title": "Yangi chop etilgan kitoblar"
-		},
-		"new_arrivals": {
-			"title": "Yangi kelganlar",
-			"currency": "so'm"
-		},
-		"news": {
-			"title": "Yangiliklar"
-		}
-	},
-	"footer": {
-		"largest_shop": "Respublikamizdagi eng katta kitob do'konlaridan biri",
-		"menu": "Menu",
-		"about_us": "Biz haqimizda",
-		"how_to_purchase": "Qanday xarid qilinadi",
-		"delivery": "Yetkazib berish",
-		"branch_and_diller": "Fillial va dillerlar",
-		"contacts": "Kontaktlar",
-		"location": "Chilonzor-8, Qatortol ko'chasi 60",
-		"downloading_applications": "Ilovalarni Yuklab Olish",
-		"public": "Ommaviy oferta",
-		"politic": "Politika"
-	}
+    "books": {
+      "title": "Kitoblar",
+      "create": "Kitob yaratish",
+      "name": "Nomi",
+      "genre": "Janr",
+      "author": "Muallif",
+      "amount": "Soni",
+      "book_price": "Kitob narxi",
+      "cover": "Muqova",
+      "ebooks_count": "Elektron kitoblar",
+      "created_at": "Yaratilgan sana",
+      "edit": "Kitobni tahrirlash",
+      "delete": "Kitobni o'chirish",
+      "list_books": "Oxirgi kitoblar ro'yxati",
+      "are_you_sure": "Ishonchingiz komilmi?",
+      "are_you_sure_description": "Kitobni o'chirish uning barcha bog'liq audiokitoblarini ham olib tashlaydi.",
+      "language": "Til",
+      "select_language": "Tilni tanlang",
+      "language_type": {
+        "en": "Ingliz",
+        "ru": "Rus",
+        "uz": "O'zbek",
+        "tr": "Turk"
+      },
+      "select_author": "Muallifni tanlang",
+      "select_cover_type": "Muqova turini tanlang",
+      "cover_type": {
+        "hard": "Qattiq",
+        "soft": "Yumshoq",
+        "digital": "Raqamli"
+      },
+      "discount": "Chegirma",
+      "number_of_pages": "Sahifalar soni",
+      "state": "Holat (joriy sharoit)",
+      "state_type": {
+        "new": "Yangi",
+        "old": "Eski",
+        "damaged": "Shikastlangan"
+      },
+      "select_state": "Holatni tanlang",
+      "year": "Yil",
+      "select_year": "Nashr yilini tanlang",
+      "barcode": "Barkod",
+      "description": "Tavsif",
+      "additional_images": "Qo'shimcha rasmlar",
+      "select_genre": "Janrni tanlang"
+    }
+  },
+  "profile": {
+    "nav": {
+      "dashboard": "Boshqaruv paneli",
+      "orders": "Buyurtmalar",
+      "products": "Mahsulotlar",
+      "settings": "Sozlamalar",
+      "logout": "Chiqish"
+    },
+    "logout": {
+      "title": "Ishonchingiz komilmi?",
+      "description": "Ushbu harakat sizni hisobingizdan chiqaradi va siz kirish sahifasiga yo'naltirilasiz. Davom etishni xohlaysizmi?",
+      "cancel": "Bekor qilish",
+      "ok": "Chiqish"
+    },
+    "settings": {
+      "title": "Sozlamalar",
+      "name": "Ismingiz",
+      "surname": "Familiyangiz",
+      "phoneNumber": "Telefon raqamingiz",
+      "email": "Emailingiz",
+      "bio": "Bio",
+      "save": "Saqlash"
+    },
+    "message": {
+      "image_title": "Taxrirlash xatosi!",
+      "image_description": "Rasmni yangilashda xatolik yuz berdi. Iltimos, keyinroq qayta urinib ko'ring.",
+      "profile_updated_title": "Profil yangilandi",
+      "profile_updated_description": "Profil rasmingiz muvaffaqiyatli yangilandi",
+      "failed_to_update": "Profilingizni yangilashda xatolik yuz berdi. Iltimos, qayta urinib ko'ring!"
+    }
+  },
+  "header": {
+    "locale": {
+      "uz": "Uz",
+      "en": "En",
+      "ru": "Ru"
+    },
+    "book_is_best_prize": "Kitob - eng yaxshi sovg'a",
+    "how_to_purchase": "Qanday harid qilinadi",
+    "category": {
+      "books": "Kitoblar",
+      "collections": "To‘plamlar",
+      "authors": "Mualliflar",
+      "discounts": "Chegirmalar"
+    },
+    "basket": "Savat",
+    "favourites": "Sevimlilar",
+    "profile": "Profil",
+    "categories": "Kategoriyalar"
+  },
+  "home": {
+    "featured_cards": {
+      "card_1": {
+        "title": "Yetkazib berish",
+        "description": "Buyurtmangizni O’zbekiston bo’ylab yetkazib beramiz"
+      },
+      "card_2": {
+        "title": "Keng tanlov",
+        "description": "Istalgan turdagi kitoblarni topishingiz mumkin"
+      },
+      "card_3": {
+        "title": "Oson to'lov",
+        "description": "Istalgan turdagi to‘lov asosida xarid qilishingiz mumkin"
+      },
+      "card_4": {
+        "title": "Himoyalangan tizim",
+        "description": "Sizning xavfsizligingiz uchun barcha ishlarni qilganmiz"
+      }
+    },
+    "statistics": {
+      "description_1": "Nomdagi kitoblar sotuvda mavjud",
+      "description_2": "Kitoblar sotuvda mavjud",
+      "description_3": "Filial va dillerlar soni"
+    },
+    "new_age_library": {
+      "more_books": "Ko'proq kitoblar",
+      "less_books": "Kamroq kitoblar",
+      "title": "Yangi davr kutubxonasi"
+    },
+    "newly_published_books": {
+      "title": "Yangi chop etilgan kitoblar"
+    },
+    "new_arrivals": {
+      "title": "Yangi kelganlar",
+      "currency": "so'm"
+    },
+    "news": {
+      "title": "Yangiliklar"
+    }
+  },
+  "footer": {
+    "largest_shop": "Respublikamizdagi eng katta kitob do'konlaridan biri",
+    "menu": "Menu",
+    "about_us": "Biz haqimizda",
+    "how_to_purchase": "Qanday xarid qilinadi",
+    "delivery": "Yetkazib berish",
+    "branch_and_diller": "Fillial va dillerlar",
+    "contacts": "Kontaktlar",
+    "location": "Chilonzor-8, Qatortol ko'chasi 60",
+    "downloading_applications": "Ilovalarni Yuklab Olish",
+    "public": "Ommaviy oferta",
+    "politic": "Politika"
+  }
 }
