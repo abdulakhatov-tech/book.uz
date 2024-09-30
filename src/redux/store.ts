@@ -5,7 +5,7 @@ export const store = configureStore({
 	reducer: {
 		modal,
 		sidebar,
-		columnCounter
+		columnCounter,
 	},
 });
 
