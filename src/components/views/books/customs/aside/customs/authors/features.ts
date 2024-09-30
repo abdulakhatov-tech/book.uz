@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type FC } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import useAuthorsService from "@/services/authors";
 import useOnlineStatus from "@/hooks/useOnlineStatus";
