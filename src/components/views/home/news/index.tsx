@@ -31,7 +31,12 @@ const News: FC = () => {
 	}
 
 	return (
-		<Section id="news" ref={newsRef} data-section="news" className="py-[30px] md:py-[35px] lg:py-[40px]">
+		<Section
+			id="news"
+			ref={newsRef}
+			data-section="news"
+			className="py-[30px] md:py-[35px] lg:py-[40px]"
+		>
 			<Container>
 				<div className="flex items-center justify-between">
 					<h3 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] font-semibold leading-[34.13px] text-black">

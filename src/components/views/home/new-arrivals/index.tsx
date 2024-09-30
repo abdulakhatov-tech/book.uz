@@ -21,8 +21,8 @@ import useSectionLazyLoader from "../../../../services/section-lazy-loader";
 const NewArrivals: React.FC = () => {
 	const { t } = useTranslation();
 	// const { getNewlyArrivedBooks } = useCategoriesService();
-	const { newArrivalBooks, newArrivalBooksRef } = useSectionLazyLoader()
- 	const { isLoading, isError, data } = newArrivalBooks;
+	const { newArrivalBooks, newArrivalBooksRef } = useSectionLazyLoader();
+	const { isLoading, isError, data } = newArrivalBooks;
 
 	const loading = isLoading || isError;
 
@@ -50,8 +50,8 @@ const NewArrivals: React.FC = () => {
 
 	return (
 		<Section
-		ref={newArrivalBooksRef}
-		data-section="new-arrivals"
+			ref={newArrivalBooksRef}
+			data-section="new-arrivals"
 			id="new-arrivals"
 			className="bg-[#F0F0F0] py-[30px] md:py-[35px] lg:py-[40px]"
 		>

@@ -19,7 +19,8 @@ import { Banners, LoadingSkeleton } from "./customs";
 
 const RecentlyPublishedBooks: React.FC = () => {
 	const { t } = useTranslation();
-	const { books, loading, recentlyPublishedBooksRef } = useRecentlyPublishedBooksFeatures();
+	const { books, loading, recentlyPublishedBooksRef } =
+		useRecentlyPublishedBooksFeatures();
 
 	// Generate skeleton or book items based on loading status
 	const renderCarouselItems = useMemo(() => {
@@ -40,8 +41,8 @@ const RecentlyPublishedBooks: React.FC = () => {
 
 	return (
 		<Section
-		ref={recentlyPublishedBooksRef}
-		data-section='recently-published-books'
+			ref={recentlyPublishedBooksRef}
+			data-section="recently-published-books"
 			id="newly-published-books"
 			className="bg-white py-[30px] md:py-[35px] lg:py-[40px]"
 		>

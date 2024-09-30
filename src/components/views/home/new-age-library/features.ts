@@ -6,7 +6,7 @@ import useSectionLazyLoader from "../../../../services/section-lazy-loader";
 
 const useNewAgeLibraryFeatures = () => {
 	// const { getNewAgeLibrary } = useCategoriesService();
-	const { newAgeLibraryBooks, newAgeLibraryBooksRef} = useSectionLazyLoader();
+	const { newAgeLibraryBooks, newAgeLibraryBooksRef } = useSectionLazyLoader();
 	const [books, setBooks] = useState<BookI[]>([]);
 	const [booksCount, setBooksCount] = useState<number>(11); // Default to at least 11
 

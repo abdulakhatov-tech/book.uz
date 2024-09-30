@@ -4,7 +4,8 @@ import useSectionLazyLoader from "../../../../services/section-lazy-loader";
 
 const useRecentlyPublishedBooksFeatures = () => {
 	// const { getRecentlyPublishedBooks } = useCategoriesService();
-	const { recentlyPublishedBooks, recentlyPublishedBooksRef } = useSectionLazyLoader();
+	const { recentlyPublishedBooks, recentlyPublishedBooksRef } =
+		useSectionLazyLoader();
 	const { isLoading, isError, data } = recentlyPublishedBooks;
 	const isOnline = useOnlineStatus();
 
@@ -13,7 +14,7 @@ const useRecentlyPublishedBooksFeatures = () => {
 	return {
 		books: data?.books,
 		loading,
-		recentlyPublishedBooksRef
+		recentlyPublishedBooksRef,
 	};
 };
 

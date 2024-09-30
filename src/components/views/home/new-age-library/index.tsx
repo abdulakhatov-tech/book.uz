@@ -16,8 +16,14 @@ const SKELETON_COUNT = 12;
 
 const NewAgeLibrary: FC = () => {
 	const { t } = useTranslation();
-	const { books, loading, booksCount, handleMoreBooks, handleLessBooks, newAgeLibraryBooksRef } =
-		useNewAgeLibraryFeatures();
+	const {
+		books,
+		loading,
+		booksCount,
+		handleMoreBooks,
+		handleLessBooks,
+		newAgeLibraryBooksRef,
+	} = useNewAgeLibraryFeatures();
 
 	const hasBooks = books && books.length > 0;
 	const showLessBooksButton = booksCount > BOOK_DISPLAY_LIMIT;
