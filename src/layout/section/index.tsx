@@ -1,22 +1,21 @@
-import type { FC } from "react";
+import { forwardRef, ReactNode } from "react";
 
 export interface ContainerPropsI {
-	children: React.ReactNode;
+	children: ReactNode;
 	id?: string;
 	className?: string;
+	"data-section"?: string;
 }
 
-const Section: FC<ContainerPropsI> = ({
-	children,
-	id,
-	className,
-	...props
-}) => {
-	return (
-		<section id={id} className={className} {...props}>
-			{children}
-		</section>
-	);
-};
+// Using forwardRef to handle the ref prop
+const Section = forwardRef<HTMLElement, ContainerPropsI>(
+	({ children, id, className, ...props }, ref) => {
+		return (
+			<section id={id} className={className} {...props} ref={ref}>
+				{children}
+			</section>
+		);
+	},
+);
 
 export default Section;

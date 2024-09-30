@@ -16,8 +16,14 @@ const SKELETON_COUNT = 12;
 
 const NewAgeLibrary: FC = () => {
 	const { t } = useTranslation();
-	const { books, loading, booksCount, handleMoreBooks, handleLessBooks } =
-		useNewAgeLibraryFeatures();
+	const {
+		books,
+		loading,
+		booksCount,
+		handleMoreBooks,
+		handleLessBooks,
+		newAgeLibraryBooksRef,
+	} = useNewAgeLibraryFeatures();
 
 	const hasBooks = books && books.length > 0;
 	const showLessBooksButton = booksCount > BOOK_DISPLAY_LIMIT;
@@ -27,6 +33,8 @@ const NewAgeLibrary: FC = () => {
 		<Section
 			id="new-age-library"
 			className="bg-[#F0F0F0] py-[30px] md:py-[35px] lg:py-[40px]"
+			ref={newAgeLibraryBooksRef}
+			data-section="new-age-library"
 		>
 			<Container>
 				<Button className="bg-orange hover:bg-orange mb-6 md:mb-8">

@@ -14,13 +14,15 @@ import { BookI } from "@/types";
 import Section from "@/layout/section";
 import { ProductCard } from "@/generic";
 import Container from "@/layout/container";
-import useCategoriesService from "@/services/categories";
+// import useCategoriesService from "@/services/categories";
 import BookSkeleton from "@/components/common/product-card-skeleton";
+import useSectionLazyLoader from "../../../../services/section-lazy-loader";
 
 const NewArrivals: React.FC = () => {
 	const { t } = useTranslation();
-	const { getNewlyArrivedBooks } = useCategoriesService();
-	const { isLoading, isError, data } = getNewlyArrivedBooks;
+	// const { getNewlyArrivedBooks } = useCategoriesService();
+	const { newArrivalBooks, newArrivalBooksRef } = useSectionLazyLoader();
+	const { isLoading, isError, data } = newArrivalBooks;
 
 	const loading = isLoading || isError;
 
@@ -48,6 +50,8 @@ const NewArrivals: React.FC = () => {
 
 	return (
 		<Section
+			ref={newArrivalBooksRef}
+			data-section="new-arrivals"
 			id="new-arrivals"
 			className="bg-[#F0F0F0] py-[30px] md:py-[35px] lg:py-[40px]"
 		>
