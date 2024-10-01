@@ -15,7 +15,9 @@
 		"uz": "O'zbek",
 		"en": "Ingliz",
 		"ru": "Rus",
-		"authors": "Mualliflar"
+		"authors": "Mualliflar",
+
+		"filter": "Filtr"
 	},
 	"auth": {
 		"sign_in_title": "Telefon raqamingizni kiriting",
