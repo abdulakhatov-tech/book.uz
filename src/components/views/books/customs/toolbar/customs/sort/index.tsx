@@ -9,6 +9,7 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import useSearchParamsHook from "@/hooks/useSearchParams";
+import classNames from "classnames"; // Import classnames for conditional styling
 
 const Sort: FC = () => {
 	const { t } = useTranslation();
@@ -34,15 +35,50 @@ const Sort: FC = () => {
 
 	return (
 		<Select onValueChange={handleSortChange} value={selectedSort}>
-			<SelectTrigger className="w-[170px]">
+			<SelectTrigger className="w-[150px] sm:w-[170px]">
 				<SelectValue placeholder={t("books.sort_by")} />
 			</SelectTrigger>
 			<SelectContent>
-				<SelectItem value="saralash">{t("books.sort_by")}</SelectItem>
-				<SelectItem value="yangi-kitoblar">{t("books.new_books")}</SelectItem>
-				<SelectItem value="arzonroq">{t("books.cheaper")}</SelectItem>
-				<SelectItem value="qimmatroq">{t("books.more_expensive")}</SelectItem>
-				<SelectItem value="reytingi-yuqori">{t("books.reyting")}</SelectItem>
+				<SelectItem
+					value="saralash"
+					className={classNames({
+						"text-blue bg-secondary-blue": selectedSort === "saralash", 
+					})}
+				>
+					{t("books.sort_by")}
+				</SelectItem>
+				<SelectItem
+					value="yangi-kitoblar"
+					className={classNames({
+						"text-blue": selectedSort === "yangi-kitoblar", 
+					})}
+				>
+					{t("books.new_books")}
+				</SelectItem>
+				<SelectItem
+					value="arzonroq"
+					className={classNames({
+						"text-blue": selectedSort === "arzonroq", 
+					})}
+				>
+					{t("books.cheaper")}
+				</SelectItem>
+				<SelectItem
+					value="qimmatroq"
+					className={classNames({
+						"text-blue": selectedSort === "qimmatroq", 
+					})}
+				>
+					{t("books.more_expensive")}
+				</SelectItem>
+				<SelectItem
+					value="reytingi-yuqori"
+					className={classNames({
+						"text-blue": selectedSort === "reytingi-yuqori", 
+					})}
+				>
+					{t("books.reyting")}
+				</SelectItem>
 			</SelectContent>
 		</Select>
 	);

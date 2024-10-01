@@ -11,11 +11,12 @@
 		"search": "Search",
 		"price": "Price",
 		"sum": "sum",
-		"languages": "languages",
+		"languages": "Languages",
 		"uz": "Uzbek",
 		"en": "English",
 		"ru": "Russian",
-		"authors": "Authors"
+		"authors": "Authors",
+		"filter": "Filter"
 	},
 	"auth": {
 		"sign_in_title": "Enter your phone number",
