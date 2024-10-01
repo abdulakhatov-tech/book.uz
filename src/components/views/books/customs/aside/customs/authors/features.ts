@@ -1,61 +1,89 @@
-import { useEffect, useMemo, useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 
+import { AuthorI } from "@/types";
 import useAuthorsService from "@/services/authors";
 import useOnlineStatus from "@/hooks/useOnlineStatus";
-import useSearchParamsHook from "@/hooks/useSearchParams";
-import { AuthorI } from "@/types";
+import { useSearchParams } from "react-router-dom";
 
 const useAuthorsFeatures = () => {
-	const isOnline = useOnlineStatus();
-	const { getAllAuthors } = useAuthorsService();
-	const { setParam, getParam, removeParam } = useSearchParamsHook();
+  const isOnline = useOnlineStatus();
+  const { getAllAuthors } = useAuthorsService();
 
-	const [search, setSearch] = useState("");
-	const [authors, setAuthors] = useState<AuthorI[]>([]);
-	const selectedAuthor = getParam("authorId");
+  const [searchParams, setSearchParams] = useSearchParams();
 
-	const { isLoading, isError, data } = getAllAuthors;
+  const initialSelectedGenres = searchParams.getAll("authorIds");
 
-	const loading = !isOnline || isError || isLoading;
+  const [search, setSearch] = useState("");
+  const [selectedAuthors, setSelectedAuthors] = useState<string[]>(initialSelectedGenres);
 
-	const searchResults = useMemo(() => {
-		if (data) {
-			if (search.length) {
-				return data.filter((author: AuthorI) =>
-					author.fullName.toLowerCase().includes(search.toLowerCase()),
-				);
-			}
-			return data;
-		}
-		return [];
-	}, [data, search]);
+  const { isLoading, isError, data } = getAllAuthors;
+  const loading = isLoading || isError || !isOnline;
 
-	useEffect(() => {
-		if (data) {
-			setAuthors(searchResults);
-		}
-	}, [searchResults, selectedAuthor, setParam, data]);
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value.toLowerCase());
+  };
 
-	const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setSearch(e.target.value);
-	};
+  const handleSelectAllChange = (checked: boolean) => {
+    if (checked) {
+      const allAuthorIds = data?.map((author: AuthorI) => author._id) || [];
+      setSelectedAuthors(allAuthorIds);
+    } else {
+      setSelectedAuthors([]);
+    }
+  };
 
-	const handleAuthor = (authorId: string) => {
-		if (selectedAuthor === authorId) {
-			removeParam("authorId");
-			return;
-		}
+  const handleAuthorChange = (authorId: string) => {
+    setSelectedAuthors(
+      (prevSelectedAuthors) =>
+        prevSelectedAuthors.includes(authorId)
+          ? prevSelectedAuthors.filter((id) => id !== authorId) // Deselect genre
+          : [...prevSelectedAuthors, authorId] // Select genre
+    );
 
-		setParam("authorId", authorId);
-	};
-	return {
-		handleSearchChange,
-		handleAuthor,
-		loading,
-		authors,
-		search,
-		selectedAuthor,
-	};
+    // setSearch("");
+  };
+
+  // Memoize filtered genres based on search query
+  const filteredAuthors = useMemo(() => {
+    if (!data || search === "") return data; // If no search query, return all data
+    return data.filter(
+      (author: AuthorI) => author?.fullName?.toLowerCase()?.includes(search) // Filter by genre name
+    );
+  }, [data, search]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(searchParams);
+
+    params.delete("authorIds");
+
+    selectedAuthors.forEach((authorId) => {
+      params.append("authorIds", authorId); 
+    });
+
+    setSearchParams(params); // Update the URL with modified params
+  }, [selectedAuthors, searchParams]);
+
+  useEffect(() => {
+    const authorIdsFromQuery = searchParams.getAll("authorIds"); // Get all authorIds from URL
+
+    if (authorIdsFromQuery.length > 0) {
+      setSelectedAuthors(authorIdsFromQuery); // Set the state with genreIds from URL
+    }
+  }, [searchParams]); 
+
+  const isAllSelected = data?.length === selectedAuthors.length;
+
+  return {
+    handleSelectAllChange,
+    handleSearchChange,
+    handleAuthorChange,
+    selectedAuthors,
+    isAllSelected,
+    setSearch,
+    loading,
+    search,
+    data: filteredAuthors,
+  };
 };
 
 export default useAuthorsFeatures;

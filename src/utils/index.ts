@@ -280,14 +280,17 @@ export const MockData = () => {
 		{
 			label: t("dashboard.books.language_type.uz"),
 			value: "uz",
+			_id: 'uz'
 		},
 		{
 			label: t("dashboard.books.language_type.en"),
 			value: "en",
+			_id: 'en'
 		},
 		{
 			label: t("dashboard.books.language_type.ru"),
 			value: "ru",
+			_id: 'ru'
 		},
 		// {
 		// 	label: t("dashboard.books.language_type.tr"),

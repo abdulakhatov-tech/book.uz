@@ -4,14 +4,14 @@ import { BookI } from "@/types";
 import useBooksService from "@/services/books";
 
 const useBookFeatures = () => {
-	const { getAllBooks } = useBooksService();
+	const { useGetAllBooks } = useBooksService();
 	const [books, setBooks] = useState<BookI[]>([]);
 	const [sortConfig, setSortConfig] = useState<{
 		key: keyof BookI;
 		direction: "asc" | "desc";
 	} | null>(null);
 
-	const { isLoading, isError, data } = getAllBooks;
+	const { isLoading, isError, data } = useGetAllBooks();
 
 	// Update books list when data changes
 	useEffect(() => {

@@ -8,8 +8,8 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
+import classNames from "classnames";
 import useSearchParamsHook from "@/hooks/useSearchParams";
-import classNames from "classnames"; // Import classnames for conditional styling
 
 const Sort: FC = () => {
 	const { t } = useTranslation();
@@ -18,28 +18,41 @@ const Sort: FC = () => {
 
 	// Load the current sort value from the URL search parameters
 	useEffect(() => {
-		const sortBy = getParam("sortBy") as string;
-		if (sortBy) {
-			setSelectedSort(sortBy);
+		const sort = getParam("sort") as string;
+		if (sort) {
+			setSelectedSort(sort);
 		}
-	}, [getParam]);
+	}, [getParam('sort')]);
 
 	const handleSortChange = (sortText: string) => {
 		if (sortText === "saralash") {
-			removeParam("sortBy");
-		} else {
-			setParam("sortBy", sortText);
+			removeParam("sort");
+		} else if (sortText === "yangi-kitoblar") {
+			setParam("sort", 'createdAt');
+			setParam("asc", String(-1));
+		} else if(sortText === "arzonroq") {
+			setParam("sort", 'fromPrice');
+            setParam("asc", String(1));
+		} else if(sortText === "qimmatroq") {
+			setParam("sort", 'fromPrice');
+            setParam("asc", String(-1));
+		} else if(sortText === "reytingi-yuqori") {
+			setParam("sort", 'rating');
+            setParam("asc", String(-1));
 		}
 		setSelectedSort(sortText);
 	};
 
+	console.log(selectedSort)
+
 	return (
 		<Select onValueChange={handleSortChange} value={selectedSort}>
-			<SelectTrigger className="w-[150px] sm:w-[170px]">
-				<SelectValue placeholder={t("books.sort_by")} />
+			<SelectTrigger className="w-[150px] sm:w-[170px] text-blue">
+				<SelectValue defaultValue={getParam('sort') as string} placeholder={t("books.sort_by")} />
 			</SelectTrigger>
 			<SelectContent>
 				<SelectItem
+				
 					value="saralash"
 					className={classNames({
 						"text-blue bg-secondary-blue": selectedSort === "saralash",

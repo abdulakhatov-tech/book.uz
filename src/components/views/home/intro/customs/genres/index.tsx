@@ -1,117 +1,97 @@
-import { useEffect, useState, useMemo, type FC } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
 import classNames from "classnames";
+import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useMemo, useState, type FC } from "react";
+
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 
 import { GenreI } from "@/types";
 import { LoadingSkeleton } from "./customs";
 import useOnlineStatus from "@/hooks/useOnlineStatus";
-import useSearchParamsHook from "@/hooks/useSearchParams";
-import useSectionLazyLoader from "../../../../../../services/section-lazy-loader";
+import { IoIosSearch, IoMdClose } from "react-icons/io";
+import useSectionLazyLoader from "@/services/section-lazy-loader";
 
-interface GenresPropsI {
-	isBooksPage?: boolean;
-	search?: string;
-	setSearch?: (value: string) => void;
-}
+const Genres: FC = () => {
+  const { t } = useTranslation();
+  const isOnline = useOnlineStatus();
+  const [search, setSearch] = useState<string>("");
+  const { genres, genresRef } = useSectionLazyLoader();
+  const { isLoading, isError, data: genresData = [] } = genres;
 
-const Genres: FC<GenresPropsI> = ({
-	isBooksPage = false,
-	search = "",
-	setSearch,
-}) => {
-	const isOnline = useOnlineStatus();
-	const navigate = useNavigate();
-	const { pathname } = useLocation();
-	const { getParam, setParam, removeParam } = useSearchParamsHook();
+  const loading = !isOnline || isLoading || isError;
 
-	const { genres, genresRef } = useSectionLazyLoader();
-	const { isLoading, isError, data: genresData = [] } = genres;
+  // Filter genres based on search input
+  const filteredGenres = useMemo(() => {
+    if (!search.trim()) return genresData;
+    return genresData.filter((genre: GenreI) =>
+      genre?.name?.toLowerCase().includes(search?.toLowerCase())
+    );
+  }, [search, genresData]);
 
-	const [filteredGenres, setFilteredGenres] = useState<GenreI[]>([]);
+  // Memoize genre items to avoid recalculating on every render
+  const genreItems = useMemo(
+    () =>
+      filteredGenres.map((item: GenreI) => (
+        <NavLink
+          key={item._id}
+          to={`/books?page=1&limit=24&genreIds=${item._id}`}
+          aria-label={`Genre ${item.name}`}
+          className={({ isActive }) =>
+            classNames(
+              "py-2 px-4 hover:bg-orange hover:text-white active:opacity-75 rounded-md text-[16px] font-normal cursor-pointer flex items-center justify-between gap-2",
+              { "bg-orange text-white": isActive } // Highlight the active genre
+            )
+          }
+        >
+          <li className='w-full flex items-center justify-between'>
+            <span className='w-[200px] font-semibold'>{item.name}</span>
+          </li>
+        </NavLink>
+      )),
+    [filteredGenres]
+  );
 
-	const selectedGenreId = (getParam("genreId") as string) || "";
+  return (
+    <div
+      ref={genresRef}
+      data-section='genres'
+      className='hidden lg:block min-w-[287px] max-w-[287px] w-[287px] bg-[#F6F6F6] rounded-[8px] p-2'
+    >
+      {/* Search Bar */}
+      <Label className='relative block mb-1'>
+        <Input
+          placeholder={t("books.search")}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          // className='custom-shadow'
+          disabled={loading}
+        />
+        {search.length ? (
+          <IoMdClose
+            onClick={() => setSearch("")}
+            className='absolute top-[50%] right-3 -translate-y-[50%] text-[22px] text-gray cursor-pointer'
+            aria-label="Clear search"
+          />
+        ) : (
+          <IoIosSearch className='absolute top-[50%] right-3 -translate-y-[50%] text-[22px] text-gray' />
+        )}
+      </Label>
 
-	const loading = useMemo(
-		() => !isOnline || isLoading || isError,
-		[isOnline, isLoading, isError],
-	);
-
-	const searchResults = useMemo(() => {
-		if (search.length) {
-			return genresData.filter((genre: GenreI) =>
-				genre.name.toLowerCase().includes(search.toLowerCase()),
-			);
-		}
-		return genresData;
-	}, [genresData, search]);
-
-	useEffect(() => {
-		setFilteredGenres(searchResults);
-	}, [searchResults]);
-
-	const onClick = (genreId: string) => {
-		if (pathname === "/") {
-			navigate(`/books?page=1&limit=24&genreId=${genreId}`);
-			return;
-		}
-
-		if (genreId === selectedGenreId) {
-			removeParam("genreId");
-		} else {
-			setParam("genreId", genreId);
-		}
-
-		// Clear the search input if search exists
-		if (search && setSearch) {
-			setSearch("");
-		}
-	};
-
-	return (
-		<div
-			ref={genresRef}
-			data-section="genres"
-			className={classNames({
-				"w-full": isBooksPage,
-				"hidden lg:block min-w-[287px] max-w-[287px] w-[287px] bg-[#F6F6F6] rounded-[8px] p-2":
-					!isBooksPage,
-			})}
-		>
-			<ul
-				className={classNames(
-					"flex flex-col text-[#1E1E1E] h-full thin-scrollbar",
-					{
-						"gap-2": loading,
-						"gap-1": !loading,
-					},
-				)}
-			>
-				{loading ? (
-					<LoadingSkeleton />
-				) : (
-					filteredGenres.map((item: GenreI, idx: number) => (
-						<li
-							key={item?._id || idx}
-							onClick={() => onClick(item._id)}
-							className={classNames(
-								"py-2 px-4 hover:bg-orange hover:text-white active:opacity-75 rounded-md text-[16px] font-normal cursor-pointer flex items-center justify-between gap-2",
-								{
-									"bg-orange text-white": selectedGenreId === item._id, // Highlight the active genre
-								},
-							)}
-						>
-							<span className="w-[200px]">{item?.name}</span>
-							{selectedGenreId === item._id && (
-								<div className="w-[18px] h-[18px] rounded-full bg-secondary-gray flex items-center justify-center">
-									<div className="bg-orange w-3 h-3 rounded-full active:w-full active:h-full transition-all"></div>
-								</div>
-							)}
-						</li>
-					))
-				)}
-			</ul>
-		</div>
-	);
+      {/* Genre List */}
+      <div className="h-[390px] overflow-y-auto thin-scrollbar">
+        <ul className='flex flex-col gap-1 text-[#1E1E1E] h-full'>
+          {loading ? (
+            <LoadingSkeleton />
+          ) : genreItems.length ? (
+            genreItems
+          ) : (
+            <li className='text-center text-gray-500'>No Genres</li>
+          )}
+        </ul>
+      </div>
+    </div>
+  );
 };
 
 export default Genres;

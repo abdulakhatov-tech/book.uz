@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { Authors, Genres, Languages, Price } from "./customs";
 
-const Main: FC = () => {
+const Aside: FC = () => {
 	return (
 		<aside className="hidden lg:block">
 			<div className="flex flex-col gap-6">
@@ -14,4 +14,4 @@ const Main: FC = () => {
 	);
 };
 
-export default Main;
+export default Aside;

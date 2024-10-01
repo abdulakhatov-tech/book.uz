@@ -5,6 +5,9 @@ import { BookI } from "@/types";
 import useAxiosInstance from "@/api";
 import { toast } from "@/components/ui/use-toast";
 import useQueryHandler from "@/hooks/useQueryHandler";
+import { GetAllBooksParams } from "./interface";
+
+
 
 const useBooksService = () => {
 	const { bookId } = useParams();
@@ -18,14 +21,17 @@ const useBooksService = () => {
 		});
 	};
 
-	const getAllBooks = useQueryHandler({
-		queryKey: ["books"],
-		queryFn: async () => {
-			const response = await axios.get("/books");
+	const useGetAllBooks = (params?: GetAllBooksParams) =>
+		useQueryHandler({
+		  queryKey: ["books", params],
+		  queryFn: async () => {
+			const response = await axios.get("/books", {
+			  params, // Pass the query parameters here
+			});
 			return response.data.data as BookI[];
-		},
-		onError: (error) => handleError(error, "fetching books"),
-	});
+		  },
+		  onError: (error) => handleError(error, "fetching books"),
+		});
 
 	const getBookById = useQueryHandler({
 		queryKey: ["book", { bookId }],
@@ -97,7 +103,7 @@ const useBooksService = () => {
 	});
 
 	return {
-		getAllBooks,
+		useGetAllBooks,
 		getBookById,
 		createBook,
 		updateBookById,

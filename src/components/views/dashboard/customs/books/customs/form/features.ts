@@ -161,7 +161,7 @@ const useCreateBookFeatures = () => {
 			formData.state.trim(),
 			formData.barcode.trim(),
 			formData.description.trim(),
-			imageUrls.thumbnail.trim(),
+			
 		];
 
 		const isFilled = requiredFields.every(Boolean);
@@ -173,6 +173,7 @@ const useCreateBookFeatures = () => {
 			formData.discount !== null &&
 			+formData.discount >= 0;
 
+			console.log(isFilled, isValidNumbers, formData, 'isFilled')
 		return isFilled && isValidNumbers;
 	};
 
@@ -224,6 +225,8 @@ const useCreateBookFeatures = () => {
 
 		navigate("/dashboard/products");
 	};
+
+	console.log(!isFormValid(), uploading)
 
 	return {
 		formData,
