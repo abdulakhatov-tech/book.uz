@@ -22,37 +22,39 @@ const Sort: FC = () => {
 		if (sort) {
 			setSelectedSort(sort);
 		}
-	}, [getParam('sort')]);
+	}, [getParam("sort")]);
 
 	const handleSortChange = (sortText: string) => {
 		if (sortText === "saralash") {
 			removeParam("sort");
 		} else if (sortText === "yangi-kitoblar") {
-			setParam("sort", 'createdAt');
+			setParam("sort", "createdAt");
 			setParam("asc", String(-1));
-		} else if(sortText === "arzonroq") {
-			setParam("sort", 'fromPrice');
-            setParam("asc", String(1));
-		} else if(sortText === "qimmatroq") {
-			setParam("sort", 'fromPrice');
-            setParam("asc", String(-1));
-		} else if(sortText === "reytingi-yuqori") {
-			setParam("sort", 'rating');
-            setParam("asc", String(-1));
+		} else if (sortText === "arzonroq") {
+			setParam("sort", "fromPrice");
+			setParam("asc", String(1));
+		} else if (sortText === "qimmatroq") {
+			setParam("sort", "fromPrice");
+			setParam("asc", String(-1));
+		} else if (sortText === "reytingi-yuqori") {
+			setParam("sort", "rating");
+			setParam("asc", String(-1));
 		}
 		setSelectedSort(sortText);
 	};
 
-	console.log(selectedSort)
+	console.log(selectedSort);
 
 	return (
 		<Select onValueChange={handleSortChange} value={selectedSort}>
 			<SelectTrigger className="w-[150px] sm:w-[170px] text-blue">
-				<SelectValue defaultValue={getParam('sort') as string} placeholder={t("books.sort_by")} />
+				<SelectValue
+					defaultValue={getParam("sort") as string}
+					placeholder={t("books.sort_by")}
+				/>
 			</SelectTrigger>
 			<SelectContent>
 				<SelectItem
-				
 					value="saralash"
 					className={classNames({
 						"text-blue bg-secondary-blue": selectedSort === "saralash",

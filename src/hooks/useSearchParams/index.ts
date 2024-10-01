@@ -62,21 +62,23 @@ const useSearchParamsHook = () => {
 		setSearchParams(searchParams);
 	};
 
-	const getParams = (key?: string): Record<string, string> | string[] | undefined => {
+	const getParams = (
+		key?: string,
+	): Record<string, string> | string[] | undefined => {
 		const params: Record<string, string> = {};
 		const allParams = new URLSearchParams(window.location.search);
-	
+
 		// If a specific key is provided, return an array of all values for that key
 		if (key) {
 			const values = allParams.getAll(key);
 			return values.length > 0 ? values : undefined;
 		}
-	
+
 		// If no key is provided, return all parameters as a record
 		for (const [paramKey, value] of allParams.entries()) {
 			params[paramKey] = value;
 		}
-	
+
 		return params;
 	};
 
@@ -110,7 +112,6 @@ const useSearchParamsHook = () => {
 		}
 		setSearchParams(searchParams);
 	};
-
 
 	return {
 		setParam,
