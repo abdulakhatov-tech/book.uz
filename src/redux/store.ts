@@ -6,7 +6,7 @@ export const store = configureStore({
 		modal,
 		sidebar,
 		columnCounter,
-		filter
+		filter,
 	},
 });
 

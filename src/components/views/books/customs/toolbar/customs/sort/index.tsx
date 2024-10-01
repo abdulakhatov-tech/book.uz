@@ -42,7 +42,7 @@ const Sort: FC = () => {
 				<SelectItem
 					value="saralash"
 					className={classNames({
-						"text-blue bg-secondary-blue": selectedSort === "saralash", 
+						"text-blue bg-secondary-blue": selectedSort === "saralash",
 					})}
 				>
 					{t("books.sort_by")}
@@ -50,7 +50,7 @@ const Sort: FC = () => {
 				<SelectItem
 					value="yangi-kitoblar"
 					className={classNames({
-						"text-blue": selectedSort === "yangi-kitoblar", 
+						"text-blue": selectedSort === "yangi-kitoblar",
 					})}
 				>
 					{t("books.new_books")}
@@ -58,7 +58,7 @@ const Sort: FC = () => {
 				<SelectItem
 					value="arzonroq"
 					className={classNames({
-						"text-blue": selectedSort === "arzonroq", 
+						"text-blue": selectedSort === "arzonroq",
 					})}
 				>
 					{t("books.cheaper")}
@@ -66,7 +66,7 @@ const Sort: FC = () => {
 				<SelectItem
 					value="qimmatroq"
 					className={classNames({
-						"text-blue": selectedSort === "qimmatroq", 
+						"text-blue": selectedSort === "qimmatroq",
 					})}
 				>
 					{t("books.more_expensive")}
@@ -74,7 +74,7 @@ const Sort: FC = () => {
 				<SelectItem
 					value="reytingi-yuqori"
 					className={classNames({
-						"text-blue": selectedSort === "reytingi-yuqori", 
+						"text-blue": selectedSort === "reytingi-yuqori",
 					})}
 				>
 					{t("books.reyting")}
