@@ -31,10 +31,11 @@ const initialFormData: FormDataI = {
 };
 
 const useCreateBookFeatures = () => {
+	const { slug } = useParams()
 	const navigate = useNavigate();
 	const axios = useAxiosInstance();
 	const { bookId } = useParams<{ bookId: string }>();
-	const { createBook, getBookById, updateBookById } = useBooksService();
+	const { createBook, useGetBookById, updateBookById } = useBooksService();
 
 	// states
 	const [uploading, setUploading] = useState<boolean>(false);
@@ -42,7 +43,7 @@ const useCreateBookFeatures = () => {
 	const [formData, setFormData] = useState<FormDataI>(initialFormData);
 	const [imageUrls, setImageUrls] = useState<ImageUrlsI>(initialPreview);
 
-	const { data: book, isLoading, isError } = getBookById;
+	const { data: book, isLoading, isError } = useGetBookById(slug);
 
 	const loading = isLoading || isError;
 
