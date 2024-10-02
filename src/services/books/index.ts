@@ -1,4 +1,3 @@
-import { useParams } from "react-router-dom";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { BookI } from "@/types";
@@ -8,7 +7,6 @@ import useQueryHandler from "@/hooks/useQueryHandler";
 import { GetAllBooksParams } from "./interface";
 
 const useBooksService = () => {
-	const { bookId } = useParams();
 	const axios = useAxiosInstance();
 	const queryClient = useQueryClient();
 
