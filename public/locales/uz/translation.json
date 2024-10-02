@@ -18,8 +18,8 @@
 		"no_information": "Ma'lumotlar yo'q",
 		"no_comments": "Izohlar yo'q",
 		"no_quotes": "Iqtiboslar yo'q",
-        "authors_books": "Muallif kitoblari",
-        "similar_books": "O'xshash kitoblar"
+		"authors_books": "Muallif kitoblari",
+		"similar_books": "O'xshash kitoblar"
 	},
 	"books": {
 		"title": "Kitoblar",

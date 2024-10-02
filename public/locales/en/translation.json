@@ -1,273 +1,273 @@
 {
-  "book": {
-    "people": "People",
+	"book": {
+		"people": "People",
 		"person": "Person",
-    "comment_on": "Leave a comment",
-    "sum": "sum",
-    "genre": "Genre",
-    "year": "Year",
-    "language": "Language",
-    "pages": "Pages",
-    "cover": "Cover",
-    "add_to_cart": "Add to cart",
-    "quick_buy": "Quick buy",
-    "information": "Information",
-    "comments": "Comments",
-    "quote": "Quotes",
-    "about_book": "About the book",
-    "no_information": "No information",
-    "no_comments": "No comments",
-    "no_quotes": "No quotes",
-    "authors_books": "Author's books",
-    "similar_books": "Similar books"
-  },
-  "books": {
-    "title": "Books",
-    "show": "Show",
-    "sort_by": "Sort By",
-    "new_books": "New Books",
-    "cheaper": "Cheaper",
-    "more_expensive": "More expensive",
-    "reyting": "Reyting",
-    "genres": "Genres",
-    "search": "Search",
-    "price": "Price",
-    "sum": "sum",
-    "languages": "Languages",
-    "uz": "Uzbek",
-    "en": "English",
-    "ru": "Russian",
-    "authors": "Authors",
-    "filter": "Filter"
-  },
-  "auth": {
-    "sign_in_title": "Enter your phone number",
-    "sign_up_title": "Sign Up",
-    "otp_title": "OTP Confirmation",
-    "sign_in_description": "Enter your phone number, and we will send you a one-time SMS code",
-    "otp_description": "Enter the one-time SMS code sent to your phone",
-    "not_have_account": "Don't have an account?",
-    "have_you_registered": "Have you registered?",
-    "register_now": "Register now",
-    "login": "Login",
-    "name": "Your name",
-    "surname": "Your surname",
-    "phone_number": "Your phone number",
-    "otp_code_expired": "OTP code expired",
-    "verify": "Verify",
-    "verifying": "Verifying",
-    "resend": "Resend"
-  },
-  "dashboard": {
-    "sidebar": {
-      "admins": "Admins",
-      "users": "Users",
-      "products": "Products",
-      "orders": "Orders",
-      "genres": "Genres",
-      "authors": "Authors",
-      "categories": "Categories",
-      "news": "News",
-      "logout": "Logout"
-    },
-    "users": {
-      "full_name": "Full Name",
-      "phone_number": "Phone Number",
-      "email": "Email",
-      "role": "Role",
-      "actions": "Actions",
-      "promote": "Promote",
-      "demote": "Demote",
-      "admins": "Admins",
-      "all_users": "All Users",
-      "list_users": "A list of recent users"
-    },
-    "authors": {
-      "full_name": "Full Name",
-      "audio_books_count": "Audio Books",
-      "books_count": "Books",
-      "ebooks_count": "E-Books",
-      "date_of_birth": "Date of Birth",
-      "date_of_death": "Date of Death",
-      "created_at": "Created At",
-      "edit": "Edit",
-      "delete": "Delete",
-      "authors": "Authors",
-      "create": "Create Author",
-      "list_authors": "A list of recent authors",
-      "biography": "Biography",
-      "image": "Image",
-      "uploading": "Uploading",
-      "are_you_sure": "Are you absolutely sure?",
-      "are_you_sure_description": "Deleting an author will also remove all their associated books and audiobooks.",
-      "cancel": "Cancel",
-      "continue": "Continue"
-    },
-    "genres": {
-      "title": "Genres",
-      "name": "Name",
-      "books_count": "Books",
-      "ebooks_count": "E-Books",
-      "audio_books_count": "Audio books",
-      "child_count": "Child count",
-      "create": "Create Genre",
-      "uploading": "Uploading",
-      "are_you_sure": "Are you absolutely sure?",
-      "are_you_sure_description": "Deleting an genre will also remove all their associated books and audiobooks.",
-      "cancel": "Cancel",
-      "continue": "Continue",
-      "created_at": "Created At",
-      "edit": "Edit Genre"
-    },
-    "books": {
-      "title": "Books",
-      "create": "Create Book",
-      "name": "Name",
-      "genre": "Genre",
-      "author": "Author",
-      "amount": "Amount",
-      "book_price": "Price",
-      "cover": "Cover",
-      "ebooks_count": "E-Books",
-      "created_at": "Created At",
-      "edit": "Edit Book",
-      "delete": "Delete Book",
-      "list_books": "A list of recent books",
-      "are_you_sure": "Are you absolutely sure?",
-      "are_you_sure_description": "Deleting a book will also remove all associated audiobooks.",
-      "language": "Language",
-      "select_language": "Select language",
-      "language_type": {
-        "en": "English",
-        "ru": "Russin",
-        "uz": "Uzbek",
-        "tr": "Turkish"
-      },
-      "select_author": "Select author",
-      "select_cover_type": "Select cover type",
-      "cover_type": {
-        "hard": "Hard",
-        "soft": "Soft",
-        "digital": "Digital"
-      },
-      "discount": "Discount",
-      "number_of_pages": "Number of pages",
-      "state": "State (current condition)",
-      "state_type": {
-        "new": "New",
-        "old": "Old",
-        "damaged": "Damaged"
-      },
-      "select_state": "Select state",
-      "year": "Year",
-      "select_year": "Select published year",
-      "barcode": "Barcode",
-      "description": "Description",
-      "additional_images": "Additional images",
-      "select_genre": "Select genre"
-    }
-  },
-  "profile": {
-    "nav": {
-      "dashboard": "Dashboard",
-      "orders": "Orders",
-      "products": "Products",
-      "settings": "Settings",
-      "logout": "Logout"
-    },
-    "logout": {
-      "title": "Are you absolutely sure",
-      "description": "This action will log you out from your account and you will be redirected to the login page. Are you sure you want to proceed",
-      "cancel": "Cancel",
-      "ok": "Logout"
-    },
-    "settings": {
-      "title": "Settings",
-      "name": "Your name",
-      "surname": "Your surname",
-      "phoneNumber": "Your phone number",
-      "email": "Your email",
-      "bio": "Bio",
-      "save": "Save"
-    },
-    "message": {
-      "image_title": "Update Error!",
-      "image_description": "An error occurred while trying to update the image. Please, try again later.",
-      "profile_updated_title": "Profile Updated",
-      "profile_updated_description": "Your profile image has been updated successfully",
-      "failed_to_update": "Failed to update your profile. Please try again!"
-    }
-  },
-  "header": {
-    "locale": {
-      "uz": "Uz",
-      "en": "En",
-      "ru": "Ru"
-    },
-    "book_is_best_prize": "A book is the best gift",
-    "how_to_purchase": "How to purchase",
-    "category": {
-      "books": "Books",
-      "collections": "Collections",
-      "authors": "Authors",
-      "discounts": "Discounts"
-    },
-    "basket": "Basket",
-    "favourites": "Favourites",
-    "Profile": "Profile",
-    "categories": "Categories"
-  },
-  "home": {
-    "featured_cards": {
-      "card_1": {
-        "title": "Delivery",
-        "description": "We deliver your order across Uzbekistan"
-      },
-      "card_2": {
-        "title": "Wide selection",
-        "description": "You can find books of any type"
-      },
-      "card_3": {
-        "title": "Easy payment",
-        "description": "You can make purchases using any type of payment method"
-      },
-      "card_4": {
-        "title": "Secured system",
-        "description": "We have done everything to ensure your safety"
-      }
-    },
-    "statistics": {
-      "description_1": "Books available for sale by title",
-      "description_2": "Books available for sale",
-      "description_3": "Number of branches and dealers"
-    },
-    "new_age_library": {
-      "more_books": "More books",
-      "less_books": "Less books",
-      "title": "New Age Library"
-    },
-    "newly_published_books": {
-      "title": "Newly published books"
-    },
-    "new_arrivals": {
-      "title": "New arrivals",
-      "currency": "sum"
-    },
-    "news": {
-      "title": "News"
-    }
-  },
-  "footer": {
-    "largest_shop": "One of the largest bookstores in our republic",
-    "menu": "Menu",
-    "about_us": "About us",
-    "how_to_purchase": "How to purchase",
-    "delivery": "Delivery",
-    "branch_and_diller": "Branches and dealers",
-    "contacts": "Contacts",
-    "location": "Chilonzor-8, Qatortol street 60",
-    "downloading_applications": "Downloading applications",
-    "public": "Public offer",
-    "politic": "Policy"
-  }
+		"comment_on": "Leave a comment",
+		"sum": "sum",
+		"genre": "Genre",
+		"year": "Year",
+		"language": "Language",
+		"pages": "Pages",
+		"cover": "Cover",
+		"add_to_cart": "Add to cart",
+		"quick_buy": "Quick buy",
+		"information": "Information",
+		"comments": "Comments",
+		"quote": "Quotes",
+		"about_book": "About the book",
+		"no_information": "No information",
+		"no_comments": "No comments",
+		"no_quotes": "No quotes",
+		"authors_books": "Author's books",
+		"similar_books": "Similar books"
+	},
+	"books": {
+		"title": "Books",
+		"show": "Show",
+		"sort_by": "Sort By",
+		"new_books": "New Books",
+		"cheaper": "Cheaper",
+		"more_expensive": "More expensive",
+		"reyting": "Reyting",
+		"genres": "Genres",
+		"search": "Search",
+		"price": "Price",
+		"sum": "sum",
+		"languages": "Languages",
+		"uz": "Uzbek",
+		"en": "English",
+		"ru": "Russian",
+		"authors": "Authors",
+		"filter": "Filter"
+	},
+	"auth": {
+		"sign_in_title": "Enter your phone number",
+		"sign_up_title": "Sign Up",
+		"otp_title": "OTP Confirmation",
+		"sign_in_description": "Enter your phone number, and we will send you a one-time SMS code",
+		"otp_description": "Enter the one-time SMS code sent to your phone",
+		"not_have_account": "Don't have an account?",
+		"have_you_registered": "Have you registered?",
+		"register_now": "Register now",
+		"login": "Login",
+		"name": "Your name",
+		"surname": "Your surname",
+		"phone_number": "Your phone number",
+		"otp_code_expired": "OTP code expired",
+		"verify": "Verify",
+		"verifying": "Verifying",
+		"resend": "Resend"
+	},
+	"dashboard": {
+		"sidebar": {
+			"admins": "Admins",
+			"users": "Users",
+			"products": "Products",
+			"orders": "Orders",
+			"genres": "Genres",
+			"authors": "Authors",
+			"categories": "Categories",
+			"news": "News",
+			"logout": "Logout"
+		},
+		"users": {
+			"full_name": "Full Name",
+			"phone_number": "Phone Number",
+			"email": "Email",
+			"role": "Role",
+			"actions": "Actions",
+			"promote": "Promote",
+			"demote": "Demote",
+			"admins": "Admins",
+			"all_users": "All Users",
+			"list_users": "A list of recent users"
+		},
+		"authors": {
+			"full_name": "Full Name",
+			"audio_books_count": "Audio Books",
+			"books_count": "Books",
+			"ebooks_count": "E-Books",
+			"date_of_birth": "Date of Birth",
+			"date_of_death": "Date of Death",
+			"created_at": "Created At",
+			"edit": "Edit",
+			"delete": "Delete",
+			"authors": "Authors",
+			"create": "Create Author",
+			"list_authors": "A list of recent authors",
+			"biography": "Biography",
+			"image": "Image",
+			"uploading": "Uploading",
+			"are_you_sure": "Are you absolutely sure?",
+			"are_you_sure_description": "Deleting an author will also remove all their associated books and audiobooks.",
+			"cancel": "Cancel",
+			"continue": "Continue"
+		},
+		"genres": {
+			"title": "Genres",
+			"name": "Name",
+			"books_count": "Books",
+			"ebooks_count": "E-Books",
+			"audio_books_count": "Audio books",
+			"child_count": "Child count",
+			"create": "Create Genre",
+			"uploading": "Uploading",
+			"are_you_sure": "Are you absolutely sure?",
+			"are_you_sure_description": "Deleting an genre will also remove all their associated books and audiobooks.",
+			"cancel": "Cancel",
+			"continue": "Continue",
+			"created_at": "Created At",
+			"edit": "Edit Genre"
+		},
+		"books": {
+			"title": "Books",
+			"create": "Create Book",
+			"name": "Name",
+			"genre": "Genre",
+			"author": "Author",
+			"amount": "Amount",
+			"book_price": "Price",
+			"cover": "Cover",
+			"ebooks_count": "E-Books",
+			"created_at": "Created At",
+			"edit": "Edit Book",
+			"delete": "Delete Book",
+			"list_books": "A list of recent books",
+			"are_you_sure": "Are you absolutely sure?",
+			"are_you_sure_description": "Deleting a book will also remove all associated audiobooks.",
+			"language": "Language",
+			"select_language": "Select language",
+			"language_type": {
+				"en": "English",
+				"ru": "Russin",
+				"uz": "Uzbek",
+				"tr": "Turkish"
+			},
+			"select_author": "Select author",
+			"select_cover_type": "Select cover type",
+			"cover_type": {
+				"hard": "Hard",
+				"soft": "Soft",
+				"digital": "Digital"
+			},
+			"discount": "Discount",
+			"number_of_pages": "Number of pages",
+			"state": "State (current condition)",
+			"state_type": {
+				"new": "New",
+				"old": "Old",
+				"damaged": "Damaged"
+			},
+			"select_state": "Select state",
+			"year": "Year",
+			"select_year": "Select published year",
+			"barcode": "Barcode",
+			"description": "Description",
+			"additional_images": "Additional images",
+			"select_genre": "Select genre"
+		}
+	},
+	"profile": {
+		"nav": {
+			"dashboard": "Dashboard",
+			"orders": "Orders",
+			"products": "Products",
+			"settings": "Settings",
+			"logout": "Logout"
+		},
+		"logout": {
+			"title": "Are you absolutely sure",
+			"description": "This action will log you out from your account and you will be redirected to the login page. Are you sure you want to proceed",
+			"cancel": "Cancel",
+			"ok": "Logout"
+		},
+		"settings": {
+			"title": "Settings",
+			"name": "Your name",
+			"surname": "Your surname",
+			"phoneNumber": "Your phone number",
+			"email": "Your email",
+			"bio": "Bio",
+			"save": "Save"
+		},
+		"message": {
+			"image_title": "Update Error!",
+			"image_description": "An error occurred while trying to update the image. Please, try again later.",
+			"profile_updated_title": "Profile Updated",
+			"profile_updated_description": "Your profile image has been updated successfully",
+			"failed_to_update": "Failed to update your profile. Please try again!"
+		}
+	},
+	"header": {
+		"locale": {
+			"uz": "Uz",
+			"en": "En",
+			"ru": "Ru"
+		},
+		"book_is_best_prize": "A book is the best gift",
+		"how_to_purchase": "How to purchase",
+		"category": {
+			"books": "Books",
+			"collections": "Collections",
+			"authors": "Authors",
+			"discounts": "Discounts"
+		},
+		"basket": "Basket",
+		"favourites": "Favourites",
+		"Profile": "Profile",
+		"categories": "Categories"
+	},
+	"home": {
+		"featured_cards": {
+			"card_1": {
+				"title": "Delivery",
+				"description": "We deliver your order across Uzbekistan"
+			},
+			"card_2": {
+				"title": "Wide selection",
+				"description": "You can find books of any type"
+			},
+			"card_3": {
+				"title": "Easy payment",
+				"description": "You can make purchases using any type of payment method"
+			},
+			"card_4": {
+				"title": "Secured system",
+				"description": "We have done everything to ensure your safety"
+			}
+		},
+		"statistics": {
+			"description_1": "Books available for sale by title",
+			"description_2": "Books available for sale",
+			"description_3": "Number of branches and dealers"
+		},
+		"new_age_library": {
+			"more_books": "More books",
+			"less_books": "Less books",
+			"title": "New Age Library"
+		},
+		"newly_published_books": {
+			"title": "Newly published books"
+		},
+		"new_arrivals": {
+			"title": "New arrivals",
+			"currency": "sum"
+		},
+		"news": {
+			"title": "News"
+		}
+	},
+	"footer": {
+		"largest_shop": "One of the largest bookstores in our republic",
+		"menu": "Menu",
+		"about_us": "About us",
+		"how_to_purchase": "How to purchase",
+		"delivery": "Delivery",
+		"branch_and_diller": "Branches and dealers",
+		"contacts": "Contacts",
+		"location": "Chilonzor-8, Qatortol street 60",
+		"downloading_applications": "Downloading applications",
+		"public": "Public offer",
+		"politic": "Policy"
+	}
 }

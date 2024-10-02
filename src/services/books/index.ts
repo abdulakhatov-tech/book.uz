@@ -31,14 +31,15 @@ const useBooksService = () => {
 			onError: (error) => handleError(error, "fetching books"),
 		});
 
-	const useGetBookById = (bookId?: string) => useQueryHandler({
-		queryKey: ["book", { bookId }],
-		queryFn: async () => {
-			const response = await axios.get(`/books/${bookId}`);
-			return response.data.data as BookI;
-		},
-		onError: (error) => handleError(error, "fetching book"),
-	});
+	const useGetBookById = (bookId?: string) =>
+		useQueryHandler({
+			queryKey: ["book", { bookId }],
+			queryFn: async () => {
+				const response = await axios.get(`/books/${bookId}`);
+				return response.data.data as BookI;
+			},
+			onError: (error) => handleError(error, "fetching book"),
+		});
 
 	const createBook = useMutation({
 		mutationFn: async (book: any) => {
