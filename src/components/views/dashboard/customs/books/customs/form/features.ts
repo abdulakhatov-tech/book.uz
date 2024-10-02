@@ -31,7 +31,7 @@ const initialFormData: FormDataI = {
 };
 
 const useCreateBookFeatures = () => {
-	const { slug } = useParams()
+	const { slug } = useParams();
 	const navigate = useNavigate();
 	const axios = useAxiosInstance();
 	const { bookId } = useParams<{ bookId: string }>();
