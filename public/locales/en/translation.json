@@ -1,4 +1,26 @@
 {
+	"book": {
+		"people": "People",
+		"person": "Person",
+		"comment_on": "Leave a comment",
+		"sum": "sum",
+		"genre": "Genre",
+		"year": "Year",
+		"language": "Language",
+		"pages": "Pages",
+		"cover": "Cover",
+		"add_to_cart": "Add to cart",
+		"quick_buy": "Quick buy",
+		"information": "Information",
+		"comments": "Comments",
+		"quote": "Quotes",
+		"about_book": "About the book",
+		"no_information": "No information",
+		"no_comments": "No comments",
+		"no_quotes": "No quotes",
+		"authors_books": "Author's books",
+		"similar_books": "Similar books"
+	},
 	"books": {
 		"title": "Books",
 		"show": "Show",

@@ -43,8 +43,6 @@ const Sort: FC = () => {
 		setSelectedSort(sortText);
 	};
 
-	console.log(selectedSort);
-
 	return (
 		<Select onValueChange={handleSortChange} value={selectedSort}>
 			<SelectTrigger className="w-[150px] sm:w-[170px] text-blue">

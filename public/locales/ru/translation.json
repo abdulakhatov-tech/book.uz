@@ -1,4 +1,26 @@
 {
+	"book": {
+		"people": "Человек",
+		"person": "Человек",
+		"comment_on": "Оставить комментарий",
+		"sum": "сум",
+		"genre": "Жанр",
+		"year": "Год",
+		"language": "Язык",
+		"pages": "Страницы",
+		"cover": "Обложка",
+		"add_to_cart": "Добавить в корзину",
+		"quick_buy": "Быстрая покупка",
+		"information": "Информация",
+		"comments": "Комментарии",
+		"quote": "Цитаты",
+		"about_book": "О книге",
+		"no_information": "Нет информации",
+		"no_comments": "Нет комментариев",
+		"no_quotes": "Нет цитат",
+		"authors_books": "Книги автора",
+		"similar_books": "Похожие книги"
+	},
 	"books": {
 		"title": "Книги",
 		"show": "Показать",
