@@ -31,7 +31,7 @@ const useBooksService = () => {
 			onError: (error) => handleError(error, "fetching books"),
 		});
 
-	const getBookById = useQueryHandler({
+	const useGetBookById = (bookId?: string) => useQueryHandler({
 		queryKey: ["book", { bookId }],
 		queryFn: async () => {
 			const response = await axios.get(`/books/${bookId}`);
@@ -102,7 +102,7 @@ const useBooksService = () => {
 
 	return {
 		useGetAllBooks,
-		getBookById,
+		useGetBookById,
 		createBook,
 		updateBookById,
 		deleteBookById,

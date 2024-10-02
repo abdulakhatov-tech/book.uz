@@ -1,7 +1,8 @@
 import type { FC } from "react";
+import Book from "@/components/views/book";
 
 const BookDetailsPage: FC = () => {
-	return <div>BookDetailsPage</div>;
+	return <Book />;
 };
 
 export default BookDetailsPage;

@@ -1,4 +1,26 @@
 {
+	"book": {
+		"people": "Odam",
+		"person": "Odam",
+		"comment_on": "Fikr bildirish",
+		"sum": "so'm",
+		"genre": "Janr",
+		"year": "Yili",
+		"language": "Tili",
+		"pages": "Betlar soni",
+		"cover": "Muqova",
+		"add_to_cart": "Savatchaga qo'shish",
+		"quick_buy": "Tezkor sotib olish",
+		"information": "Ma'lumot",
+		"comments": "Izohlar",
+		"quote": "Iqtiboslar",
+		"about_book": "Kitob haqida",
+		"no_information": "Ma'lumotlar yo'q",
+		"no_comments": "Izohlar yo'q",
+		"no_quotes": "Iqtiboslar yo'q",
+        "authors_books": "Muallif kitoblari",
+        "similar_books": "O'xshash kitoblar"
+	},
 	"books": {
 		"title": "Kitoblar",
 		"show": "Ko'rsatish",
@@ -16,7 +38,6 @@
 		"en": "Ingliz",
 		"ru": "Rus",
 		"authors": "Mualliflar",
-
 		"filter": "Filtr"
 	},
 	"auth": {
