@@ -5,7 +5,7 @@ import { BannerI } from "@/types";
 // import { formatTitleToUrl } from "@/helpers";
 import { CarouselItem } from "@/components/ui/carousel";
 
-const BannerItem: FC<BannerI> = ({ link, title, imgUrl }) => {
+const BannerItem: FC<BannerI> = ({ title, imgUrl }) => {
 	return (
 		<CarouselItem>
 			<NavLink

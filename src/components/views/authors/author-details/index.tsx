@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import Section from "@/layout/section";
 import Container from "@/layout/container";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 
 import noAuthor from "@/assets/icons/no-user.svg";
 import booksIcon from "@/assets/icons/books.svg";
