@@ -2,9 +2,9 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { BookI } from "@/types";
 import useAxiosInstance from "@/api";
+import { GetAllBooksParams } from "./interface";
 import { toast } from "@/components/ui/use-toast";
 import useQueryHandler from "@/hooks/useQueryHandler";
-import { GetAllBooksParams } from "./interface";
 
 const useBooksService = () => {
 	const axios = useAxiosInstance();
@@ -60,10 +60,6 @@ const useBooksService = () => {
 
 	const updateBookById = useMutation({
 		mutationFn: async (book: any) => {
-			queryClient.setQueryData(["books"], (prev: any) =>
-				prev.map((item: any) => (item._id === book._id ? book : item)),
-			);
-
 			const response = await axios.put(`/books/${book._id}`, book);
 			return response.data.data;
 		},

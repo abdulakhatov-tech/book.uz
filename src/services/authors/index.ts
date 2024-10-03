@@ -1,12 +1,11 @@
 import useAxiosInstance from "@/api";
-import { useParams } from "react-router-dom";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "@/components/ui/use-toast";
 import useQueryHandler from "@/hooks/useQueryHandler";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+
 const useAuthorsService = () => {
 	const axios = useAxiosInstance();
 	const queryClient = useQueryClient();
-	const { authorId } = useParams();
 	const getAllAuthors = useQueryHandler({
 		queryKey: ["authors"],
 		queryFn: async () => {
@@ -14,19 +13,20 @@ const useAuthorsService = () => {
 			return response.data.data;
 		},
 	});
-	const getAuthorById = useQueryHandler({
-		queryKey: ["author", { authorId }],
-		queryFn: async () => {
-			const response = await axios.get(`/authors/${authorId}`);
-			return response.data.data;
-		},
-		onError: (error) => {
-			toast({
-				title: "Error fetching author",
-				description: error.message,
-			});
-		},
-	});
+	const useGetAuthorById = (authorId: string) =>
+		useQueryHandler({
+			queryKey: ["author", { authorId }],
+			queryFn: async () => {
+				const response = await axios.get(`/authors/${authorId}`);
+				return response.data.data;
+			},
+			onError: (error) => {
+				toast({
+					title: "Error fetching author",
+					description: error.message,
+				});
+			},
+		});
 	const createAuthor = useMutation({
 		mutationFn: async (author: any) => {
 			const response = await axios.post("/authors", author);
@@ -96,7 +96,7 @@ const useAuthorsService = () => {
 		getAllAuthors,
 		createAuthor,
 		updateAuthorById,
-		getAuthorById,
+		useGetAuthorById,
 		deleteAuthorById,
 	};
 };

@@ -21,7 +21,8 @@ const useCreateAuthorFeatures = () => {
 	const navigate = useNavigate();
 	const { authorId } = useParams();
 	const axios = useAxiosInstance();
-	const { createAuthor, getAuthorById, updateAuthorById } = useAuthorsService();
+	const { createAuthor, useGetAuthorById, updateAuthorById } =
+		useAuthorsService();
 
 	const [uploading, setUploading] = useState(false);
 	const [imageUrl, setImageUrl] = useState<string | null>("");
@@ -33,7 +34,7 @@ const useCreateAuthorFeatures = () => {
 		dateOfdeath: "",
 	});
 
-	const { data: author, isLoading, isError } = getAuthorById;
+	const { data: author, isLoading, isError } = useGetAuthorById(authorId!);
 
 	const loading = isLoading || isError;
 

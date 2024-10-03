@@ -1,4 +1,10 @@
 {
+	"authors": {
+		"biography": "Biografiya",
+		"books": "kitoblar",
+		"book": "kitob",
+		"author_books": "Muallifning kitoblari"
+	},
 	"book": {
 		"people": "Odam",
 		"person": "Odam",
@@ -19,7 +25,12 @@
 		"no_comments": "Izohlar yo'q",
 		"no_quotes": "Iqtiboslar yo'q",
 		"authors_books": "Muallif kitoblari",
-		"similar_books": "O'xshash kitoblar"
+		"similar_books": "O'xshash kitoblar",
+		"send": "Yuborish",
+		"edit": "Tahrirlash",
+		"edit_comment": "Izohni tahrirlash",
+
+		"my_rating": "Mening bahoyim"
 	},
 	"books": {
 		"title": "Kitoblar",

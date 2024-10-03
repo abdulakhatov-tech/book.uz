@@ -123,3 +123,13 @@ export interface NewsI {
 	book?: any;
 	_id: string;
 }
+
+export interface ReviewI {
+	_id: string;
+	user: UserI;
+	bookId: string;
+	message: string;
+	rating: number;
+	createdAt?: Date;
+	updatedAt?: Date;
+}

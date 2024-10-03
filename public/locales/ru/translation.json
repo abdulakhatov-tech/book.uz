@@ -1,4 +1,10 @@
 {
+	"authors": {
+		"biography": "Биография",
+		"books": "книги",
+		"book": "книга",
+		"author_books": "Книги автора"
+	},
 	"book": {
 		"people": "Человек",
 		"person": "Человек",
@@ -19,7 +25,11 @@
 		"no_comments": "Нет комментариев",
 		"no_quotes": "Нет цитат",
 		"authors_books": "Книги автора",
-		"similar_books": "Похожие книги"
+		"similar_books": "Похожие книги",
+		"send": "Отправить",
+		"edit": "Редактировать",
+		"edit_comment": "Редактировать комментарий",
+		"my_rating": "Моя Оценка"
 	},
 	"books": {
 		"title": "Книги",

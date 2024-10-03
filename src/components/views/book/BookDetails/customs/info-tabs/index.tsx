@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 
 import { BookI } from "@/types";
+import { Reviews } from "./customs";
 import useBookDetailsFeatures from "../../features";
 
 const InfoTabs: FC = () => {
@@ -41,17 +42,25 @@ const InfoTabs: FC = () => {
 		switch (activeTab) {
 			case "information":
 				content = book?.description || t("book.no_information");
-				break;
+
+				return (
+					<div
+						dangerouslySetInnerHTML={{ __html: content }}
+						className="text-[14px] md:text-[16px] leading-[24px] font-medium text-secondary-black"
+					/>
+				);
 			case "comments":
-				content = !book?.description?.length
-					? book.description
-					: t("book.no_comments");
-				break;
+				return <Reviews />;
 			case "quote":
 				content = !book?.description?.length
 					? book.description
 					: t("book.no_quotes");
-				break;
+				return (
+					<div
+						dangerouslySetInnerHTML={{ __html: content }}
+						className="text-[14px] md:text-[16px] leading-[24px] font-medium text-secondary-black"
+					/>
+				);
 			default:
 				break;
 		}

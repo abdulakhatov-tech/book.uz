@@ -54,8 +54,6 @@ const Main: FC = () => {
 		const newPage = pageParam ? Number(pageParam) : 1;
 		setCurrentPage(newPage);
 		setQueryParams(params);
-
-		console.log(params, "params");
 	}, [searchParams]);
 
 	const handlePageChange = (newPage: number) => {
