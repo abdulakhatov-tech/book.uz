@@ -59,7 +59,7 @@ const useBooksService = () => {
 	});
 
 	const updateBookById = useMutation({
-		mutationFn: async (book: BookI) => {
+		mutationFn: async (book: any) => {
 			const response = await axios.put(`/books/${book._id}`, book);
 			return response.data.data;
 		},

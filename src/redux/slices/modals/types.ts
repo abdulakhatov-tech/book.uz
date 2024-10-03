@@ -1,4 +1,3 @@
-
 export interface AuthModalState {
 	authType: "sign-in" | "sign-up" | "verify-otp";
 	open: boolean;
