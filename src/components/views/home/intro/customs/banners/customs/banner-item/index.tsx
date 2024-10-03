@@ -8,9 +8,9 @@ import { CarouselItem } from "@/components/ui/carousel";
 const BannerItem: FC<BannerI> = ({ link, title, imgUrl }) => {
 	return (
 		<CarouselItem>
-			<NavLink 
-			// to={`${link}/books/details/${formatTitleToUrl(title)}`}
-			to='/'
+			<NavLink
+				// to={`${link}/books/details/${formatTitleToUrl(title)}`}
+				to="/"
 			>
 				<img
 					src={imgUrl}

@@ -9,7 +9,7 @@ export interface AuthModalState {
 export interface ReviewDropdownState {
 	open: boolean;
 	bookId: string;
-	review: any ;
+	review: any;
 	reviewType: "create" | "edit";
 }
 

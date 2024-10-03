@@ -61,7 +61,6 @@ const useAppRoutes = () => {
 			path: "/packages",
 			Component: Packages,
 			isPrivate: false,
-
 		},
 		{
 			_id: _id(),

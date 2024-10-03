@@ -13,19 +13,20 @@ const useAuthorsService = () => {
 			return response.data.data;
 		},
 	});
-	const useGetAuthorById = (authorId: string) =>  useQueryHandler({
-		queryKey: ["author", { authorId }],
-		queryFn: async () => {
-			const response = await axios.get(`/authors/${authorId}`);
-			return response.data.data;
-		},
-		onError: (error) => {
-			toast({
-				title: "Error fetching author",
-				description: error.message,
-			});
-		},
-	});
+	const useGetAuthorById = (authorId: string) =>
+		useQueryHandler({
+			queryKey: ["author", { authorId }],
+			queryFn: async () => {
+				const response = await axios.get(`/authors/${authorId}`);
+				return response.data.data;
+			},
+			onError: (error) => {
+				toast({
+					title: "Error fetching author",
+					description: error.message,
+				});
+			},
+		});
 	const createAuthor = useMutation({
 		mutationFn: async (author: any) => {
 			const response = await axios.post("/authors", author);

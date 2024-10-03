@@ -11,7 +11,7 @@ const initialState: IInitialState = {
 	categoryDropdownVisibility: false,
 	reviewsDropdownVisibility: {
 		open: false,
-		bookId: '',
+		bookId: "",
 		review: {},
 		reviewType: "create",
 	},
@@ -22,30 +22,30 @@ const modalSlice = createSlice({
 	name: "modal",
 	initialState,
 	reducers: {
-		toggleMenuModalVisibility: (
-			state,
-			{ payload }: PayloadAction<boolean>
-		) => {
+		toggleMenuModalVisibility: (state, { payload }: PayloadAction<boolean>) => {
 			state.menuModalVisibility = payload;
 		},
 		toggleAuthModalVisibility: (
 			state,
-			{ payload }: PayloadAction<Partial<AuthModalState>>
+			{ payload }: PayloadAction<Partial<AuthModalState>>,
 		) => {
 			state.authModalVisibility = { ...state.authModalVisibility, ...payload };
 		},
 		toggleCategoryDropdownVisibility: (
 			state,
-			{ payload }: PayloadAction<boolean | undefined>
+			{ payload }: PayloadAction<boolean | undefined>,
 		) => {
 			state.categoryDropdownVisibility =
 				payload !== undefined ? payload : !state.categoryDropdownVisibility;
 		},
 		toggleReviewDropdownVisibility: (
 			state,
-			{ payload }: PayloadAction<Partial<ReviewDropdownState>>
+			{ payload }: PayloadAction<Partial<ReviewDropdownState>>,
 		) => {
-			state.reviewsDropdownVisibility = { ...state.reviewsDropdownVisibility, ...payload };
+			state.reviewsDropdownVisibility = {
+				...state.reviewsDropdownVisibility,
+				...payload,
+			};
 		},
 	},
 });
