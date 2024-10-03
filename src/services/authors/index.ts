@@ -6,7 +6,6 @@ import useQueryHandler from "@/hooks/useQueryHandler";
 const useAuthorsService = () => {
 	const axios = useAxiosInstance();
 	const queryClient = useQueryClient();
-	const { authorId } = useParams();
 	const getAllAuthors = useQueryHandler({
 		queryKey: ["authors"],
 		queryFn: async () => {
@@ -14,7 +13,7 @@ const useAuthorsService = () => {
 			return response.data.data;
 		},
 	});
-	const getAuthorById = useQueryHandler({
+	const useGetAuthorById = (authorId: string) =>  useQueryHandler({
 		queryKey: ["author", { authorId }],
 		queryFn: async () => {
 			const response = await axios.get(`/authors/${authorId}`);
@@ -96,7 +95,7 @@ const useAuthorsService = () => {
 		getAllAuthors,
 		createAuthor,
 		updateAuthorById,
-		getAuthorById,
+		useGetAuthorById,
 		deleteAuthorById,
 	};
 };

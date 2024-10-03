@@ -11,6 +11,7 @@ const useBookDetailsFeatures = () => {
 	const { data: book, isLoading, isError } = useGetBookById(slug!);
 	const loading = !isOnline || isLoading || isError;
 
+
 	return {
 		book,
 		loading,

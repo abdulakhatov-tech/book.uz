@@ -1,13 +1,24 @@
 import { FC } from "react";
-import Container from "@/layout/container";
-import Section from "@/layout/section";
+import { useTranslation } from "react-i18next";
+
+import useBooksService from "@/services/books";
+import useBookDetailsFeatures from "../BookDetails/features";
+import ProductsCarousel from "@/components/common/products-carousel";
 
 const AuthorsBooks: FC = () => {
-	return (
-		<Section id="author-books" className="py-4 border">
-			<Container>AuthorsBooks</Container>
-		</Section>
-	);
+  const { t } = useTranslation();
+  const { book } = useBookDetailsFeatures();
+  const { useGetAllBooks } = useBooksService();
+
+  const authorBooks = useGetAllBooks({ authorIds: book?.author?._id });
+
+  return (
+    <ProductsCarousel
+      title={t("book.authors_books")}
+      books={authorBooks}
+      className='bg-white py-4'
+    />
+  );
 };
 
 export default AuthorsBooks;

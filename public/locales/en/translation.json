@@ -1,4 +1,10 @@
 {
+	"authors": {
+		"biography": "Biography",
+		"books": "books",
+		"book": "book",
+		"author_books": "Author books"
+	},
 	"book": {
 		"people": "People",
 		"person": "Person",
@@ -19,7 +25,11 @@
 		"no_comments": "No comments",
 		"no_quotes": "No quotes",
 		"authors_books": "Author's books",
-		"similar_books": "Similar books"
+		"similar_books": "Similar books",
+		"send": "Send",
+		"edit": "Edit",
+		"edit_comment": "Edit comment",
+		"my_rating": "My Rating"
 	},
 	"books": {
 		"title": "Books",

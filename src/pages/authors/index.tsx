@@ -1,7 +1,8 @@
+import AuthorsComponent from "@/components/views/authors";
 import type { FC } from "react";
 
 const AuthosPage: FC = () => {
-	return <div>AuthosPage</div>;
+	return <AuthorsComponent />;
 };
 
 export default AuthosPage;

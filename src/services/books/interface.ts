@@ -1,11 +1,11 @@
 export interface GetAllBooksParams {
 	page?: number;
 	limit?: number;
-	genreId?: string;
+	genreIds?: string;
 	fromPrice?: number;
 	toPrice?: number;
 	language?: string;
-	authorId?: string;
+	authorIds?: string;
 	sort?: string;
 	asc?: number;
 }

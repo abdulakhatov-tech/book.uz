@@ -38,8 +38,8 @@ const Banners: React.FC = () => {
 							<BannerItem key={item._id} {...item} />
 						))}
 					</CarouselContent>
-					<CarouselPrevious className="absolute left-2 md:left-4 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-[#939393]" />
-					<CarouselNext className="absolute right-2 md:right-4 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-[#939393]" />
+					<CarouselPrevious className="absolute left-2 md:left-4 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-[#939393] bg-white" />
+					<CarouselNext className="absolute right-2 md:right-4 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-[#939393] bg-white" />
 				</Carousel>
 			)}
 		</div>

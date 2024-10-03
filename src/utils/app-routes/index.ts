@@ -6,6 +6,7 @@ const Books = lazy(() => import("@/pages/books"));
 const BookDetails = lazy(() => import("@/pages/books/book-details"));
 const Packages = lazy(() => import("@/pages/packages"));
 const Authors = lazy(() => import("@/pages/authors"));
+const AuthorDetails = lazy(() => import("@/pages/authors/details"));
 const Discounts = lazy(() => import("@/pages/discounts"));
 const Cart = lazy(() => import("@/pages/cart"));
 const Checkout = lazy(() => import("@/pages/cart/checkout"));
@@ -51,7 +52,6 @@ const useAppRoutes = () => {
 					_id: _id(),
 					path: "details/:slug",
 					Component: BookDetails,
-
 					isPrivate: false,
 				},
 			],
@@ -61,12 +61,21 @@ const useAppRoutes = () => {
 			path: "/packages",
 			Component: Packages,
 			isPrivate: false,
+
 		},
 		{
 			_id: _id(),
 			path: "/authors",
 			Component: Authors,
 			isPrivate: false,
+			children: [
+				{
+					_id: _id(),
+					path: "details/:authorId",
+					Component: AuthorDetails,
+					isPrivate: false,
+				},
+			],
 		},
 		{
 			_id: _id(),
