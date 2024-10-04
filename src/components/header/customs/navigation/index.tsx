@@ -20,7 +20,7 @@ const HeaderNavigation: FC = () => {
 	const categoryDropdownVisibility = useAppSelector(
 		(state) => state.modal.categoryDropdownVisibility,
 	);
-	const wishlist = useAppSelector(state=>state.wishlist.bookmark)
+	const wishlist = useAppSelector((state) => state.wishlist.bookmark);
 
 	const handleCategoryDropdown = () => {
 		dispatch(toggleCategoryDropdownVisibility(!categoryDropdownVisibility));
@@ -61,16 +61,12 @@ const HeaderNavigation: FC = () => {
 					path="/cart"
 				/>
 				<NavButton
-					Icon={IoMdHeartEmpty }
+					Icon={IoMdHeartEmpty}
 					label={t("header.favourites")}
 					path="/bookmark"
 					count={wishlist?.length || 0}
 				/>
-				<NavButton
-					Icon={LuUser2 }
-					label={t("header.profile")}
-					path="/profile"
-				/>
+				<NavButton Icon={LuUser2} label={t("header.profile")} path="/profile" />
 			</div>
 		</div>
 	);

@@ -310,7 +310,6 @@ export const MockData = () => {
 		{
 			label: t("news.all"),
 			value: "all",
-		
 		},
 		{
 			label: t("news.title"),
@@ -323,8 +322,8 @@ export const MockData = () => {
 		{
 			label: t("news.discounts"),
 			value: "discounts",
-		}
-	 ] 
+		},
+	];
 
 	return {
 		categories,

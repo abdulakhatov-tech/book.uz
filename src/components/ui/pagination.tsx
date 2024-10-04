@@ -51,7 +51,9 @@ const PaginationLink = ({
 			buttonVariants({
 				variant: isActive ? "default" : "ghost",
 				size,
-				className: isActive ? "bg-secondary-blue hover:bg-secondary-blue text-blue" : 'white'
+				className: isActive
+					? "bg-secondary-blue hover:bg-secondary-blue text-blue"
+					: "white",
 			}),
 			className,
 		)}
