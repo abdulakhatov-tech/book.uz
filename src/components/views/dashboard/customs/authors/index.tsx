@@ -15,8 +15,8 @@ import useAuthorsFeatures from "./features";
 import { LoadingRows, UserRow } from "./customs";
 const Authors: React.FC = () => {
 	const { t } = useTranslation();
-	const { getAllAuthors } = useAuthorsFeatures();
-	const { isLoading, isError, data } = getAllAuthors;
+	const { useGetAllAuthors } = useAuthorsFeatures();
+	const { isLoading, isError, data } = useGetAllAuthors();
 	return (
 		<Section id="dashboard-authors">
 			<div className="flex items-center justify-between mb-2">

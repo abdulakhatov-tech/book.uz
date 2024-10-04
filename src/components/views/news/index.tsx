@@ -17,7 +17,6 @@ import Container from "@/layout/container";
 import CustomPagination from "@/tools/pagination";
 import { ViewCounter } from "../books/customs/toolbar/customs";
 import { LoadingSkeleton, NewsItem } from "../home/news/customs";
-import SearchBar from "@/tools/search-bar";
 
 const NewsComponent: FC = () => {
 	const { t } = useTranslation();
