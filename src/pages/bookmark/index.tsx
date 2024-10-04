@@ -1,7 +1,8 @@
 import type { FC } from "react";
+import BookMarkComponent from "@/components/views/bookmark";
 
 const BookmarkPage: FC = () => {
-	return <div>BookmarkPage</div>;
+	return <BookMarkComponent />
 };
 
 export default BookmarkPage;

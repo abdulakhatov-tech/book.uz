@@ -47,7 +47,7 @@ const NewAgeLibrary: FC = () => {
 								<BookSkeleton key={idx} />
 							))
 						: books?.map((book: BookI) => (
-								<ProductCard key={book._id} {...book} />
+								<ProductCard key={book._id} book={book} />
 							))}
 				</div>
 

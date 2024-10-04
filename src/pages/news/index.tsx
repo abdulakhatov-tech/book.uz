@@ -1,7 +1,8 @@
 import type { FC } from "react";
+import NewsComponent from "@/components/views/news";
 
 const NewsPage: FC = () => {
-	return <div>NewsPage</div>;
+	return <NewsComponent />;
 };
 
 export default NewsPage;

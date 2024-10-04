@@ -12,7 +12,7 @@ const Category: FC<{ className: string }> = ({ className }) => {
 				<li key={category.path}>
 					<NavLink
 						to={category.path}
-						className="text-black text-[16px] leading-[19.36px] font-semibold cursor-pointer"
+						className="text-black hover:text-orange text-[16px] leading-[19.36px] font-semibold cursor-pointer"
 					>
 						{category.label}
 					</NavLink>

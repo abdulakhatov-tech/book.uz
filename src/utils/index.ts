@@ -299,11 +299,32 @@ export const MockData = () => {
 	];
 
 	const categories = [
-		{ label: t("header.category.books"), path: "/books" },
+		{ label: t("header.category.books"), path: "/books?page=1&limit=24" },
 		{ label: t("header.category.collections"), path: "/packages" },
-		{ label: t("header.category.authors"), path: "/authors" },
+		{ label: t("header.category.authors"), path: "/authors?page=1&limit=24" },
 		{ label: t("header.category.discounts"), path: "/discounts" },
+		{ label: t("header.category.news"), path: "/news?page=1&limit=12" },
 	];
+
+	const newsfilterOptions = [
+		{
+			label: t("news.all"),
+			value: "all",
+		
+		},
+		{
+			label: t("news.title"),
+			value: "news",
+		},
+		{
+			label: t("news.new_books"),
+			value: "newBook",
+		},
+		{
+			label: t("news.discounts"),
+			value: "discounts",
+		}
+	 ] 
 
 	return {
 		categories,
@@ -312,6 +333,7 @@ export const MockData = () => {
 		bookLanguages,
 		featuredCards,
 		bookCoverTypes,
+		newsfilterOptions,
 		profileNavigation,
 		dashboardSidebarNavigation,
 	};
