@@ -7,15 +7,7 @@ import useBooksService from "@/services/books";
 import { useAppSelector } from "@/hooks/useRedux";
 import BookSkeleton from "@/components/common/product-card-skeleton";
 
-import {
-	Pagination,
-	PaginationContent,
-	PaginationEllipsis,
-	PaginationItem,
-	PaginationLink,
-	PaginationNext,
-	PaginationPrevious,
-} from "@/components/ui/pagination";
+import CustomPagination from "@/tools/pagination";
 
 interface QueryParams {
 	page: number;
@@ -28,10 +20,11 @@ interface QueryParams {
 
 const Main: FC = () => {
 	const { useGetAllBooks } = useBooksService();
+	const [searchParams] = useSearchParams();
 	const { limit } = useAppSelector((state) => state.columnCounter);
-	const [queryParams, setQueryParams] = useState<QueryParams>({ page: 1 });
-	const [searchParams, setSearchParams] = useSearchParams(); // use this to update the URL
+
 	const [currentPage, setCurrentPage] = useState<number>(1);
+	const [queryParams, setQueryParams] = useState<QueryParams>({ page: 1 });
 
 	// Fetching books using the state queryParams
 	const { isLoading, isError, data } = useGetAllBooks(queryParams);
@@ -56,15 +49,6 @@ const Main: FC = () => {
 		setQueryParams(params);
 	}, [searchParams]);
 
-	const handlePageChange = (newPage: number) => {
-		// Update the URL with the new page
-		setSearchParams((prevParams) => {
-			const updatedParams = new URLSearchParams(prevParams.toString());
-			updatedParams.set("page", newPage.toString());
-			return updatedParams;
-		});
-	};
-
 	return (
 		<div>
 			<div
@@ -77,42 +61,11 @@ const Main: FC = () => {
 							<BookSkeleton key={idx} />
 						))
 					: data?.map((book: BookI) => (
-							<ProductCard key={book._id} {...book} />
+							<ProductCard key={book._id} book={book} />
 						))}
 			</div>
 
-			<Pagination className="mt-4">
-				<PaginationContent>
-					<PaginationItem>
-						<PaginationPrevious
-							href="#"
-							onClick={() =>
-								handlePageChange(currentPage > 1 ? currentPage - 1 : 1)
-							}
-						/>
-					</PaginationItem>
-					{[...Array(3)].map((_, index) => (
-						<PaginationItem key={index}>
-							<PaginationLink
-								href="#"
-								isActive={currentPage === index + 1}
-								onClick={() => handlePageChange(index + 1)}
-							>
-								{index + 1}
-							</PaginationLink>
-						</PaginationItem>
-					))}
-					<PaginationItem>
-						<PaginationEllipsis />
-					</PaginationItem>
-					<PaginationItem>
-						<PaginationNext
-							href="#"
-							onClick={() => handlePageChange(currentPage + 1)}
-						/>
-					</PaginationItem>
-				</PaginationContent>
-			</Pagination>
+			{data?.length > 12 && <CustomPagination currentPage={currentPage} />}
 		</div>
 	);
 };

@@ -7,7 +7,7 @@ import { useSearchParams } from "react-router-dom";
 
 const useAuthorsFeatures = () => {
 	const isOnline = useOnlineStatus();
-	const { getAllAuthors } = useAuthorsService();
+	const { useGetAllAuthors } = useAuthorsService();
 
 	const [searchParams, setSearchParams] = useSearchParams();
 
@@ -18,7 +18,7 @@ const useAuthorsFeatures = () => {
 		initialSelectedGenres,
 	);
 
-	const { isLoading, isError, data } = getAllAuthors;
+	const { isLoading, isError, data } = useGetAllAuthors();
 	const loading = isLoading || isError || !isOnline;
 
 	const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {

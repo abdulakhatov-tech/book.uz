@@ -35,7 +35,7 @@ const NewsItem: FC<NewsI> = ({ imgUrl, title, createdAt, type, link }) => {
 				<p className="text-white text-[14px] font-medium leading-[16.94px]">
 					{formatDate(createdAt)}
 				</p>
-				<h4 className="text-orange text-[18px] font-semibold leading-[25.2px] truncate-two-lines">
+				<h4 className="text-white text-[18px] font-semibold leading-[25.2px] truncate-two-lines">
 					{title}
 				</h4>
 			</div>

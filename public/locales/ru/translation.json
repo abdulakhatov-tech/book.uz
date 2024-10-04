@@ -1,4 +1,15 @@
 {
+	"general": {
+		"search": "Поиск"
+	},
+	"news": {
+		"title": "Новости",
+		"sort_by": "Сортировать по",
+		"new_books": "Новые книги",
+		"discounts": "Скидки",
+		"no_news": "Нет новостей",
+		"all": "Все"
+	},
 	"authors": {
 		"biography": "Биография",
 		"books": "книги",
@@ -220,7 +231,8 @@
 			"books": "Книги",
 			"collections": "Коллекции",
 			"authors": "Авторы",
-			"discounts": "Скидки"
+			"discounts": "Скидки",
+			"news": "Новости"
 		},
 		"basket": "Корзина",
 		"favourites": "Избранное",

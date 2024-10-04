@@ -1,4 +1,15 @@
 {
+	"general": {
+		"search": "Search"
+	},
+	"news": {
+		"title": "News",
+		"sort_by": "Sort by",
+		"new_books": "New Books",
+		"discounts": "Discounts",
+		"no_news": "No News",
+		"all": "All"
+	},
 	"authors": {
 		"biography": "Biography",
 		"books": "books",
@@ -220,7 +231,8 @@
 			"books": "Books",
 			"collections": "Collections",
 			"authors": "Authors",
-			"discounts": "Discounts"
+			"discounts": "Discounts",
+			"news": "News"
 		},
 		"basket": "Basket",
 		"favourites": "Favourites",

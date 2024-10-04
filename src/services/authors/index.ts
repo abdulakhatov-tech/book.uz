@@ -3,16 +3,22 @@ import { toast } from "@/components/ui/use-toast";
 import useQueryHandler from "@/hooks/useQueryHandler";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
+interface QueryParamsI {
+	page: number;
+	limit: number;
+}
+
 const useAuthorsService = () => {
 	const axios = useAxiosInstance();
 	const queryClient = useQueryClient();
-	const getAllAuthors = useQueryHandler({
-		queryKey: ["authors"],
-		queryFn: async () => {
-			const response = await axios.get("/authors");
-			return response.data.data;
-		},
-	});
+	const useGetAllAuthors = (params?: QueryParamsI) =>
+		useQueryHandler({
+			queryKey: ["authors", params],
+			queryFn: async () => {
+				const response = await axios.get("/authors", { params });
+				return response.data.data;
+			},
+		});
 	const useGetAuthorById = (authorId: string) =>
 		useQueryHandler({
 			queryKey: ["author", { authorId }],
@@ -93,8 +99,8 @@ const useAuthorsService = () => {
 		},
 	});
 	return {
-		getAllAuthors,
 		createAuthor,
+		useGetAllAuthors,
 		updateAuthorById,
 		useGetAuthorById,
 		deleteAuthorById,

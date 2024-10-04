@@ -31,7 +31,6 @@ const ProductsCarousel: React.FC<ProductsCarouselPropsI> = ({
 }) => {
 	const isOnline = useOnlineStatus();
 	const { isLoading, isError, data } = books;
-	console.log(data, "carousel");
 
 	const loading = isLoading || isError || !isOnline;
 
@@ -53,7 +52,7 @@ const ProductsCarousel: React.FC<ProductsCarouselPropsI> = ({
 					key={book._id}
 					className="basis-[50%] sm:basis-[33%] md:basis-[25%] lg:basis-[20%] xl:basis-[16.6%]"
 				>
-					<ProductCard {...book} noSlide />
+					<ProductCard book={book} noSlide />
 				</CarouselItem>
 			));
 		}
@@ -63,7 +62,7 @@ const ProductsCarousel: React.FC<ProductsCarouselPropsI> = ({
 				key={book._id}
 				className="basis-[50%] sm:basis-[33%] md:basis-[25%] lg:basis-[20%] xl:basis-[16.6%]"
 			>
-				<ProductCard {...book} noSlide />
+				<ProductCard book={book} noSlide />
 			</CarouselItem>
 		));
 	};

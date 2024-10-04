@@ -2,9 +2,11 @@ import type { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Button } from "@/components/ui/button";
-import userIcon from "@/assets/icons/user.svg";
-import heartIcon from "@/assets/icons/heart.svg";
-import basketIcon from "@/assets/icons/basket.svg";
+
+import { LuUser2 } from "react-icons/lu";
+import { IoMdHeartEmpty } from "react-icons/io";
+import { FaShoppingBasket } from "react-icons/fa";
+
 import menuIcon from "@/assets/icons/menu-blue.svg";
 import closeIcon from "@/assets/icons/close-blue.svg";
 
@@ -18,6 +20,7 @@ const HeaderNavigation: FC = () => {
 	const categoryDropdownVisibility = useAppSelector(
 		(state) => state.modal.categoryDropdownVisibility,
 	);
+	const wishlist = useAppSelector((state) => state.wishlist.bookmark);
 
 	const handleCategoryDropdown = () => {
 		dispatch(toggleCategoryDropdownVisibility(!categoryDropdownVisibility));
@@ -53,23 +56,17 @@ const HeaderNavigation: FC = () => {
 			{/* Right-side Icons */}
 			<div className="flex items-center gap-2 sm:gap-4 md:gap-6">
 				<NavButton
-					icon={basketIcon}
+					Icon={FaShoppingBasket}
 					label={t("header.basket")}
 					path="/cart"
-					alt="View shopping basket"
 				/>
 				<NavButton
-					icon={heartIcon}
+					Icon={IoMdHeartEmpty}
 					label={t("header.favourites")}
 					path="/bookmark"
-					alt="View favorites"
+					count={wishlist?.length || 0}
 				/>
-				<NavButton
-					icon={userIcon}
-					label={t("header.profile")}
-					path="/profile"
-					alt="View user profile"
-				/>
+				<NavButton Icon={LuUser2} label={t("header.profile")} path="/profile" />
 			</div>
 		</div>
 	);

@@ -1,4 +1,15 @@
 {
+	"general": {
+		"search": "Qidiruv"
+	},
+	"news": {
+		"title": "Yangiliklar",
+		"sort_by": "Saralash",
+		"new_books": "Yangi kitoblar",
+		"discounts": "Chegirmalar",
+		"no_news": "Yangiliklar yo'q",
+		"all": "Hammasi"
+	},
 	"authors": {
 		"biography": "Biografiya",
 		"books": "kitoblar",
@@ -222,7 +233,8 @@
 			"books": "Kitoblar",
 			"collections": "To‘plamlar",
 			"authors": "Mualliflar",
-			"discounts": "Chegirmalar"
+			"discounts": "Chegirmalar",
+			"news": "Yangiliklar"
 		},
 		"basket": "Savat",
 		"favourites": "Sevimlilar",
