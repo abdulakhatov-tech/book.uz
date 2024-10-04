@@ -16,9 +16,9 @@ import useAuthorsService from "@/services/authors";
 
 const SelectAuthor: React.FC<SelectAuthorPropsI> = ({ value, onChange }) => {
 	const { t } = useTranslation();
-	const { getAllAuthors } = useAuthorsService();
+	const { useGetAllAuthors } = useAuthorsService();
 
-	const { isLoading, isError, data: authors } = getAllAuthors;
+	const { isLoading, isError, data: authors } = useGetAllAuthors();
 
 	return (
 		<Select value={value} onValueChange={(value) => onChange(value, "author")}>
