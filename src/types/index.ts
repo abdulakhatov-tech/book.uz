@@ -134,7 +134,7 @@ export interface ReviewI {
 	updatedAt?: Date;
 }
 
-export interface CartItemI {
+export interface CartItemI extends BookI {
 	_id: string;
 	name: string;
 	amount: number;
