@@ -1,33 +1,78 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Link } from "react-router-dom";
+import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 
 import { FaHeart } from "react-icons/fa6";
 import { GrSearch } from "react-icons/gr";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { FaShoppingBasket } from "react-icons/fa";
+import { toast } from "@/components/ui/use-toast";
 
-import { BookI } from "@/types";
-import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
 import {
 	addBookToWishlist,
 	removeBookFromWishlist,
 } from "@/redux/slices/wishlist";
+import { BookI, CartItemI } from "@/types";
+import { addToCart } from "@/redux/slices/cart";
+import { toggleAuthModalVisibility } from "@/redux/slices/modals";
+import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
 
 const ActionButtons: FC<{
 	book: BookI;
 }> = ({ book }) => {
+	const isAuthed = useAuthHeader();
 	const dispatch = useAppDispatch();
-	const wishlist = useAppSelector((state) => state.wishlist.bookmark);
+	const { error } = useAppSelector((state) => state.cart);
+	const { bookmark } = useAppSelector((state) => state.wishlist);
 
-	const isBookInWishlist = wishlist.some((b: BookI) => b._id === book._id);
+	const isBookInWishlist = bookmark?.some(
+		(b: BookI | CartItemI) => b._id === book._id,
+	);
 
 	const handleWishlist = () => {
+		if (!isAuthed) {
+			dispatch(
+				toggleAuthModalVisibility({
+					open: true,
+				}),
+			);
+
+			return;
+		}
+
 		if (isBookInWishlist) {
 			dispatch(removeBookFromWishlist(book));
 		} else {
 			dispatch(addBookToWishlist(book));
 		}
 	};
+
+	const handleAddToCart = () => {
+		if (!isAuthed) {
+			dispatch(
+				toggleAuthModalVisibility({
+					open: true,
+				}),
+			);
+
+			return;
+		}
+
+		dispatch(addToCart(book));
+		toast({
+			title: book.name,
+			description: "Added to Cart",
+		});
+	};
+
+	useEffect(() => {
+		if (error) {
+			toast({
+				title: book.name,
+				description: error,
+			});
+		}
+	}, [error]);
 
 	return (
 		<div className="absolute bottom-2 right-2 z-10 flex flex-col gap-1">
@@ -42,6 +87,7 @@ const ActionButtons: FC<{
 				)}
 			</div>
 			<div
+				onClick={handleAddToCart}
 				className={`w-7 md:w-8 h-7 md:h-8 rounded-full bg-white center custom-shadow hover:bg-orange active:bg-orange`}
 			>
 				<FaShoppingBasket className="text-[16px] md:text-[18px] text-black hover:text-white" />

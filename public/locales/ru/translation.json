@@ -1,4 +1,20 @@
 {
+	"cart": {
+		"title": "Корзина",
+		"price": "Цена",
+		"sum": "сум",
+		"favourites": "Избранное",
+		"delete": "Удалить",
+		"your_order": "Ваш заказ",
+		"books": "Книги",
+		"discount": "Скидка",
+		"delivery": "Доставка",
+		"total": "Итого",
+		"purchase": "Оформить покупку",
+		"continue_shopping": "Продолжить покупки",
+		"recommended": "Рекомендуемые",
+		"no_books_found": "Книги не найдены"
+	},
 	"general": {
 		"search": "Поиск"
 	},

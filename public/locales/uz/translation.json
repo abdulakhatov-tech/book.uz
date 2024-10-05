@@ -1,4 +1,20 @@
 {
+	"cart": {
+		"title": "Savatcha",
+		"price": "Narxi",
+		"sum": "so'm",
+		"favourites": "Sevimlilarga",
+		"delete": "O'chirish",
+		"your_order": "Sizning buyurtmangiz",
+		"books": "Kitoblar",
+		"discount": "Chegirma",
+		"delivery": "Yetkazib berish",
+		"total": "Jami",
+		"purchase": "Xarid qilish",
+		"continue_shopping": "Xaridni davom ettirish",
+		"recommended": "Tavsiya etilgan",
+		"no_books_found": "Kitoblar topilmadi"
+	},
 	"general": {
 		"search": "Qidiruv"
 	},
