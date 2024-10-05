@@ -7,58 +7,58 @@ import { toggleAuthModalVisibility } from "@/redux/slices/modals";
 import { useState } from "react";
 
 const useSummaryFeatures = () => {
-  const navigate = useNavigate();
-  const isAuthed = useAuthHeader();
-  const dispatch = useAppDispatch();
-  const { isLoading } = useLoading();
-  const { cart } = useAppSelector((state) => state.cart);
-  const [loadingCheckout, setLoadingCheckout] = useState<boolean>(false);
+	const navigate = useNavigate();
+	const isAuthed = useAuthHeader();
+	const dispatch = useAppDispatch();
+	const { isLoading } = useLoading();
+	const { cart } = useAppSelector((state) => state.cart);
+	const [loadingCheckout, setLoadingCheckout] = useState<boolean>(false);
 
-  const delivery = 30000;
-  const discount = 20000;
-  const totalBooks = cart.reduce((sum, item) => sum + item.amount, 0);
-  const totalPrice = cart.reduce(
-    (sum, item) => sum + item.amount * item.bookPrice,
-    0
-  );
-  const totalPriceWithDelivery = totalPrice + delivery;
-  const totalPriceWithDiscount = totalPriceWithDelivery - discount;
+	const delivery = 30000;
+	const discount = 20000;
+	const totalBooks = cart.reduce((sum, item) => sum + item.amount, 0);
+	const totalPrice = cart.reduce(
+		(sum, item) => sum + item.amount * item.bookPrice,
+		0,
+	);
+	const totalPriceWithDelivery = totalPrice + delivery;
+	const totalPriceWithDiscount = totalPriceWithDelivery - discount;
 
-  const checkoutHandler = () => {
-    if (isLoading) {
-      return;
-    }
+	const checkoutHandler = () => {
+		if (isLoading) {
+			return;
+		}
 
-    if (!isAuthed) {
-      dispatch(
-        toggleAuthModalVisibility({
-          open: true,
-        })
-      );
-    }
+		if (!isAuthed) {
+			dispatch(
+				toggleAuthModalVisibility({
+					open: true,
+				}),
+			);
+		}
 
-    setLoadingCheckout(true);
+		setLoadingCheckout(true);
 
-    setTimeout(() => {
-      if (cart.length) {
-        navigate("/cart/checkout");
-      } else {
-        navigate("/");
-      }
-      setLoadingCheckout(false);
-    }, 1000);
-  };
+		setTimeout(() => {
+			if (cart.length) {
+				navigate("/cart/checkout");
+			} else {
+				navigate("/");
+			}
+			setLoadingCheckout(false);
+		}, 1000);
+	};
 
-  return {
-    delivery,
-    discount,
-    isLoading,
-    totalBooks,
-    totalPrice,
-    loadingCheckout,
-    checkoutHandler,
-    totalPriceWithDiscount,
-  };
+	return {
+		delivery,
+		discount,
+		isLoading,
+		totalBooks,
+		totalPrice,
+		loadingCheckout,
+		checkoutHandler,
+		totalPriceWithDiscount,
+	};
 };
 
 export default useSummaryFeatures;

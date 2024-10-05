@@ -135,15 +135,15 @@ export interface ReviewI {
 }
 
 export interface CartItemI {
-    _id: string;
-    name: string;
-    amount: number;
-    bookPrice: number;
-    cover: string;
-    discount: number;
-    imgUrl: string;
-    link: string;
-    maxAmount: number;
-    state: string; 
-	author: AuthorI
+	_id: string;
+	name: string;
+	amount: number;
+	bookPrice: number;
+	cover: string;
+	discount: number;
+	imgUrl: string;
+	link: string;
+	maxAmount: number;
+	state: string;
+	author: AuthorI;
 }

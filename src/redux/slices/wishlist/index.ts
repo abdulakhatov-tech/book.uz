@@ -3,12 +3,12 @@ import { loadState, saveState } from "@/utils/localStorage";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface WishlistPropsI {
-	bookmark: (BookI | CartItemI)[] ;
+	bookmark: (BookI | CartItemI)[];
 }
 
 const WISHLIST_KEY = "wishlist";
 
-const initialState: WishlistPropsI = loadState(WISHLIST_KEY) ||  {
+const initialState: WishlistPropsI = loadState(WISHLIST_KEY) || {
 	bookmark: [],
 };
 
@@ -20,7 +20,10 @@ const wishlistSlice = createSlice({
 			state.bookmark = [...state.bookmark, action.payload];
 			saveState(WISHLIST_KEY, state);
 		},
-		removeBookFromWishlist: (state, action: PayloadAction<BookI | CartItemI>) => {
+		removeBookFromWishlist: (
+			state,
+			action: PayloadAction<BookI | CartItemI>,
+		) => {
 			state.bookmark = state.bookmark.filter(
 				(book) => book._id !== action.payload._id,
 			);
