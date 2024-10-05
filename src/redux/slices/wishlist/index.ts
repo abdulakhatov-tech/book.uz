@@ -1,14 +1,14 @@
-import { BookI } from "@/types";
+import { BookI, CartItemI } from "@/types";
 import { loadState, saveState } from "@/utils/localStorage";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface WishlistPropsI {
-	bookmark: BookI[];
+	bookmark: (BookI | CartItemI)[] ;
 }
 
 const WISHLIST_KEY = "wishlist";
 
-const initialState: WishlistPropsI = loadState(WISHLIST_KEY) || {
+const initialState: WishlistPropsI = loadState(WISHLIST_KEY) ||  {
 	bookmark: [],
 };
 
@@ -16,11 +16,11 @@ const wishlistSlice = createSlice({
 	name: "wishlist",
 	initialState,
 	reducers: {
-		addBookToWishlist: (state, action: PayloadAction<BookI>) => {
+		addBookToWishlist: (state, action: PayloadAction<BookI | CartItemI>) => {
 			state.bookmark = [...state.bookmark, action.payload];
 			saveState(WISHLIST_KEY, state);
 		},
-		removeBookFromWishlist: (state, action: PayloadAction<BookI>) => {
+		removeBookFromWishlist: (state, action: PayloadAction<BookI | CartItemI>) => {
 			state.bookmark = state.bookmark.filter(
 				(book) => book._id !== action.payload._id,
 			);

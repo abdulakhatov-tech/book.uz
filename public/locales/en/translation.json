@@ -1,4 +1,20 @@
 {
+	"cart": {
+		"title": "Cart",
+		"price": "Price",
+		"sum": "sum",
+		"favourites": "Favourites",
+		"delete": "Delete",
+		"your_order": "Your order",
+		"books": "Kitoblar",
+		"discount": "Discount",
+		"delivery": "Delivery",
+		"total": "Total",
+		"purchase": "Purchase",
+		"continue_shopping": "Continue Shopping",
+		"recommended": "Recommended",
+		"no_books_found": "No Books found"
+	},
 	"general": {
 		"search": "Search"
 	},

@@ -21,6 +21,7 @@ const HeaderNavigation: FC = () => {
 		(state) => state.modal.categoryDropdownVisibility,
 	);
 	const wishlist = useAppSelector((state) => state.wishlist.bookmark);
+	const cart = useAppSelector((state) => state.cart.cart);
 
 	const handleCategoryDropdown = () => {
 		dispatch(toggleCategoryDropdownVisibility(!categoryDropdownVisibility));
@@ -59,6 +60,7 @@ const HeaderNavigation: FC = () => {
 					Icon={FaShoppingBasket}
 					label={t("header.basket")}
 					path="/cart"
+					count={cart?.length || 0}
 				/>
 				<NavButton
 					Icon={IoMdHeartEmpty}
