@@ -48,7 +48,7 @@ const RecentlyPublishedBookCard: React.FC<BookI> = ({
 	);
 
 	return (
-		<div className="grid grid-cols-[130px_1fr] sm:grid-cols-[160px_1fr] md:grid-cols-[190px_1fr] bg-secondary-blue rounded-[16px] h-full max-w-[480px]">
+		<div className="grid grid-cols-[130px_1fr] sm:grid-cols-[160px_1fr] md:grid-cols-[190px_1fr] bg-secondary-blue rounded-[16px] h-full max-w-[480px]  transition-transform duration-300 ease-in-out transform hover:scale-[1.05] hover:shadow-lg">
 			<div className="relative">
 				<div className="md:absolute -top-[40px] left-[50%] md:-translate-x-[50%] bg-yellow-300 w-full max-w-[164px] h-full max-h-[226px]  overflow-hidden rounded-[6px]">
 					{renderImages()}

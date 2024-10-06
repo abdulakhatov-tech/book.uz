@@ -15,7 +15,7 @@ const CardItem: FC<StatisticsI> = ({ icon, title, description }) => {
 	}
 
 	return (
-		<Card className="py-5 md:py-7 px-4 md:px-6 bg-[rgba(214,89,17,0.1)] flex items-center gap-4 md:gap-6">
+		<Card className="py-5 md:py-7 px-4 md:px-6 bg-[rgba(214,89,17,0.1)] flex items-center gap-4 md:gap-6  transition-transform duration-300 ease-in-out transform hover:scale-[1.05] hover:shadow-lg">
 			<div className="w-[56px] h-[56px] md:w-[64px] md:h-[64px] lg:w-[72px] lg:h-[72px] rounded-[50%] bg-white flex items-center justify-center">
 				<img
 					src={icon}

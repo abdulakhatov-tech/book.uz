@@ -39,7 +39,7 @@ const Genres: FC = () => {
 					aria-label={`Genre ${item.name}`}
 					className={({ isActive }) =>
 						classNames(
-							"py-2 px-4 hover:bg-orange hover:text-white active:opacity-75 rounded-md text-[16px] font-normal cursor-pointer flex items-center justify-between gap-2",
+							"py-2 px-4 hover:bg-orange hover:text-white active:opacity-75 rounded-md text-[16px] font-normal cursor-pointer flex items-center justify-between gap-2  transition-transform duration-300 ease-in-out transform hover:scale-[0.96] hover:shadow-lg",
 							{ "bg-orange text-white": isActive }, // Highlight the active genre
 						)
 					}

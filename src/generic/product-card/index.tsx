@@ -14,7 +14,7 @@ const ProductCard: FC<{ book: BookI; noSlide?: boolean }> = ({
 	const { imgUrl, additionalImages, author, name, bookPrice } = book;
 
 	return (
-		<div className="custom-shadow p-2 rounded-[8px]">
+		<div className="custom-shadow p-2 rounded-[8px]  transition-transform duration-300 ease-in-out transform hover:scale-[1.05] hover:shadow-lg">
 			<div className="relative max-h-[240px] sm:max-h-[245px] w-full overflow-hidden rounded-[6px]">
 				<RenderImages
 					imgUrl={imgUrl}
