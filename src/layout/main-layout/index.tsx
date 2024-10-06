@@ -9,8 +9,6 @@ import ScrollRestoration from "@/tools/scroll-restoration";
 import BackToTop from "@/tools/back-to-top";
 
 const MainLayout: React.FC = () => {
-
-	
 	return (
 		<div className="flex flex-col min-h-[100vh]">
 			<Header />
