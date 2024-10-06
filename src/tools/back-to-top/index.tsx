@@ -34,7 +34,7 @@ const BackToTop: FC = () => {
 		<button
 			onClick={scrollToTop}
 			className={clsx(
-				"w-9 h-9 rounded-md flex items-center justify-center bg-orange fixed left-4 bottom-6 custom-shadow transition-all duration-300 ease-out transform",
+				"w-9 h-9 rounded-md flex items-center justify-center bg-orange fixed left-4 bottom-6 custom-shadow transition-all duration-300 ease-out transform hover:scale-[1.05] hover:shadow-lg",
 				{
 					"opacity-0 pointer-events-none translate-y-2": !isVisible,
 					"opacity-100 pointer-events-auto scale-110": clicked,

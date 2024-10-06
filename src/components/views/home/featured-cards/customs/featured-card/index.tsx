@@ -15,7 +15,7 @@ const FeaturedCard: React.FC<FeaturedCardI> = ({
 	description,
 }) => {
 	return (
-		<Card className="bg-[rgba(16,125,228,0.1)]">
+		<Card className="bg-[rgba(16,125,228,0.1)] transition-transform duration-300 ease-in-out transform hover:scale-[1.05] hover:shadow-lg">
 			<CardHeader>
 				<div>
 					<img src={icon} alt={`${title} icon`} className="w-[48px] h-[48px]" />
