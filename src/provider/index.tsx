@@ -28,7 +28,7 @@ const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 					<SuspenseWrapper>
 						<Provider store={store}>
 							{children}
-							<ReactQueryDevtools initialIsOpen={false} />
+							<ReactQueryDevtools position="left" initialIsOpen={false} />
 						</Provider>
 					</SuspenseWrapper>
 				</BrowserRouter>

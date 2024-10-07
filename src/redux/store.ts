@@ -1,20 +1,22 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {
 	cart,
-	columnCounter,
-	filter,
 	modal,
+	filter,
 	sidebar,
 	wishlist,
+	checkout,
+	columnCounter,
 } from "./slices";
 
 export const store = configureStore({
 	reducer: {
 		cart,
 		modal,
-		sidebar,
 		filter,
+		sidebar,
 		wishlist,
+		checkout,
 		columnCounter,
 	},
 });
