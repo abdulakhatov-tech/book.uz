@@ -1,2 +1,2 @@
-export { default as SelectRegions } from './regions'
-export { default as SelectDistricts } from './districts'
+export { default as SelectRegions } from "./regions";
+export { default as SelectDistricts } from "./districts";

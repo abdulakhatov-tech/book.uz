@@ -9,42 +9,44 @@ import useOnlineStatus from "@/hooks/useOnlineStatus";
 import { DeliveryItem, LoadingSkeleton } from "./customs";
 
 const PaymentMethods: FC = () => {
-  const { t } = useTranslation();
-  const isOnline = useOnlineStatus();
-  const { useGetPaymentMethods } = useUserApi();
-  const { userInfo } = useAppSelector((state) => state.checkout);
+	const { t } = useTranslation();
+	const isOnline = useOnlineStatus();
+	const { useGetPaymentMethods } = useUserApi();
+	const { userInfo } = useAppSelector((state) => state.checkout);
 
-  const { isLoading, isError, data } = useGetPaymentMethods();
-  const [paymentMethods, setPaymentMethods] = useState<PaymentMethodI[]>([]); 
+	const { isLoading, isError, data } = useGetPaymentMethods();
+	const [paymentMethods, setPaymentMethods] = useState<PaymentMethodI[]>([]);
 
-  const loading = isLoading || isError || !isOnline;
+	const loading = isLoading || isError || !isOnline;
 
-  useEffect(() => {
-    if (!loading && data) {
-      const filteredMethods =
-        userInfo.delivery_method !== "pickup"
-          ? data.filter((paymentMethod: PaymentMethodI) => paymentMethod.type !== "cash")
-          : data;
+	useEffect(() => {
+		if (!loading && data) {
+			const filteredMethods =
+				userInfo.delivery_method !== "pickup"
+					? data.filter(
+							(paymentMethod: PaymentMethodI) => paymentMethod.type !== "cash",
+						)
+					: data;
 
-      setPaymentMethods(filteredMethods);
-    }
-  }, [userInfo.delivery_method, data, loading]);
+			setPaymentMethods(filteredMethods);
+		}
+	}, [userInfo.delivery_method, data, loading]);
 
-  return (
-    <Card title={t("checkout.payment_method")}>
-      <div>
-        <div className="grid md:grid-cols-3 gap-4">
-          {loading ? (
-            <LoadingSkeleton />
-          ) : (
-            paymentMethods?.map((method: PaymentMethodI) => (
-              <DeliveryItem key={method._id} method={method} />
-            ))
-          )}
-        </div>
-      </div>
-    </Card>
-  );
+	return (
+		<Card title={t("checkout.payment_method")}>
+			<div>
+				<div className="grid md:grid-cols-3 gap-4">
+					{loading ? (
+						<LoadingSkeleton />
+					) : (
+						paymentMethods?.map((method: PaymentMethodI) => (
+							<DeliveryItem key={method._id} method={method} />
+						))
+					)}
+				</div>
+			</div>
+		</Card>
+	);
 };
 
 export default PaymentMethods;

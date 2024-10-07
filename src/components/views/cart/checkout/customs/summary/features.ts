@@ -13,7 +13,9 @@ const useSummaryFeatures = () => {
 	const dispatch = useAppDispatch();
 	const { isLoading } = useLoading();
 	const { cart } = useAppSelector((state) => state.cart);
-	const { delivery, discount, couponCode, agree_to_rules } = useAppSelector(state => state.checkout)
+	const { delivery, discount, couponCode, agree_to_rules } = useAppSelector(
+		(state) => state.checkout,
+	);
 	const [loadingCheckout, setLoadingCheckout] = useState<boolean>(false);
 
 	const totalBooks = cart.reduce((sum, item) => sum + item.amount, 0);
@@ -21,13 +23,18 @@ const useSummaryFeatures = () => {
 		(sum, item) => sum + item.amount * item.bookPrice,
 		0,
 	);
-	const totalPriceWithDelivery = totalPrice + delivery - (totalPrice + delivery) * (Number(couponCode) / 100);
-	const couponCodePercentageToPrice = couponCode ? ((totalPrice + delivery) * (Number(couponCode) / 100)) : 0;
+	const totalPriceWithDelivery =
+		totalPrice +
+		delivery -
+		(totalPrice + delivery) * (Number(couponCode) / 100);
+	const couponCodePercentageToPrice = couponCode
+		? (totalPrice + delivery) * (Number(couponCode) / 100)
+		: 0;
 	const totalPriceWithDiscount = totalPriceWithDelivery - discount;
 
 	const agreeTermsOfRules = (value: boolean) => {
-		dispatch(setAgreeToRules(value))
-	}
+		dispatch(setAgreeToRules(value));
+	};
 
 	const checkoutHandler = () => {
 		if (isLoading) {
@@ -60,7 +67,7 @@ const useSummaryFeatures = () => {
 		isLoading,
 		totalBooks,
 		totalPrice,
-		couponCode, 
+		couponCode,
 		agree_to_rules,
 		loadingCheckout,
 		checkoutHandler,
