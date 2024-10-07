@@ -27,3 +27,7 @@ export const saveState = (key: string, state: any): void => {
 		});
 	}
 };
+
+export const clearLocalStorage = (key: string) => {
+	localStorage.removeItem(key);
+};

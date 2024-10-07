@@ -65,7 +65,12 @@ export interface UserI {
 	wishlist: Array<any>;
 	_id: string;
 	email?: string;
-	bio?: string; // Object ID
+	bio?: string;
+	address?: {
+		region?: string;
+		district?: string;
+		details?: string;
+	};
 }
 
 export interface AuthorI {
@@ -146,4 +151,40 @@ export interface CartItemI extends BookI {
 	maxAmount: number;
 	state: string;
 	author: AuthorI;
+}
+
+export interface UserCheckoutInfo {
+	name: string;
+	surname: string;
+	phoneNumber: string;
+	delivery_method: string;
+	region: string;
+	district: string;
+	address: string;
+	payment_method: string;
+	couponCode: string;
+	extra_note: string;
+}
+
+export interface DeliveryMethodI {
+	_id: string;
+	name: string;
+	type: "courier" | "pickup" | "postal";
+	value: number;
+	createdAt?: Date;
+	updatedAt?: Date;
+}
+
+export interface PaymentMethodI {
+	_id: string;
+	name: string;
+	type: "payme" | "cash" | "click";
+	createdAt?: Date;
+	updatedAt?: Date;
+}
+
+export interface RegionI {
+	_id: string;
+	name: string;
+	paymentTypes: ("balance" | "card" | "cash")[];
 }
