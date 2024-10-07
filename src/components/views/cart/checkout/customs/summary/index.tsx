@@ -1,10 +1,8 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
 import { FaShoppingBasket } from "react-icons/fa";
-import { MdShoppingCartCheckout } from "react-icons/md";
 
 import { formatPrice } from "@/helpers";
 import useSummaryFeatures from "./features";

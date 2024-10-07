@@ -14,6 +14,7 @@ import { RegionI } from "@/types";
 import { useUserApi } from "@/services/user-api";
 import useOnlineStatus from "@/hooks/useOnlineStatus";
 import { setUserInfo } from "@/redux/slices/checkout";
+import { UserI } from "@/types";
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
 
 const SelectDistrict: FC = () => {
