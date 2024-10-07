@@ -29,7 +29,7 @@ const SelectDistrict: FC = () => {
 		data: districts,
 		isLoading,
 		isError,
-	} = useGetDistricts(userInfo.region || user?.address?.region as string);
+	} = useGetDistricts(userInfo.region || (user?.address?.region as string));
 	const isDisabled = isLoading || isError || !isOnline;
 
 	const handleValueChange = (value: string) => {
