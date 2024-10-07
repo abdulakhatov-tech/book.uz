@@ -29,7 +29,7 @@ const SelectDistrict: FC = () => {
 		data: districts,
 		isLoading,
 		isError,
-	} = useGetDistricts(userInfo.region || user?.address?.region);
+	} = useGetDistricts(userInfo.region || user?.address?.region as string);
 	const isDisabled = isLoading || isError || !isOnline;
 
 	const handleValueChange = (value: string) => {
@@ -45,7 +45,7 @@ const SelectDistrict: FC = () => {
 				{t("checkout.district")}
 			</Label>
 			<Select
-				value={userInfo.district || user?.address?.district}
+				value={userInfo.district || user?.address?.district || ""}
 				onValueChange={handleValueChange}
 				disabled={!userInfo.region || isDisabled}
 			>
