@@ -12,8 +12,8 @@ const useSectionLazyLoader = () => {
 	const newArrivalBooksRef = useRef(null);
 	const newAgeLibraryBooksRef = useRef(null);
 	const recentlyPublishedBooksRef = useRef(null);
- 
-	const [isStatisticsVisible, setStatisticsVisible] = useState<boolean>(false)
+
+	const [isStatisticsVisible, setStatisticsVisible] = useState<boolean>(false);
 	const [isGenresVisible, setGenresVisible] = useState<boolean>(false);
 	const [isNewAgeLibraryBooksVisible, setNewAgeLibraryBooksVisible] =
 		useState<boolean>(false);
@@ -60,8 +60,8 @@ const useSectionLazyLoader = () => {
 
 		const statisticsObserver = new IntersectionObserver(
 			observeSection(setStatisticsVisible),
-            options,
-		)
+			options,
+		);
 
 		// Start observing sections
 		if (genresRef.current) genresObserver.observe(genresRef.current);
@@ -72,7 +72,8 @@ const useSectionLazyLoader = () => {
 		if (newArrivalBooksRef.current)
 			newArrivalBooksObserver.observe(newArrivalBooksRef.current);
 		if (newsRef.current) newsObserver.observe(newsRef.current);
-		if (statisticsRef.current) statisticsObserver.observe(statisticsRef.current);
+		if (statisticsRef.current)
+			statisticsObserver.observe(statisticsRef.current);
 
 		return () => {
 			newsObserver.disconnect();
@@ -132,20 +133,20 @@ const useSectionLazyLoader = () => {
 
 	const statistics = useQueryHandler({
 		queryKey: ["statistics"],
-        queryFn: async () => {
-            const response = await axios.get("/statistics");
-            return response.data?.data || [];
-        },
-        enabled: isStatisticsVisible,
-	})
+		queryFn: async () => {
+			const response = await axios.get("/statistics");
+			return response.data?.data || [];
+		},
+		enabled: isStatisticsVisible,
+	});
 
 	return {
 		genres,
 		newsRef,
 		allNews,
 		genresRef,
-        statistics,
-        statisticsRef,
+		statistics,
+		statisticsRef,
 		newArrivalBooks,
 		newAgeLibraryBooks,
 		newArrivalBooksRef,

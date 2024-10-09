@@ -28,7 +28,7 @@ const useGenresFeatures = () => {
 
 	const handleSelectAllChange = (checked: boolean) => {
 		if (checked) {
-			setSelectedItems(['all']);
+			setSelectedItems(["all"]);
 		} else {
 			setSelectedItems([]);
 		}
@@ -59,26 +59,26 @@ const useGenresFeatures = () => {
 		params.delete("language");
 
 		if (selectedItems.includes("all")) {
-			params.append("language", "all"); 
+			params.append("language", "all");
 		} else {
-
 			selectedItems.forEach((language) => {
-				params.append("language", language); 
+				params.append("language", language);
 			});
 		}
 
-		setSearchParams(params); 
+		setSearchParams(params);
 	}, [selectedItems, searchParams]);
 
 	useEffect(() => {
-		const languageFromQuery = searchParams.getAll("language"); 
+		const languageFromQuery = searchParams.getAll("language");
 
 		if (languageFromQuery.length > 0) {
-			setSelectedItems(languageFromQuery); 
+			setSelectedItems(languageFromQuery);
 		}
 	}, [searchParams]);
 
-	const isAllSelected = selectedItems.includes("all") || (data?.length === selectedItems.length);
+	const isAllSelected =
+		selectedItems.includes("all") || data?.length === selectedItems.length;
 
 	return {
 		handleSelectAllChange,

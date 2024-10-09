@@ -21,7 +21,10 @@ const Settings: React.FC = () => {
 
 			<form onSubmit={handleSubmit}>
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-					<Label htmlFor="name" className="text-[#828282] flex flex-col gap-2 font-semibold">
+					<Label
+						htmlFor="name"
+						className="text-[#828282] flex flex-col gap-2 font-semibold"
+					>
 						{t("profile.settings.name")}:
 						<Input
 							type="text"
@@ -54,7 +57,10 @@ const Settings: React.FC = () => {
 							onChange={handleInputChange}
 						/>
 					</Label>
-					<Label htmlFor="email" className="text-[#828282] flex flex-col gap-2 font-semibold">
+					<Label
+						htmlFor="email"
+						className="text-[#828282] flex flex-col gap-2 font-semibold"
+					>
 						{t("profile.settings.email")}:
 						<Input
 							type="email"
@@ -63,7 +69,10 @@ const Settings: React.FC = () => {
 							onChange={handleInputChange}
 						/>
 					</Label>
-					<Label htmlFor="bio" className="text-[#828282] flex flex-col gap-2 font-semibold">
+					<Label
+						htmlFor="bio"
+						className="text-[#828282] flex flex-col gap-2 font-semibold"
+					>
 						{t("profile.settings.bio")}:
 						<Textarea
 							name="bio"
@@ -73,7 +82,10 @@ const Settings: React.FC = () => {
 						/>
 					</Label>
 				</div>
-				<Button type="submit" className="bg-[#EF7F1A] hover:bg-[#EF7F1A] mt-4 font-semibold">
+				<Button
+					type="submit"
+					className="bg-[#EF7F1A] hover:bg-[#EF7F1A] mt-4 font-semibold"
+				>
 					{loading
 						? `${t("profile.settings.save")}...`
 						: t("profile.settings.save")}

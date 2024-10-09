@@ -16,7 +16,7 @@ const Address: FC = () => {
 
 	const handleAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const extraAddress = e.target.value;
-		dispatch(setUserInfo({ ...userInfo, billingAddress: { extraAddress }}));
+		dispatch(setUserInfo({ ...userInfo, billingAddress: { extraAddress } }));
 	};
 
 	return (

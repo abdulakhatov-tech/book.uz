@@ -23,9 +23,9 @@ const initialState: InitialStateI = {
 		extra_note: "",
 		billingAddress: {
 			region: "",
-            district: "",
-            extraAddress: "",
-		}
+			district: "",
+			extraAddress: "",
+		},
 	},
 };
 

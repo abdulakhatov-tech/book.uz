@@ -30,8 +30,7 @@ const SelectDistrict: FC = () => {
 	const isDisabled = isLoading || isError || !isOnline;
 
 	const handleValueChange = (value: string) => {
-		if(!isDisabled) {
-
+		if (!isDisabled) {
 			dispatch(setUserInfo({ district: value }));
 		}
 	};

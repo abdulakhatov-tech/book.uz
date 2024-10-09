@@ -40,39 +40,41 @@ const useUsersService = () => {
 	const axios = useAxiosInstance();
 	const queryClient = useQueryClient();
 
-	const useGetAllUsers = (params?: QueryParamsI) => useQueryHandler({
-		queryKey: ["users", params],
-		queryFn: async () => {
-			const response = await axios.get("/users", { params});
-			return response?.data?.data || [];
-		},
-	});
+	const useGetAllUsers = (params?: QueryParamsI) =>
+		useQueryHandler({
+			queryKey: ["users", params],
+			queryFn: async () => {
+				const response = await axios.get("/users", { params });
+				return response?.data?.data || [];
+			},
+		});
 
-	const useGetUserById = (userId: string) => useQueryHandler({
-		queryKey: ["user", { userId }],
-		queryFn: async () => {
-			const response = await axios.get(`/users/${userId}`);
-			return response?.data?.data || null;
-		},
-	});
+	const useGetUserById = (userId: string) =>
+		useQueryHandler({
+			queryKey: ["user", { userId }],
+			queryFn: async () => {
+				const response = await axios.get(`/users/${userId}`);
+				return response?.data?.data || null;
+			},
+		});
 
 	const updateUserById = useMutation({
 		mutationFn: async (user: {
 			_id: string;
-            name?: string;
-            surname?: string;
-            phoneNumber?: string;
-            email?: string;
-            bio?: string;
-            profilePhoto?: string;
+			name?: string;
+			surname?: string;
+			phoneNumber?: string;
+			email?: string;
+			bio?: string;
+			profilePhoto?: string;
 			balance?: number;
 			frozenBalance?: number;
 			lastEnteredAt?: Date;
 			billingAddress?: {
-                region?: string;
-                district?: string;
-                details?: string;
-            };
+				region?: string;
+				district?: string;
+				details?: string;
+			};
 		}) => {
 			const response = await axios.put(`/users/${user._id}`, user);
 			return response.data.data;
@@ -97,7 +99,7 @@ const useUsersService = () => {
 		onError: (error) => {
 			toast({
 				title: t("Ma'lumotlaringizni yangilaydigan xatolik"),
-                description: error.message,
+				description: error.message,
 			});
 		},
 	});

@@ -10,9 +10,8 @@ const useSummaryFeatures = () => {
 	const dispatch = useAppDispatch();
 	const { isLoading } = useLoading();
 	const { cart } = useAppSelector((state) => state.cart);
-	const { delivery, discount, couponCode, agree_to_rules, userInfo } = useAppSelector(
-		(state) => state.checkout,
-	);
+	const { delivery, discount, couponCode, agree_to_rules, userInfo } =
+		useAppSelector((state) => state.checkout);
 	const [loadingCheckout, setLoadingCheckout] = useState<boolean>(false);
 
 	const totalBooks = cart.reduce((sum, item) => sum + item.amount, 0);
@@ -50,8 +49,8 @@ const useSummaryFeatures = () => {
 
 		setTimeout(() => {
 			if (cart.length) {
-				console.log(userInfo)
-			} 
+				console.log(userInfo);
+			}
 			setLoadingCheckout(false);
 		}, 1000);
 	};

@@ -39,7 +39,7 @@ const AuthHeader: FC = () => {
 						className="w-full h-full object-cover"
 					/>
 				</NavLink>
-				<img	
+				<img
 					src={closeIcon}
 					alt="Close"
 					className="w-[20px] h-[20px] cursor-pointer"

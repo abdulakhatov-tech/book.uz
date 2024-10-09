@@ -26,8 +26,8 @@ const Banners: React.FC = () => {
 	const isOnline = useOnlineStatus();
 	const { useGetAllBanners } = useBannersService();
 
-	const { isLoading, isError, data: banners} = useGetAllBanners();
-	const loading = isLoading || isError || !isOnline
+	const { isLoading, isError, data: banners } = useGetAllBanners();
+	const loading = isLoading || isError || !isOnline;
 
 	return (
 		<div className="h-full flex-grow relative rounded-[8px] overflow-hidden">

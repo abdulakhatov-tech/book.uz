@@ -3,19 +3,19 @@ import React from "react";
 import { Outlet, useOutlet } from "react-router-dom";
 
 const Main: React.FC = () => {
-  const hasOutlet = useOutlet();
+	const hasOutlet = useOutlet();
 
-  return (
-    <>
-      {hasOutlet ? (
-        <Outlet />
-      ) : (
-        <div>
-          <News />
-        </div>
-      )}
-    </>
-  );
+	return (
+		<>
+			{hasOutlet ? (
+				<Outlet />
+			) : (
+				<div>
+					<News />
+				</div>
+			)}
+		</>
+	);
 };
 
 export default Main;

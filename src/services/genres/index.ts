@@ -22,19 +22,20 @@ const useGenresService = () => {
 		},
 	});
 
-	const useGetGenreById = (genreId: string) => useQueryHandler({
-		queryKey: ["genre", { genreId }],
-		queryFn: async () => {
-			const response = await axios.get(`/genres/${genreId}`);
-			return response.data.data;
-		},
-		onError: (error) => {
-			toast({
-				title: "Error fetching genre",
-				description: error.message,
-			});
-		},
-	});
+	const useGetGenreById = (genreId: string) =>
+		useQueryHandler({
+			queryKey: ["genre", { genreId }],
+			queryFn: async () => {
+				const response = await axios.get(`/genres/${genreId}`);
+				return response.data.data;
+			},
+			onError: (error) => {
+				toast({
+					title: "Error fetching genre",
+					description: error.message,
+				});
+			},
+		});
 
 	const createGenre = useMutation({
 		mutationFn: async (genre: any) => {
@@ -63,13 +64,13 @@ const useGenresService = () => {
 			const response = await axios.put(`/genres/${genre._id}`, genre);
 			return response.data.data;
 		},
-		onSuccess: (updatedGenre:any) => {
+		onSuccess: (updatedGenre: any) => {
 			queryClient.invalidateQueries({
 				queryKey: ["genres"],
 			});
 			queryClient.invalidateQueries({
-                queryKey: ["genre", { genreId: updatedGenre?._id }],
-            });
+				queryKey: ["genre", { genreId: updatedGenre?._id }],
+			});
 		},
 		onError: (error) => {
 			toast({

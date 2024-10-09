@@ -27,7 +27,7 @@ const useAuthorsFeatures = () => {
 
 	const handleSelectAllChange = (checked: boolean) => {
 		if (checked) {
-			setSelectedAuthors(['all']);
+			setSelectedAuthors(["all"]);
 		} else {
 			setSelectedAuthors([]);
 		}
@@ -76,7 +76,8 @@ const useAuthorsFeatures = () => {
 		}
 	}, [searchParams]);
 
-	const isAllSelected = selectedAuthors.includes("all") || (data?.length === selectedAuthors.length);
+	const isAllSelected =
+		selectedAuthors.includes("all") || data?.length === selectedAuthors.length;
 
 	return {
 		handleSelectAllChange,

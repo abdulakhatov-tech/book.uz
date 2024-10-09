@@ -25,7 +25,7 @@ const UserInfo: React.FC = () => {
 			) : (
 				data?.phoneNumber && (
 					<p
-					className="text-[16px] font-semibold text-secondary-black"
+						className="text-[16px] font-semibold text-secondary-black"
 						aria-label={`Phone number: ${formatPhoneNumber(data.phoneNumber)}`}
 					>
 						{formatPhoneNumber(data.phoneNumber)}

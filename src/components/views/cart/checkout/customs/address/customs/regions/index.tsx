@@ -34,7 +34,7 @@ const SelectRegions: FC = () => {
 	);
 
 	useEffect(() => {
-		if (userInfo.delivery_method === "pickup" && regions?.length ) {
+		if (userInfo.delivery_method === "pickup" && regions?.length) {
 			dispatch(setUserInfo({ ...userInfo, region: regions[1]?._id }));
 		} else {
 			dispatch(setUserInfo({ ...userInfo }));

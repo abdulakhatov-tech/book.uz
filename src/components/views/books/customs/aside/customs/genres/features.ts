@@ -79,7 +79,8 @@ const useGenresFeatures = () => {
 		}
 	}, [searchParams]); // Watch for changes in searchParams
 
-	const isAllSelected = selectedGenres.includes("all") || (data?.length === selectedGenres.length);
+	const isAllSelected =
+		selectedGenres.includes("all") || data?.length === selectedGenres.length;
 
 	return {
 		handleSelectAllChange,
