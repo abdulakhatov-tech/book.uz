@@ -27,8 +27,7 @@ const useAuthorsFeatures = () => {
 
 	const handleSelectAllChange = (checked: boolean) => {
 		if (checked) {
-			const allAuthorIds = data?.map((author: AuthorI) => author._id) || [];
-			setSelectedAuthors(allAuthorIds);
+			setSelectedAuthors(['all']);
 		} else {
 			setSelectedAuthors([]);
 		}
@@ -58,9 +57,13 @@ const useAuthorsFeatures = () => {
 
 		params.delete("authorIds");
 
-		selectedAuthors.forEach((authorId) => {
-			params.append("authorIds", authorId);
-		});
+		if (selectedAuthors.includes("all")) {
+			params.append("authorIds", "all");
+		} else {
+			selectedAuthors.forEach((authorId) => {
+				params.append("authorIds", authorId);
+			});
+		}
 
 		setSearchParams(params); // Update the URL with modified params
 	}, [selectedAuthors, searchParams]);
@@ -73,7 +76,7 @@ const useAuthorsFeatures = () => {
 		}
 	}, [searchParams]);
 
-	const isAllSelected = data?.length === selectedAuthors.length;
+	const isAllSelected = selectedAuthors.includes("all") || (data?.length === selectedAuthors.length);
 
 	return {
 		handleSelectAllChange,

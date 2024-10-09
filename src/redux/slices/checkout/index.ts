@@ -19,12 +19,13 @@ const initialState: InitialStateI = {
 		surname: "",
 		phoneNumber: "",
 		delivery_method: "courier",
-		region: "",
-		district: "",
-		address: "",
 		payment_method: "payme",
-		couponCode: "",
 		extra_note: "",
+		billingAddress: {
+			region: "",
+            district: "",
+            extraAddress: "",
+		}
 	},
 };
 
@@ -32,21 +33,22 @@ const checkoutSlice = createSlice({
 	name: "checkout",
 	initialState,
 	reducers: {
-		setUserInfo: (state, action: PayloadAction<UserCheckoutInfo>) => {
+		setUserInfo: (state, action) => {
 			state.userInfo = { ...state.userInfo, ...action.payload };
 		},
-		setDelivery: (state, action: PayloadAction<number>) => {
+		setDelivery: (state, action) => {
 			state.delivery = action.payload;
 		},
-		setCouponCode: (state, action: PayloadAction<number>) => {
+		setCouponCode: (state, action) => {
 			state.couponCode = action.payload;
 		},
-		setDiscount: (state, action: PayloadAction<number>) => {
+		setDiscount: (state, action) => {
 			state.discount = action.payload;
 		},
-		setAgreeToRules: (state, action: PayloadAction<boolean>) => {
+		setAgreeToRules: (state, action) => {
 			state.agree_to_rules = action.payload;
 		},
+		resetCheckout: () => initialState,
 	},
 });
 

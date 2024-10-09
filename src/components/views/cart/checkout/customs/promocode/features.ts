@@ -11,9 +11,9 @@ import { setCouponCode } from "@/redux/slices/checkout";
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
 
 const useCouponCodeFeatures = () => {
+	const dispatch = useAppDispatch(); 
 	const { applyCoupon } = useUserApi();
 	const [coupon, setCoupon] = useState<string>("");
-	const dispatch = useAppDispatch();
 	const { couponCode } = useAppSelector((state) => state.checkout);
 
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

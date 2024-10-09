@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
 		<footer className="bg-[#171717]">
 			<Container>
 				<ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 py-10">
-					<li>
+					<li className="cursor-pointer">
 						<img src={logo} alt="Book.uz logo" />
 						{/* Tagline */}
 						<h4 className="text-white text-lg lg:text-xl italic font-normal mt-5 mb-3">
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
 							BOOK.UZ - {t("footer.largest_shop")}
 						</p>
 					</li>
-					<li>
+					<li className="cursor-pointer">
 						<h4 className="text-white text-lg lg:text-xl font-semibold mb-4">
 							{t("footer.menu")}
 						</h4>
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
 							<li>{t("footer.branch_and_diller")}</li>
 						</ul>
 					</li>
-					<li>
+					<li className="cursor-pointer">
 						<h4 className="text-white text-lg lg:text-xl font-semibold mb-4">
 							{t("footer.contacts")}
 						</h4>
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
 							</div>
 						</address>
 					</li>
-					<li>
+					<li className="cursor-pointer">
 						<h4 className="text-white text-lg lg:text-xl font-semibold mb-4">
 							{t("footer.downloading_applications")}
 						</h4>
@@ -85,8 +85,8 @@ const Footer: React.FC = () => {
 					</li>
 				</ul>
 				<div className="text-white flex items-center justify-between flex-col sm:flex-row py-4 border-t border-t-white gap-2">
-					<p>© {new Date().getFullYear()} Book.uz</p>
-					<ul className="flex items-center gap-4">
+					<p className="cursor-pointer">© {new Date().getFullYear()} Book.uz</p>
+					<ul className="flex items-center gap-4 cursor-pointer">
 						<li>{t("footer.public")}</li>
 						<li>{t("footer.politic")}</li>
 					</ul>

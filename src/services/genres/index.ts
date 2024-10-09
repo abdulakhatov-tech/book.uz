@@ -1,4 +1,3 @@
-import { useParams } from "react-router-dom";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import useAxiosInstance from "@/api";
@@ -8,7 +7,6 @@ import useQueryHandler from "@/hooks/useQueryHandler";
 const useGenresService = () => {
 	const axios = useAxiosInstance();
 	const queryClient = useQueryClient();
-	const { genreId } = useParams();
 
 	const genres = useQueryHandler({
 		queryKey: ["genres"],
@@ -24,7 +22,7 @@ const useGenresService = () => {
 		},
 	});
 
-	const getGenreById = useQueryHandler({
+	const useGetGenreById = (genreId: string) => useQueryHandler({
 		queryKey: ["genre", { genreId }],
 		queryFn: async () => {
 			const response = await axios.get(`/genres/${genreId}`);
@@ -65,14 +63,13 @@ const useGenresService = () => {
 			const response = await axios.put(`/genres/${genre._id}`, genre);
 			return response.data.data;
 		},
-		onSuccess: () => {
+		onSuccess: (updatedGenre:any) => {
 			queryClient.invalidateQueries({
 				queryKey: ["genres"],
 			});
-			toast({
-				title: "Genre updated",
-				description: "Genre updated successfully",
-			});
+			queryClient.invalidateQueries({
+                queryKey: ["genre", { genreId: updatedGenre?._id }],
+            });
 		},
 		onError: (error) => {
 			toast({
@@ -91,10 +88,6 @@ const useGenresService = () => {
 			queryClient.invalidateQueries({
 				queryKey: ["genres"],
 			});
-			toast({
-				title: "Genre deleted",
-				description: "Genre deleted successfully",
-			});
 		},
 		onError: (error) => {
 			toast({
@@ -107,7 +100,7 @@ const useGenresService = () => {
 	return {
 		genres,
 		createGenre,
-		getGenreById,
+		useGetGenreById,
 		updateGenreById,
 		deleteGenreById,
 	};

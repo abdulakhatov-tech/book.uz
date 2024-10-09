@@ -74,7 +74,7 @@ const GenresComponent: FC = () => {
 									)}
 								>
 									<Checkbox
-										checked={selectedGenres.includes(genre._id)}
+										checked={selectedGenres.includes(genre._id) || isAllSelected}
 										onCheckedChange={() => handleGenreChange(genre._id)}
 									/>
 									<span className="text-[16px] leading-[24px] font-semibold">

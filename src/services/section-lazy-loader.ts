@@ -6,12 +6,14 @@ import useQueryHandler from "@/hooks/useQueryHandler";
 const useSectionLazyLoader = () => {
 	const axios = useAxiosInstance();
 
+	const newsRef = useRef(null);
 	const genresRef = useRef(null);
+	const statisticsRef = useRef(null);
+	const newArrivalBooksRef = useRef(null);
 	const newAgeLibraryBooksRef = useRef(null);
 	const recentlyPublishedBooksRef = useRef(null);
-	const newArrivalBooksRef = useRef(null);
-	const newsRef = useRef(null);
-
+ 
+	const [isStatisticsVisible, setStatisticsVisible] = useState<boolean>(false)
 	const [isGenresVisible, setGenresVisible] = useState<boolean>(false);
 	const [isNewAgeLibraryBooksVisible, setNewAgeLibraryBooksVisible] =
 		useState<boolean>(false);
@@ -56,6 +58,11 @@ const useSectionLazyLoader = () => {
 			options,
 		);
 
+		const statisticsObserver = new IntersectionObserver(
+			observeSection(setStatisticsVisible),
+            options,
+		)
+
 		// Start observing sections
 		if (genresRef.current) genresObserver.observe(genresRef.current);
 		if (newAgeLibraryBooksRef.current)
@@ -65,13 +72,15 @@ const useSectionLazyLoader = () => {
 		if (newArrivalBooksRef.current)
 			newArrivalBooksObserver.observe(newArrivalBooksRef.current);
 		if (newsRef.current) newsObserver.observe(newsRef.current);
+		if (statisticsRef.current) statisticsObserver.observe(statisticsRef.current);
 
 		return () => {
+			newsObserver.disconnect();
 			genresObserver.disconnect();
+			statisticsObserver.disconnect();
+			newArrivalBooksObserver.disconnect();
 			newAgeLibraryBooksObserver.disconnect();
 			recentlyPublishedBooksObserver.disconnect();
-			newArrivalBooksObserver.disconnect();
-			newsObserver.disconnect();
 		};
 	}, []);
 
@@ -121,17 +130,28 @@ const useSectionLazyLoader = () => {
 		enabled: isNewsVisible,
 	});
 
+	const statistics = useQueryHandler({
+		queryKey: ["statistics"],
+        queryFn: async () => {
+            const response = await axios.get("/statistics");
+            return response.data?.data || [];
+        },
+        enabled: isStatisticsVisible,
+	})
+
 	return {
-		genresRef,
-		newAgeLibraryBooksRef,
-		recentlyPublishedBooksRef,
-		newArrivalBooksRef,
-		newsRef,
 		genres,
-		newAgeLibraryBooks,
-		recentlyPublishedBooks,
-		newArrivalBooks,
+		newsRef,
 		allNews,
+		genresRef,
+        statistics,
+        statisticsRef,
+		newArrivalBooks,
+		newAgeLibraryBooks,
+		newArrivalBooksRef,
+		newAgeLibraryBooksRef,
+		recentlyPublishedBooks,
+		recentlyPublishedBooksRef,
 	};
 };
 

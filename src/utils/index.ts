@@ -1,14 +1,7 @@
 import { useId } from "react";
 import { useTranslation } from "react-i18next";
 
-import { BannerI, FeaturedCardI, StatisticsI } from "@/types";
-
-import bannerImg1 from "@/assets/images/sep-taqdir-tuhfasi.png";
-import bannerImg2 from "@/assets/images/onamni-asra.png";
-import bannerImg3 from "@/assets/images/haram.png";
-import bannerImg4 from "@/assets/images/turkiston.png";
-import bannerImg5 from "@/assets/images/hayotga-qayt.png";
-import bannerImg6 from "@/assets/images/sivilizatsiyalar-toqnashuvi-va-yangi-dunyo-tartibi.png";
+import { FeaturedCardI } from "@/types";
 
 // banners 2
 import banner2Img1 from "@/assets/images/banner-1.jpg";
@@ -23,10 +16,8 @@ import featuredCardsIcon2 from "@/assets/icons/book.svg";
 import featuredCardsIcon3 from "@/assets/icons/credit-card.svg";
 import featuredCardsIcon4 from "@/assets/icons/guarantee.svg";
 
-import bookIcon from "@/assets/icons/books-icon.svg";
-
 // profile navigation
-import { RiDashboardFill } from "react-icons/ri";
+import { RiDashboard3Line, RiDashboardFill } from "react-icons/ri";
 import { SlBasketLoaded } from "react-icons/sl";
 import { IoSettingsOutline } from "react-icons/io5";
 
@@ -39,57 +30,6 @@ import { IoBookSharp } from "react-icons/io5";
 import { IoBasketOutline } from "react-icons/io5";
 import { FaRegNewspaper } from "react-icons/fa6";
 import { PiUsersThreeLight } from "react-icons/pi";
-
-export const banners: BannerI[] = [
-	{
-		_id: "1",
-		link: import.meta.env.VITE_BASE_URL,
-		imgUrl: bannerImg1,
-		title: "Sep taqdir tuhfasi",
-		position: 1,
-		type: 10,
-	},
-	{
-		_id: "2",
-		link: import.meta.env.VITE_BASE_URL,
-		imgUrl: bannerImg2,
-		title: "Onamni asra",
-		position: 2,
-		type: 10,
-	},
-	{
-		_id: "3",
-		link: import.meta.env.VITE_BASE_URL,
-		imgUrl: bannerImg3,
-		title: "Haram",
-		position: 3,
-		type: 10,
-	},
-	{
-		_id: "4",
-		link: import.meta.env.VITE_BASE_URL,
-		imgUrl: bannerImg4,
-		title: "Turkiston Rossiya va Xitoy oraligida",
-		position: 4,
-		type: 10,
-	},
-	{
-		_id: "5",
-		link: import.meta.env.VITE_BASE_URL,
-		imgUrl: bannerImg5,
-		title: "Hayotga qayt",
-		position: 5,
-		type: 10,
-	},
-	{
-		_id: "6",
-		link: import.meta.env.VITE_BASE_URL,
-		imgUrl: bannerImg6,
-		title: "Sivilizatsiyalar toqnashuvi va yangi dunyo tartibi",
-		position: 6,
-		type: 10,
-	},
-];
 
 export const banners_2 = [
 	{
@@ -145,28 +85,14 @@ export const MockData = () => {
 		},
 	];
 
-	const statistics: StatisticsI[] = [
-		{
-			_id: "1",
-			icon: bookIcon,
-			title: 5000,
-			description: t("home.statistics.description_1"),
-		},
-		{
-			_id: "2",
-			icon: bookIcon,
-			title: 30000,
-			description: t("home.statistics.description_2"),
-		},
-		{
-			_id: "3",
-			icon: bookIcon,
-			title: 7,
-			description: t("home.statistics.description_3"),
-		},
-	];
-
 	const profileNavigation = [
+		{
+			_id,
+			icon: RiDashboard3Line,
+			label: t("profile.nav.features"),
+			path: "/profile",
+			roles: ["admin", "owner", "user"],
+		},
 		{
 			_id,
 			icon: RiDashboardFill,
@@ -179,7 +105,7 @@ export const MockData = () => {
 			icon: SlBasketLoaded,
 			label: t("profile.nav.orders"),
 			path: "/profile/orders",
-			roles: ["user"],
+			roles: ["admin", "owner", "user"],
 		},
 		{
 			_id,
@@ -328,7 +254,6 @@ export const MockData = () => {
 	return {
 		categories,
 		bookStates,
-		statistics,
 		bookLanguages,
 		featuredCards,
 		bookCoverTypes,

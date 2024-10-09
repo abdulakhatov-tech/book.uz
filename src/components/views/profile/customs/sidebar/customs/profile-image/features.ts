@@ -54,7 +54,8 @@ const useProfileImageFeatures = () => {
 
 			// Update the user profile with the new image URL
 			updateUserById.mutate({
-				...user,
+				// ...user,
+				_id: user?._id,
 				profilePhoto: imageUrl,
 			});
 		} catch (error) {

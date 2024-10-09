@@ -10,19 +10,17 @@ import {
 import { Label } from "@/components/ui/label";
 
 import Loading from "../loading";
-import { RegionI, UserI } from "@/types";
+import { RegionI } from "@/types";
 import { useUserApi } from "@/services/user-api";
 import useOnlineStatus from "@/hooks/useOnlineStatus";
 import { setUserInfo } from "@/redux/slices/checkout";
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
-import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 
 const SelectRegions: FC = () => {
 	const { t } = useTranslation();
 	const dispatch = useAppDispatch();
 	const isOnline = useOnlineStatus();
 	const { useGetRegions } = useUserApi();
-	const user: UserI | null = useAuthUser();
 	const { userInfo } = useAppSelector((state) => state.checkout);
 
 	const { data: regions, isLoading, isError } = useGetRegions();
@@ -30,18 +28,18 @@ const SelectRegions: FC = () => {
 
 	const handleValueChange = useCallback(
 		(value: string) => {
-			dispatch(setUserInfo({ ...userInfo, region: value }));
+			dispatch(setUserInfo({ region: value }));
 		},
-		[dispatch, userInfo],
+		[userInfo],
 	);
 
 	useEffect(() => {
-		if (userInfo.delivery_method === "pickup" && regions?.length) {
+		if (userInfo.delivery_method === "pickup" && regions?.length ) {
 			dispatch(setUserInfo({ ...userInfo, region: regions[1]?._id }));
 		} else {
 			dispatch(setUserInfo({ ...userInfo }));
 		}
-	}, [userInfo.delivery_method]);
+	}, [userInfo.delivery_method, userInfo.billingAddress.region]);
 
 	return (
 		<div>
@@ -52,7 +50,7 @@ const SelectRegions: FC = () => {
 				{t("checkout.region")}
 			</Label>
 			<Select
-				value={userInfo.region || user?.address?.region}
+				value={userInfo.billingAddress.region}
 				onValueChange={handleValueChange}
 				disabled={isDisabled || userInfo.delivery_method === "pickup"}
 			>

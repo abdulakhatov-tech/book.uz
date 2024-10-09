@@ -80,6 +80,7 @@ const Summary: FC = () => {
 
 			<div className="mt-4 flex flex-col gap-2 text-[16px] font-medium leading-[24px] text-white">
 				<Button
+					disabled={isLoading || loadingCheckout}
 					onClick={checkoutHandler}
 					className="flex items-center gap-2 w-full bg-orange hover:bg-orange "
 				>
@@ -94,6 +95,7 @@ const Summary: FC = () => {
 				</Button>
 				<Link to={isLoading ? "/cart" : "/books?page=1&limit=9"}>
 					<Button
+						disabled={isLoading || loadingCheckout}
 						variant="outline"
 						className="flex items-center gap-2 w-full bg-white hover:bg-white hover:text-secondary-black text-secondary-black  text-[16px] font-medium leading-[24px]"
 					>

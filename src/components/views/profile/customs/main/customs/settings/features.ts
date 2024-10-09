@@ -44,17 +44,27 @@ const useSettingFeatures = () => {
 	const handleSubmit = (e: any) => {
 		e.preventDefault();
 
-		if (user && user?._id) {
-			setLoading(true);
-			updateUserById.mutate({
-				...user,
-				name: formData.name,
-				surname: formData.surname,
-				phoneNumber: formData.phoneNumber,
-				email: formData.email,
-				bio: formData.bio,
-			});
-			setLoading(false);
+		if (user && user._id) {
+			// Compare current form data with the user's original data
+			const isDataChanged =
+				formData.name !== user.name ||
+				formData.surname !== user.surname ||
+				formData.phoneNumber !== user.phoneNumber ||
+				formData.email !== user.email ||
+				formData.bio !== user.bio;
+
+			if (isDataChanged) {
+				setLoading(true);
+				updateUserById.mutate({
+					_id: user._id,
+					name: formData.name,
+					surname: formData.surname,
+					phoneNumber: formData.phoneNumber,
+					email: formData.email,
+					bio: formData.bio,
+				});
+				setLoading(false);
+			}
 		}
 	};
 

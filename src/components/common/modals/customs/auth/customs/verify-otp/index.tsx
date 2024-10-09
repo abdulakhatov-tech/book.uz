@@ -71,7 +71,7 @@ const VerifyOtp: FC = () => {
 				disabled={loading}
 				type="submit"
 				variant="default"
-				className="bg-[#EF7F1A] w-full mt-4"
+				className="bg-orange hover:bg-orange w-full mt-4"
 			>
 				{loading ? (
 					<div className="flex items-center gap-2">

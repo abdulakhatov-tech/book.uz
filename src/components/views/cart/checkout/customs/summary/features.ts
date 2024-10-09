@@ -1,5 +1,3 @@
-import { useNavigate } from "react-router-dom";
-
 import useLoading from "@/utils/custom-loading";
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
@@ -8,12 +6,11 @@ import { useState } from "react";
 import { setAgreeToRules } from "@/redux/slices/checkout";
 
 const useSummaryFeatures = () => {
-	const navigate = useNavigate();
 	const isAuthed = useAuthHeader();
 	const dispatch = useAppDispatch();
 	const { isLoading } = useLoading();
 	const { cart } = useAppSelector((state) => state.cart);
-	const { delivery, discount, couponCode, agree_to_rules } = useAppSelector(
+	const { delivery, discount, couponCode, agree_to_rules, userInfo } = useAppSelector(
 		(state) => state.checkout,
 	);
 	const [loadingCheckout, setLoadingCheckout] = useState<boolean>(false);
@@ -53,10 +50,8 @@ const useSummaryFeatures = () => {
 
 		setTimeout(() => {
 			if (cart.length) {
-				navigate("/cart/checkout");
-			} else {
-				navigate("/");
-			}
+				console.log(userInfo)
+			} 
 			setLoadingCheckout(false);
 		}, 1000);
 	};

@@ -33,7 +33,7 @@ const Logout: React.FC = () => {
 		<AlertDialog>
 			<AlertDialogTrigger>
 				<div
-					className="py-5 flex items-center gap-2 hover:text-[crimson]"
+					className="py-5 flex items-center gap-2 hover:text-[crimson] font-semibold"
 					aria-label={t("profile.nav.logout")}
 				>
 					<IoIosLogOut

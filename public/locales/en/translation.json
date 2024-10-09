@@ -247,6 +247,7 @@
 	},
 	"profile": {
 		"nav": {
+			"features": "Features",
 			"dashboard": "Dashboard",
 			"orders": "Orders",
 			"products": "Products",
@@ -267,6 +268,11 @@
 			"email": "Your email",
 			"bio": "Bio",
 			"save": "Save"
+		},
+		"review": {
+			"title": "Comments",
+			"to_see_in_comments": "See in comments",
+			"replied_to_your_comment": "replied to your comment"
 		},
 		"message": {
 			"image_title": "Update Error!",

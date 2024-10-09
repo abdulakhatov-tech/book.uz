@@ -20,7 +20,7 @@ const Navigation: React.FC = () => {
 							to={item.path}
 							className={({ isActive }) =>
 								classnames(
-									"flex items-center gap-2 text-[#000] text-[16px] font-medium hover:text-[#333]",
+									"flex items-center gap-2 text-[#000] text-[16px] font-semibold hover:text-[#333]",
 									{
 										"text-[#EF7F1A]": isActive,
 										"hover:text-[#EF7F1A]": !isActive,

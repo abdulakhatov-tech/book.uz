@@ -5,13 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 import Card from "../card";
-import { UserI } from "@/types";
 import { setUserInfo } from "@/redux/slices/checkout";
-import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
 
 const UserInformation: FC = () => {
-	const user: UserI | null = useAuthUser();
 	const { t } = useTranslation();
 	const dispatch = useAppDispatch();
 	const { userInfo } = useAppSelector((state) => state.checkout);
@@ -37,7 +34,7 @@ const UserInformation: FC = () => {
 						type="text"
 						name="name"
 						required
-						value={userInfo?.name || user?.name}
+						value={userInfo?.name}
 						onChange={handleInputChange}
 						aria-label={t("checkout.name")}
 					/>
@@ -55,7 +52,7 @@ const UserInformation: FC = () => {
 						type="text"
 						name="surname"
 						required
-						value={userInfo?.surname || user?.surname}
+						value={userInfo?.surname}
 						onChange={handleInputChange}
 						aria-label={t("checkout.surname")}
 					/>
@@ -73,7 +70,7 @@ const UserInformation: FC = () => {
 						type="tel"
 						name="phoneNumber"
 						required
-						value={userInfo?.phoneNumber || user?.phoneNumber}
+						value={userInfo?.phoneNumber}
 						pattern="^\+?[0-9\s\-]*$"
 						onChange={handleInputChange}
 						aria-label={t("checkout.phone_number")}

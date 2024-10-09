@@ -8,10 +8,10 @@ import {
 	CarouselPrevious,
 } from "@/components/ui/carousel";
 import { BannerI } from "@/types";
-import { banners } from "@/utils";
 import { BannerItem } from "./customs";
-import useLoading from "@/utils/custom-loading";
+import useBannersService from "@/services/banners";
 import { Skeleton } from "@/components/ui/skeleton";
+import useOnlineStatus from "@/hooks/useOnlineStatus";
 
 const autoplayOptions = Autoplay({
 	delay: 3000,
@@ -23,13 +23,15 @@ const carouselOptions = {
 };
 
 const Banners: React.FC = () => {
-	const { isLoading } = useLoading();
+	const isOnline = useOnlineStatus();
+	const { useGetAllBanners } = useBannersService();
 
-	if (!banners?.length) return null;
+	const { isLoading, isError, data: banners} = useGetAllBanners();
+	const loading = isLoading || isError || !isOnline
 
 	return (
 		<div className="h-full flex-grow relative rounded-[8px] overflow-hidden">
-			{isLoading ? (
+			{loading ? (
 				<Skeleton className="h-full w-full max-h-[448px] min-h-[200px] sm:min-h-[300px] md:min-h-[350px] lg:min-h-[450px] bg-skeleton-color" />
 			) : (
 				<Carousel opts={carouselOptions} plugins={[autoplayOptions]}>

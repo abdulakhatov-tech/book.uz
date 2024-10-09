@@ -15,8 +15,8 @@ const Address: FC = () => {
 	const { userInfo } = useAppSelector((state) => state.checkout);
 
 	const handleAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const address = e.target.value;
-		dispatch(setUserInfo({ ...userInfo, address }));
+		const extraAddress = e.target.value;
+		dispatch(setUserInfo({ ...userInfo, billingAddress: { extraAddress }}));
 	};
 
 	return (
@@ -35,7 +35,7 @@ const Address: FC = () => {
 						id="address"
 						placeholder={"Amir Temur ko'chasi, 12-uy"}
 						className="mt-2"
-						value={userInfo?.address}
+						value={userInfo?.billingAddress?.extraAddress}
 						onChange={handleAddressChange}
 					/>
 				</div>

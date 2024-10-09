@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 import {
 	Select,
 	SelectContent,
@@ -14,14 +13,12 @@ import { RegionI } from "@/types";
 import { useUserApi } from "@/services/user-api";
 import useOnlineStatus from "@/hooks/useOnlineStatus";
 import { setUserInfo } from "@/redux/slices/checkout";
-import { UserI } from "@/types";
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
 
 const SelectDistrict: FC = () => {
 	const { t } = useTranslation();
 	const dispatch = useAppDispatch();
 	const isOnline = useOnlineStatus();
-	const user: UserI | null = useAuthUser();
 	const { useGetDistricts } = useUserApi();
 	const { userInfo } = useAppSelector((state) => state.checkout);
 
@@ -29,11 +26,14 @@ const SelectDistrict: FC = () => {
 		data: districts,
 		isLoading,
 		isError,
-	} = useGetDistricts(userInfo.region || (user?.address?.region as string));
+	} = useGetDistricts(userInfo?.billingAddress?.region);
 	const isDisabled = isLoading || isError || !isOnline;
 
 	const handleValueChange = (value: string) => {
-		dispatch(setUserInfo({ ...userInfo, district: value }));
+		if(!isDisabled) {
+
+			dispatch(setUserInfo({ district: value }));
+		}
 	};
 
 	return (
@@ -45,9 +45,9 @@ const SelectDistrict: FC = () => {
 				{t("checkout.district")}
 			</Label>
 			<Select
-				value={userInfo.district || user?.address?.district || ""}
+				value={userInfo?.billingAddress?.district}
 				onValueChange={handleValueChange}
-				disabled={!userInfo.region || isDisabled}
+				disabled={!userInfo?.billingAddress?.region || isDisabled}
 			>
 				<SelectTrigger className="w-full">
 					<SelectValue placeholder={t("checkout.district")} />

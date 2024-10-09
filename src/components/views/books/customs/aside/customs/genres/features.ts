@@ -28,10 +28,9 @@ const useGenresFeatures = () => {
 
 	const handleSelectAllChange = (checked: boolean) => {
 		if (checked) {
-			const allGenreIds = data?.map((genre: GenreI) => genre._id) || [];
-			setSelectedGenres(allGenreIds);
+			setSelectedGenres(["all"]); // Set state to "all" instead of all IDs
 		} else {
-			setSelectedGenres([]);
+			setSelectedGenres([]); // Deselect all
 		}
 	};
 
@@ -56,12 +55,17 @@ const useGenresFeatures = () => {
 	useEffect(() => {
 		const params = new URLSearchParams(searchParams);
 
-		params.delete("genreIds");
+		params.delete("genreIds"); // Clear existing genreIds
 
-		// Append each selected genreId as its own query param
-		selectedGenres.forEach((genreId) => {
-			params.append("genreIds", genreId); // Append each genreId individually
-		});
+		// Append "all" if selected
+		if (selectedGenres.includes("all")) {
+			params.append("genreIds", "all"); // Add "all" if it is selected
+		} else {
+			// Append each selected genreId as its own query param
+			selectedGenres.forEach((genreId) => {
+				params.append("genreIds", genreId); // Append each genreId individually
+			});
+		}
 
 		setSearchParams(params); // Update the URL with modified params
 	}, [selectedGenres, searchParams]);
@@ -75,7 +79,7 @@ const useGenresFeatures = () => {
 		}
 	}, [searchParams]); // Watch for changes in searchParams
 
-	const isAllSelected = data?.length === selectedGenres.length;
+	const isAllSelected = selectedGenres.includes("all") || (data?.length === selectedGenres.length);
 
 	return {
 		handleSelectAllChange,

@@ -1,25 +1,28 @@
 import React from "react";
+import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 
+import { UserI } from "@/types";
+import useUsersService from "@/services/users";
 import useProfileImageFeatures from "./features";
 import { Skeleton } from "@/components/ui/skeleton";
 import camera from "@/assets/icons/camera-to-take-photos.svg";
-import useUsersService from "@/services/users";
 
 const ProfileImage: React.FC = () => {
+	const user: UserI | null = useAuthUser();
+	const { useGetUserById } = useUsersService();
 	const { preview, uploading, handleFileChange } = useProfileImageFeatures();
-	const { getUserById } = useUsersService();
 
-	const { isLoading, isError, data: user } = getUserById;
+	const { isLoading, isError, data } = useGetUserById(user?._id as string);
 
 	return (
 		<form className="flex flex-col items-center">
 			<div className="relative">
 				<div className="w-[100px] h-[100px] rounded-full overflow-hidden custom-shadow">
-					{isLoading || isError || !user || uploading ? (
-						<Skeleton className="w-full h-full object-cover" />
+					{isLoading || isError || !data || uploading ? (
+						<Skeleton className="w-full h-full object-cover bg-skeleton-color" />
 					) : (
 						<img
-							src={preview || user?.profilePhoto}
+							src={preview || data?.profilePhoto}
 							alt="User profile"
 							loading="lazy"
 							className="w-full h-full object-cover"
@@ -45,8 +48,6 @@ const ProfileImage: React.FC = () => {
 					/>
 				</label>
 			</div>
-			{/* Optional: Display error message if any */}
-			{/* {error && <p className="text-red-500">{error}</p>} */}
 		</form>
 	);
 };

@@ -29,7 +29,6 @@ const Promocode: FC = () => {
 					onChange={handleChange}
 					onKeyDown={handleKeyDown}
 					className="max-w-[300px]"
-					required
 					disabled={!!couponCode}
 				/>
 				<Button

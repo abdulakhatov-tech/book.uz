@@ -73,7 +73,7 @@ const LanguagesComponent: FC = () => {
 									)}
 								>
 									<Checkbox
-										checked={selectedItems.includes(language._id)}
+										checked={selectedItems.includes(language._id) || isAllSelected}
 										onCheckedChange={() => handleItemChange(language._id)}
 									/>
 									<span className="text-[16px] leading-[24px] font-semibold">

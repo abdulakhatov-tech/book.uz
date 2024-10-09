@@ -28,8 +28,7 @@ const useGenresFeatures = () => {
 
 	const handleSelectAllChange = (checked: boolean) => {
 		if (checked) {
-			const allItemIds = data?.map((item: any) => item._id) || [];
-			setSelectedItems(allItemIds);
+			setSelectedItems(['all']);
 		} else {
 			setSelectedItems([]);
 		}
@@ -59,22 +58,27 @@ const useGenresFeatures = () => {
 
 		params.delete("language");
 
-		selectedItems.forEach((language) => {
-			params.append("language", language);
-		});
+		if (selectedItems.includes("all")) {
+			params.append("language", "all"); 
+		} else {
 
-		setSearchParams(params); // Update the URL with modified params
+			selectedItems.forEach((language) => {
+				params.append("language", language); 
+			});
+		}
+
+		setSearchParams(params); 
 	}, [selectedItems, searchParams]);
 
 	useEffect(() => {
-		const languageFromQuery = searchParams.getAll("language"); // Get all genreIds from URL
+		const languageFromQuery = searchParams.getAll("language"); 
 
 		if (languageFromQuery.length > 0) {
-			setSelectedItems(languageFromQuery); // Set the state with genreIds from URL
+			setSelectedItems(languageFromQuery); 
 		}
 	}, [searchParams]);
 
-	const isAllSelected = data?.length === selectedItems.length;
+	const isAllSelected = selectedItems.includes("all") || (data?.length === selectedItems.length);
 
 	return {
 		handleSelectAllChange,

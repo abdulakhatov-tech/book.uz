@@ -18,7 +18,7 @@ const NewsItem: FC<NewsI> = ({ imgUrl, title, createdAt, type, link }) => {
 
 	return (
 		<article
-			className="relative border rounded-[8px] overflow-hidden bg-gray-100 cursor-pointer  transition-transform duration-300 ease-in-out transform hover:scale-[1.05] hover:shadow-lg"
+			className="relative border rounded-[8px] overflow-hidden bg-gray-100 cursor-pointer  transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:bg-gray-50"
 			onClick={handleClick}
 			role="button"
 			tabIndex={0} // For accessibility

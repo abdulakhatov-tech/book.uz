@@ -13,9 +13,9 @@ import Section from "@/layout/section";
 import Container from "@/layout/container";
 
 import { BookI } from "@/types";
+import { Banners, LoadingSkeleton } from "./customs";
 import useRecentlyPublishedBooksFeatures from "./features";
 import RecentlyPublishedBookCard from "@/generic/recently-published-book-card";
-import { Banners, LoadingSkeleton } from "./customs";
 
 const RecentlyPublishedBooks: React.FC = () => {
 	const { t } = useTranslation();
@@ -59,7 +59,7 @@ const RecentlyPublishedBooks: React.FC = () => {
 					plugins={[Autoplay({ delay: 14000, stopOnInteraction: false })]}
 					className="relative"
 				>
-					<CarouselContent className="-ml-4 pt-[15px] sm:pt-[20px] md:pt-[66px]">
+					<CarouselContent className="-ml-4 pt-[15px] sm:pt-[20px] md:pt-[66px] pb-6">
 						{renderCarouselItems}
 					</CarouselContent>
 

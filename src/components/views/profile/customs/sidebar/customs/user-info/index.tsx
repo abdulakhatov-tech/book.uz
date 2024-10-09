@@ -1,33 +1,34 @@
 import React from "react";
-// import useAuthUser from "react-auth-kit/hooks/useAuthUser";
+import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 
-// import { UserI } from "@/types";
+import { UserI } from "@/types";
 import { formatPhoneNumber } from "@/helpers";
 import useUsersService from "@/services/users";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const UserInfo: React.FC = () => {
-	// const user: UserI | null = useAuthUser();
-	const { getUserById } = useUsersService();
-	const { isLoading, isError, data: user } = getUserById;
+	const user: UserI | null = useAuthUser();
+	const { useGetUserById } = useUsersService();
+	const { isLoading, isError, data } = useGetUserById(user?._id as string);
 
 	return (
-		<div className="flex flex-col items-center gap-1 py-3">
+		<div className="flex flex-col items-center gap-1 py-3 mt-2">
 			{isLoading || isError ? (
-				<Skeleton className="h-[25px] w-full" />
+				<Skeleton className="h-[20px] w-[90%] bg-skeleton-color" />
 			) : (
-				<h2 className="text-[18px] font-semibold leading-[25.2px] text-black">
-					{user?.name || "Guest"} {user?.surname || ""}
+				<h2 className="text-[18px] font-bold leading-[25.2px] text-black">
+					{data?.surname || ""} {data?.name || "Guest"}
 				</h2>
 			)}
 			{isLoading || isError ? (
-				<Skeleton className="h-[25px] w-full" />
+				<Skeleton className="h-[20px] w-[80%] bg-skeleton-color mt-1" />
 			) : (
-				user?.phoneNumber && (
+				data?.phoneNumber && (
 					<p
-						aria-label={`Phone number: ${formatPhoneNumber(user.phoneNumber)}`}
+					className="text-[16px] font-semibold text-secondary-black"
+						aria-label={`Phone number: ${formatPhoneNumber(data.phoneNumber)}`}
 					>
-						{formatPhoneNumber(user.phoneNumber)}
+						{formatPhoneNumber(data.phoneNumber)}
 					</p>
 				)
 			)}

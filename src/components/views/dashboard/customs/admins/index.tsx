@@ -17,9 +17,9 @@ import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 const Admins: React.FC = () => {
 	const { t } = useTranslation();
 	const currentUser: UserI | null = useAuthUser();
-	const { getAllUsers, demoteUserToUserHandler } = useAdminsFeatures();
+	const { useGetAllUsers, demoteUserToUserHandler } = useAdminsFeatures();
 
-	const { isLoading, isError, data: users } = getAllUsers;
+	const { isLoading, isError, data: users } = useGetAllUsers();
 
 	// Filter users with admin or owner role
 	const admins =
