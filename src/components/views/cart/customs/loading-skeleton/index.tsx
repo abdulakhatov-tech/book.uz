@@ -8,7 +8,10 @@ const LoadingSkeleton: FC = () => {
 		// 	className="h-[190px] w-full rounded-[8px] bg-skeleton-color"
 		// />
 
-		<div key={idx} className="bg-skeleton-color px-2 sm:px-4 md:px-6 py-3 sm:py-4 rounded-[8px]">
+		<div
+			key={idx}
+			className="bg-skeleton-color px-2 sm:px-4 md:px-6 py-3 sm:py-4 rounded-[8px]"
+		>
 			<div className="grid grid-cols-[90px_1fr] sm:grid-cols-[100px_1fr] gap-4 md:gap-6">
 				<div className="w-full h-[150px] rounded-[8px] overflow-hidden">
 					<Skeleton className="w-full h-full" />
