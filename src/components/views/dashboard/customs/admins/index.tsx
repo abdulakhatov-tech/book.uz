@@ -43,11 +43,21 @@ const Admins: React.FC = () => {
 			<Table>
 				<TableHeader>
 					<TableRow>
-						<TableHead className="w-[50px] font-bold text-[18px] text-secondary-black">№</TableHead>
-						<TableHead className="font-bold text-[18px] text-secondary-black">{t("dashboard.users.full_name")}</TableHead>
-						<TableHead className="font-bold text-[18px] text-secondary-black">{t("dashboard.users.phone_number")}</TableHead>
-						<TableHead className="font-bold text-[18px] text-secondary-black">{t("dashboard.users.email")}</TableHead>
-						<TableHead className="font-bold text-[18px] text-secondary-black">{t("dashboard.users.role")}</TableHead>
+						<TableHead className="w-[50px] font-bold text-[18px] text-secondary-black">
+							№
+						</TableHead>
+						<TableHead className="font-bold text-[18px] text-secondary-black">
+							{t("dashboard.users.full_name")}
+						</TableHead>
+						<TableHead className="font-bold text-[18px] text-secondary-black">
+							{t("dashboard.users.phone_number")}
+						</TableHead>
+						<TableHead className="font-bold text-[18px] text-secondary-black">
+							{t("dashboard.users.email")}
+						</TableHead>
+						<TableHead className="font-bold text-[18px] text-secondary-black">
+							{t("dashboard.users.role")}
+						</TableHead>
 						<TableHead className="text-right font-bold text-[18px] text-secondary-black">
 							{t("dashboard.users.actions")}
 						</TableHead>

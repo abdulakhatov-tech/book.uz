@@ -130,91 +130,91 @@ const useAppRoutes = () => {
 			path: "/dashboard",
 			Component: Dashboard,
 			isPrivate: true,
-			allowedRoles: ["admin", "owner"]
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/admins",
 			Component: Admins,
 			isPrivate: true,
-			allowedRoles: ["admin", "owner"]
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/users",
 			Component: Users,
 			isPrivate: true,
-			allowedRoles: ["admin", "owner"]
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/products",
 			Component: DashboarBooks,
 			isPrivate: true,
-			allowedRoles: ["admin", "owner"]
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/products/create",
 			Component: CreateBookPage,
 			isPrivate: true,
-			allowedRoles: ["admin", "owner"]
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/products/edit/:bookId",
 			Component: EditBookPage,
 			isPrivate: true,
-			allowedRoles: ["admin", "owner"]
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/orders",
 			Component: OrdersPage,
 			isPrivate: true,
-			allowedRoles: ["admin", "owner"]
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/authors",
 			Component: AuthorsPage,
 			isPrivate: true,
-			allowedRoles: ["admin", "owner"]
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/authors/create",
 			Component: CreateAuthorPage,
 			isPrivate: true,
-			allowedRoles: ["admin", "owner"]
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/authors/edit/:authorId",
 			Component: EditAuthorPage,
 			isPrivate: true,
-			allowedRoles: ["admin", "owner"]
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/genres",
 			Component: Genres,
 			isPrivate: true,
-			allowedRoles: ["admin", "owner"]
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/genres/create",
 			Component: CreateGenrePage,
 			isPrivate: true,
-			allowedRoles: ["admin", "owner"]
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/genres/edit/:genreId",
 			Component: EditGenrePage,
 			isPrivate: true,
-			allowedRoles: ["admin", "owner"]
+			allowedRoles: ["admin", "owner"],
 		},
 	];
 

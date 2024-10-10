@@ -53,9 +53,10 @@ const News: FC = () => {
 					{loading ? (
 						<LoadingSkeleton />
 					) : (
-						newsData?.reverse()?.slice(0, 4).map((news: NewsI) => (
-							<NewsItem key={news._id} {...news} />
-						))
+						newsData
+							?.reverse()
+							?.slice(0, 4)
+							.map((news: NewsI) => <NewsItem key={news._id} {...news} />)
 					)}
 				</div>
 			</Container>

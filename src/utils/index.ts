@@ -159,7 +159,7 @@ export const MockData = () => {
 			label: t("dashboard.sidebar.orders"),
 			path: "/dashboard/orders",
 			roles: ["admin", "owner"],
-		}
+		},
 	];
 
 	const bookStates = [
@@ -228,7 +228,7 @@ export const MockData = () => {
 		{
 			label: t("news.new_books"),
 			value: "newBook",
-		}
+		},
 	];
 
 	const newsTypes = [
@@ -237,10 +237,10 @@ export const MockData = () => {
 			value: "news",
 		},
 		{
-			label: 'New Book',
-			value: 'newBook',
+			label: "New Book",
+			value: "newBook",
 		},
-	]
+	];
 
 	return {
 		newsTypes,

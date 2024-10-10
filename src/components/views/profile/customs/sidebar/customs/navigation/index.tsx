@@ -10,8 +10,9 @@ const Navigation: React.FC = () => {
 	const { profileNavigation } = MockData();
 	const user: UserI | null = useAuthUser();
 
-
-	const filteredNavigation = profileNavigation.filter((item: any) => item.roles.includes(user?.role))
+	const filteredNavigation = profileNavigation.filter((item: any) =>
+		item.roles.includes(user?.role),
+	);
 
 	return (
 		<div className="border-t-[1px] border-b-[1px] border-[#DBDBDB] py-5">

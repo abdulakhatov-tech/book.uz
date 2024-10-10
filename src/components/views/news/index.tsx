@@ -47,45 +47,47 @@ const NewsComponent: FC = () => {
 	return (
 		<Section id="news" className="pt-4 pb-[80px] md:pb-[100px]">
 			<Container>
-				{
-					hasOutlet ? <Outlet /> :<>
-					<div className="flex items-center justify-between mb-4">
-					<h3 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] font-semibold leading-[34.13px] text-black">
-						{t("home.news.title")}
-					</h3>
-						<div className="flex items-center gap-4">
-							<ViewCounter viewOptions={[12, 16, 24]} />
-	
-							<Select
-								// defaultValue={queryParams?.type}
-								value={queryParams.type}
-								onValueChange={handleChange}
-							>
-								<SelectTrigger className="w-[140px]">
-									<SelectValue placeholder={t("news.sort_by")} />
-								</SelectTrigger>
-								<SelectContent>
-									{newsfilterOptions?.map(
-										({ label, value }: { label: string; value: string }) => (
-											<SelectItem key={value} value={value}>
-												{label}
-											</SelectItem>
-										),
-									)}
-								</SelectContent>
-							</Select>
+				{hasOutlet ? (
+					<Outlet />
+				) : (
+					<>
+						<div className="flex items-center justify-between mb-4">
+							<h3 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] font-semibold leading-[34.13px] text-black">
+								{t("home.news.title")}
+							</h3>
+							<div className="flex items-center gap-4">
+								<ViewCounter viewOptions={[12, 16, 24]} />
+
+								<Select
+									// defaultValue={queryParams?.type}
+									value={queryParams.type}
+									onValueChange={handleChange}
+								>
+									<SelectTrigger className="w-[140px]">
+										<SelectValue placeholder={t("news.sort_by")} />
+									</SelectTrigger>
+									<SelectContent>
+										{newsfilterOptions?.map(
+											({ label, value }: { label: string; value: string }) => (
+												<SelectItem key={value} value={value}>
+													{label}
+												</SelectItem>
+											),
+										)}
+									</SelectContent>
+								</Select>
+							</div>
 						</div>
-					</div>
-	
-					<div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pt-[15px] sm:pt-[20px] md:pt-[24px]">
-						{renderNewsItems()}
-					</div>
-	
-					{newsData?.length > 12 && (
-						<CustomPagination currentPage={currentPage} />
-					)}
+
+						<div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pt-[15px] sm:pt-[20px] md:pt-[24px]">
+							{renderNewsItems()}
+						</div>
+
+						{newsData?.length > 12 && (
+							<CustomPagination currentPage={currentPage} />
+						)}
 					</>
-				}
+				)}
 			</Container>
 		</Section>
 	);

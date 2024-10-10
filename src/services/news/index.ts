@@ -32,43 +32,44 @@ const useNewsService = () => {
 
 	const deleteNewsById = useMutation({
 		mutationFn: async (newsId: string) => {
-            const response = await axios.delete(`/news/${newsId}`);
-            return response.data.data;
-        },
-        onSuccess: () => {
-            queryClient.invalidateQueries({
-                queryKey: ["news"],
-            });
+			const response = await axios.delete(`/news/${newsId}`);
+			return response.data.data;
+		},
+		onSuccess: () => {
+			queryClient.invalidateQueries({
+				queryKey: ["news"],
+			});
 			toast({
-                title: "News deleted",
-            });
-        },
-        onError: (error) => {
-            toast({
-                title: "Error deleting news",
-                description: error.message,
-            });
-        },
-	})
+				title: "News deleted",
+			});
+		},
+		onError: (error) => {
+			toast({
+				title: "Error deleting news",
+				description: error.message,
+			});
+		},
+	});
 
-	const useGetNewsById = (newsId: string) => useQueryHandler({
-		queryKey: ["news", { newsId }],
-        queryFn: async () => {
-            const response = await axios.get(`/news/${newsId}`);
-            return response.data.data;
-        },
-        onError: (error) => {
-            toast({
-                title: "Error fetching news",
-                description: error.message,
-            });
-        },
-	}) 
+	const useGetNewsById = (newsId: string) =>
+		useQueryHandler({
+			queryKey: ["news", { newsId }],
+			queryFn: async () => {
+				const response = await axios.get(`/news/${newsId}`);
+				return response.data.data;
+			},
+			onError: (error) => {
+				toast({
+					title: "Error fetching news",
+					description: error.message,
+				});
+			},
+		});
 
 	return {
 		useGetAllNews,
 		deleteNewsById,
-		useGetNewsById
+		useGetNewsById,
 	};
 };
 

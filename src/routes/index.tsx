@@ -93,7 +93,7 @@ const AppRoutes = () => {
 										Component,
 										path,
 										isPrivate,
-										allowedRoles
+										allowedRoles,
 									})}
 								/>
 							);

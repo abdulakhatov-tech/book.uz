@@ -39,10 +39,18 @@ const Genres: React.FC = () => {
 				</TableCaption>
 				<TableHeader>
 					<TableRow>
-						<TableHead className="w-[50px] font-bold text-[18px] text-secondary-black">№</TableHead>
-						<TableHead className="font-bold text-[18px] text-secondary-black">{t("dashboard.genres.name")}</TableHead>
-						<TableHead className="font-bold text-[18px] text-secondary-black">{t("dashboard.genres.books_count")}</TableHead>
-						<TableHead className="font-bold text-[18px] text-secondary-black">{t("dashboard.genres.created_at")}</TableHead>
+						<TableHead className="w-[50px] font-bold text-[18px] text-secondary-black">
+							№
+						</TableHead>
+						<TableHead className="font-bold text-[18px] text-secondary-black">
+							{t("dashboard.genres.name")}
+						</TableHead>
+						<TableHead className="font-bold text-[18px] text-secondary-black">
+							{t("dashboard.genres.books_count")}
+						</TableHead>
+						<TableHead className="font-bold text-[18px] text-secondary-black">
+							{t("dashboard.genres.created_at")}
+						</TableHead>
 						<TableHead className="text-right font-bold text-[18px] text-secondary-black">
 							{t("dashboard.users.actions")}
 						</TableHead>

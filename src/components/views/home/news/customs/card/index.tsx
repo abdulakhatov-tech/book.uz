@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { NewsI } from "@/types";
 import { formatDate } from "@/helpers";
 
-const NewsItem: FC<NewsI> = ({_id, imgUrl, title, createdAt, type, book }) => {
+const NewsItem: FC<NewsI> = ({ _id, imgUrl, title, createdAt, type, book }) => {
 	const navigate = useNavigate();
 
 	// Function to handle navigation based on the type

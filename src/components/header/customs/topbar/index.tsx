@@ -42,7 +42,12 @@ const TopBar: FC = () => {
 			</div>
 
 			<div className="flex items-center gap-3 sm:gap-4 lg:gap-5">
-				<img onClick={() => dispatch(toggleSearch())} src={searchIcon} alt="Search" className="w-[18px] h-[18px]" />
+				<img
+					onClick={() => dispatch(toggleSearch())}
+					src={searchIcon}
+					alt="Search"
+					className="w-[18px] h-[18px]"
+				/>
 				<Locale />
 
 				{/* Contact Link */}

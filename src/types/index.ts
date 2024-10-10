@@ -84,7 +84,7 @@ export type RoutePropT = {
 	Component: FC<any>;
 	children?: RoutePropT[];
 	isPrivate?: boolean;
-	allowedRoles?: string[]
+	allowedRoles?: string[];
 };
 
 export interface GenreI {
