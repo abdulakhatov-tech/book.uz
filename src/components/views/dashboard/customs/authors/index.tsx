@@ -20,7 +20,7 @@ const Authors: React.FC = () => {
 	return (
 		<Section id="dashboard-authors">
 			<div className="flex items-center justify-between mb-2">
-				<h2 className="text-[22px] text-black mb-4">
+				<h2 className="text-[22px] text-black mb-4 font-bold">
 					{t("dashboard.authors.authors")}
 				</h2>
 				<Link to="create">
@@ -30,13 +30,13 @@ const Authors: React.FC = () => {
 			<Table>
 				<TableHeader>
 					<TableRow>
-						<TableHead className="w-[50px]">№</TableHead>
-						<TableHead>{t("dashboard.authors.full_name")}</TableHead>
-						<TableHead>{t("dashboard.authors.books_count")}</TableHead>
-						<TableHead>{t("dashboard.authors.date_of_birth")}</TableHead>
-						<TableHead>{t("dashboard.authors.date_of_death")}</TableHead>
-						<TableHead>{t("dashboard.authors.created_at")}</TableHead>
-						<TableHead className="text-right">
+						<TableHead className="w-[50px] font-bold text-[18px] text-secondary-black">№</TableHead>
+						<TableHead className="font-bold text-[18px] text-secondary-black">{t("dashboard.authors.full_name")}</TableHead>
+						<TableHead className="font-bold text-[18px] text-secondary-black">{t("dashboard.authors.books_count")}</TableHead>
+						<TableHead className="font-bold text-[18px] text-secondary-black">{t("dashboard.authors.date_of_birth")}</TableHead>
+						<TableHead className="font-bold text-[18px] text-secondary-black">{t("dashboard.authors.date_of_death")}</TableHead>
+						<TableHead className="font-bold text-[18px] text-secondary-black">{t("dashboard.authors.created_at")}</TableHead>
+						<TableHead className="text-right font-bold text-[18px] text-secondary-black">
 							{t("dashboard.users.actions")}
 						</TableHead>
 					</TableRow>

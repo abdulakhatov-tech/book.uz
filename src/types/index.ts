@@ -28,13 +28,14 @@ export interface BookI {
 
 export interface OrderI {
 	_id: string;
-	userId: string;
-	bookId: string;
+	user: string;
+	book: any[];
 	paymentMethodId: string;
 	quantity: number;
 	deliveryMethodId: string;
 	price: number;
-	status: "pending" | "processing" | "delivered" | "cancelled";
+	status: "pending" | "processing" | "delivered" | "canceled";
+	createdAt?: string;
 }
 
 export type RoleT = "user" | "admin" | "owner";
@@ -74,6 +75,7 @@ export type RenderComponentT = {
 		description: string;
 	};
 	isPrivate?: boolean;
+	allowedRoles?: string[];
 };
 
 export type RoutePropT = {
@@ -82,6 +84,7 @@ export type RoutePropT = {
 	Component: FC<any>;
 	children?: RoutePropT[];
 	isPrivate?: boolean;
+	allowedRoles?: string[]
 };
 
 export interface GenreI {
@@ -138,7 +141,6 @@ export interface NewsI {
 	isRead: number;
 	readCount: number;
 	type: "news" | "newBook";
-	link?: string;
 	book?: any;
 	_id: string;
 }

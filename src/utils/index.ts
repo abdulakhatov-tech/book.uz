@@ -159,21 +159,7 @@ export const MockData = () => {
 			label: t("dashboard.sidebar.orders"),
 			path: "/dashboard/orders",
 			roles: ["admin", "owner"],
-		},
-		{
-			_id,
-			Icon: TbCategory,
-			label: t("dashboard.sidebar.categories"),
-			path: "/dashboard/categories",
-			roles: ["admin", "owner"],
-		},
-		{
-			_id,
-			Icon: FaRegNewspaper,
-			label: t("dashboard.sidebar.news"),
-			path: "/dashboard/news",
-			roles: ["admin", "owner"],
-		},
+		}
 	];
 
 	const bookStates = [
@@ -226,9 +212,7 @@ export const MockData = () => {
 
 	const categories = [
 		{ label: t("header.category.books"), path: "/books?page=1&limit=24" },
-		{ label: t("header.category.collections"), path: "/packages" },
 		{ label: t("header.category.authors"), path: "/authors?page=1&limit=24" },
-		{ label: t("header.category.discounts"), path: "/discounts" },
 		{ label: t("header.category.news"), path: "/news?page=1&limit=12" },
 	];
 
@@ -244,14 +228,22 @@ export const MockData = () => {
 		{
 			label: t("news.new_books"),
 			value: "newBook",
-		},
-		{
-			label: t("news.discounts"),
-			value: "discounts",
-		},
+		}
 	];
 
+	const newsTypes = [
+		{
+			label: "News",
+			value: "news",
+		},
+		{
+			label: 'New Book',
+			value: 'newBook',
+		},
+	]
+
 	return {
+		newsTypes,
 		categories,
 		bookStates,
 		bookLanguages,

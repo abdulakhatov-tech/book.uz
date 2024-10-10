@@ -53,7 +53,7 @@ const News: FC = () => {
 					{loading ? (
 						<LoadingSkeleton />
 					) : (
-						newsData?.map((news: NewsI) => (
+						newsData?.reverse()?.slice(0, 4).map((news: NewsI) => (
 							<NewsItem key={news._id} {...news} />
 						))
 					)}

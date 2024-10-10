@@ -26,7 +26,7 @@ const Genres: React.FC = () => {
 	return (
 		<Section id="dashboard-genres">
 			<div className="flex items-center justify-between mb-2">
-				<h2 className="text-[22px] text-black mb-4">
+				<h2 className="text-[22px] text-black mb-4 font-bold">
 					{t("dashboard.genres.title")}
 				</h2>
 				<Link to="create">
@@ -39,11 +39,11 @@ const Genres: React.FC = () => {
 				</TableCaption>
 				<TableHeader>
 					<TableRow>
-						<TableHead className="w-[50px]">№</TableHead>
-						<TableHead>{t("dashboard.genres.name")}</TableHead>
-						<TableHead>{t("dashboard.genres.books_count")}</TableHead>
-						<TableHead>{t("dashboard.genres.created_at")}</TableHead>
-						<TableHead className="text-right">
+						<TableHead className="w-[50px] font-bold text-[18px] text-secondary-black">№</TableHead>
+						<TableHead className="font-bold text-[18px] text-secondary-black">{t("dashboard.genres.name")}</TableHead>
+						<TableHead className="font-bold text-[18px] text-secondary-black">{t("dashboard.genres.books_count")}</TableHead>
+						<TableHead className="font-bold text-[18px] text-secondary-black">{t("dashboard.genres.created_at")}</TableHead>
+						<TableHead className="text-right font-bold text-[18px] text-secondary-black">
 							{t("dashboard.users.actions")}
 						</TableHead>
 					</TableRow>

@@ -8,4 +8,5 @@ export interface GetAllBooksParams {
 	authorIds?: string;
 	sort?: string;
 	asc?: number;
+	search?: string;
 }
