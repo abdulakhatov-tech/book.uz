@@ -12,29 +12,30 @@ import { store } from "@/redux/store";
 import authStore from "@/config/auth";
 import SuspenseWrapper from "@/tools/suspense-wrapper";
 import "@/locale";
+import { HelmetProvider } from "react-helmet-async";
 
 interface AppProviderProps {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 // Create a client
 const queryClient = new QueryClient();
 
 const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
-	return (
-		<AuthProvider store={authStore}>
-			<QueryClientProvider client={queryClient}>
-				<BrowserRouter>
-					<SuspenseWrapper>
-						<Provider store={store}>
-							{children}
-							<ReactQueryDevtools position="left" initialIsOpen={false} />
-						</Provider>
-					</SuspenseWrapper>
-				</BrowserRouter>
-			</QueryClientProvider>
-		</AuthProvider>
-	);
+  return (
+    <AuthProvider store={authStore}>
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <SuspenseWrapper>
+            <Provider store={store}>
+              <HelmetProvider>{children}</HelmetProvider>
+              {/* <ReactQueryDevtools position="left" initialIsOpen={false} /> */}
+            </Provider>
+          </SuspenseWrapper>
+        </BrowserRouter>
+      </QueryClientProvider>
+    </AuthProvider>
+  );
 };
 
 export default AppProvider;
