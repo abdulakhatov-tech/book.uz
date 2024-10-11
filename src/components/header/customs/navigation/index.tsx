@@ -1,15 +1,18 @@
 import type { FC } from "react";
 import { useTranslation } from "react-i18next";
+import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 
 import { Button } from "@/components/ui/button";
 
 import { LuUser2 } from "react-icons/lu";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { FaShoppingBasket } from "react-icons/fa";
+import { MdOutlineDashboard } from "react-icons/md";
 
 import menuIcon from "@/assets/icons/menu-blue.svg";
 import closeIcon from "@/assets/icons/close-blue.svg";
 
+import { UserI } from "@/types";
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
 import { toggleCategoryDropdownVisibility } from "@/redux/slices/modals";
 import { CategoryDropdown, CategoryNavigation, NavButton } from "./customs";
@@ -22,6 +25,7 @@ const HeaderNavigation: FC = () => {
 	);
 	const wishlist = useAppSelector((state) => state.wishlist.bookmark);
 	const cart = useAppSelector((state) => state.cart.cart);
+	const user = useAuthUser<UserI>();
 
 	const handleCategoryDropdown = () => {
 		dispatch(toggleCategoryDropdownVisibility(!categoryDropdownVisibility));
@@ -69,6 +73,13 @@ const HeaderNavigation: FC = () => {
 					count={wishlist?.length || 0}
 				/>
 				<NavButton Icon={LuUser2} label={t("header.profile")} path="/profile" />
+				{(user?.role === "owner" || user?.role === "admin") && (
+					<NavButton
+						Icon={MdOutlineDashboard}
+						label={t("profile.nav.dashboard")}
+						path="/dashboard"
+					/>
+				)}
 			</div>
 		</div>
 	);

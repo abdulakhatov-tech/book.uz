@@ -24,11 +24,9 @@ import { IoSettingsOutline } from "react-icons/io5";
 // dashboard sidebar
 import { LuUsers2 } from "react-icons/lu";
 import { SlBasket } from "react-icons/sl";
-import { TbCategory } from "react-icons/tb";
 import { GrUserAdmin } from "react-icons/gr";
 import { IoBookSharp } from "react-icons/io5";
 import { IoBasketOutline } from "react-icons/io5";
-import { FaRegNewspaper } from "react-icons/fa6";
 import { PiUsersThreeLight } from "react-icons/pi";
 
 export const banners_2 = [
@@ -160,20 +158,6 @@ export const MockData = () => {
 			path: "/dashboard/orders",
 			roles: ["admin", "owner"],
 		},
-		{
-			_id,
-			Icon: TbCategory,
-			label: t("dashboard.sidebar.categories"),
-			path: "/dashboard/categories",
-			roles: ["admin", "owner"],
-		},
-		{
-			_id,
-			Icon: FaRegNewspaper,
-			label: t("dashboard.sidebar.news"),
-			path: "/dashboard/news",
-			roles: ["admin", "owner"],
-		},
 	];
 
 	const bookStates = [
@@ -226,9 +210,7 @@ export const MockData = () => {
 
 	const categories = [
 		{ label: t("header.category.books"), path: "/books?page=1&limit=24" },
-		{ label: t("header.category.collections"), path: "/packages" },
 		{ label: t("header.category.authors"), path: "/authors?page=1&limit=24" },
-		{ label: t("header.category.discounts"), path: "/discounts" },
 		{ label: t("header.category.news"), path: "/news?page=1&limit=12" },
 	];
 
@@ -245,13 +227,21 @@ export const MockData = () => {
 			label: t("news.new_books"),
 			value: "newBook",
 		},
+	];
+
+	const newsTypes = [
 		{
-			label: t("news.discounts"),
-			value: "discounts",
+			label: "News",
+			value: "news",
+		},
+		{
+			label: "New Book",
+			value: "newBook",
 		},
 	];
 
 	return {
+		newsTypes,
 		categories,
 		bookStates,
 		bookLanguages,

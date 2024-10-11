@@ -7,6 +7,7 @@ import {
 	wishlist,
 	checkout,
 	columnCounter,
+	search,
 } from "./slices";
 
 export const store = configureStore({
@@ -14,6 +15,7 @@ export const store = configureStore({
 		cart,
 		modal,
 		filter,
+		search,
 		sidebar,
 		wishlist,
 		checkout,

@@ -7,6 +7,21 @@ const useOrdersService = () => {
 	const axios = useAxiosInstance();
 	const queryClient = useQueryClient();
 
+	const useGetAllOrders = () =>
+		useQueryHandler({
+			queryKey: ["all-orders"],
+			queryFn: async () => {
+				const response = await axios.get("/orders");
+				return response.data.data || [];
+			},
+			onError: (error) => {
+				toast({
+					title: "Error fetching orders",
+					description: error.message,
+				});
+			},
+		});
+
 	const useGetUserOrders = (userId: string) =>
 		useQueryHandler({
 			queryKey: ["user-orders"],
@@ -44,15 +59,21 @@ const useOrdersService = () => {
 			status,
 		}: {
 			orderId: string;
-			status: "pending" | "processing" | "shipped" | "delivered" | "cancelled";
+			status: "pending" | "processing" | "delivered" | "canceled";
 		}) => {
 			const response = await axios.put(`/orders/${orderId}/status`, { status });
+			queryClient.setQueryData(["all-orders"], (oldOrders: any) => {
+				return oldOrders.map((order: any) =>
+					order._id === orderId ? { ...order, status } : order,
+				);
+			});
 			return response.data;
 		},
 		onSuccess: (data) => {
 			queryClient.invalidateQueries({
-				queryKey: ["user-orders"],
+				queryKey: ["all-orders"],
 			});
+
 			toast({
 				title: "Order updated",
 				description: `Order status updated to ${data.status}`,
@@ -67,8 +88,9 @@ const useOrdersService = () => {
 	});
 
 	return {
-		useGetUserOrders,
 		createOrder,
+		useGetAllOrders,
+		useGetUserOrders,
 		updateOrderStatus,
 	};
 };

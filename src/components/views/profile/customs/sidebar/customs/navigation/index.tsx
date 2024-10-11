@@ -1,23 +1,27 @@
-import { MockData } from "@/utils";
 import React from "react";
 import classnames from "classnames";
 import { NavLink } from "react-router-dom";
-// import useAuthUser from "react-auth-kit/hooks/useAuthUser";
-// import { UserI } from "@/types";
+import useAuthUser from "react-auth-kit/hooks/useAuthUser";
+
+import { UserI } from "@/types";
+import { MockData } from "@/utils";
 
 const Navigation: React.FC = () => {
 	const { profileNavigation } = MockData();
-	// const user: UserI | null = useAuthUser();
+	const user: UserI | null = useAuthUser();
 
-	// const filteredNavigation = profileNavigation.filter((item: any) => item.roles.includes(user?.role))
+	const filteredNavigation = profileNavigation.filter((item: any) =>
+		item.roles.includes(user?.role),
+	);
 
 	return (
 		<div className="border-t-[1px] border-b-[1px] border-[#DBDBDB] py-5">
 			<ul className="flex flex-col gap-5">
-				{profileNavigation.map((item) => (
+				{filteredNavigation.map((item) => (
 					<li key={item.path}>
 						<NavLink
 							to={item.path}
+							end={item.path === "/"}
 							className={({ isActive }) =>
 								classnames(
 									"flex items-center gap-2 text-[#000] text-[16px] font-semibold hover:text-[#333]",

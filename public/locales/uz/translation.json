@@ -138,6 +138,35 @@
 		"resend": "Resend"
 	},
 	"dashboard": {
+		"orders": {
+			"title": "Buyurtmalar",
+			"full_name": "To'liq ism",
+			"address": "Manzil",
+			"created_at": "Yaratilgan vaqti",
+			"price": "Narx",
+			"status": "Holat",
+			"actions": "Harakatlar",
+			"cancel": "Bekor qilish",
+			"payment_type": "To'lov turi",
+			"delivery_type": "Yetkazib berish turi",
+			"sum": "so'm"
+		},
+		"news": {
+			"title": "Yangiliklar",
+			"create": "Yangilik yaratish",
+			"edit": "Yangilikni tahrirlash",
+			"no_news": "Yangiliklar yo'q",
+			"list_news": "So'nggi yangiliklar ro'yxati",
+			"name": "Nomi",
+			"is_read": "O'qilganmi",
+			"read_count": "O'qishlar soni",
+			"type": "Turi",
+			"content": "Kontent",
+			"created_at": "Yaratilgan vaqti",
+			"updated_at": "Yangilangan vaqti",
+			"actions": "Amallar",
+			"delete": "O'chirish"
+		},
 		"sidebar": {
 			"admins": "Administratorlar",
 			"users": "Foydalanuvchilar",
@@ -248,6 +277,18 @@
 		}
 	},
 	"profile": {
+		"orders": {
+			"title": "Mening buyurtmalarim",
+			"all": "Barchasi",
+			"active": "Faol",
+			"finished": "Tugatilgan",
+			"order": "Buyurtma",
+			"pending": "Kutish holatida",
+			"processing": "Qayta ishlanmoqda",
+			"delivered": "Yetkazib berilgan",
+			"canceled": "Bekor qilingan",
+			"sum": "so'm"
+		},
 		"nav": {
 			"features": "Xususiyatlar",
 			"dashboard": "Boshqaruv paneli",

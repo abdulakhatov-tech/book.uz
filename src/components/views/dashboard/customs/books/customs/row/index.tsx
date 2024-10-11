@@ -26,7 +26,7 @@ const AuthorRow: React.FC<BookRowPropsI> = ({ book, index }) => {
 	const { deleteBookById } = useBooksService();
 
 	return (
-		<TableRow key={book._id}>
+		<TableRow>
 			<TableCell className="font-medium">{index + 1}</TableCell>
 			<TableCell className="flex items-center gap-3">
 				<div className="w-[40px] h-[40px] rounded-full overflow-hidden flex items-center justify-center bg-[#BC8E5B] text-white">

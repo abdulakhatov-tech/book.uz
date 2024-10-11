@@ -16,9 +16,10 @@ const AppRoutes = () => {
 	const renderComponent: React.FC<RenderComponentT> = ({
 		Component,
 		isPrivate,
+		allowedRoles,
 	}) =>
 		isPrivate ? (
-			<PrivateRoute>
+			<PrivateRoute allowedRoles={allowedRoles}>
 				<Component />
 			</PrivateRoute>
 		) : (
@@ -81,7 +82,7 @@ const AppRoutes = () => {
 				/>
 
 				{dashboardRoutes.map(
-					({ _id, path, Component, children, isPrivate }) => {
+					({ _id, path, Component, children, isPrivate, allowedRoles }) => {
 						if (!children?.length) {
 							return (
 								<Route
@@ -92,6 +93,7 @@ const AppRoutes = () => {
 										Component,
 										path,
 										isPrivate,
+										allowedRoles,
 									})}
 								/>
 							);

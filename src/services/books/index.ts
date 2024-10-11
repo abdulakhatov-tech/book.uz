@@ -24,7 +24,7 @@ const useBooksService = () => {
 				const response = await axios.get("/books", {
 					params, // Pass the query parameters here
 				});
-				return response.data.data as BookI[];
+				return response?.data?.data as BookI[];
 			},
 			onError: (error) => handleError(error, "fetching books"),
 		});

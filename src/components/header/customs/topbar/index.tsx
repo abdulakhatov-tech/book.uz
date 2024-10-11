@@ -9,9 +9,12 @@ import searchIcon from "@/assets/icons/search.svg";
 import useTopBarFeatures from "./features";
 import Locale from "@/components/common/locale";
 import { HelpLink, SocialLinks } from "./customs";
+import { useAppDispatch } from "@/hooks/useRedux";
+import { toggleSearch } from "@/redux/slices/search";
 
 const TopBar: FC = () => {
 	const { t } = useTranslation();
+	const dispatch = useAppDispatch();
 	const { handleMenuClick, handleOnKeyDown } = useTopBarFeatures();
 
 	return (
@@ -39,7 +42,12 @@ const TopBar: FC = () => {
 			</div>
 
 			<div className="flex items-center gap-3 sm:gap-4 lg:gap-5">
-				<img src={searchIcon} alt="Search" className="w-[18px] h-[18px]" />
+				<img
+					onClick={() => dispatch(toggleSearch())}
+					src={searchIcon}
+					alt="Search"
+					className="w-[18px] h-[18px]"
+				/>
 				<Locale />
 
 				{/* Contact Link */}

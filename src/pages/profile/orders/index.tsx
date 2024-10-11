@@ -1,7 +1,8 @@
 import type { FC } from "react";
+import ProfileOrders from "@/components/views/profile/customs/main/customs/orders";
 
-const OrdersPage: FC = () => {
-	return <div>Orders</div>;
+const ProfileOrdersPage: FC = () => {
+	return <ProfileOrders />;
 };
 
-export default OrdersPage;
+export default ProfileOrdersPage;

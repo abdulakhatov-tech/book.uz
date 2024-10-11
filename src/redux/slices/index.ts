@@ -5,3 +5,4 @@ export { default as sidebar } from "./sidebar";
 export { default as checkout } from "./checkout";
 export { default as wishlist } from "./wishlist";
 export { default as columnCounter } from "./column-counter";
+export { default as search } from "./search";

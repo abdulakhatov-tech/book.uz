@@ -33,7 +33,7 @@ const DashboardBooks: React.FC = () => {
 	return (
 		<Section id="dashboard-books">
 			<div className="flex items-center justify-between mb-2">
-				<h2 className="text-[22px] text-black mb-4">
+				<h2 className="text-[22px] text-black mb-4 font-bold">
 					{t("dashboard.books.title")}
 				</h2>
 				<Link to="create">
@@ -46,31 +46,51 @@ const DashboardBooks: React.FC = () => {
 				</TableCaption>
 				<TableHeader>
 					<TableRow>
-						<TableHead className="w-[50px]">№</TableHead>
-						<TableHead onClick={() => handleSort("name")}>
+						<TableHead className="w-[50px] font-bold text-[18px] text-secondary-black">
+							№
+						</TableHead>
+						<TableHead
+							className="font-bold text-[18px] text-secondary-black"
+							onClick={() => handleSort("name")}
+						>
 							{t("dashboard.books.name")} <FaSort className="inline-block" />
 						</TableHead>
-						<TableHead onClick={() => handleSort("genre")}>
+						<TableHead
+							className="font-bold text-[18px] text-secondary-black"
+							onClick={() => handleSort("genre")}
+						>
 							{t("dashboard.books.genre")} <FaSort className="inline-block" />
 						</TableHead>
-						<TableHead onClick={() => handleSort("author")}>
+						<TableHead
+							className="font-bold text-[18px] text-secondary-black"
+							onClick={() => handleSort("author")}
+						>
 							{t("dashboard.books.author")} <FaSort className="inline-block" />
 						</TableHead>
-						<TableHead onClick={() => handleSort("amount")}>
+						<TableHead
+							className="font-bold text-[18px] text-secondary-black"
+							onClick={() => handleSort("amount")}
+						>
 							{t("dashboard.books.amount")} <FaSort className="inline-block" />
 						</TableHead>
-						<TableHead onClick={() => handleSort("bookPrice")}>
+						<TableHead
+							className="font-bold text-[18px] text-secondary-black"
+							onClick={() => handleSort("bookPrice")}
+						>
 							{t("dashboard.books.book_price")}{" "}
 							<FaSort className="inline-block" />
 						</TableHead>
-						<TableHead>
+						<TableHead className="font-bold text-[18px] text-secondary-black">
 							{t("dashboard.books.cover")} <FaSort className="inline-block" />
 						</TableHead>
-						<TableHead onClick={() => handleSort("createdAt")}>
+						<TableHead
+							className="font-bold text-[18px] text-secondary-black"
+							onClick={() => handleSort("createdAt")}
+						>
 							{t("dashboard.books.created_at")}{" "}
 							<FaSort className="inline-block" />
 						</TableHead>
-						<TableHead className="text-right">
+						<TableHead className="font-bold text-[18px] text-secondary-black text-right">
 							{t("dashboard.users.actions")}
 						</TableHead>
 					</TableRow>

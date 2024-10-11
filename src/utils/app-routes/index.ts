@@ -4,10 +4,8 @@ import { lazy, useId } from "react";
 const Home = lazy(() => import("@/pages/home"));
 const Books = lazy(() => import("@/pages/books"));
 const BookDetails = lazy(() => import("@/pages/books/book-details"));
-const Packages = lazy(() => import("@/pages/packages"));
 const Authors = lazy(() => import("@/pages/authors"));
 const AuthorDetails = lazy(() => import("@/pages/authors/details"));
-const Discounts = lazy(() => import("@/pages/discounts"));
 const Cart = lazy(() => import("@/pages/cart"));
 const Checkout = lazy(() => import("@/pages/cart/checkout"));
 const Bookmark = lazy(() => import("@/pages/bookmark"));
@@ -23,14 +21,13 @@ const DashboarBooks = lazy(() => import("@/pages/dashboard/books"));
 const OrdersPage = lazy(() => import("@/pages/dashboard/orders"));
 const Genres = lazy(() => import("@/pages/dashboard/genres"));
 const AuthorsPage = lazy(() => import("@/pages/dashboard/authors"));
-const Categories = lazy(() => import("@/pages/dashboard/categories"));
-const NewsPage = lazy(() => import("@/pages/dashboard/news"));
 const CreateAuthorPage = lazy(() => import("@/pages/dashboard/authors/create"));
 const EditAuthorPage = lazy(() => import("@/pages/dashboard/authors/edit"));
 const CreateGenrePage = lazy(() => import("@/pages/dashboard/genres/create"));
 const EditGenrePage = lazy(() => import("@/pages/dashboard/genres/edit"));
 const CreateBookPage = lazy(() => import("@/pages/dashboard/books/create"));
 const EditBookPage = lazy(() => import("@/pages/dashboard/books/edit"));
+const NewsDetailsPage = lazy(() => import("@/pages/news/details"));
 
 const useAppRoutes = () => {
 	const _id = useId;
@@ -58,12 +55,6 @@ const useAppRoutes = () => {
 		},
 		{
 			_id: _id(),
-			path: "/packages",
-			Component: Packages,
-			isPrivate: false,
-		},
-		{
-			_id: _id(),
 			path: "/authors",
 			Component: Authors,
 			isPrivate: false,
@@ -75,12 +66,6 @@ const useAppRoutes = () => {
 					isPrivate: false,
 				},
 			],
-		},
-		{
-			_id: _id(),
-			path: "/discounts",
-			Component: Discounts,
-			isPrivate: false,
 		},
 		{
 			_id: _id(),
@@ -111,8 +96,8 @@ const useAppRoutes = () => {
 			children: [
 				{
 					_id: _id(),
-					path: ":slug",
-					Component: News,
+					path: ":newsId",
+					Component: NewsDetailsPage,
 					isPrivate: true,
 				},
 			],
@@ -145,90 +130,91 @@ const useAppRoutes = () => {
 			path: "/dashboard",
 			Component: Dashboard,
 			isPrivate: true,
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/admins",
 			Component: Admins,
 			isPrivate: true,
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/users",
 			Component: Users,
 			isPrivate: true,
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/products",
 			Component: DashboarBooks,
 			isPrivate: true,
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/products/create",
 			Component: CreateBookPage,
 			isPrivate: true,
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/products/edit/:bookId",
 			Component: EditBookPage,
 			isPrivate: true,
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/orders",
 			Component: OrdersPage,
 			isPrivate: true,
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/authors",
 			Component: AuthorsPage,
 			isPrivate: true,
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/authors/create",
 			Component: CreateAuthorPage,
 			isPrivate: true,
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/authors/edit/:authorId",
 			Component: EditAuthorPage,
 			isPrivate: true,
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/genres",
 			Component: Genres,
 			isPrivate: true,
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/genres/create",
 			Component: CreateGenrePage,
 			isPrivate: true,
+			allowedRoles: ["admin", "owner"],
 		},
 		{
 			_id: _id(),
 			path: "/dashboard/genres/edit/:genreId",
 			Component: EditGenrePage,
 			isPrivate: true,
-		},
-		{
-			_id: _id(),
-			path: "/dashboard/categories",
-			Component: Categories,
-			isPrivate: true,
-		},
-		{
-			_id: _id(),
-			path: "/dashboard/news",
-			Component: NewsPage,
-			isPrivate: true,
+			allowedRoles: ["admin", "owner"],
 		},
 	];
 

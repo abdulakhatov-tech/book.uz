@@ -36,7 +36,7 @@ const Banners: React.FC = () => {
 			) : (
 				<Carousel opts={carouselOptions} plugins={[autoplayOptions]}>
 					<CarouselContent className="h-full max-h-[448px]">
-						{banners.map((item: BannerI) => (
+						{banners?.map((item: BannerI) => (
 							<BannerItem key={item._id} {...item} />
 						))}
 					</CarouselContent>
