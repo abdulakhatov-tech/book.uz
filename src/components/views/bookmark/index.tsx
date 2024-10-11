@@ -24,13 +24,19 @@ const BookMarkComponent: FC = () => {
 				</h3>
 
 				<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:3 md:gap-4">
-					{isLoading
-						? Array.from({ length: SKELETON_COUNT }, (_, idx) => (
-								<BookSkeleton key={idx} />
-							))
-						: wishlist?.map((book: BookI) => (
-								<ProductCard key={book._id} book={book} />
-							))}
+					{isLoading ? (
+						Array.from({ length: SKELETON_COUNT }, (_, idx) => (
+							<BookSkeleton key={idx} />
+						))
+					) : wishlist?.length ? (
+						wishlist?.map((book: BookI) => (
+							<ProductCard key={book._id} book={book} />
+						))
+					) : (
+						<h4 className="w-full text-center col-span-6 py-4 text-[18px]">
+							No wishlist
+						</h4>
+					)}
 				</div>
 			</Container>
 		</Section>

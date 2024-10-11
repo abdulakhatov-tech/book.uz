@@ -8,6 +8,7 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
+
 import Loading from "../loading";
 import { RegionI } from "@/types";
 import { useUserApi } from "@/services/user-api";
@@ -31,7 +32,11 @@ const SelectDistrict: FC = () => {
 
 	const handleValueChange = (value: string) => {
 		if (!isDisabled) {
-			dispatch(setUserInfo({ district: value }));
+			dispatch(
+				setUserInfo({
+					billingAddress: { ...userInfo.billingAddress, district: value },
+				}),
+			);
 		}
 	};
 
@@ -46,9 +51,9 @@ const SelectDistrict: FC = () => {
 			<Select
 				value={userInfo?.billingAddress?.district}
 				onValueChange={handleValueChange}
-				disabled={!userInfo?.billingAddress?.region || isDisabled}
+				disabled={isDisabled}
 			>
-				<SelectTrigger className="w-full">
+				<SelectTrigger className="w-full font-semibold">
 					<SelectValue placeholder={t("checkout.district")} />
 				</SelectTrigger>
 				<SelectContent className="max-h-[300px]">
@@ -56,7 +61,7 @@ const SelectDistrict: FC = () => {
 						<Loading />
 					) : (
 						districts?.map(({ _id, name }: RegionI) => (
-							<SelectItem key={_id} value={_id}>
+							<SelectItem key={_id} value={_id} className="font-semibold">
 								{name}
 							</SelectItem>
 						))

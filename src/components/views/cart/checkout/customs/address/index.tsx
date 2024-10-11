@@ -16,7 +16,14 @@ const Address: FC = () => {
 
 	const handleAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const extraAddress = e.target.value;
-		dispatch(setUserInfo({ ...userInfo, billingAddress: { extraAddress } }));
+		dispatch(
+			setUserInfo({
+				billingAddress: {
+					...userInfo.billingAddress,
+					extraAddress,
+				},
+			}),
+		);
 	};
 
 	return (
@@ -34,7 +41,7 @@ const Address: FC = () => {
 					<Input
 						id="address"
 						placeholder={"Amir Temur ko'chasi, 12-uy"}
-						className="mt-2"
+						className="mt-2 font-semibold"
 						value={userInfo?.billingAddress?.extraAddress}
 						onChange={handleAddressChange}
 					/>

@@ -43,8 +43,8 @@ const SearchComponent: FC = () => {
 		<Section
 			id="search"
 			className={classNames("py-4", {
-				hidden: !open,
-				block: open,
+				hidden: open,
+				block: !open,
 			})}
 		>
 			<Container>

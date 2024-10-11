@@ -14,6 +14,9 @@ const Profile = lazy(() => import("@/pages/profile"));
 const Dashboard = lazy(() => import("@/pages/dashboard"));
 const Orders = lazy(() => import("@/pages/profile/orders"));
 const Settings = lazy(() => import("@/pages/profile/settings"));
+const CheckoutSuccess = lazy(
+	() => import("@/pages/cart/checkout/checkout-success"),
+);
 
 const Admins = lazy(() => import("@/pages/dashboard/admins"));
 const Users = lazy(() => import("@/pages/dashboard/users"));
@@ -121,6 +124,12 @@ const useAppRoutes = () => {
 					isPrivate: true,
 				},
 			],
+		},
+		{
+			_id: _id(),
+			path: "/checkout-success",
+			Component: CheckoutSuccess,
+			isPrivate: true,
 		},
 	];
 

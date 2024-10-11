@@ -173,8 +173,8 @@ export interface UserCheckoutInfo {
 	name: string;
 	surname: string;
 	phoneNumber: string;
-	delivery_method: string;
-	payment_method: string;
+	delivery_method: "courier" | "pickup" | "postal";
+	payment_method: "payme" | "click" | "cash";
 	extra_note: string;
 	billingAddress: {
 		region: string;

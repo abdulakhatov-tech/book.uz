@@ -73,7 +73,7 @@ const useUsersService = () => {
 			billingAddress?: {
 				region?: string;
 				district?: string;
-				details?: string;
+				extraAddress?: string;
 			};
 		}) => {
 			const response = await axios.put(`/users/${user._id}`, user);

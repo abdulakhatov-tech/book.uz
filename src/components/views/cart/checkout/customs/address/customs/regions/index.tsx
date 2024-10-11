@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect } from "react";
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import {
 	Select,
@@ -26,20 +26,18 @@ const SelectRegions: FC = () => {
 	const { data: regions, isLoading, isError } = useGetRegions();
 	const isDisabled = isLoading || isError || !isOnline;
 
-	const handleValueChange = useCallback(
-		(value: string) => {
-			dispatch(setUserInfo({ region: value }));
-		},
-		[userInfo],
-	);
-
-	useEffect(() => {
-		if (userInfo.delivery_method === "pickup" && regions?.length) {
-			dispatch(setUserInfo({ ...userInfo, region: regions[1]?._id }));
-		} else {
-			dispatch(setUserInfo({ ...userInfo }));
+	const handleValueChange = (value: string) => {
+		if (!isDisabled) {
+			dispatch(
+				setUserInfo({
+					billingAddress: {
+						...userInfo.billingAddress,
+						region: value,
+					},
+				}),
+			);
 		}
-	}, [userInfo.delivery_method, userInfo.billingAddress.region]);
+	};
 
 	return (
 		<div>
@@ -52,17 +50,20 @@ const SelectRegions: FC = () => {
 			<Select
 				value={userInfo.billingAddress.region}
 				onValueChange={handleValueChange}
-				disabled={isDisabled || userInfo.delivery_method === "pickup"}
+				disabled={isDisabled}
 			>
-				<SelectTrigger className="w-full">
-					<SelectValue placeholder={t("checkout.region")} />
+				<SelectTrigger className="w-full font-semibold">
+					<SelectValue
+						className="font-semibold"
+						placeholder={t("checkout.region")}
+					/>
 				</SelectTrigger>
 				<SelectContent className="max-h-[300px]">
 					{isDisabled ? (
 						<Loading />
 					) : (
 						regions?.map(({ _id, name }: RegionI) => (
-							<SelectItem key={_id} value={_id}>
+							<SelectItem key={_id} value={_id} className="font-semibold">
 								{name}
 							</SelectItem>
 						))

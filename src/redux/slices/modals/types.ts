@@ -16,4 +16,5 @@ export interface IInitialState {
 	authModalVisibility: AuthModalState;
 	categoryDropdownVisibility: boolean;
 	reviewsDropdownVisibility: ReviewDropdownState;
+	checkoutSuccessModalVisibility: boolean;
 }

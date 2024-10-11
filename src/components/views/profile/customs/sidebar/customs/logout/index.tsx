@@ -15,11 +15,15 @@ import {
 	AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { toast } from "@/components/ui/use-toast";
+import { useAppDispatch } from "@/hooks/useRedux";
+import { clearCart } from "@/redux/slices/cart";
+import { clearWishlist } from "@/redux/slices/wishlist";
 
 const Logout: React.FC = () => {
 	const { t } = useTranslation();
 	const navigate = useNavigate();
 	const signOut = useSignOut();
+	const dispatch = useAppDispatch();
 
 	const handleLogout = () => {
 		signOut();
@@ -27,6 +31,8 @@ const Logout: React.FC = () => {
 		toast({
 			title: "You have been logged out!",
 		});
+		dispatch(clearWishlist());
+		dispatch(clearCart());
 	};
 
 	return (

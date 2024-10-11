@@ -83,11 +83,17 @@ const cartSlice = createSlice({
 
 			saveState(CART_KEY, state.cart); // Persist cart state
 		},
+		clearCart: (state) => {
+			state.cart = [];
+			state.error = null;
+			saveState(CART_KEY, state.cart); // Persist cart state
+		},
 	},
 });
 
 export const {
 	addToCart,
+	clearCart,
 	removeFromCart,
 	clearCartError,
 	incrementBookAmount,

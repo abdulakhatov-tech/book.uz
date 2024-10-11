@@ -7,13 +7,19 @@ import {
 	toggleCategoryDropdownVisibility,
 	toggleMenuModalVisibility,
 } from "@/redux/slices/modals";
-import { AuthModalVisibility, MenuModalVisibility } from "./customs";
+import {
+	AuthModalVisibility,
+	CheckoutSuccessModalVisibility,
+	MenuModalVisibility,
+} from "./customs";
 
 const ModalVisibility: React.FC = () => {
 	const dispatch = useAppDispatch();
-	const { menuModalVisibility, authModalVisibility } = useAppSelector(
-		(state) => state.modal,
-	);
+	const {
+		menuModalVisibility,
+		authModalVisibility,
+		checkoutSuccessModalVisibility,
+	} = useAppSelector((state) => state.modal);
 
 	// Media query to check if the screen width is less than 767px
 	const lg = useMediaQuery("(min-width: 1024px)");
@@ -29,6 +35,7 @@ const ModalVisibility: React.FC = () => {
 		<>
 			{menuModalVisibility && <MenuModalVisibility />}
 			{authModalVisibility.open && <AuthModalVisibility />}
+			{checkoutSuccessModalVisibility && <CheckoutSuccessModalVisibility />}
 		</>
 	);
 };

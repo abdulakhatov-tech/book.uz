@@ -15,27 +15,51 @@ const Promocode: FC = () => {
 	const {
 		coupon,
 		couponCode,
-		handleChange,
 		applyCoupon,
-		handleApplyCoupon,
+		copyMessage,
+		handleChange,
 		handleKeyDown,
+		suggestedCoupon,
+		handleCopyCoupon,
+		handleApplyCoupon,
 	} = useCouponCodeFeatures();
 
 	return (
 		<Card title={t("checkout.coupon_code")}>
+			<div className="mb-4">
+				{suggestedCoupon && (
+					<div
+						onClick={handleCopyCoupon}
+						className="flex items-center justify-between px-4 py-2 bg-gray-100 rounded-md border border-gray-300 "
+					>
+						<span className="text-md font-medium text-gray-600">
+							{suggestedCoupon || "No coupon"}
+						</span>
+
+						{copyMessage && (
+							<span className="text-green-500 text-sm font-medium text-gray-600">
+								{copyMessage}
+							</span>
+						)}
+					</div>
+				)}
+			</div>
+
 			<div className="flex items-center gap-4">
 				<Input
 					value={coupon}
 					onChange={handleChange}
 					onKeyDown={handleKeyDown}
 					className="max-w-[300px]"
-					disabled={!!couponCode}
+					disabled={!!couponCode || !suggestedCoupon}
 				/>
 				<Button
 					onClick={handleApplyCoupon}
 					type="button"
 					className="bg-orange hover:bg-orange"
-					disabled={!!couponCode || applyCoupon.status === "pending"}
+					disabled={
+						!!couponCode || applyCoupon.status === "pending" || !suggestedCoupon
+					}
 				>
 					{applyCoupon.status === "pending" ? (
 						<LoadingSpinner />

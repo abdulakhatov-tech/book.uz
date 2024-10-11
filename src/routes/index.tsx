@@ -1,10 +1,10 @@
 import { lazy } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
-import MainLayout from "@/layout/main-layout";
-import type { RenderComponentT } from "@/types";
-import useAppRoutes from "@/utils/app-routes";
 import PrivateRoute from "./private-routes";
+import MainLayout from "@/layout/main-layout";
+import useAppRoutes from "@/utils/app-routes";
+import type { RenderComponentT } from "@/types";
 import DashboardLayout from "@/layout/dashboard-layout";
 
 const NotFound = lazy(() => import("@/pages/not-found"));

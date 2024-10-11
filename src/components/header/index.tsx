@@ -6,7 +6,7 @@ import SearchComponent from "../search";
 
 const Header: FC = () => {
 	return (
-		<header className="pt-[10px] pb-2">
+		<header className="pt-[10px] pb-6">
 			<Container>
 				<TopBar />
 				<SearchComponent />
