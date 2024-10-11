@@ -44,7 +44,7 @@ export const useUserApi = () => {
 	const applyCoupon = useMutation({
 		mutationFn: async (couponCode: string) => {
 			const response = await axios.post("/user-api/apply-coupon", {
-				couponCode
+				couponCode,
 			});
 			return response.data.data;
 		},

@@ -31,8 +31,8 @@ const Logout: React.FC = () => {
 		toast({
 			title: "You have been logged out!",
 		});
-		dispatch(clearWishlist())
-		dispatch(clearCart())
+		dispatch(clearWishlist());
+		dispatch(clearCart());
 	};
 
 	return (

@@ -8,10 +8,10 @@ const Main: React.FC = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		if(location.pathname === '/profile') {
-			navigate('/profile/orders')
+		if (location.pathname === "/profile") {
+			navigate("/profile/orders");
 		}
-	}, [location.pathname])
+	}, [location.pathname]);
 
 	return (
 		<>

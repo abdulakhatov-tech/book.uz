@@ -48,9 +48,12 @@ const modalSlice = createSlice({
 				...payload,
 			};
 		},
-		toggleCheckoutSuccessModalVisibility: (state, { payload }: PayloadAction<boolean>) => {
+		toggleCheckoutSuccessModalVisibility: (
+			state,
+			{ payload }: PayloadAction<boolean>,
+		) => {
 			state.checkoutSuccessModalVisibility = payload;
-		}
+		},
 	},
 });
 
@@ -60,7 +63,7 @@ export const {
 	toggleAuthModalVisibility,
 	toggleCategoryDropdownVisibility,
 	toggleReviewDropdownVisibility,
-	toggleCheckoutSuccessModalVisibility
+	toggleCheckoutSuccessModalVisibility,
 } = modalSlice.actions;
 
 // Exporting reducer

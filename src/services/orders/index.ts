@@ -33,18 +33,17 @@ const useOrdersService = () => {
 
 	const createOrder = useMutation({
 		mutationFn: async (order: {
-			user: string,
-			books: {book: string, quantity: number}[],
-			delivery_method: 'courier' | 'pickup' | 'postal',
-			payment_method: 'payme' | 'click' | 'cash',
-            billingAddress: {
-				region: string,
-                district: string,
-				extraAddress: string,
-            },
-            extra_note: string,
-            price: number,
-			
+			user: string;
+			books: { book: string; quantity: number }[];
+			delivery_method: "courier" | "pickup" | "postal";
+			payment_method: "payme" | "click" | "cash";
+			billingAddress: {
+				region: string;
+				district: string;
+				extraAddress: string;
+			};
+			extra_note: string;
+			price: number;
 		}) => {
 			const response = await axios.post("/orders", order);
 			return response.data;

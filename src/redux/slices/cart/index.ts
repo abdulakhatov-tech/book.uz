@@ -87,7 +87,7 @@ const cartSlice = createSlice({
 			state.cart = [];
 			state.error = null;
 			saveState(CART_KEY, state.cart); // Persist cart state
-		}
+		},
 	},
 });
 

@@ -12,7 +12,7 @@ import { setUserInfo } from "@/redux/slices/checkout";
 const PaymentMethods: FC = () => {
 	const { t } = useTranslation();
 	const isOnline = useOnlineStatus();
-	const dispatch = useAppDispatch()
+	const dispatch = useAppDispatch();
 	const { useGetPaymentMethods } = useUserApi();
 	const { userInfo } = useAppSelector((state) => state.checkout);
 
@@ -32,11 +32,13 @@ const PaymentMethods: FC = () => {
 
 			setPaymentMethods(filteredMethods);
 		}
-		if(userInfo.delivery_method !== "pickup") {
-			dispatch(setUserInfo({
-				...userInfo,
-                payment_method: "payme" 
-			}))
+		if (userInfo.delivery_method !== "pickup") {
+			dispatch(
+				setUserInfo({
+					...userInfo,
+					payment_method: "payme",
+				}),
+			);
 		}
 	}, [userInfo.delivery_method, data, loading]);
 

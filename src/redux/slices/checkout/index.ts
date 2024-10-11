@@ -58,7 +58,7 @@ export const {
 	setCouponCode,
 	setDiscount,
 	setAgreeToRules,
-	resetCheckout
+	resetCheckout,
 } = checkoutSlice.actions;
 
 export default checkoutSlice.reducer;

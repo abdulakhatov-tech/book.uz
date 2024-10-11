@@ -15,7 +15,7 @@ const UserInformation: FC = () => {
 
 	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target;
-		dispatch(setUserInfo({[name]: value }));
+		dispatch(setUserInfo({ [name]: value }));
 	};
 
 	return (
