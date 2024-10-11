@@ -7,8 +7,14 @@ const NewsPage: FC = () => {
 		<>
 			<Helmet>
 				<title>Latest News - Book Shop</title>
-				<meta name="description" content="Stay updated with the latest news, book releases, and events at Book Shop." />
-				<meta name="keywords" content="news, book releases, events, book shop, updates" />
+				<meta
+					name="description"
+					content="Stay updated with the latest news, book releases, and events at Book Shop."
+				/>
+				<meta
+					name="keywords"
+					content="news, book releases, events, book shop, updates"
+				/>
 				<link rel="canonical" href="/news" />
 			</Helmet>
 			<NewsComponent />

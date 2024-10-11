@@ -12,8 +12,14 @@ const BooksPage: FC = () => {
 				{!hasOutlet ? (
 					<>
 						<title>Books Collection - Book Shop</title>
-						<meta name="description" content="Explore our wide collection of books. Find your next read from various genres and authors." />
-						<meta name="keywords" content="books, book shop, literature, genres, authors" />
+						<meta
+							name="description"
+							content="Explore our wide collection of books. Find your next read from various genres and authors."
+						/>
+						<meta
+							name="keywords"
+							content="books, book shop, literature, genres, authors"
+						/>
 						<link rel="canonical" href="/books" />
 					</>
 				) : (

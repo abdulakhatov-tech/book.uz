@@ -7,7 +7,10 @@ const CheckoutPage: FC = () => {
 		<>
 			<Helmet>
 				<title>Checkout - Book Shop</title>
-				<meta name="description" content="Complete your purchase by reviewing your order and entering payment details." />
+				<meta
+					name="description"
+					content="Complete your purchase by reviewing your order and entering payment details."
+				/>
 				<meta name="keywords" content="checkout, order, book shop, payment" />
 				<link rel="canonical" href="/cart/checkout" />
 			</Helmet>

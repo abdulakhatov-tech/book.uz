@@ -7,8 +7,14 @@ const SettingsPage: FC = () => {
 		<>
 			<Helmet>
 				<title>Account Settings - Book Shop</title>
-				<meta name="description" content="Update your account settings, preferences, and personal information at Book Shop." />
-				<meta name="keywords" content="account settings, user preferences, personal information, book shop" />
+				<meta
+					name="description"
+					content="Update your account settings, preferences, and personal information at Book Shop."
+				/>
+				<meta
+					name="keywords"
+					content="account settings, user preferences, personal information, book shop"
+				/>
 				<link rel="canonical" href="/profile/settings" />
 			</Helmet>
 			<Settings />

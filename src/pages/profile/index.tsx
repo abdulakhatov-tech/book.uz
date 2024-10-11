@@ -7,8 +7,14 @@ const ProfilePage: FC = () => {
 		<>
 			<Helmet>
 				<title>User Profile - Book Shop</title>
-				<meta name="description" content="View and manage your profile, order history, and preferences at Book Shop." />
-				<meta name="keywords" content="user profile, account settings, order history, book shop, manage profile" />
+				<meta
+					name="description"
+					content="View and manage your profile, order history, and preferences at Book Shop."
+				/>
+				<meta
+					name="keywords"
+					content="user profile, account settings, order history, book shop, manage profile"
+				/>
 				<link rel="canonical" href="/profile" />
 			</Helmet>
 			<Profile />

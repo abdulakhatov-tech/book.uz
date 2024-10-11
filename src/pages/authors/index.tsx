@@ -7,7 +7,10 @@ const AuthosPage: FC = () => {
 		<>
 			<Helmet>
 				<title>Authors - Book Shop</title>
-				<meta name="description" content="Explore the list of authors in our collection. Find your favorite authors and their works." />
+				<meta
+					name="description"
+					content="Explore the list of authors in our collection. Find your favorite authors and their works."
+				/>
 				<meta name="keywords" content="authors, books, literature, book shop" />
 				<link rel="canonical" href="/authors" />
 			</Helmet>

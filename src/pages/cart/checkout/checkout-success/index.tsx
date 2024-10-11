@@ -7,8 +7,14 @@ const CheckoutSuccess: FC = () => {
 		<>
 			<Helmet>
 				<title>Checkout Success - Book Shop</title>
-				<meta name="description" content="Your order has been successfully placed. Thank you for shopping with us!" />
-				<meta name="keywords" content="checkout success, order completed, book shop, thank you" />
+				<meta
+					name="description"
+					content="Your order has been successfully placed. Thank you for shopping with us!"
+				/>
+				<meta
+					name="keywords"
+					content="checkout success, order completed, book shop, thank you"
+				/>
 				<link rel="canonical" href="/cart/checkout/success" />
 			</Helmet>
 			<CheckoutSuccessComponent />

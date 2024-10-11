@@ -7,8 +7,14 @@ const ProfileOrdersPage: FC = () => {
 		<>
 			<Helmet>
 				<title>Your Orders - Book Shop</title>
-				<meta name="description" content="View your order history and track the status of your orders at Book Shop." />
-				<meta name="keywords" content="orders, order history, track orders, user profile, book shop" />
+				<meta
+					name="description"
+					content="View your order history and track the status of your orders at Book Shop."
+				/>
+				<meta
+					name="keywords"
+					content="orders, order history, track orders, user profile, book shop"
+				/>
 				<link rel="canonical" href="/profile/orders" />
 			</Helmet>
 			<ProfileOrders />

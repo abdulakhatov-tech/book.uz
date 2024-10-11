@@ -12,7 +12,10 @@ const CartPage: FC = () => {
 				{!hasOutlet ? (
 					<>
 						<title>Your Cart - Book Shop</title>
-						<meta name="description" content="View and manage the items in your cart. Proceed to checkout when ready." />
+						<meta
+							name="description"
+							content="View and manage the items in your cart. Proceed to checkout when ready."
+						/>
 						<meta name="keywords" content="cart, books, checkout, book shop" />
 						<link rel="canonical" href="/cart" />
 					</>

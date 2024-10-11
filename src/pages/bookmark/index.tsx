@@ -7,8 +7,14 @@ const BookmarkPage: FC = () => {
 		<>
 			<Helmet>
 				<title>Bookmarked Books - Book Shop</title>
-				<meta name="description" content="View your bookmarked books and easily access your favorite titles." />
-				<meta name="keywords" content="bookmarked books, favorites, book collection, book shop" />
+				<meta
+					name="description"
+					content="View your bookmarked books and easily access your favorite titles."
+				/>
+				<meta
+					name="keywords"
+					content="bookmarked books, favorites, book collection, book shop"
+				/>
 				<link rel="canonical" href="/bookmark" />
 			</Helmet>
 			<BookMarkComponent />
