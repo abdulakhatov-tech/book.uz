@@ -84,13 +84,13 @@ export const MockData = () => {
 	];
 
 	const profileNavigation = [
-		{
-			_id,
-			icon: RiDashboard3Line,
-			label: t("profile.nav.features"),
-			path: "/profile",
-			roles: ["admin", "owner", "user"],
-		},
+		// {
+		// 	_id,
+		// 	icon: RiDashboard3Line,
+		// 	label: t("profile.nav.features"),
+		// 	path: "/profile",
+		// 	roles: ["admin", "owner", "user"],
+		// },
 		{
 			_id,
 			icon: RiDashboardFill,

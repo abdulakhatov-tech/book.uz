@@ -6,6 +6,7 @@ import type { RenderComponentT } from "@/types";
 import useAppRoutes from "@/utils/app-routes";
 import PrivateRoute from "./private-routes";
 import DashboardLayout from "@/layout/dashboard-layout";
+import CheckoutSuccess from "@/pages/cart/checkout/checkout-success";
 
 const NotFound = lazy(() => import("@/pages/not-found"));
 const Error = lazy(() => import("@/pages/error"));

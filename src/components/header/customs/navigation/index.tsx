@@ -72,7 +72,6 @@ const HeaderNavigation: FC = () => {
 					path="/bookmark"
 					count={wishlist?.length || 0}
 				/>
-				<NavButton Icon={LuUser2} label={t("header.profile")} path="/profile" />
 				{(user?.role === "owner" || user?.role === "admin") && (
 					<NavButton
 						Icon={MdOutlineDashboard}
@@ -80,6 +79,7 @@ const HeaderNavigation: FC = () => {
 						path="/dashboard"
 					/>
 				)}
+				<NavButton Icon={LuUser2} label={t("header.profile")} path="/profile" />
 			</div>
 		</div>
 	);

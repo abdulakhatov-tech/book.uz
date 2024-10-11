@@ -38,7 +38,11 @@
 		"cash_description": "Yetkazib berish paytida naqd pul bilan to‘lash imkoniyati. To‘lovni qabul qilganingizdan keyin amalga oshiring",
 		"click_description": "Click to‘lov tizimi orqali qulay va tezkor to‘lov. Mobil ilova orqali onlayn to‘lovlaringizni amalga oshiring",
 		"coupon_code_applied_message": "Kopon kodi muvaffaqiyatli qo'llanildi.",
-		"coupon_code_discount_message": "chegirma umumiy summangizga qo'llanildi."
+		"coupon_code_discount_message": "chegirma umumiy summangizga qo'llanildi.",
+		"order_success_title": "Xaridingiz uchun raxmat!",
+		"order_success_description": "Sizning buyurtmangiz muvaffaqiyatli amalga oshirildi. Siz bilan tez orada bog’lanishadi. Buyurtmangiz holatini profilingizda kuzatib borishingiz mumkin",
+		"order_success_close_btn": "Yopish",
+		"order_success_profile": "Profilga o'tish"
 	},
 	"cart": {
 		"title": "Savatcha",

@@ -14,8 +14,11 @@ const useSummaryFeatures = () => {
 	const { cart } = useAppSelector((state) => state.cart);
 	const [loadingCheckout, setLoadingCheckout] = useState<boolean>(false);
 
-	const delivery = 30000;
-	const discount = 20000;
+	const delivery = 0;
+	const discount = cart?.reduce((acc, item) => {
+		const itemDiscount = (item?.bookPrice * item?.discount / 100) * item?.amount;
+		return acc + itemDiscount;
+	  }, 0);
 	const totalBooks = cart.reduce((sum, item) => sum + item.amount, 0);
 	const totalPrice = cart.reduce(
 		(sum, item) => sum + item.amount * item.bookPrice,

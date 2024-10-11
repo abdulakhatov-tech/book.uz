@@ -28,9 +28,9 @@ const BookMarkComponent: FC = () => {
 						? Array.from({ length: SKELETON_COUNT }, (_, idx) => (
 								<BookSkeleton key={idx} />
 							))
-						: wishlist?.map((book: BookI) => (
+						: wishlist?.length ? wishlist?.map((book: BookI) => (
 								<ProductCard key={book._id} book={book} />
-							))}
+							)) : <h4 className="w-full text-center col-span-6 py-4 text-[18px]">No wishlist</h4>}
 				</div>
 			</Container>
 		</Section>

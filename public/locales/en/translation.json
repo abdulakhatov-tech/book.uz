@@ -38,7 +38,11 @@
 		"cash_description": "The option to pay with cash upon delivery. Make the payment after receiving your order",
 		"click_description": "Convenient and quick payment via the Click payment system. Make online payments through the mobile app",
 		"coupon_code_applied_message": "Couponcode applied successfully.",
-		"coupon_code_discount_message": "discount has been applied to your total amount."
+		"coupon_code_discount_message": "discount has been applied to your total amount.",
+		"order_success_title": "Thank you for your purchase!",
+		"order_success_description": "Your order has been successfully placed. We will contact you shortly. You can track your order status in your profile.",
+		"order_success_close_btn": "Close",
+		"order_success_profile": "Go to Profile"
 	},
 	"cart": {
 		"title": "Cart",

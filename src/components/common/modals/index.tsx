@@ -7,11 +7,11 @@ import {
 	toggleCategoryDropdownVisibility,
 	toggleMenuModalVisibility,
 } from "@/redux/slices/modals";
-import { AuthModalVisibility, MenuModalVisibility } from "./customs";
+import { AuthModalVisibility, CheckoutSuccessModalVisibility, MenuModalVisibility } from "./customs";
 
 const ModalVisibility: React.FC = () => {
 	const dispatch = useAppDispatch();
-	const { menuModalVisibility, authModalVisibility } = useAppSelector(
+	const { menuModalVisibility, authModalVisibility, checkoutSuccessModalVisibility } = useAppSelector(
 		(state) => state.modal,
 	);
 
@@ -29,6 +29,9 @@ const ModalVisibility: React.FC = () => {
 		<>
 			{menuModalVisibility && <MenuModalVisibility />}
 			{authModalVisibility.open && <AuthModalVisibility />}
+			{
+				checkoutSuccessModalVisibility && <CheckoutSuccessModalVisibility />
+			}
 		</>
 	);
 };
