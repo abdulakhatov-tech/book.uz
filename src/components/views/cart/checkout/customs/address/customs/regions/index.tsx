@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect } from "react";
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import {
 	Select,
@@ -10,7 +10,7 @@ import {
 import { Label } from "@/components/ui/label";
 
 import Loading from "../loading";
-import { RegionI, UserI } from "@/types";
+import { RegionI } from "@/types";
 import { useUserApi } from "@/services/user-api";
 import useOnlineStatus from "@/hooks/useOnlineStatus";
 import { setUserInfo } from "@/redux/slices/checkout";

@@ -17,7 +17,7 @@ import featuredCardsIcon3 from "@/assets/icons/credit-card.svg";
 import featuredCardsIcon4 from "@/assets/icons/guarantee.svg";
 
 // profile navigation
-import { RiDashboard3Line, RiDashboardFill } from "react-icons/ri";
+import { RiDashboardFill } from "react-icons/ri";
 import { SlBasketLoaded } from "react-icons/sl";
 import { IoSettingsOutline } from "react-icons/io5";
 

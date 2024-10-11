@@ -7,8 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import useSettingFeatures from "./features";
 import { useTranslation } from "react-i18next";
-import SelectDistrict from "@/components/views/cart/checkout/customs/address/customs/districts";
-import { SelectRegions } from "@/components/views/cart/checkout/customs/address/customs";
 
 const Settings: React.FC = () => {
 	const { t } = useTranslation();

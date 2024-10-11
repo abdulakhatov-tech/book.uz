@@ -10,7 +10,7 @@ const useSummaryFeatures = () => {
 	const dispatch = useAppDispatch();
 	const { isLoading } = useLoading();
 	const { cart } = useAppSelector((state) => state.cart);
-	const { delivery, discount, couponCode, agree_to_rules, userInfo } =
+	const { delivery, couponCode, agree_to_rules, userInfo } =
 		useAppSelector((state) => state.checkout);
 	const [loadingCheckout, setLoadingCheckout] = useState<boolean>(false);
 
