@@ -24,11 +24,9 @@ import { IoSettingsOutline } from "react-icons/io5";
 // dashboard sidebar
 import { LuUsers2 } from "react-icons/lu";
 import { SlBasket } from "react-icons/sl";
-import { TbCategory } from "react-icons/tb";
 import { GrUserAdmin } from "react-icons/gr";
 import { IoBookSharp } from "react-icons/io5";
 import { IoBasketOutline } from "react-icons/io5";
-import { FaRegNewspaper } from "react-icons/fa6";
 import { PiUsersThreeLight } from "react-icons/pi";
 
 export const banners_2 = [

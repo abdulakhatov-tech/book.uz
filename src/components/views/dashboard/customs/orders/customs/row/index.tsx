@@ -1,32 +1,17 @@
 import React from "react";
+import classNames from "classnames";
 import { useTranslation } from "react-i18next";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 
-import {
-	AlertDialog,
-	AlertDialogAction,
-	AlertDialogCancel,
-	AlertDialogContent,
-	AlertDialogDescription,
-	AlertDialogFooter,
-	AlertDialogHeader,
-	AlertDialogTitle,
-	AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
 import { FaRegUser } from "react-icons/fa";
 import { TableCell, TableRow } from "@/components/ui/table";
 
-import { OrderRowPropsI } from "./interface";
-import useAuthorsService from "@/services/authors";
-import { formatDate, formatPrice } from "@/helpers";
-import classNames from "classnames";
-import { Button } from "@/components/ui/button";
-import { MdDelete } from "react-icons/md";
 import SelectAction from "../select-action";
+import { OrderRowPropsI } from "./interface";
+import { formatDate, formatPrice } from "@/helpers";
 
 const OrderRow: React.FC<OrderRowPropsI> = ({ order, index }) => {
 	const { t } = useTranslation();
-	const { deleteAuthorById } = useAuthorsService();
 	return (
 		<TableRow>
 			<TableCell className="font-medium">{index + 1}</TableCell>

@@ -1,4 +1,4 @@
-import { FC, useCallback, useRef, useState } from "react";
+import { FC, useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 
 import Container from "@/layout/container";
